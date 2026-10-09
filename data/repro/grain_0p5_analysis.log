@@ -1,0 +1,18 @@
+0.5-degree cells in file: 3340  | pass mask + records + data: 672  | with ecoregion: 671
+modelled: 671 cells in 64 ecoregions, 10 biomes
+
+GPP, standardised, SEs clustered by ecoregion
+A  baseline                                  beta +0.228  se 0.050  p=0.0000  plateau I=+0.263
+B  + biome fixed effects                     beta +0.151  se 0.046  p=0.0010  plateau I=+0.245
+C  + ecoregion fixed effects (within)        beta +0.058  se 0.025  p=0.0212  plateau I=-0.011
+ML_Error
+
+spatial error (queen, 15 island cells): beta +0.090  p=0.0000  lambda=0.88
+
+leave-block-out CV (richness added to climate + effort):
+  2-degree blocks (112): MSE reduction +6.1%  95% CI [+0.2, +12.1]  *
+  4-degree blocks (44): MSE reduction +6.0%  95% CI [-1.1, +12.5]
+
+richness variance within ecoregions at 0.5 deg: 59.9% (1 deg: 38.5%)
+
+1-degree reference: baseline +0.273, biome FE +0.182, ecoregion FE +0.030 (p=0.59), SEM +0.017 (p=0.51), 4-deg block CV +9.4%

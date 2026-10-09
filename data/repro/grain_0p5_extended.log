@@ -1,0 +1,32 @@
+n = 671 cells, 64 ecoregions
+
+=== GPP (standardised; SEs clustered by ecoregion) ===
+  baseline (effort + climate)              beta +0.228  se 0.050  p=0.0000
+  + biome FE                               beta +0.151  se 0.046  p=0.0010
+  + ecoregion FE  [within]                 beta +0.058  se 0.025  p=0.0212
+    + topographic heterogeneity            beta +0.041  se 0.024  p=0.0812
+    + NDVI seasonality                     beta +0.068  se 0.025  p=0.0054
+    + both  (full within model)            beta +0.051  se 0.023  p=0.0235
+
+=== NPP (standardised; SEs clustered by ecoregion) ===
+  baseline (effort + climate)              beta +0.268  se 0.058  p=0.0000
+  + biome FE                               beta +0.183  se 0.045  p=0.0001
+  + ecoregion FE  [within]                 beta +0.077  se 0.032  p=0.0163
+    + topographic heterogeneity            beta +0.052  se 0.029  p=0.0681
+    + NDVI seasonality                     beta +0.089  se 0.031  p=0.0045
+    + both  (full within model)            beta +0.064  se 0.027  p=0.0204
+
+=== leave-one-ecoregion-out, full within model (GPP) ===
+  64 refits: beta range +0.046 to +0.071 ; p<0.05 in 64 / 64
+   dropping South Deccan Plateau dry deciduous ( 11 cells): beta +0.046 p=0.037
+   dropping Kayah-Karen montane rain forests   ( 28 cells): beta +0.047 p=0.042
+   dropping Eastern Himalayan broadleaf forest ( 22 cells): beta +0.047 p=0.040
+
+=== within-ecoregion effect by biome (GPP, base controls) ===
+  Temperate Conifer Forests                        n= 43 ( 6 ecoregions)  beta +0.121 p=0.164
+  Tropical & Subtropical Dry Broadleaf Forests     n= 92 (10 ecoregions)  beta +0.028 p=0.516
+  Tropical & Subtropical Moist Broadleaf Forests   n=388 (31 ecoregions)  beta +0.027 p=0.413
+
+=== leave-one-ecoregion-out CV: does richness help predict an unseen ecoregion? ===
+  GPP: richness cuts out-of-sample MSE by +4.9%  95% CI [-0.3, +9.3]
+  NPP: richness cuts out-of-sample MSE by +4.5%  95% CI [-1.1, +9.1]

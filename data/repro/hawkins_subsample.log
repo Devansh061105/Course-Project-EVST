@@ -1,0 +1,30 @@
+full data n=221: standardised richness beta = +0.273 (HC3 p=1.6e-08)
+
+residual correlogram (Moran's I by distance class, degrees):
+   0.0- 1.5  I=+0.674  pairs=  527
+   1.5- 3.0  I=+0.414  pairs=  983
+   3.0- 4.5  I=+0.249  pairs= 1536
+   4.5- 6.0  I=+0.156  pairs= 1375
+   6.0- 7.5  I=+0.147  pairs= 1718
+   7.5- 9.0  I=+0.192  pairs= 1703
+   9.0-10.5  I=+0.062  pairs= 1864
+  10.5-12.0  I=-0.002  pairs= 1503  <- first class with I < 0.05
+  12.0-13.5  I=+0.016  pairs= 1800
+  13.5-15.0  I=+0.007  pairs= 1389
+
+full-SAC-free spacing would be 12.0 deg: infeasible at this extent; testing short-distance spacings instead
+
+subsamples spaced >= 3.0 deg: 2000 draws, median n=34 cells
+  richness beta: median +0.268, 95% interval [+0.047, +0.509]
+  full-data beta +0.273 sits at the 52th percentile of the subsample distribution -> indistinguishable (OLS unbiased)
+  beta > 0 in 99% of subsamples; p < 0.05 in 35%
+
+subsamples spaced >= 4.5 deg: 2000 draws, median n=17 cells
+  richness beta: median +0.282, 95% interval [-0.156, +0.707]
+  full-data beta +0.273 sits at the 48th percentile of the subsample distribution -> indistinguishable (OLS unbiased)
+  beta > 0 in 91% of subsamples; p < 0.05 in 15%
+
+subsamples spaced >= 6.0 deg: 1999 draws, median n=13 cells
+  richness beta: median +0.298, 95% interval [-0.320, +0.914]
+  full-data beta +0.273 sits at the 45th percentile of the subsample distribution -> indistinguishable (OLS unbiased)
+  beta > 0 in 87% of subsamples; p < 0.05 in 11%

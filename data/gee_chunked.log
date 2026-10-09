@@ -1,0 +1,22 @@
+*** Earth Engine *** Share your feedback by taking our Annual Developer Satisfaction Survey: https://google.qualtrics.com/jfe/form/SV_9oS0DRcPvElRMNw?source=python
+grid: 884 cells
+cached cells: 0
+  batch 0-50 done (50 cached) 21s
+  batch 50-100 done (100 cached) 45s
+  batch 100-150 done (150 cached) 70s
+  batch 150-200 done (200 cached) 92s
+  batch 200-250 done (250 cached) 120s
+  batch 250-300 done (300 cached) 146s
+  batch 300-350 done (350 cached) 189s
+  batch 350-400 done (400 cached) 225s
+  batch 400-450 done (450 cached) 268s
+  batch 450-500 done (500 cached) 314s
+  batch 500-550 done (550 cached) 365s
+  batch 550-600 done (600 cached) 420s
+  batch 600-650 done (650 cached) 474s
+  batch 650-700 done (700 cached) 519s
+  batch 700-750 done (750 cached) 579s
+  batch 750-800 done (800 cached) 623s
+  batch 800-850 done (850 cached) 673s
+  batch 850-884 done (884 cached) 714s
+wrote C:\summer project 2\project9_biodiversity\data\gee_cells.csv: 884 cells in 714s

@@ -1,0 +1,50 @@
+==============================================================================
+EXTENSION C — three case-study landscapes
+==============================================================================
+
+--- Western Ghats  (8-16N, 74-77E) ---
+   land cells 20, eligible after mask 7
+   dominant land cover: water 35%, tree cover 35%, cropland 30%
+   mean natural frac 0.44 | cropland+built 0.24 | water 0.32
+   climate: 24.3 degC, 2499 mm/yr
+   productivity: GPP 2.15 kgC/m2/yr (NDVI 0.62)
+   survey effort: median 1098270 records/cell
+   richness: raw observed 456 | rarefied@250 113.8
+   corrected-model residual: mean +0.256 (model under-predicts here)
+
+--- Thar Desert  (25-30N, 69-74E) ---
+   land cells 25, eligible after mask 8
+   dominant land cover: cropland 52%, bare/sparse 44%, shrubland 4%
+   mean natural frac 0.57 | cropland+built 0.42 | water 0.01
+   climate: 27.0 degC, 241 mm/yr
+   productivity: GPP 0.21 kgC/m2/yr (NDVI 0.15)
+   survey effort: median 7911 records/cell
+   richness: raw observed 209 | rarefied@250 98.0
+   corrected-model residual: mean -1.063 (model over-predicts here)
+
+--- Eastern Himalaya  (26-29N, 88-97E) ---
+   land cells 27, eligible after mask 24
+   dominant land cover: tree cover 74%, grassland 15%, cropland 7%, bare/sparse 4%
+   mean natural frac 0.84 | cropland+built 0.12 | water 0.02
+   climate: 12.0 degC, 3013 mm/yr
+   productivity: GPP 1.48 kgC/m2/yr (NDVI 0.51)
+   survey effort: median 76542 records/cell
+   richness: raw observed 450 | rarefied@250 126.3
+   corrected-model residual: mean -0.297 (model over-predicts here)
+
+==============================================================================
+REGIONAL REORDERING — Extension A made legible
+==============================================================================
+
+region                  n  med records    raw S  rank   rare S  rank     GPP  rank
+----------------------------------------------------------------------------------
+Western Ghats           7      1098270      456     1    113.8     2    2.15     1
+Thar Desert             8         7911      209     3     98.0     3    0.21     3
+Eastern Himalaya       24        76542      450     2    126.3     1    1.48     2
+
+effort spread: 139x between most- and least-surveyed region
+raw-richness spread:      2.18x
+rarefied-richness spread: 1.29x
+GPP spread:               10.03x
+
+-> RANKING CHANGES after effort correction.

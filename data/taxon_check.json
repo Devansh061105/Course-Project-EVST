@@ -1,0 +1,1522 @@
+[
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r03c06",
+  "total": 1,
+  "sp_resolved": 1,
+  "obs_richness": 1,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r03c07",
+  "total": 0,
+  "sp_resolved": 0,
+  "obs_richness": 0,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r03c08",
+  "total": 380200,
+  "sp_resolved": 368408,
+  "obs_richness": 359,
+  "truncated": false,
+  "rarefied50": 30.814320348860765
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r04c06",
+  "total": 1,
+  "sp_resolved": 1,
+  "obs_richness": 1,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r04c07",
+  "total": 1705,
+  "sp_resolved": 1683,
+  "obs_richness": 27,
+  "truncated": false,
+  "rarefied50": 11.637616963282495
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r04c08",
+  "total": 1774361,
+  "sp_resolved": 1729208,
+  "obs_richness": 450,
+  "truncated": false,
+  "rarefied50": 35.257875053809016
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r05c06",
+  "total": 0,
+  "sp_resolved": 0,
+  "obs_richness": 0,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r05c07",
+  "total": 113750,
+  "sp_resolved": 109622,
+  "obs_richness": 286,
+  "truncated": false,
+  "rarefied50": 35.616478421115595
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r05c08",
+  "total": 3849369,
+  "sp_resolved": 3758648,
+  "obs_richness": 509,
+  "truncated": false,
+  "rarefied50": 39.843387728714845
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r06c06",
+  "total": 100,
+  "sp_resolved": 100,
+  "obs_richness": 17,
+  "truncated": false,
+  "rarefied50": 12.357521052537749
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r06c07",
+  "total": 904308,
+  "sp_resolved": 882349,
+  "obs_richness": 466,
+  "truncated": false,
+  "rarefied50": 38.39854604517339
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r06c08",
+  "total": 1918715,
+  "sp_resolved": 1882470,
+  "obs_richness": 465,
+  "truncated": false,
+  "rarefied50": 40.49627596679592
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r07c06",
+  "total": 346114,
+  "sp_resolved": 335651,
+  "obs_richness": 375,
+  "truncated": false,
+  "rarefied50": 38.0100723953691
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r07c07",
+  "total": 1098270,
+  "sp_resolved": 1068305,
+  "obs_richness": 477,
+  "truncated": false,
+  "rarefied50": 39.53305333191373
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r07c08",
+  "total": 1612262,
+  "sp_resolved": 1565915,
+  "obs_richness": 428,
+  "truncated": false,
+  "rarefied50": 39.58534613608295
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r08c06",
+  "total": 716650,
+  "sp_resolved": 694077,
+  "obs_richness": 399,
+  "truncated": false,
+  "rarefied50": 38.66845962728929
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r08c07",
+  "total": 287729,
+  "sp_resolved": 281526,
+  "obs_richness": 398,
+  "truncated": false,
+  "rarefied50": 40.84613520723402
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r08c08",
+  "total": 65523,
+  "sp_resolved": 64028,
+  "obs_richness": 279,
+  "truncated": false,
+  "rarefied50": 37.39418365963726
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r09c06",
+  "total": 286615,
+  "sp_resolved": 278099,
+  "obs_richness": 425,
+  "truncated": false,
+  "rarefied50": 40.525862179770506
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r09c07",
+  "total": 55245,
+  "sp_resolved": 53809,
+  "obs_richness": 353,
+  "truncated": false,
+  "rarefied50": 40.397049488854165
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r09c08",
+  "total": 20995,
+  "sp_resolved": 20446,
+  "obs_richness": 267,
+  "truncated": false,
+  "rarefied50": 38.35945551989086
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r10c06",
+  "total": 748225,
+  "sp_resolved": 730125,
+  "obs_richness": 465,
+  "truncated": false,
+  "rarefied50": 41.832739204517765
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r10c07",
+  "total": 109592,
+  "sp_resolved": 106765,
+  "obs_richness": 356,
+  "truncated": false,
+  "rarefied50": 39.42618253892449
+ },
+ {
+  "taxon": "birds",
+  "region": "western_ghats",
+  "cell_id": "r10c08",
+  "total": 196920,
+  "sp_resolved": 192369,
+  "obs_richness": 307,
+  "truncated": false,
+  "rarefied50": 40.22450446151199
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r10c07",
+  "total": 109592,
+  "sp_resolved": 106765,
+  "obs_richness": 356,
+  "truncated": false,
+  "rarefied50": 39.42618253892449
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r10c08",
+  "total": 196920,
+  "sp_resolved": 192369,
+  "obs_richness": 307,
+  "truncated": false,
+  "rarefied50": 40.22450446151199
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r10c09",
+  "total": 6152,
+  "sp_resolved": 5903,
+  "obs_richness": 208,
+  "truncated": false,
+  "rarefied50": 38.54774594997708
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r10c10",
+  "total": 33430,
+  "sp_resolved": 32396,
+  "obs_richness": 301,
+  "truncated": false,
+  "rarefied50": 41.14586872443396
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r10c11",
+  "total": 4514,
+  "sp_resolved": 4331,
+  "obs_richness": 225,
+  "truncated": false,
+  "rarefied50": 37.95569080682761
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r11c07",
+  "total": 116773,
+  "sp_resolved": 113590,
+  "obs_richness": 268,
+  "truncated": false,
+  "rarefied50": 38.56341862693786
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r11c08",
+  "total": 11640,
+  "sp_resolved": 11315,
+  "obs_richness": 216,
+  "truncated": false,
+  "rarefied50": 37.26391851199457
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r11c09",
+  "total": 51607,
+  "sp_resolved": 49704,
+  "obs_richness": 273,
+  "truncated": false,
+  "rarefied50": 39.76913892281034
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r11c10",
+  "total": 89371,
+  "sp_resolved": 87328,
+  "obs_richness": 312,
+  "truncated": false,
+  "rarefied50": 41.14022734649713
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r11c11",
+  "total": 2797,
+  "sp_resolved": 2690,
+  "obs_richness": 213,
+  "truncated": false,
+  "rarefied50": 39.13018057976673
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r12c07",
+  "total": 36901,
+  "sp_resolved": 35770,
+  "obs_richness": 264,
+  "truncated": false,
+  "rarefied50": 39.14146017079391
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r12c08",
+  "total": 16666,
+  "sp_resolved": 16197,
+  "obs_richness": 238,
+  "truncated": false,
+  "rarefied50": 36.85273287870271
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r12c09",
+  "total": 175902,
+  "sp_resolved": 170638,
+  "obs_richness": 322,
+  "truncated": false,
+  "rarefied50": 41.08236218225161
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r12c10",
+  "total": 868585,
+  "sp_resolved": 838649,
+  "obs_richness": 375,
+  "truncated": false,
+  "rarefied50": 39.845144370208395
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r12c11",
+  "total": 34097,
+  "sp_resolved": 32894,
+  "obs_richness": 281,
+  "truncated": false,
+  "rarefied50": 41.166049524333204
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r13c07",
+  "total": 13896,
+  "sp_resolved": 13523,
+  "obs_richness": 239,
+  "truncated": false,
+  "rarefied50": 39.565846183737555
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r13c08",
+  "total": 23303,
+  "sp_resolved": 22620,
+  "obs_richness": 238,
+  "truncated": false,
+  "rarefied50": 39.29252568883476
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r13c09",
+  "total": 12413,
+  "sp_resolved": 11882,
+  "obs_richness": 246,
+  "truncated": false,
+  "rarefied50": 39.72935589458011
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r13c10",
+  "total": 36087,
+  "sp_resolved": 34975,
+  "obs_richness": 287,
+  "truncated": false,
+  "rarefied50": 41.97843979433266
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r13c11",
+  "total": 13881,
+  "sp_resolved": 13381,
+  "obs_richness": 245,
+  "truncated": false,
+  "rarefied50": 38.6571001876292
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r14c07",
+  "total": 34152,
+  "sp_resolved": 33029,
+  "obs_richness": 279,
+  "truncated": false,
+  "rarefied50": 38.6834311522661
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r14c08",
+  "total": 11872,
+  "sp_resolved": 11493,
+  "obs_richness": 224,
+  "truncated": false,
+  "rarefied50": 38.764641254997244
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r14c09",
+  "total": 9382,
+  "sp_resolved": 9086,
+  "obs_richness": 249,
+  "truncated": false,
+  "rarefied50": 39.592019060849005
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r14c10",
+  "total": 29493,
+  "sp_resolved": 28851,
+  "obs_richness": 288,
+  "truncated": false,
+  "rarefied50": 39.995026316788895
+ },
+ {
+  "taxon": "birds",
+  "region": "deccan_plateau",
+  "cell_id": "r14c11",
+  "total": 29642,
+  "sp_resolved": 28695,
+  "obs_richness": 303,
+  "truncated": false,
+  "rarefied50": 40.63234562362451
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c20",
+  "total": 372377,
+  "sp_resolved": 364979,
+  "obs_richness": 698,
+  "truncated": false,
+  "rarefied50": 44.341625902887706
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c21",
+  "total": 94063,
+  "sp_resolved": 92240,
+  "obs_richness": 624,
+  "truncated": false,
+  "rarefied50": 42.77732961979369
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c22",
+  "total": 136875,
+  "sp_resolved": 134559,
+  "obs_richness": 667,
+  "truncated": false,
+  "rarefied50": 43.11786239742078
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c23",
+  "total": 600631,
+  "sp_resolved": 584456,
+  "obs_richness": 694,
+  "truncated": false,
+  "rarefied50": 41.729500137966006
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c24",
+  "total": 280897,
+  "sp_resolved": 274458,
+  "obs_richness": 657,
+  "truncated": false,
+  "rarefied50": 42.624356595908644
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c25",
+  "total": 419518,
+  "sp_resolved": 411100,
+  "obs_richness": 560,
+  "truncated": false,
+  "rarefied50": 42.52839308583219
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c26",
+  "total": 59022,
+  "sp_resolved": 57439,
+  "obs_richness": 512,
+  "truncated": false,
+  "rarefied50": 41.52391551010224
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c27",
+  "total": 500,
+  "sp_resolved": 494,
+  "obs_richness": 180,
+  "truncated": false,
+  "rarefied50": 39.67565582611522
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c28",
+  "total": 3434,
+  "sp_resolved": 3374,
+  "obs_richness": 395,
+  "truncated": false,
+  "rarefied50": 42.86167118584225
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c20",
+  "total": 460637,
+  "sp_resolved": 459831,
+  "obs_richness": 622,
+  "truncated": false,
+  "rarefied50": 42.600242913928916
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c21",
+  "total": 193036,
+  "sp_resolved": 192033,
+  "obs_richness": 624,
+  "truncated": false,
+  "rarefied50": 41.42113735882763
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c22",
+  "total": 211026,
+  "sp_resolved": 210344,
+  "obs_richness": 615,
+  "truncated": false,
+  "rarefied50": 43.882902806821846
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c23",
+  "total": 146324,
+  "sp_resolved": 145869,
+  "obs_richness": 586,
+  "truncated": false,
+  "rarefied50": 43.489180649709034
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c24",
+  "total": 461053,
+  "sp_resolved": 459025,
+  "obs_richness": 592,
+  "truncated": false,
+  "rarefied50": 43.88079548644111
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c25",
+  "total": 24790,
+  "sp_resolved": 24563,
+  "obs_richness": 473,
+  "truncated": false,
+  "rarefied50": 42.65365223789052
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c26",
+  "total": 33111,
+  "sp_resolved": 31773,
+  "obs_richness": 415,
+  "truncated": false,
+  "rarefied50": 38.63938590871024
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c27",
+  "total": 374004,
+  "sp_resolved": 364836,
+  "obs_richness": 605,
+  "truncated": false,
+  "rarefied50": 43.12424974829554
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c28",
+  "total": 128240,
+  "sp_resolved": 127599,
+  "obs_richness": 587,
+  "truncated": false,
+  "rarefied50": 42.841609594378205
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c20",
+  "total": 4773,
+  "sp_resolved": 4765,
+  "obs_richness": 149,
+  "truncated": false,
+  "rarefied50": 25.217574864486824
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c21",
+  "total": 737,
+  "sp_resolved": 737,
+  "obs_richness": 143,
+  "truncated": false,
+  "rarefied50": 36.77248682144114
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c22",
+  "total": 889,
+  "sp_resolved": 888,
+  "obs_richness": 152,
+  "truncated": false,
+  "rarefied50": 38.27054941113745
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c23",
+  "total": 967,
+  "sp_resolved": 965,
+  "obs_richness": 171,
+  "truncated": false,
+  "rarefied50": 37.76161605126316
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c24",
+  "total": 23,
+  "sp_resolved": 23,
+  "obs_richness": 13,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c25",
+  "total": 455,
+  "sp_resolved": 455,
+  "obs_richness": 143,
+  "truncated": false,
+  "rarefied50": 37.59588389879445
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c26",
+  "total": 10703,
+  "sp_resolved": 10669,
+  "obs_richness": 354,
+  "truncated": false,
+  "rarefied50": 41.69551453630835
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c27",
+  "total": 209380,
+  "sp_resolved": 208629,
+  "obs_richness": 600,
+  "truncated": false,
+  "rarefied50": 44.10089144224854
+ },
+ {
+  "taxon": "birds",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c28",
+  "total": 4817,
+  "sp_resolved": 4796,
+  "obs_richness": 334,
+  "truncated": false,
+  "rarefied50": 40.41780454819706
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r03c06",
+  "total": 0,
+  "sp_resolved": 0,
+  "obs_richness": 0,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r03c07",
+  "total": 0,
+  "sp_resolved": 0,
+  "obs_richness": 0,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r03c08",
+  "total": 62911,
+  "sp_resolved": 62879,
+  "obs_richness": 687,
+  "truncated": false,
+  "rarefied50": 24.89764732652045
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r04c06",
+  "total": 0,
+  "sp_resolved": 0,
+  "obs_richness": 0,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r04c07",
+  "total": 1,
+  "sp_resolved": 1,
+  "obs_richness": 1,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r04c08",
+  "total": 127706,
+  "sp_resolved": 127573,
+  "obs_richness": 1059,
+  "truncated": false,
+  "rarefied50": 28.73955959224253
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r05c06",
+  "total": 0,
+  "sp_resolved": 0,
+  "obs_richness": 0,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r05c07",
+  "total": 2825,
+  "sp_resolved": 2825,
+  "obs_richness": 153,
+  "truncated": false,
+  "rarefied50": 22.024521275229283
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r05c08",
+  "total": 103679,
+  "sp_resolved": 99805,
+  "obs_richness": 1200,
+  "truncated": true,
+  "rarefied50": 37.05636151526787
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r06c06",
+  "total": 1,
+  "sp_resolved": 1,
+  "obs_richness": 1,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r06c07",
+  "total": 44566,
+  "sp_resolved": 44538,
+  "obs_richness": 943,
+  "truncated": false,
+  "rarefied50": 25.875375958796177
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r06c08",
+  "total": 21053,
+  "sp_resolved": 20514,
+  "obs_richness": 1200,
+  "truncated": true,
+  "rarefied50": 30.358697791909677
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r07c06",
+  "total": 1499,
+  "sp_resolved": 1495,
+  "obs_richness": 237,
+  "truncated": false,
+  "rarefied50": 27.294941439115085
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r07c07",
+  "total": 21688,
+  "sp_resolved": 21481,
+  "obs_richness": 1200,
+  "truncated": true,
+  "rarefied50": 35.12819184201037
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r07c08",
+  "total": 3443,
+  "sp_resolved": 3433,
+  "obs_richness": 712,
+  "truncated": false,
+  "rarefied50": 44.68783336573241
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r08c06",
+  "total": 826,
+  "sp_resolved": 813,
+  "obs_richness": 329,
+  "truncated": false,
+  "rarefied50": 43.57199816040329
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r08c07",
+  "total": 5180,
+  "sp_resolved": 4916,
+  "obs_richness": 755,
+  "truncated": false,
+  "rarefied50": 37.094237812112894
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r08c08",
+  "total": 272,
+  "sp_resolved": 271,
+  "obs_richness": 132,
+  "truncated": false,
+  "rarefied50": 41.0988356960944
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r09c06",
+  "total": 2847,
+  "sp_resolved": 2777,
+  "obs_richness": 604,
+  "truncated": false,
+  "rarefied50": 40.888147022079835
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r09c07",
+  "total": 388,
+  "sp_resolved": 382,
+  "obs_richness": 226,
+  "truncated": false,
+  "rarefied50": 44.755422660829296
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r09c08",
+  "total": 348,
+  "sp_resolved": 343,
+  "obs_richness": 192,
+  "truncated": false,
+  "rarefied50": 42.986956335180665
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r10c06",
+  "total": 10548,
+  "sp_resolved": 10473,
+  "obs_richness": 928,
+  "truncated": false,
+  "rarefied50": 29.70743911948541
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r10c07",
+  "total": 693,
+  "sp_resolved": 683,
+  "obs_richness": 208,
+  "truncated": false,
+  "rarefied50": 37.03128729512013
+ },
+ {
+  "taxon": "plants",
+  "region": "western_ghats",
+  "cell_id": "r10c08",
+  "total": 431,
+  "sp_resolved": 428,
+  "obs_richness": 179,
+  "truncated": false,
+  "rarefied50": 40.961222628659094
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r10c07",
+  "total": 693,
+  "sp_resolved": 683,
+  "obs_richness": 208,
+  "truncated": false,
+  "rarefied50": 37.03128729512013
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r10c08",
+  "total": 431,
+  "sp_resolved": 428,
+  "obs_richness": 179,
+  "truncated": false,
+  "rarefied50": 40.961222628659094
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r10c09",
+  "total": 67,
+  "sp_resolved": 67,
+  "obs_richness": 42,
+  "truncated": false,
+  "rarefied50": 34.2458402214056
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r10c10",
+  "total": 341,
+  "sp_resolved": 337,
+  "obs_richness": 183,
+  "truncated": false,
+  "rarefied50": 39.666818201988704
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r10c11",
+  "total": 135,
+  "sp_resolved": 128,
+  "obs_richness": 51,
+  "truncated": false,
+  "rarefied50": 24.724351375897108
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r11c07",
+  "total": 161,
+  "sp_resolved": 161,
+  "obs_richness": 99,
+  "truncated": false,
+  "rarefied50": 41.58508486446217
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r11c08",
+  "total": 92,
+  "sp_resolved": 92,
+  "obs_richness": 57,
+  "truncated": false,
+  "rarefied50": 36.84680691397624
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r11c09",
+  "total": 120,
+  "sp_resolved": 120,
+  "obs_richness": 71,
+  "truncated": false,
+  "rarefied50": 37.77122238791354
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r11c10",
+  "total": 338,
+  "sp_resolved": 335,
+  "obs_richness": 211,
+  "truncated": false,
+  "rarefied50": 45.59165494320096
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r11c11",
+  "total": 145,
+  "sp_resolved": 128,
+  "obs_richness": 87,
+  "truncated": false,
+  "rarefied50": 42.0047736220467
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r12c07",
+  "total": 277,
+  "sp_resolved": 273,
+  "obs_richness": 138,
+  "truncated": false,
+  "rarefied50": 35.33042484395101
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r12c08",
+  "total": 108,
+  "sp_resolved": 108,
+  "obs_richness": 64,
+  "truncated": false,
+  "rarefied50": 37.39029080569138
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r12c09",
+  "total": 351,
+  "sp_resolved": 346,
+  "obs_richness": 175,
+  "truncated": false,
+  "rarefied50": 42.41154837176128
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r12c10",
+  "total": 10474,
+  "sp_resolved": 10190,
+  "obs_richness": 952,
+  "truncated": false,
+  "rarefied50": 44.39663627531504
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r12c11",
+  "total": 339,
+  "sp_resolved": 328,
+  "obs_richness": 176,
+  "truncated": false,
+  "rarefied50": 43.18800715319168
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r13c07",
+  "total": 134,
+  "sp_resolved": 131,
+  "obs_richness": 78,
+  "truncated": false,
+  "rarefied50": 37.577686330707195
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r13c08",
+  "total": 75,
+  "sp_resolved": 75,
+  "obs_richness": 55,
+  "truncated": false,
+  "rarefied50": 39.84463240010144
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r13c09",
+  "total": 134,
+  "sp_resolved": 134,
+  "obs_richness": 48,
+  "truncated": false,
+  "rarefied50": 24.72537100474577
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r13c10",
+  "total": 260,
+  "sp_resolved": 259,
+  "obs_richness": 135,
+  "truncated": false,
+  "rarefied50": 36.39063091930434
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r13c11",
+  "total": 284,
+  "sp_resolved": 283,
+  "obs_richness": 167,
+  "truncated": false,
+  "rarefied50": 42.890828802562105
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r14c07",
+  "total": 712,
+  "sp_resolved": 659,
+  "obs_richness": 324,
+  "truncated": false,
+  "rarefied50": 39.815241583502946
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r14c08",
+  "total": 87,
+  "sp_resolved": 86,
+  "obs_richness": 62,
+  "truncated": false,
+  "rarefied50": 40.60028710484492
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r14c09",
+  "total": 115,
+  "sp_resolved": 115,
+  "obs_richness": 52,
+  "truncated": false,
+  "rarefied50": 25.7014380371328
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r14c10",
+  "total": 100,
+  "sp_resolved": 98,
+  "obs_richness": 66,
+  "truncated": false,
+  "rarefied50": 38.87047246419287
+ },
+ {
+  "taxon": "plants",
+  "region": "deccan_plateau",
+  "cell_id": "r14c11",
+  "total": 81,
+  "sp_resolved": 81,
+  "obs_richness": 57,
+  "truncated": false,
+  "rarefied50": 39.97868507098464
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c20",
+  "total": 1220,
+  "sp_resolved": 1218,
+  "obs_richness": 403,
+  "truncated": false,
+  "rarefied50": 40.451527345463326
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c21",
+  "total": 1287,
+  "sp_resolved": 1094,
+  "obs_richness": 444,
+  "truncated": false,
+  "rarefied50": 40.48381702983767
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c22",
+  "total": 1360,
+  "sp_resolved": 1014,
+  "obs_richness": 319,
+  "truncated": false,
+  "rarefied50": 35.75319893430475
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c23",
+  "total": 1596,
+  "sp_resolved": 1551,
+  "obs_richness": 482,
+  "truncated": false,
+  "rarefied50": 42.76871366913948
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c24",
+  "total": 734,
+  "sp_resolved": 692,
+  "obs_richness": 321,
+  "truncated": false,
+  "rarefied50": 43.63429373026551
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c25",
+  "total": 428,
+  "sp_resolved": 425,
+  "obs_richness": 232,
+  "truncated": false,
+  "rarefied50": 44.4324411988216
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c26",
+  "total": 572,
+  "sp_resolved": 550,
+  "obs_richness": 287,
+  "truncated": false,
+  "rarefied50": 44.652104713899966
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c27",
+  "total": 31,
+  "sp_resolved": 31,
+  "obs_richness": 20,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r21c28",
+  "total": 166,
+  "sp_resolved": 148,
+  "obs_richness": 65,
+  "truncated": false,
+  "rarefied50": 34.286752449968496
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c20",
+  "total": 2865,
+  "sp_resolved": 2812,
+  "obs_richness": 912,
+  "truncated": false,
+  "rarefied50": 47.15692092780412
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c21",
+  "total": 4761,
+  "sp_resolved": 4237,
+  "obs_richness": 1200,
+  "truncated": true,
+  "rarefied50": 47.192073787894664
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c22",
+  "total": 4192,
+  "sp_resolved": 3902,
+  "obs_richness": 1200,
+  "truncated": true,
+  "rarefied50": 47.05860177516361
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c23",
+  "total": 1626,
+  "sp_resolved": 1519,
+  "obs_richness": 703,
+  "truncated": false,
+  "rarefied50": 46.64892361689266
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c24",
+  "total": 674,
+  "sp_resolved": 669,
+  "obs_richness": 357,
+  "truncated": false,
+  "rarefied50": 45.62594558953501
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c25",
+  "total": 564,
+  "sp_resolved": 562,
+  "obs_richness": 192,
+  "truncated": false,
+  "rarefied50": 28.57915727628216
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c26",
+  "total": 247,
+  "sp_resolved": 238,
+  "obs_richness": 155,
+  "truncated": false,
+  "rarefied50": 44.08262412759021
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c27",
+  "total": 347,
+  "sp_resolved": 339,
+  "obs_richness": 208,
+  "truncated": false,
+  "rarefied50": 44.98832588341778
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r22c28",
+  "total": 734,
+  "sp_resolved": 324,
+  "obs_richness": 190,
+  "truncated": false,
+  "rarefied50": 44.189048481594725
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c20",
+  "total": 14,
+  "sp_resolved": 14,
+  "obs_richness": 10,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c21",
+  "total": 88,
+  "sp_resolved": 80,
+  "obs_richness": 39,
+  "truncated": false,
+  "rarefied50": 28.773379654416818
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c22",
+  "total": 135,
+  "sp_resolved": 132,
+  "obs_richness": 79,
+  "truncated": false,
+  "rarefied50": 39.33944455783715
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c23",
+  "total": 130,
+  "sp_resolved": 119,
+  "obs_richness": 84,
+  "truncated": false,
+  "rarefied50": 42.9569470192469
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c24",
+  "total": 35,
+  "sp_resolved": 33,
+  "obs_richness": 31,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c25",
+  "total": 20,
+  "sp_resolved": 17,
+  "obs_richness": 15,
+  "truncated": false,
+  "rarefied50": null
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c26",
+  "total": 52,
+  "sp_resolved": 50,
+  "obs_richness": 42,
+  "truncated": false,
+  "rarefied50": 42.0
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c27",
+  "total": 230,
+  "sp_resolved": 227,
+  "obs_richness": 147,
+  "truncated": false,
+  "rarefied50": 43.54574799524811
+ },
+ {
+  "taxon": "plants",
+  "region": "eastern_himalaya",
+  "cell_id": "r23c28",
+  "total": 43,
+  "sp_resolved": 43,
+  "obs_richness": 36,
+  "truncated": false,
+  "rarefied50": null
+ }
+]

@@ -1,0 +1,40 @@
+n = 221 cells (0 dropped for missing confounder values)
+
+correlations with effort-corrected richness and GPP:
+              rarefied_250    gpp
+rarefied_250         1.000  0.558
+gpp                  0.558  1.000
+elev_mean           -0.339 -0.576
+elev_sd              0.249 -0.115
+ndvi_cv             -0.283 -0.627
+temp_c               0.270  0.544
+precip_mm_yr         0.493  0.454
+
+=== response: GPP ===
+ML_Error
+baseline (effort+climate)      OLS +0.273 (p=1.6e-08) R2=0.558 | SEM +0.017 (p=0.506) AIC  144.7 | plateau I=+0.166 | CV  +9.4% [ +0.2,+19.2] *
+ML_Error
++ elevation, topo heterog.     OLS +0.320 (p=4.5e-09) R2=0.566 | SEM -0.013 (p=0.639) AIC  136.8 | plateau I=+0.137 | CV +11.8% [ +1.0,+23.0] *
+ML_Error
++ NDVI seasonality             OLS +0.218 (p=3.4e-06) R2=0.649 | SEM +0.029 (p=0.226) AIC  107.0 | plateau I=+0.159 | CV  +7.7% [ -0.8,+15.6]
+ML_Error
++ all confounders              OLS +0.242 (p=3.6e-06) R2=0.654 | SEM -0.003 (p=0.884) AIC   78.9 | plateau I=+0.150 | CV  +8.3% [ +0.8,+15.3] *
+
+=== response: NPP ===
+ML_Error
+baseline (effort+climate)      OLS +0.384 (p=1.9e-11) R2=0.432 | SEM +0.093 (p=0.008) AIC  262.4 | plateau I=+0.152 | CV +14.6% [ +2.1,+27.9] *
+ML_Error
++ elevation, topo heterog.     OLS +0.407 (p=3.9e-10) R2=0.459 | SEM +0.029 (p=0.400) AIC  238.2 | plateau I=+0.137 | CV +15.0% [ +2.5,+27.7] *
+ML_Error
++ NDVI seasonality             OLS +0.322 (p=4.6e-09) R2=0.549 | SEM +0.107 (p=0.001) AIC  223.5 | plateau I=+0.149 | CV +13.3% [ +1.0,+26.2] *
+ML_Error
++ all confounders              OLS +0.326 (p=1.9e-07) R2=0.552 | SEM +0.039 (p=0.204) AIC  188.8 | plateau I=+0.144 | CV +11.7% [ +2.0,+21.9] *
+
+VIF, full model:
+  rarefied_250   1.87
+  log_effort     1.37
+  temp_c         88.93
+  precip_mm_yr   2.10
+  elev_mean      77.09
+  elev_sd        3.82
+  ndvi_cv        3.09

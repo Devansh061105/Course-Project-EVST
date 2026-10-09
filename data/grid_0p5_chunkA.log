@@ -1,0 +1,20 @@
+=== cell size 0.5 deg : 3536 cells ===
+  skipping 1016 sub-cells whose 1-degree parent is open sea
+  gbif grid pos 2196/3536, cached 2000  74s
+  gbif grid pos 2246/3536, cached 2050  138s
+  gbif grid pos 2296/3536, cached 2100  209s
+  gbif grid pos 2346/3536, cached 2150  281s
+  gbif grid pos 2396/3536, cached 2200  353s
+  gbif grid pos 2446/3536, cached 2250  422s
+  gbif grid pos 2496/3536, cached 2300  490s
+  gbif grid pos 2546/3536, cached 2350  562s
+  gbif grid pos 2596/3536, cached 2400  630s
+  gbif grid pos 2646/3536, cached 2450  709s
+  gbif grid pos 2696/3536, cached 2500  783s
+  gbif grid pos 2746/3536, cached 2550  857s
+  gbif grid pos 2796/3536, cached 2600  931s
+  gbif grid pos 2846/3536, cached 2650  1004s
+  gbif grid pos 2896/3536, cached 2700  1077s
+  gbif grid pos 2946/3536, cached 2750  1147s
+  gbif: 2750 cells cached, 590 land cells remaining, 1147s
+  STOPPED at MAX_PULLS=800 - re-run to continue (cache saved)

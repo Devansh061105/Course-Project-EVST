@@ -1,0 +1,18 @@
+eligible cells across study region: 221
+Western Ghats reference: n=7  precip=2499mm  natural=0.78  GPP=2.15
+
+windows passing filters (n>=8 cells, natural>=0.55): 160
+
+window (lat / lon)              n   precip  natural    GPP   temp   med_recs
+--------------------------------------------------------------------------------
+25-30N  69-74E                  8      241     0.84   0.21   27.0       7911
+22-27N  81-86E                  8     1325     0.61   1.15   24.1       6742
+19-24N  95-100E                13     1423     0.80   2.10   22.7       2801
+16-21N  82-87E                  8     1612     0.66   1.39   25.5      16679
+19-24N  90-95E                 13     1664     0.83   1.98   23.6      10800
+6-11N  77-82E                   8     1740     0.72   2.02   25.9     434541
+
+For reference, the three planned case studies:
+  western_ghats     n=7   precip=2499   natural=0.78 GPP=2.15
+  deccan_plateau    NO ELIGIBLE CELLS
+  eastern_himalaya  n=24  precip=3013   natural=0.86 GPP=1.48

@@ -1,0 +1,14 @@
+n = 221 cells, 1-degree grid
+
+leave-one-cell-out             R2oos 0.489 -> 0.538  dMSE +0.0292 (+9.6%)  95% CI [+0.0086, +0.0510]  richness HELPS
+random 10-fold                 R2oos 0.489 -> 0.539  dMSE +0.0292 (+9.6%)  95% CI [+0.0152, +0.0449]  richness HELPS
+leave-block-out 2 deg (93 blk) R2oos 0.466 -> 0.515  dMSE +0.0293 (+9.2%)  95% CI [+0.0016, +0.0584]  richness HELPS
+leave-block-out 3 deg (55 blk) R2oos 0.440 -> 0.496  dMSE +0.0330 (+9.9%)  95% CI [+0.0033, +0.0616]  richness HELPS
+leave-block-out 4 deg (39 blk) R2oos 0.425 -> 0.480  dMSE +0.0323 (+9.4%)  95% CI [+0.0001, +0.0653]  richness HELPS
+leave-block-out 6 deg (23 blk) R2oos 0.355 -> 0.410  dMSE +0.0323 (+8.4%)  95% CI [-0.0099, +0.0653]  no reliable gain
+leave-block-out 8 deg (14 blk) R2oos 0.293 -> 0.348  dMSE +0.0327 (+7.8%)  95% CI [-0.0128, +0.0732]  no reliable gain
+
+buffered leave-one-out (training excludes cells within r of the test cell):
+  r=1.5 deg   R2oos 0.438 -> 0.490  dMSE +0.0311 (+9.3%)  CI [-0.0012, +0.0646]  no reliable gain
+  r=3.0 deg   R2oos 0.363 -> 0.425  dMSE +0.0367 (+9.7%)  CI [+0.0026, +0.0695]  HELPS
+  r=5.0 deg   R2oos 0.218 -> 0.276  dMSE +0.0344 (+7.4%)  CI [+0.0001, +0.0678]  HELPS

@@ -1,0 +1,10 @@
+candidate cells (pass land-cover mask): 267, to pull: 0
+
+records 2019-2023 as share of 2000-2024 (median over cells): 0.51
+correlation of rarefied richness, 2019-23 vs 2000-24 (shared cells, n=203): 0.938
+
+model cells with 2019-23 records: 203 (main analysis: 221)
+ML_Error
+GPP 2019-23: OLS +0.223 (p=6.2e-05) | SEM +0.030 (p=0.267) | CV +5.8% [-3.3, +14.9] | within-ecoregion +0.003 (p=0.968)
+ML_Error
+NPP 2019-23: OLS +0.302 (p=3.3e-06) | SEM +0.090 (p=0.010) | CV +9.0% [-3.2, +21.4] | within-ecoregion +0.057 (p=0.502)

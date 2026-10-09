@@ -1,0 +1,38 @@
+grid: 884 cells -> data/grid_1deg.geojson
+  25/884 cells (cached 25) 34s elapsed
+  50/884 cells (cached 50) 66s elapsed
+  75/884 cells (cached 75) 103s elapsed
+  100/884 cells (cached 100) 134s elapsed
+  125/884 cells (cached 125) 169s elapsed
+  150/884 cells (cached 150) 209s elapsed
+  175/884 cells (cached 175) 241s elapsed
+  200/884 cells (cached 200) 274s elapsed
+  225/884 cells (cached 225) 306s elapsed
+  250/884 cells (cached 250) 343s elapsed
+  275/884 cells (cached 275) 374s elapsed
+  300/884 cells (cached 300) 406s elapsed
+  325/884 cells (cached 325) 438s elapsed
+  350/884 cells (cached 350) 472s elapsed
+  375/884 cells (cached 375) 504s elapsed
+  400/884 cells (cached 400) 537s elapsed
+  425/884 cells (cached 425) 571s elapsed
+  450/884 cells (cached 450) 603s elapsed
+  475/884 cells (cached 475) 638s elapsed
+  500/884 cells (cached 500) 671s elapsed
+  525/884 cells (cached 525) 708s elapsed
+  550/884 cells (cached 550) 741s elapsed
+  575/884 cells (cached 575) 781s elapsed
+  600/884 cells (cached 600) 823s elapsed
+  625/884 cells (cached 625) 859s elapsed
+  650/884 cells (cached 650) 896s elapsed
+  675/884 cells (cached 675) 932s elapsed
+  700/884 cells (cached 700) 972s elapsed
+  725/884 cells (cached 725) 1008s elapsed
+  750/884 cells (cached 750) 1047s elapsed
+  775/884 cells (cached 775) 1084s elapsed
+  800/884 cells (cached 800) 1121s elapsed
+  825/884 cells (cached 825) 1159s elapsed
+  850/884 cells (cached 850) 1194s elapsed
+  875/884 cells (cached 875) 1231s elapsed
+pull complete in 1243s
+wrote C:\summer project 2\project9_biodiversity\data\gbif_cells.csv: 884 cells, 560 usable (>=20 records), 0 facet-truncated

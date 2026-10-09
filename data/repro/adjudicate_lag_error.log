@@ -1,0 +1,81 @@
+==============================================================================
+PART 1 - Spatial Durbin family, 1.0 deg, n=221 (standardised)
+==============================================================================
+ML_Lag
+ML_Error
+ML_Lag
+ML_Error
+
+model        logL       AIC     rich b         p W_rich t (p)
+----------------------------------------------------------------
+OLS       -222.97    455.93     +0.273    0.0000               
+SLX       -200.39    418.77     +0.116    0.0513 +0.474 (0.000)
+SAR        -99.04    210.07     +0.079    0.0050               
+SEM        -67.36    144.73     +0.017    0.5059               
+SDM        -59.74    139.48     +0.034    0.2074 +0.078 (0.042)
+SDEM       -55.34    128.67     +0.044    0.1549 +0.077 (0.226)
+
+Likelihood-ratio tests (df=4):
+  SDM  vs SAR  LR=  78.60 df=4 p=3.331e-16  WX terms needed beyond lag? -> SAR rejected
+  SDM  vs SEM  LR=  15.25 df=4 p=0.004205  common-factor test: is the ERROR model adequate? -> SEM rejected
+  SDEM vs SEM  LR=  24.06 df=4 p=7.784e-05  WX terms needed beyond error? -> SEM rejected
+  SDEM vs SLX  LR= 290.10 df=1 p=0  spatial error needed beyond SLX? -> SLX rejected
+
+SDM richness impacts (median, 95% sim. interval; * = excludes 0), 1000 draws:
+  direct   +0.100 [+0.031, +0.174]  *
+  indirect +0.646 [+0.239, +1.182]  *
+  total    +0.743 [+0.278, +1.309]  *
+SDEM richness: direct +0.044 (p=0.155), indirect +0.077 (p=0.226), total +0.121 (p=0.156)
+
+==============================================================================
+PART 2 - spatial block cross-validation (out-of-sample GPP), n=221
+==============================================================================
+
+scheme                       model                        RMSE   R2_oos
+------------------------------------------------------------------------
+random 10-fold (x20)         climate+effort             0.5522    0.488
+random 10-fold (x20)         climate+effort+richness    0.5256    0.536
+random 10-fold (x20)         richness only              0.6461    0.299
+leave-block-out 3 deg (55)   climate+effort             0.5771    0.440
+leave-block-out 3 deg (55)   climate+effort+richness    0.5478    0.496
+leave-block-out 3 deg (55)   richness only              0.6540    0.282
+   richness gain per fold: mean -0.0034, 95% boot CI [-0.0333, +0.0268], helped in 27/55 folds -> (per-fold metric; SUPERSEDED by spatial_cv.py)
+leave-block-out 4 deg (39)   climate+effort             0.5849    0.425
+leave-block-out 4 deg (39)   climate+effort+richness    0.5567    0.480
+leave-block-out 4 deg (39)   richness only              0.6601    0.268
+   richness gain per fold: mean +0.0143, 95% boot CI [-0.0169, +0.0493], helped in 20/39 folds -> (per-fold metric; SUPERSEDED by spatial_cv.py)
+leave-block-out 6 deg (23)   climate+effort             0.6195    0.355
+leave-block-out 6 deg (23)   climate+effort+richness    0.5928    0.410
+leave-block-out 6 deg (23)   richness only              0.6663    0.254
+   richness gain per fold: mean -0.0077, 95% boot CI [-0.0507, +0.0340], helped in 11/23 folds -> (per-fold metric; SUPERSEDED by spatial_cv.py)
+
+random-CV richness gain (RMSE reduction) = +0.0266
+NOTE: this Part 2 averages per-fold RMSE, which weights a 1-cell block like a 15-cell block. Its per-fold intervals are not valid inference; use scripts/spatial_cv.py (cell-weighted block bootstrap) instead.
+==============================================================================
+PART 1 - Spatial Durbin family, 2.0 deg, n=67 (standardised)
+==============================================================================
+ML_Lag
+ML_Error
+ML_Lag
+ML_Error
+
+model        logL       AIC     rich b         p W_rich t (p)
+----------------------------------------------------------------
+OLS        -59.49    128.98     +0.342    0.0001               
+SLX        -44.38    106.75     +0.218    0.0174 +0.686 (0.000)
+SAR        -35.14     82.28     +0.181    0.0007               
+SEM        -33.14     76.27     +0.006    0.9166               
+SDM        -24.83     69.65     +0.084    0.1500 +0.316 (0.001)
+SDEM       -27.36     72.73     +0.025    0.7363 +0.090 (0.548)
+
+Likelihood-ratio tests (df=4):
+  SDM  vs SAR  LR=  20.63 df=4 p=0.000375  WX terms needed beyond lag? -> SAR rejected
+  SDM  vs SEM  LR=  16.62 df=4 p=0.002289  common-factor test: is the ERROR model adequate? -> SEM rejected
+  SDEM vs SEM  LR=  11.54 df=4 p=0.02109  WX terms needed beyond error? -> SEM rejected
+  SDEM vs SLX  LR=  34.02 df=1 p=5.45e-09  spatial error needed beyond SLX? -> SLX rejected
+
+SDM richness impacts (median, 95% sim. interval; * = excludes 0), 1000 draws:
+  direct   +0.245 [+0.102, +0.388]  *
+  indirect +1.056 [+0.642, +1.704]  *
+  total    +1.297 [+0.802, +2.050]  *
+SDEM richness: direct +0.025 (p=0.736), indirect +0.090 (p=0.548), total +0.115 (p=0.587)

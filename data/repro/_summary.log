@@ -1,0 +1,49 @@
+merge_and_extA.py            exit 0      9s
+spatial_refit.py             exit 0      9s
+weights_sensitivity.py       exit 0      7s
+extension_b.py               exit 0      9s
+extension_c.py               exit 0      4s
+scan_contrast_region.py      exit 0      1s
+adjudicate_lag_error.py      exit 0     79s
+spatial_cv.py                exit 0      2s
+hawkins_subsample.py         exit 0     33s
+robustness_suite.py          exit 0     10s
+confounder_analysis.py       exit 0      6s
+ecoregion_analysis.py        exit 0      5s
+coverage_rarefaction.py      exit 0      3s
+gbif_timewindow.py           exit 0      5s
+grain_0p5_analysis.py        exit 0     14s
+grain_0p5_extended.py        exit 0      5s
+make_figures.py              exit 0      8s
+
+check                                    documented   reproduced  result
+--------------------------------------------------------------------------------
+model cells                                     221          221  PASS
+corrected OLS coef (raw units)            0.0109704    0.0109704  PASS
+SEM richness beta (raw units)               0.00069      0.00069  PASS
+SEM richness p                               0.5059       0.5059  PASS
+only significant weights spec                 knn12        knn12  PASS
+Ext B primary linear AIC                     342.32       342.32  PASS
+case-study effort spread                        139          139  PASS
+case-study GPP spread                         10.03        10.03  PASS
+case-study corrected-richness spread           1.29         1.29  PASS
+Thar precipitation (mm)                         241          241  PASS
+SDEM AIC at 1 deg                            128.67       128.67  PASS
+LR SDM vs SAR                                  78.6        78.60  PASS
+4-deg block CV gain %                           9.4          9.4  PASS
+Hawkins median beta @3 deg                    0.268        0.268  PASS
+NPP SEM beta                                  0.093        0.093  PASS
+GPP OLS + all confounders                     0.242        0.242  PASS
+within-ecoregion GPP beta                      0.03        0.030  PASS
+within-ecoregion GPP p                       0.5865       0.5865  PASS
+plateau after ecoregion FE                   -0.027       -0.027  PASS
+richness variance within ecoregions %          38.5         38.5  PASS
+2019-23 within-ecoregion GPP beta             0.003        0.003  PASS
+0.5 deg baseline beta                         0.228        0.228  PASS
+0.5 deg within-ecoregion beta                 0.058        0.058  PASS
+0.5 deg within-ecoregion p                   0.0212       0.0212  PASS
+0.5 deg spatial error beta                     0.09        0.090  PASS
+0.5 deg full within model, GPP                0.051        0.051  PASS
+leave-one-ecoregion-out min beta              0.046        0.046  PASS
+
+27/27 checks pass; 17/17 scripts exited 0

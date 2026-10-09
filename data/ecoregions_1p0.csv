@@ -1,0 +1,491 @@
+cell_id,eco_id,eco_name,biome,realm
+r00c27,278,Sumatran lowland rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r00c32,265,Peninsular Malaysian rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r00c33,263,Peninsular Malaysian montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r01c12,274,Sri Lanka lowland rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r01c13,301,Sri Lanka dry-zone dry evergreen forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r01c32,284,Tenasserim-South Thailand semi-evergreen rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r01c33,265,Peninsular Malaysian rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r02c12,301,Sri Lanka dry-zone dry evergreen forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r02c13,301,Sri Lanka dry-zone dry evergreen forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r02c31,284,Tenasserim-South Thailand semi-evergreen rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r03c09,270,South Western Ghats moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r03c12,301,Sri Lanka dry-zone dry evergreen forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r03c30,284,Tenasserim-South Thailand semi-evergreen rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r03c31,284,Tenasserim-South Thailand semi-evergreen rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r04c08,242,Malabar Coast moist forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r04c09,270,South Western Ghats moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r04c10,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r04c12,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r04c30,284,Tenasserim-South Thailand semi-evergreen rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r05c08,270,South Western Ghats moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r05c09,298,South Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r05c10,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r05c11,293,East Deccan dry-evergreen forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r05c30,284,Tenasserim-South Thailand semi-evergreen rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r06c08,270,South Western Ghats moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r06c09,298,South Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r06c10,298,South Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r06c11,293,East Deccan dry-evergreen forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r06c31,284,Tenasserim-South Thailand semi-evergreen rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r07c07,271,South Western Ghats montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r07c08,298,South Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r07c09,298,South Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r07c10,298,South Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r07c11,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r07c30,250,Myanmar coastal rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r07c31,284,Tenasserim-South Thailand semi-evergreen rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r08c07,254,North Western Ghats montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r08c08,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r08c09,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r08c10,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r08c11,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r08c30,250,Myanmar coastal rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r08c31,225,Chao Phraya lowland moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r08c32,319,Indochina mangroves,Mangroves,Indomalayan
+r08c33,223,Cardamom Mountains rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r09c06,253,North Western Ghats moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r09c07,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r09c08,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r09c09,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r09c10,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r09c11,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r09c30,284,Tenasserim-South Thailand semi-evergreen rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r09c31,291,Central Indochina dry forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r09c32,224,Chao Phraya freshwater swamp forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r09c33,299,Southeast Indochina dry evergreen forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r10c06,253,North Western Ghats moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r10c07,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r10c08,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r10c09,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r10c10,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r10c11,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r10c30,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r10c31,291,Central Indochina dry forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r10c32,291,Central Indochina dry forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r10c33,299,Southeast Indochina dry evergreen forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r11c05,242,Malabar Coast moist forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r11c06,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r11c07,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r11c08,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r11c09,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r11c10,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r11c11,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r11c12,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r11c13,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r11c26,250,Myanmar coastal rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r11c27,234,Irrawaddy freshwater swamp forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r11c29,321,Myanmar Coast mangroves,Mangroves,Indomalayan
+r11c30,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r11c31,291,Central Indochina dry forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r11c32,224,Chao Phraya freshwater swamp forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r11c33,239,Luang Prabang montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r12c05,253,North Western Ghats moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r12c06,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r12c07,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r12c08,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r12c09,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r12c10,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r12c11,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r12c12,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r12c13,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r12c14,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r12c27,250,Myanmar coastal rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r12c28,250,Myanmar coastal rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r12c29,250,Myanmar coastal rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r12c30,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r12c31,258,Northern Thailand-Laos moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r12c32,258,Northern Thailand-Laos moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r12c33,239,Luang Prabang montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c05,254,North Western Ghats montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c06,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r13c07,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r13c08,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r13c09,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r13c10,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r13c11,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r13c12,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c13,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c14,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c15,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c26,250,Myanmar coastal rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c27,294,Irrawaddy dry forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r13c28,235,Irrawaddy moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c29,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c30,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c31,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c32,258,Northern Thailand-Laos moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r13c33,239,Luang Prabang montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c05,253,North Western Ghats moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c06,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r14c07,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r14c08,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r14c09,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r14c10,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c11,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c12,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c13,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c14,297,North Deccan dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r14c15,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c16,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c26,226,Chin Hills-Arakan Yoma montane forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c27,235,Irrawaddy moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c28,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c29,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c30,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c31,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c32,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r14c33,258,Northern Thailand-Laos moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c05,253,North Western Ghats moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c06,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r15c07,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r15c08,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r15c09,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r15c10,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r15c11,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r15c12,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r15c13,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c14,297,North Deccan dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r15c15,297,North Deccan dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r15c16,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c17,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c18,261,Orissa semi-evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c25,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c26,235,Irrawaddy moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c27,294,Irrawaddy dry forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r15c28,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c29,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c30,237,Kayah-Karen montane rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c31,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c32,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r15c33,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c02,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r16c03,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r16c05,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r16c06,315,Deccan thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r16c07,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r16c08,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r16c09,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r16c10,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c11,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r16c12,290,Central Deccan Plateau dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r16c13,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c14,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c15,297,North Deccan dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r16c16,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c17,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c18,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c24,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c25,226,Chin Hills-Arakan Yoma montane forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c26,235,Irrawaddy moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c27,294,Irrawaddy dry forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r16c28,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c29,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c30,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c31,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c32,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r16c33,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c02,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r17c03,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r17c04,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r17c05,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r17c06,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r17c07,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r17c08,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r17c09,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r17c10,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c11,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c12,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c13,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c14,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c15,228,East Deccan moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c16,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r17c17,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r17c18,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r17c19,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c20,282,Sundarbans freshwater swamp forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c21,323,Sundarbans mangroves,Mangroves,Indomalayan
+r17c22,323,Sundarbans mangroves,Mangroves,Indomalayan
+r17c23,323,Sundarbans mangroves,Mangroves,Indomalayan
+r17c24,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c25,226,Chin Hills-Arakan Yoma montane forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c26,235,Irrawaddy moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c27,235,Irrawaddy moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c28,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c29,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c30,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c31,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c32,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r17c33,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c00,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r18c01,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r18c02,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r18c03,312,Rann of Kutch seasonal salt marsh,Flooded Grasslands & Savannas,Indomalayan
+r18c04,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r18c05,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c06,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c07,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c08,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c09,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c10,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c11,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c12,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c13,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c14,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c15,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c16,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c17,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c18,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c19,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r18c20,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c21,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c22,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c23,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c24,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c25,226,Chin Hills-Arakan Yoma montane forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c26,235,Irrawaddy moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c27,235,Irrawaddy moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c28,235,Irrawaddy moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c29,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c30,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c31,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c32,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r18c33,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c00,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r19c01,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r19c02,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r19c03,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r19c04,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r19c05,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c06,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c07,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c08,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c09,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c10,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c11,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c12,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c13,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c14,296,Narmada Valley dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c15,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c16,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c17,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c18,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c19,292,Chhota-Nagpur dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r19c20,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c21,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c22,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c23,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c24,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c25,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c26,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c27,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c28,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c29,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c30,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c31,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c32,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r19c33,643,Yunnan Plateau subtropical evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Palearctic
+r20c00,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r20c01,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r20c02,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r20c03,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r20c04,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r20c05,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r20c06,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r20c07,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r20c08,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r20c09,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r20c10,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c11,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c12,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c13,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c14,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c15,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c16,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c17,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c18,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c19,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c20,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c21,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c22,244,Meghalaya subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c23,244,Meghalaya subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c24,244,Meghalaya subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c25,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c26,304,Northeast India-Myanmar pine forests,Tropical & Subtropical Coniferous Forests,Indomalayan
+r20c27,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c28,259,Northern Triangle subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c29,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c30,256,Northern Indochina subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r20c31,643,Yunnan Plateau subtropical evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Palearctic
+r20c32,643,Yunnan Plateau subtropical evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Palearctic
+r20c33,643,Yunnan Plateau subtropical evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Palearctic
+r21c00,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r21c01,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r21c02,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r21c03,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r21c04,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r21c05,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r21c06,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r21c07,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r21c08,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r21c09,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c10,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c11,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c12,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c13,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c14,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c15,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c16,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c17,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c18,311,Terai-Duar savanna and grasslands,"Tropical & Subtropical Grasslands, Savannas & Shrublands",Indomalayan
+r21c19,311,Terai-Duar savanna and grasslands,"Tropical & Subtropical Grasslands, Savannas & Shrublands",Indomalayan
+r21c20,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c21,238,Lower Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c22,222,Brahmaputra Valley semi-evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c23,222,Brahmaputra Valley semi-evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c24,222,Brahmaputra Valley semi-evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c25,244,Meghalaya subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c26,249,Mizoram-Manipur-Kachin rain forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c27,259,Northern Triangle subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c28,259,Northern Triangle subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c29,259,Northern Triangle subtropical forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r21c30,704,Nujiang Langcang Gorge alpine conifer and mixed forests,Temperate Conifer Forests,Palearctic
+r21c31,704,Nujiang Langcang Gorge alpine conifer and mixed forests,Temperate Conifer Forests,Palearctic
+r21c32,643,Yunnan Plateau subtropical evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Palearctic
+r21c33,643,Yunnan Plateau subtropical evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Palearctic
+r22c00,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r22c01,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r22c02,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r22c03,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r22c04,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r22c05,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r22c06,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r22c07,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r22c08,295,Khathiar-Gir dry deciduous forests,Tropical & Subtropical Dry Broadleaf Forests,Indomalayan
+r22c09,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r22c10,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r22c11,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r22c12,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r22c13,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r22c14,233,Himalayan subtropical broadleaf forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r22c15,233,Himalayan subtropical broadleaf forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r22c16,233,Himalayan subtropical broadleaf forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r22c17,306,Eastern Himalayan broadleaf forests,Temperate Broadleaf & Mixed Forests,Indomalayan
+r22c18,309,Eastern Himalayan subalpine conifer forests,Temperate Conifer Forests,Indomalayan
+r22c19,0,Rock and Ice,N/A,N/A
+r22c20,302,Himalayan subtropical pine forests,Tropical & Subtropical Coniferous Forests,Indomalayan
+r22c21,751,Eastern Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r22c22,306,Eastern Himalayan broadleaf forests,Temperate Broadleaf & Mixed Forests,Indomalayan
+r22c23,306,Eastern Himalayan broadleaf forests,Temperate Broadleaf & Mixed Forests,Indomalayan
+r22c24,309,Eastern Himalayan subalpine conifer forests,Temperate Conifer Forests,Indomalayan
+r22c25,306,Eastern Himalayan broadleaf forests,Temperate Broadleaf & Mixed Forests,Indomalayan
+r22c26,222,Brahmaputra Valley semi-evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r22c27,222,Brahmaputra Valley semi-evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r22c28,306,Eastern Himalayan broadleaf forests,Temperate Broadleaf & Mixed Forests,Indomalayan
+r22c29,307,Northern Triangle temperate forests,Temperate Broadleaf & Mixed Forests,Indomalayan
+r22c30,704,Nujiang Langcang Gorge alpine conifer and mixed forests,Temperate Conifer Forests,Palearctic
+r22c31,704,Nujiang Langcang Gorge alpine conifer and mixed forests,Temperate Conifer Forests,Palearctic
+r22c32,697,Hengduan Mountains subalpine conifer forests,Temperate Conifer Forests,Palearctic
+r22c33,643,Yunnan Plateau subtropical evergreen forests,Tropical & Subtropical Moist Broadleaf Forests,Palearctic
+r23c00,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r23c01,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r23c02,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r23c03,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r23c04,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r23c05,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r23c06,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r23c07,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r23c08,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r23c09,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r23c10,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r23c11,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r23c12,311,Terai-Duar savanna and grasslands,"Tropical & Subtropical Grasslands, Savannas & Shrublands",Indomalayan
+r23c13,233,Himalayan subtropical broadleaf forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r23c14,302,Himalayan subtropical pine forests,Tropical & Subtropical Coniferous Forests,Indomalayan
+r23c15,308,Western Himalayan broadleaf forests,Temperate Broadleaf & Mixed Forests,Indomalayan
+r23c16,0,Rock and Ice,N/A,N/A
+r23c17,0,Rock and Ice,N/A,N/A
+r23c18,751,Eastern Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r23c19,770,Yarlung Zanbo arid steppe,Montane Grasslands & Shrublands,Palearctic
+r23c20,751,Eastern Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r23c21,751,Eastern Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r23c22,751,Eastern Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r23c23,751,Eastern Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r23c24,751,Eastern Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r23c25,751,Eastern Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r23c26,306,Eastern Himalayan broadleaf forests,Temperate Broadleaf & Mixed Forests,Indomalayan
+r23c27,306,Eastern Himalayan broadleaf forests,Temperate Broadleaf & Mixed Forests,Indomalayan
+r23c28,751,Eastern Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r23c29,751,Eastern Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r23c30,704,Nujiang Langcang Gorge alpine conifer and mixed forests,Temperate Conifer Forests,Palearctic
+r23c31,697,Hengduan Mountains subalpine conifer forests,Temperate Conifer Forests,Palearctic
+r23c32,697,Hengduan Mountains subalpine conifer forests,Temperate Conifer Forests,Palearctic
+r23c33,697,Hengduan Mountains subalpine conifer forests,Temperate Conifer Forests,Palearctic
+r24c00,814,Baluchistan xeric woodlands,Deserts & Xeric Shrublands,Palearctic
+r24c01,814,Baluchistan xeric woodlands,Deserts & Xeric Shrublands,Palearctic
+r24c02,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r24c03,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r24c04,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r24c05,318,Thar desert,Deserts & Xeric Shrublands,Indomalayan
+r24c06,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r24c07,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r24c08,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r24c09,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r24c10,287,Upper Gangetic Plains moist deciduous forests,Tropical & Subtropical Moist Broadleaf Forests,Indomalayan
+r24c11,302,Himalayan subtropical pine forests,Tropical & Subtropical Coniferous Forests,Indomalayan
+r24c12,302,Himalayan subtropical pine forests,Tropical & Subtropical Coniferous Forests,Indomalayan
+r24c13,310,Western Himalayan subalpine conifer forests,Temperate Conifer Forests,Indomalayan
+r24c14,769,Western Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r24c15,750,Central Tibetan Plateau alpine steppe,Montane Grasslands & Shrublands,Palearctic
+r24c16,750,Central Tibetan Plateau alpine steppe,Montane Grasslands & Shrublands,Palearctic
+r24c17,750,Central Tibetan Plateau alpine steppe,Montane Grasslands & Shrublands,Palearctic
+r24c18,770,Yarlung Zanbo arid steppe,Montane Grasslands & Shrublands,Palearctic
+r24c19,750,Central Tibetan Plateau alpine steppe,Montane Grasslands & Shrublands,Palearctic
+r24c20,770,Yarlung Zanbo arid steppe,Montane Grasslands & Shrublands,Palearctic
+r24c21,768,Tibetan Plateau alpine shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r24c22,768,Tibetan Plateau alpine shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r24c23,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r24c24,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r24c25,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r24c26,702,Northeast Himalayan subalpine conifer forests,Temperate Conifer Forests,Palearctic
+r24c27,702,Northeast Himalayan subalpine conifer forests,Temperate Conifer Forests,Palearctic
+r24c28,702,Northeast Himalayan subalpine conifer forests,Temperate Conifer Forests,Palearctic
+r24c29,704,Nujiang Langcang Gorge alpine conifer and mixed forests,Temperate Conifer Forests,Palearctic
+r24c30,704,Nujiang Langcang Gorge alpine conifer and mixed forests,Temperate Conifer Forests,Palearctic
+r24c31,697,Hengduan Mountains subalpine conifer forests,Temperate Conifer Forests,Palearctic
+r24c32,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r24c33,697,Hengduan Mountains subalpine conifer forests,Temperate Conifer Forests,Palearctic
+r25c00,814,Baluchistan xeric woodlands,Deserts & Xeric Shrublands,Palearctic
+r25c01,814,Baluchistan xeric woodlands,Deserts & Xeric Shrublands,Palearctic
+r25c02,814,Baluchistan xeric woodlands,Deserts & Xeric Shrublands,Palearctic
+r25c03,317,Indus Valley desert,Deserts & Xeric Shrublands,Indomalayan
+r25c04,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r25c05,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r25c06,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r25c07,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r25c08,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r25c09,314,Aravalli west thorn scrub forests,Deserts & Xeric Shrublands,Indomalayan
+r25c10,302,Himalayan subtropical pine forests,Tropical & Subtropical Coniferous Forests,Indomalayan
+r25c11,308,Western Himalayan broadleaf forests,Temperate Broadleaf & Mixed Forests,Indomalayan
+r25c12,769,Western Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c13,769,Western Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c14,769,Western Himalayan alpine shrub and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c15,0,Rock and Ice,N/A,N/A
+r25c16,0,Rock and Ice,N/A,N/A
+r25c17,750,Central Tibetan Plateau alpine steppe,Montane Grasslands & Shrublands,Palearctic
+r25c18,750,Central Tibetan Plateau alpine steppe,Montane Grasslands & Shrublands,Palearctic
+r25c19,750,Central Tibetan Plateau alpine steppe,Montane Grasslands & Shrublands,Palearctic
+r25c20,768,Tibetan Plateau alpine shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c21,768,Tibetan Plateau alpine shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c22,768,Tibetan Plateau alpine shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c23,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c24,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c25,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c26,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c27,702,Northeast Himalayan subalpine conifer forests,Temperate Conifer Forests,Palearctic
+r25c28,704,Nujiang Langcang Gorge alpine conifer and mixed forests,Temperate Conifer Forests,Palearctic
+r25c29,704,Nujiang Langcang Gorge alpine conifer and mixed forests,Temperate Conifer Forests,Palearctic
+r25c30,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c31,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c32,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic
+r25c33,765,Southeast Tibet shrublands and meadows,Montane Grasslands & Shrublands,Palearctic

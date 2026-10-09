@@ -1,0 +1,204 @@
+cell_id,eco_name,richness_within_resid,gpp_within_resid
+r00c32,Peninsular Malaysian rain forests,-4.465983421256581,-0.01724601511500934
+r01c13,Sri Lanka dry-zone dry evergreen forests,6.881868407323438,0.11873064087349983
+r01c32,Tenasserim-South Thailand semi-evergreen rain forests,20.658948388047733,-0.27511172053183053
+r01c33,Peninsular Malaysian rain forests,4.465983421275823,0.017246015114643853
+r02c12,Sri Lanka dry-zone dry evergreen forests,-8.5088413419993,0.28917308791762775
+r02c13,Sri Lanka dry-zone dry evergreen forests,5.230897818571236,-0.35862546047953736
+r02c31,Tenasserim-South Thailand semi-evergreen rain forests,0.004363676630831037,-0.2645302420515674
+r03c09,South Western Ghats moist deciduous forests,6.6323468247287565,-0.13832021556853924
+r03c12,Sri Lanka dry-zone dry evergreen forests,-3.6039248838606994,-0.04927826831200166
+r03c30,Tenasserim-South Thailand semi-evergreen rain forests,-12.19311971037746,0.10642627109795022
+r03c31,Tenasserim-South Thailand semi-evergreen rain forests,3.3114526128827038,-0.21945615810127173
+r04c08,Malabar Coast moist forests,-11.771360406723133,0.46417195397160715
+r04c09,South Western Ghats moist deciduous forests,0.9286584246869012,-0.14965725021786347
+r04c30,Tenasserim-South Thailand semi-evergreen rain forests,-5.01600484876667,0.08018619514757219
+r05c08,South Western Ghats moist deciduous forests,-9.006819069027102,0.04713798726258078
+r05c09,South Deccan Plateau dry deciduous forests,14.80353484614892,-0.003882936733823339
+r06c08,South Western Ghats moist deciduous forests,1.4458138196565358,0.24083947852338472
+r06c09,South Deccan Plateau dry deciduous forests,-10.790422289811985,-0.05496997499413703
+r06c31,Tenasserim-South Thailand semi-evergreen rain forests,-5.742659407266373,0.17566239332761757
+r07c09,South Deccan Plateau dry deciduous forests,-4.013112556325183,0.058852911727687696
+r07c31,Tenasserim-South Thailand semi-evergreen rain forests,11.278385794794659,0.10805973430344995
+r08c07,North Western Ghats montane rain forests,13.502726135320103,0.463779850891767
+r08c30,Myanmar coastal rain forests,9.36066578236121,0.33514130919506213
+r09c06,North Western Ghats moist deciduous forests,-0.46051655239750744,0.5417252256884639
+r09c30,Tenasserim-South Thailand semi-evergreen rain forests,-12.301366505875265,0.2887635268068163
+r10c06,North Western Ghats moist deciduous forests,11.61956610909985,0.12545058497753514
+r10c30,Kayah-Karen montane rain forests,-3.2752477355870724,0.27554304836033516
+r11c05,Malabar Coast moist forests,11.771360406746268,-0.4641719539720457
+r11c30,Kayah-Karen montane rain forests,-19.211270569446057,-0.17660173790318145
+r11c33,Luang Prabang montane rain forests,6.4159928709157725,-0.10189316046697483
+r12c05,North Western Ghats moist deciduous forests,-17.4212342069671,-0.2723659884118861
+r12c13,East Deccan moist deciduous forests,16.754426448289607,0.029232840655633918
+r12c14,East Deccan moist deciduous forests,3.027376874044478,0.2912908759359656
+r12c29,Myanmar coastal rain forests,1.2700646574789403,-0.16308169213271917
+r12c30,Kayah-Karen montane rain forests,1.3554323872117067,-0.01383028160842592
+r12c31,Northern Thailand-Laos moist deciduous forests,-26.042018781739756,-0.339560960101424
+r12c32,Northern Thailand-Laos moist deciduous forests,22.437864741208728,-0.20528533541686733
+r12c33,Luang Prabang montane rain forests,6.600844888385538,-0.14078523355216643
+r13c05,North Western Ghats montane rain forests,-13.5027261353042,-0.46377985089207363
+r13c12,East Deccan moist deciduous forests,7.116863937482933,-0.08376877358776569
+r13c13,East Deccan moist deciduous forests,-10.730061421150666,0.01298305182581605
+r13c14,East Deccan moist deciduous forests,1.8097955143892506,0.13023045882296747
+r13c15,East Deccan moist deciduous forests,-12.613126407073295,-0.004882261179572467
+r13c26,Myanmar coastal rain forests,-10.630730439809625,-0.17205961706299933
+r13c28,Irrawaddy moist deciduous forests,-20.487747961761073,0.011145869172291434
+r13c29,Kayah-Karen montane rain forests,-19.417096522807654,0.08522019997876429
+r13c30,Kayah-Karen montane rain forests,25.055555982381136,0.10290258821290177
+r13c31,Kayah-Karen montane rain forests,-6.279828115419619,-0.22090226897282683
+r13c32,Northern Thailand-Laos moist deciduous forests,-7.868018546551781,0.023930279872304006
+r13c33,Luang Prabang montane rain forests,-13.016837759287796,0.24267839401875824
+r14c12,East Deccan moist deciduous forests,11.754523444336499,-0.03133567109486779
+r14c13,East Deccan moist deciduous forests,2.607150092158193,0.0759190659767992
+r14c15,East Deccan moist deciduous forests,-0.16569027142929826,0.16696264421531803
+r14c16,East Deccan moist deciduous forests,-4.247177534797558,0.10683684776652114
+r14c26,Chin Hills-Arakan Yoma montane forests,20.45874749011722,-0.4962342021884518
+r14c27,Irrawaddy moist deciduous forests,8.617544667953041,-0.2441870039212668
+r14c28,Kayah-Karen montane rain forests,-20.91921655692353,-0.18104950960706212
+r14c29,Kayah-Karen montane rain forests,0.6380158457228902,-0.144965419324111
+r14c30,Kayah-Karen montane rain forests,23.032746090170363,0.3660564621168767
+r14c31,Kayah-Karen montane rain forests,19.020909194768194,-0.09237308125445898
+r14c32,Northern Indochina subtropical forests,-12.24097622380421,-0.23194221642988966
+r14c33,Northern Thailand-Laos moist deciduous forests,11.472172587111501,0.5209160156456023
+r15c05,North Western Ghats moist deciduous forests,6.262184650302416,-0.3948098222547305
+r15c13,East Deccan moist deciduous forests,3.776847693418958,-0.12432775218778191
+r15c14,North Deccan dry deciduous forests,-7.395104949301242,0.04001048191046097
+r15c15,North Deccan dry deciduous forests,7.395104949312341,-0.04001048191069967
+r15c16,East Deccan moist deciduous forests,-0.5946044891461071,0.05314180794067691
+r15c26,Irrawaddy moist deciduous forests,-7.037134440717352,-0.11611141985327578
+r15c29,Northern Indochina subtropical forests,20.08087116730917,-0.44356870266162307
+r15c31,Northern Indochina subtropical forests,12.287607569915224,0.14206522513470743
+r15c32,Northern Indochina subtropical forests,-21.87362490644314,0.15064117295626067
+r15c33,Northern Indochina subtropical forests,-20.957900800092048,0.36349738490891514
+r16c16,East Deccan moist deciduous forests,0.19019631634679968,-0.09499670061487886
+r16c17,East Deccan moist deciduous forests,-13.85093427978397,-0.05446774415686595
+r16c18,East Deccan moist deciduous forests,6.217733710817143,-0.04095525518793264
+r16c24,Lower Gangetic Plains moist deciduous forests,6.121756870775258,0.5167101003238885
+r16c25,Chin Hills-Arakan Yoma montane forests,-5.843668399384342,0.09515795299111085
+r16c26,Irrawaddy moist deciduous forests,-0.7146909024440049,-0.2203783361101297
+r16c28,Northern Indochina subtropical forests,-1.5408882212197028,-0.8080222025216199
+r16c32,Northern Indochina subtropical forests,-17.73881126981297,0.3212069448507058
+r16c33,Northern Indochina subtropical forests,-16.378847357734912,0.5051059557910498
+r17c12,East Deccan moist deciduous forests,-14.891062696377588,-0.11466282686633966
+r17c14,East Deccan moist deciduous forests,-4.306208263859645,-0.1957089524420652
+r17c15,East Deccan moist deciduous forests,8.143951332453199,-0.12149165582371535
+r17c17,Chhota-Nagpur dry deciduous forests,-15.918761881452667,0.020373971013763148
+r17c18,Chhota-Nagpur dry deciduous forests,-1.6696295106973906,-0.09290499024252608
+r17c24,Mizoram-Manipur-Kachin rain forests,-7.826956415323693,-0.05228515102043563
+r17c25,Chin Hills-Arakan Yoma montane forests,-18.10474446161959,0.049593471752415574
+r17c26,Irrawaddy moist deciduous forests,6.643391022222033,-0.054136757011846726
+r17c28,Northern Indochina subtropical forests,-1.4431877114143532,-0.35371469574917613
+r17c29,Northern Indochina subtropical forests,2.566072444588002,-0.20370341207346776
+r17c32,Northern Indochina subtropical forests,-8.141170334952335,0.20299642432354803
+r17c33,Northern Indochina subtropical forests,-2.3431737821111938,0.481077784510219
+r18c14,Chhota-Nagpur dry deciduous forests,-0.5720008681611262,0.022342542888568406
+r18c15,Chhota-Nagpur dry deciduous forests,16.58764734734487,0.08215726458554062
+r18c16,Chhota-Nagpur dry deciduous forests,4.455614693522762,0.07673134534931036
+r18c17,Chhota-Nagpur dry deciduous forests,-2.8828697805220287,-0.10870013359518738
+r18c23,Lower Gangetic Plains moist deciduous forests,-12.93824047591923,-0.01169832889744682
+r18c24,Mizoram-Manipur-Kachin rain forests,-5.300829531964993,0.2793688184076015
+r18c25,Chin Hills-Arakan Yoma montane forests,3.4896653709084404,0.3514827774443594
+r18c26,Irrawaddy moist deciduous forests,0.3920946856783871,0.5548940438751471
+r18c27,Irrawaddy moist deciduous forests,12.586542929108674,0.06877360384831088
+r18c29,Northern Indochina subtropical forests,13.740313362194911,0.28968223481154043
+r18c31,Northern Indochina subtropical forests,7.12314505994226,0.011534042945798184
+r18c33,Northern Indochina subtropical forests,14.001298511730113,-0.15575493248266703
+r19c01,Thar desert,-2.3444050621893666,0.033707926800476684
+r19c02,Thar desert,19.73345890984173,-0.031202074189313866
+r19c24,Mizoram-Manipur-Kachin rain forests,-13.552596823412088,-0.5832255750716584
+r19c25,Mizoram-Manipur-Kachin rain forests,-3.0098368265447704,0.267152343501718
+r19c26,Mizoram-Manipur-Kachin rain forests,0.4139054821667969,-0.026853012872593673
+r19c27,Mizoram-Manipur-Kachin rain forests,9.37169389415638,-0.13067964347805638
+r19c28,Mizoram-Manipur-Kachin rain forests,-12.52975762362506,-0.14037043432876573
+r19c29,Mizoram-Manipur-Kachin rain forests,21.699356804354863,0.23735706354547892
+r19c30,Northern Indochina subtropical forests,10.722879313338524,0.11624562914101855
+r19c32,Northern Indochina subtropical forests,18.29072018220262,-0.25305660198590507
+r19c33,Yunnan Plateau subtropical evergreen forests,2.1784502213318433,0.16277464776506934
+r20c22,Meghalaya subtropical forests,-12.765864106139873,-0.18028849971591154
+r20c23,Meghalaya subtropical forests,4.961888284614531,0.0142450162237302
+r20c24,Meghalaya subtropical forests,1.7955370753642086,0.3284139827141852
+r20c25,Mizoram-Manipur-Kachin rain forests,0.01904880537955478,0.23355362364779753
+r20c27,Mizoram-Manipur-Kachin rain forests,4.6116783906268495,-0.03607952773925627
+r20c28,Northern Triangle subtropical forests,3.7666066032847993,-0.056469990187899555
+r20c29,Mizoram-Manipur-Kachin rain forests,11.358365146091103,0.20041607315361398
+r20c30,Northern Indochina subtropical forests,3.8456729964733256,-0.1342900354713792
+r20c31,Yunnan Plateau subtropical evergreen forests,10.365205435543587,0.19434084005513874
+r20c32,Yunnan Plateau subtropical evergreen forests,5.97281010014801,0.06435981604566798
+r20c33,Yunnan Plateau subtropical evergreen forests,-20.895437338384,0.000234863237874805
+r21c01,Thar desert,-7.382208451389047,-0.06662515080798276
+r21c02,Thar desert,-13.794093886589025,-0.04748939022922269
+r21c03,Thar desert,-3.184763335805556,-0.031604039404610984
+r21c21,Lower Gangetic Plains moist deciduous forests,6.816483605171186,-0.5050117714269857
+r21c22,Brahmaputra Valley semi-evergreen forests,7.167922620466896,-0.17972443763357826
+r21c23,Brahmaputra Valley semi-evergreen forests,0.04476591034696753,-0.08908928497965274
+r21c25,Meghalaya subtropical forests,6.008438746191231,-0.16237049922287428
+r21c26,Mizoram-Manipur-Kachin rain forests,-5.254071301816481,-0.248354577747119
+r21c27,Northern Triangle subtropical forests,-7.509712970743934,-0.045799278945523714
+r21c28,Northern Triangle subtropical forests,3.743106367488423,0.10226926913280865
+r21c30,Nujiang Langcang Gorge alpine conifer and mixed forests,16.111851722019395,0.327829369022119
+r21c31,Nujiang Langcang Gorge alpine conifer and mixed forests,2.628856701574108,0.2644090342463927
+r21c32,Yunnan Plateau subtropical evergreen forests,4.4842890903982635,-0.12501884694056176
+r21c33,Yunnan Plateau subtropical evergreen forests,-2.1053175090065395,-0.2966913201636754
+r22c02,Thar desert,2.2578490784783014,-0.012489882266688318
+r22c03,Thar desert,0.82543713311712,-0.03397021827960864
+r22c16,Himalayan subtropical broadleaf forests,-2.827786841305823,-0.06188540777968199
+r22c17,Eastern Himalayan broadleaf forests,-17.33502982286872,-0.17219483211701125
+r22c18,Eastern Himalayan subalpine conifer forests,-6.515727554767295,0.10171057353532253
+r22c19,Rock and Ice,-3.8445809448066655,0.04336016948178911
+r22c20,Himalayan subtropical pine forests,-2.4884178644127246,-0.2487902362446648
+r22c21,Eastern Himalayan alpine shrub and meadows,11.650963800405933,0.22107912030136578
+r22c22,Eastern Himalayan broadleaf forests,18.201748690964052,-0.11048092535334963
+r22c23,Eastern Himalayan broadleaf forests,12.068374569973798,-0.02116336890798154
+r22c24,Eastern Himalayan subalpine conifer forests,6.515727554797678,-0.10171057353587121
+r22c25,Eastern Himalayan broadleaf forests,-3.6441801719377622,0.16718738130377098
+r22c26,Brahmaputra Valley semi-evergreen forests,-20.68018522120728,0.08380518301977125
+r22c27,Brahmaputra Valley semi-evergreen forests,13.467496690437486,0.18500853959262997
+r22c28,Eastern Himalayan broadleaf forests,5.132266658522923,0.6138716693800124
+r22c30,Nujiang Langcang Gorge alpine conifer and mixed forests,-14.097662829089273,-0.22720633590426242
+r22c31,Nujiang Langcang Gorge alpine conifer and mixed forests,0.14422632132709623,0.09822627911521375
+r22c32,Hengduan Mountains subalpine conifer forests,17.90228086431324,0.29996576519195806
+r23c03,Thar desert,6.796590710402995,0.18599167227817165
+r23c04,Thar desert,0.9296049941049631,0.027651333138714318
+r23c05,Thar desert,-3.8374700899471748,-0.02397017704007484
+r23c13,Himalayan subtropical broadleaf forests,2.8277868413203464,0.061885407779396884
+r23c14,Himalayan subtropical pine forests,-1.0082530305844983,0.18237989038862334
+r23c15,Western Himalayan broadleaf forests,6.083573389332798,-0.061887266949920416
+r23c16,Rock and Ice,-2.288169686856463,0.05617018587578115
+r23c17,Rock and Ice,6.132750631698769,-0.09953035535802651
+r23c18,Eastern Himalayan alpine shrub and meadows,-8.149749483751961,-0.057164619060664223
+r23c19,Yarlung Zanbo arid steppe,-2.668841912238449,0.001988750967061803
+r23c20,Eastern Himalayan alpine shrub and meadows,-41.313794920454974,-0.16874091553060508
+r23c21,Eastern Himalayan alpine shrub and meadows,7.0938857262376445,-0.11783099961205384
+r23c22,Eastern Himalayan alpine shrub and meadows,9.46783841656638,-0.08920401838207462
+r23c23,Eastern Himalayan alpine shrub and meadows,10.25055337891068,-0.09613813748480265
+r23c25,Eastern Himalayan alpine shrub and meadows,-1.8114513302812867,0.10053056614440747
+r23c26,Eastern Himalayan broadleaf forests,-18.45151679579449,-0.2665967715263542
+r23c27,Eastern Himalayan broadleaf forests,4.028336871230493,-0.21062315278103627
+r23c28,Eastern Himalayan alpine shrub and meadows,7.341033270833648,0.1419466548876187
+r23c29,Eastern Himalayan alpine shrub and meadows,5.470721141590332,0.06552234873577623
+r23c30,Nujiang Langcang Gorge alpine conifer and mixed forests,-4.787271915797618,-0.4632583464802488
+r23c31,Hengduan Mountains subalpine conifer forests,9.220512009780435,-0.03991431415692237
+r23c32,Hengduan Mountains subalpine conifer forests,-20.34447055105109,-0.013884411405925778
+r24c11,Himalayan subtropical pine forests,7.921540573521554,-0.15228880525316146
+r24c12,Himalayan subtropical pine forests,7.747232732449135,0.03903335455514245
+r24c14,Western Himalayan alpine shrub and meadows,17.32200301827453,0.02047818442153243
+r24c20,Yarlung Zanbo arid steppe,2.6688419122436073,-0.001988750967159364
+r24c22,Tibetan Plateau alpine shrublands and meadows,6.799183259302069,-0.022714233622083108
+r24c23,Southeast Tibet shrublands and meadows,-5.4096905093116305,-0.08376122286573046
+r24c24,Southeast Tibet shrublands and meadows,-19.698036105599364,-0.08378009866536537
+r24c26,Northeast Himalayan subalpine conifer forests,-10.758684433425032,-0.0515843732734006
+r24c27,Northeast Himalayan subalpine conifer forests,14.020819780969902,-0.06586228433332775
+r24c28,Northeast Himalayan subalpine conifer forests,-24.676747451809817,-0.010995919079766797
+r24c32,Southeast Tibet shrublands and meadows,20.803151678355633,0.012782597270457496
+r24c33,Hengduan Mountains subalpine conifer forests,-6.778322323020845,-0.2461670396294413
+r25c10,Himalayan subtropical pine forests,-12.172102410924978,0.1796657965532622
+r25c11,Western Himalayan broadleaf forests,-6.083573389317877,0.06188726694965663
+r25c12,Western Himalayan alpine shrub and meadows,-5.118522138654825,0.06684143299897338
+r25c13,Western Himalayan alpine shrub and meadows,-12.203480879602864,-0.08731961742063295
+r25c22,Tibetan Plateau alpine shrublands and meadows,-6.799183259296342,0.022714233621977747
+r25c23,Southeast Tibet shrublands and meadows,-32.04221517344309,-0.004212329897830852
+r25c25,Southeast Tibet shrublands and meadows,13.25320982024897,-0.02882142795527673
+r25c27,Northeast Himalayan subalpine conifer forests,21.41461210429277,0.12844257668583847
+r25c31,Southeast Tibet shrublands and meadows,5.295019945372928,0.057543663915065824
+r25c33,Southeast Tibet shrublands and meadows,17.798560344404805,0.13024881819821676

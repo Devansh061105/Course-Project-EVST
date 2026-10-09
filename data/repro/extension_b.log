@@ -1,0 +1,68 @@
+
+==========================================================================
+1.0 deg grid, rarefied at n=250   n=221   richness range 47.5 - 154.2 (mean 116.2)
+==========================================================================
+
+OLS      linear AIC=  342.32   quadratic AIC=  344.25   dAIC=  +1.93  -> indistinguishable
+         rich_c  = +0.011186 (p=2.591e-07)
+         rich_c2 = +0.00001812 (p=0.7539)  convex (upturn)
+         turning point at richness = -192.5  -> OUTSIDE observed range (curved slope, not a turning point)
+ML_Lag
+ML_Lag
+ML_Lag   linear AIC=  102.85   quadratic AIC=  104.84   dAIC=  +2.00  -> indistinguishable
+         rich_c2 = +0.00000226 (p=0.9491)  vertex=-664.2 (OUTSIDE)
+ML_Error
+ML_Error
+ML_Error linear AIC=   31.11   quadratic AIC=   30.81   dAIC=  -0.31  -> indistinguishable
+         rich_c2 = -0.00004434 (p=0.1275)  vertex=118.3 (inside)
+
+==========================================================================
+1.0 deg grid, rarefied_50   n=221   richness range 14.4 - 44.5 (mean 39.8)
+==========================================================================
+
+OLS      linear AIC=  353.07   quadratic AIC=  348.58   dAIC=  -4.49  -> QUADRATIC better
+         rich_c  = +0.072140 (p=8.116e-07)
+         rich_c2 = +0.00266157 (p=0.0001735)  convex (upturn)
+         turning point at richness = 26.2  -> INSIDE range but convex -> a MINIMUM (U shape), not a hump
+ML_Lag
+ML_Lag
+ML_Lag   linear AIC=  107.68   quadratic AIC=  106.32   dAIC=  -1.36  -> indistinguishable
+         rich_c2 = +0.00100939 (p=0.0643)  vertex=28.4 (inside)
+ML_Error
+ML_Error
+ML_Error linear AIC=   31.49   quadratic AIC=   33.37   dAIC=  +1.88  -> indistinguishable
+         rich_c2 = -0.00014049 (p=0.7276)  vertex=39.6 (inside)
+
+==========================================================================
+1.0 deg grid, rarefied_100   n=221   richness range 25.2 - 80.0 (mean 66.8)
+==========================================================================
+
+OLS      linear AIC=  348.04   quadratic AIC=  347.47   dAIC=  -0.57  -> indistinguishable
+         rich_c  = +0.028331 (p=1.67e-06)
+         rich_c2 = +0.00046806 (p=0.06267)  convex (upturn)
+         turning point at richness = 36.5  -> INSIDE range but convex -> a MINIMUM (U shape), not a hump
+ML_Lag
+ML_Lag
+ML_Lag   linear AIC=  105.59   quadratic AIC=  106.76   dAIC=  +1.18  -> indistinguishable
+         rich_c2 = +0.00013998 (p=0.3622)  vertex=36.5 (inside)
+ML_Error
+ML_Error
+ML_Error linear AIC=   31.41   quadratic AIC=   32.33   dAIC=  +0.91  -> indistinguishable
+         rich_c2 = -0.00012731 (p=0.2959)  vertex=64.9 (inside)
+
+==========================================================================
+2.0 deg grid, rarefied at n=250   n=67   richness range 75.2 - 164.8 (mean 126.1)
+==========================================================================
+
+OLS      linear AIC=   90.79   quadratic AIC=   92.79   dAIC=  +2.00  -> indistinguishable
+         rich_c  = +0.012418 (p=0.0003241)
+         rich_c2 = +0.00000165 (p=0.9905)  convex (upturn)
+         turning point at richness = -3636.2  -> OUTSIDE observed range (curved slope, not a turning point)
+ML_Lag
+ML_Lag
+ML_Lag   linear AIC=   32.00   quadratic AIC=   33.54   dAIC=  +1.53  -> indistinguishable
+         rich_c2 = +0.00004925 (p=0.4928)  vertex=49.4 (OUTSIDE)
+ML_Error
+ML_Error
+ML_Error linear AIC=   38.09   quadratic AIC=   38.97   dAIC=  +0.88  -> indistinguishable
+         rich_c2 = +0.00007171 (p=0.2883)  vertex=116.4 (inside)

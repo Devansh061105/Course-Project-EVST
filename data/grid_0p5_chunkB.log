@@ -1,0 +1,39 @@
+=== cell size 0.5 deg : 3536 cells ===
+  skipping 1016 sub-cells whose 1-degree parent is open sea
+  gbif grid pos 2996/3536, cached 2800  64s
+  gbif grid pos 3046/3536, cached 2850  124s
+  gbif grid pos 3096/3536, cached 2900  184s
+  gbif grid pos 3146/3536, cached 2950  243s
+  gbif grid pos 3196/3536, cached 3000  303s
+  gbif grid pos 3246/3536, cached 3050  363s
+  gbif grid pos 3296/3536, cached 3100  423s
+  gbif grid pos 3346/3536, cached 3150  484s
+  gbif grid pos 3396/3536, cached 3200  544s
+  gbif grid pos 3446/3536, cached 3250  604s
+  gbif grid pos 3496/3536, cached 3300  662s
+  gbif: 3340 cells cached, 0 land cells remaining, 712s
+  gbif done
+*** Earth Engine *** Share your feedback by taking our Annual Developer Satisfaction Survey: https://google.qualtrics.com/jfe/form/SV_9oS0DRcPvElRMNw?source=python
+  gee 50/2520  5s
+  gee 300/2520  43s
+  gee 550/2520  73s
+  gee 800/2520  104s
+  gee 1050/2520  134s
+  gee 1300/2520  165s
+  gee 1550/2520  197s
+  gee 1800/2520  220s
+  gee 2050/2520  245s
+  gee 2300/2520  274s
+  gee 2520/2520  297s
+  gee done: 2520 cells, 297s
+  truncated cells: 0
+  eligible cells: 672 of 3340
+ML_Error
+ML_Lag
+
+--- RESULTS at 0.5 deg (n=672) ---
+  OLS+HC3   richness beta=+0.008827  p=4.889e-12
+  Moran I (OLS resid) = 0.826
+  robust LM lag=20.6  robust LM error=192.4  -> AIC winner: error
+  ML_Error  richness beta=+0.003582  se=0.000607  p=0.0000  -> SIGNIFICANT
+  residual Moran I (e_filtered) = -0.052 (p=0.052)

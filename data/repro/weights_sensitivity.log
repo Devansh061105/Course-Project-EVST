@@ -1,0 +1,38 @@
+n = 221 cells
+
+weights                        n  MoranI  rLMlag  rLMerr AICwin  beta_rich    p_rich  resMorI   p_res
+--------------------------------------------------------------------------------------------------------
+ML_Error
+ML_Lag
+queen contiguity             221   0.723    24.8    29.4  error   +0.00069    0.5059    0.034   0.254
+ML_Error
+ML_Lag
+distance band 1.0 deg        221   0.765    10.3    18.9  error   +0.00111    0.3671   -0.126   0.032
+ML_Error
+ML_Lag
+distance band 1.5 deg        221   0.723    24.8    29.4  error   +0.00069    0.5059    0.034   0.220
+ML_Error
+ML_Lag
+distance band 2.0 deg        221   0.689    33.7    37.3  error   +0.00096    0.3868    0.048   0.082
+ML_Error
+ML_Lag
+distance band 2.5 deg        221   0.642    41.5    84.8  error   +0.00174    0.1566    0.057   0.040
+ML_Error
+ML_Lag
+distance band 3.0 deg        221   0.607    49.9    93.7  error   +0.00131    0.3190    0.062   0.014
+ML_Error
+ML_Lag
+k-nearest neighbours k=4     221   0.733    24.4    29.6  error   +0.00109    0.3282    0.002   0.404
+ML_Error
+ML_Lag
+k-nearest neighbours k=6     221   0.707    25.6    68.1  error   +0.00161    0.1501    0.061   0.028
+ML_Error
+ML_Lag
+k-nearest neighbours k=8     221   0.669    36.1    95.9  error   +0.00166    0.1553    0.064   0.036
+ML_Error
+ML_Lag
+k-nearest neighbours k=12    221   0.610    44.0   155.7  error   +0.00263    0.0406    0.051   0.024
+
+10/10 weights specifications ran
+richness significant (p<0.05) under: ['knn12']
+p range: 0.0406 to 0.5059

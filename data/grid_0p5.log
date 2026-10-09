@@ -1,0 +1,11 @@
+=== cell size 0.5 deg : 3536 cells ===
+  skipping 1016 sub-cells whose 1-degree parent is open sea
+  gbif grid pos 1582/3536, cached 1550  52s
+  gbif grid pos 1660/3536, cached 1600  106s
+  gbif grid pos 1734/3536, cached 1650  175s
+  gbif grid pos 1822/3536, cached 1700  245s
+  gbif grid pos 1894/3536, cached 1750  309s
+  gbif grid pos 1962/3536, cached 1800  381s
+  gbif grid pos 2030/3536, cached 1850  451s
+  gbif grid pos 2088/3536, cached 1900  524s
+  gbif grid pos 2140/3536, cached 1950  594s

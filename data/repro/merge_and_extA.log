@@ -1,0 +1,43 @@
+merged: 884 cells (gbif 884, gee 884)
+land cells (WorldCover coverage): 630 of 884
+
+=== Step 5: sanity check, one cell per case-study region ===
+  western_ghats     cell r05c08  GPP=2.062  NDVI=0.64  T=25.2C  P=2616mm  wc_mode=10  records=3849369  obs_S=509  rare250=114.7
+  deccan_plateau    NO CELLS SURVIVE THE MASK
+  eastern_himalaya  cell r21c23  GPP=1.619  NDVI=0.57  T=22.5C  P=2827mm  wc_mode=10  records=600631  obs_S=694  rare250=133.3
+
+  CHECK Western Ghats GPP (2.147) > Thar Desert GPP (0.237)? PASS
+
+=== Step 6 / Extension A ===
+naive     n = 582 (all cells with GPP, no mask, no effort control)
+corrected n = 221 (natural cover, >=20 records, rarefiable at 250)
+  excluded by dominant class: cropland=217, water=146
+
+--- NAIVE: GPP ~ raw richness ---
+  n=582  R2=0.0817  adjR2=0.0801  AIC=1234.4
+  term                     coef    se(HC3)         t         p
+  const                 0.90292    0.07459     12.11    0.0000
+  obs_richness        0.0013718  0.0002109      6.50    0.0000
+
+--- CORRECTED: GPP ~ rarefied richness + log10(effort) + climate ---
+  n=221  R2=0.5576  adjR2=0.5494  AIC=342.3
+  term                     coef    se(HC3)         t         p
+  const                -0.73782     0.2224     -3.32    0.0009
+  rarefied_250          0.01097    0.00194      5.66    0.0000
+  log_effort          -0.053738    0.03649     -1.47    0.1409
+  temp_c               0.039536   0.003482     11.35    0.0000
+  precip_mm_yr       0.00029749  5.282e-05      5.63    0.0000
+
+--- VIF (corrected model) ---
+  rarefied_250     1.46
+  log_effort       1.26
+  temp_c           1.25
+  precip_mm_yr     1.47
+
+--- THE REVEAL ---
+  naive     richness coef = +0.00137184  (p=7.774e-11)
+  corrected richness coef = +0.0109704  (p=1.55e-08)
+  effort    coef          = -0.0537376  (p=0.1409)
+  sign flip: no
+
+wrote data/merged_cells.csv (884 rows), data/model_cells.csv (221 rows)

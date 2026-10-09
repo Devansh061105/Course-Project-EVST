@@ -1,0 +1,14 @@
+model cells: 221
+full-sample coverage: min 0.7658  median 0.9970
+coverage 0.90: reached in 210 cells; records needed m*: median 643, range 177-1040
+coverage 0.95: reached in 196 cells; records needed m*: median 1247, range 367-2044
+
+coverage achieved by the fixed n=250 standardisation: min 0.614  median 0.757  max 0.930  -> spread of 0.316
+correlation rarefied_250 vs S_cov90 = 0.948 ; vs S_cov95 = 0.921
+
+variance decomposition across 56 ecoregions (n=220):
+  rarefied_250   within-ecoregion share of variance:  38.5%
+  gpp            within-ecoregion share of variance:   9.8%
+  npp            within-ecoregion share of variance:  15.6%
+  temp_c         within-ecoregion share of variance:   4.1%
+  precip_mm_yr   within-ecoregion share of variance:  24.8%

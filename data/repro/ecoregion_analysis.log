@@ -1,0 +1,36 @@
+
+============================================================================================
+RESPONSE GPP  (standardised; SEs cluster-robust by ecoregion, 56 clusters)
+============================================================================================
+A  baseline, clustered by ecoregion (plan Step 8) n=220  beta +0.273  se 0.072  p=0.0001  plateau I=+0.170
+   + realm fixed effects                     n=220  beta +0.271  se 0.069  p=0.0001  plateau I=+0.173
+B  + biome fixed effects                     n=220  beta +0.182  se 0.079  p=0.0205  plateau I=+0.141
+C  + ecoregion fixed effects (within-ecoregion) n=220  beta +0.030  se 0.055  p=0.5865  plateau I=-0.027
+D  moist broadleaf forest biome only         n=129  beta +0.147  se 0.146  p=0.3131  plateau I=+0.135
+
+ML_Error
+   spatial error, no FE                      SEM beta +0.017  p=0.5138  lambda=0.91
+ML_Error
+   spatial error + biome FE                  SEM beta +0.014  p=0.6010  lambda=0.91
+ML_Error
+   spatial error, moist broadleaf only       SEM beta -0.064  p=0.1257  lambda=0.90
+
+leave-one-ecoregion-out CV (56 ecoregions): richness cuts out-of-sample MSE by +9.4%, 95% CI [-0.4, +18.0]
+
+============================================================================================
+RESPONSE NPP  (standardised; SEs cluster-robust by ecoregion, 56 clusters)
+============================================================================================
+A  baseline, clustered by ecoregion (plan Step 8) n=220  beta +0.383  se 0.089  p=0.0000  plateau I=+0.159
+   + realm fixed effects                     n=220  beta +0.383  se 0.085  p=0.0000  plateau I=+0.159
+B  + biome fixed effects                     n=220  beta +0.257  se 0.087  p=0.0033  plateau I=+0.120
+C  + ecoregion fixed effects (within-ecoregion) n=220  beta +0.099  se 0.064  p=0.1226  plateau I=-0.033
+D  moist broadleaf forest biome only         n=129  beta +0.088  se 0.123  p=0.4764  plateau I=+0.082
+
+ML_Error
+   spatial error, no FE                      SEM beta +0.097  p=0.0053  lambda=0.87
+ML_Error
+   spatial error + biome FE                  SEM beta +0.079  p=0.0190  lambda=0.89
+ML_Error
+   spatial error, moist broadleaf only       SEM beta -0.032  p=0.4312  lambda=0.91
+
+leave-one-ecoregion-out CV (56 ecoregions): richness cuts out-of-sample MSE by +14.2%, 95% CI [+0.8, +25.8]  *

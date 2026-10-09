@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "study_id": "project9_south_southeast_asia_v1",
+  "bounds": [60, -12, 142, 40],
+  "resolutions": [1, 0.5, 2],
+  "primary_resolution": 1,
+  "domain_rule": "Full rectangular master grid. Geographic domain is the window itself, not a country-list mask. Later terrestrial natural-habitat eligibility is separate.",
+  "case_cell_rule": "All cells with more than 1 square metre of overlap with the defined case-study polygon; retain overlap fractions and original full-cell geometry.",
+  "overlap_tolerance_km2": 0.000001,
+  "cases": [
+    {
+      "case_id": "western_ghats",
+      "label": "Western Ghats",
+      "ecoregion_ids": [253, 254, 270, 271],
+      "clip_bounds": null,
+      "definition": "Union of the four North/South Western Ghats moist deciduous and montane rain-forest ecoregions in RESOLVE 2017. An operational ecological definition, not an administrative boundary."
+    },
+    {
+      "case_id": "deccan_drylands",
+      "label": "Deccan Plateau dryland subregion",
+      "ecoregion_ids": [315],
+      "clip_bounds": [60, 12, 142, 40],
+      "definition": "Deccan thorn scrub forests north of 12 N. This predeclared dryland subregion avoids Sri Lankan portions and the southern peninsula and represents the plan's dryland contrast; it is not the entire plateau or proof of present-day savanna land cover."
+    },
+    {
+      "case_id": "eastern_himalaya_foothills",
+      "label": "Eastern Himalayan foothill subregion",
+      "ecoregion_ids": [233],
+      "clip_bounds": [88, -12, 142, 40],
+      "definition": "Himalayan subtropical broadleaf forests east of 88 E, a reproducible Bhutan/eastern foothill segment of the published Siwalik foothill ecoregion. The cutoff is a study decision, not an official eastern-Himalaya boundary; this is not the whole Himalayan range."
+    }
+  ]
+}

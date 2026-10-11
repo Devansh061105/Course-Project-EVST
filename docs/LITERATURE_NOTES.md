@@ -47,7 +47,7 @@ for anything beyond that without reading the paper.
 | ESA WorldCover v200 | Zanaga, D. et al. (2022). ESA WorldCover 10 m 2021 v200. Zenodo. doi:10.5281/zenodo.7254221 |
 | RESOLVE Ecoregions 2017 | Dinerstein, E. et al. (2017). An ecoregion-based approach to protecting half the terrestrial realm. *BioScience* 67(6):534–545. doi:10.1093/biosci/bix014. Abstract read: the paper's map of Earth's 846 terrestrial ecoregions is the layer used (Earth Engine `RESOLVE/ECOREGIONS/2017`); the paper's own subject is conservation targets, so cite it as the source of the ecoregion map only. |
 | SRTM (elevation) | NASA JPL (2013). NASA Shuttle Radar Topography Mission Global 1 arc second. NASA EOSDIS Land Processes DAAC. doi:10.5067/MEaSUREs/SRTM/SRTMGL1.003 (Earth Engine asset `USGS/SRTMGL1_003`) |
-| GBIF occurrences | **No citable DOI exists for our data.** We used live faceted API queries, not a download. GBIF requires a DOI for published use: register a *derived dataset* listing the contributing datasets (API endpoint `api.gbif.org/v1/derivedDataset` confirmed to exist 2026-10-06 — it answers GET with 405, i.e. POST-only; registration needs a GBIF account, so this is the user's step), or re-run as a formal occurrence download. Must be done before the final report. |
+| GBIF occurrences | GBIF.org (11 October 2026) Filtered export of GBIF occurrence data. https://doi.org/10.15468/dd.jf64nx (GBIF derived dataset: Aves, 5-31N 68-102E, 2000-2024; 110 datasets, 71,716,026 records; registered 2026-10-11 because the data came from API queries, not a download). Per-cell data, codebook, counts and scripts: Zenodo doi:10.5281/zenodo.23264805. |
 
 ## Considered and dropped
 - Hawkins et al. (2003) *Ecology* 84:3105, energy/water and richness — abstract

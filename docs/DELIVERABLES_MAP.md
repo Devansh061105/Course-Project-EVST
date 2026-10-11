@@ -52,5 +52,5 @@ Each claim is limited to what a specific result supports.
 1. Deliverable 8 and the report text (user has asked for analysis first).
 2. GBF source for the introduction (CBD decision text; non-peer-reviewed is fine in
    the report but must be cited).
-3. GBIF derived-dataset DOI (needs the user's GBIF account).
+3. ~~GBIF derived-dataset DOI~~ done 2026-10-11 (https://doi.org/10.15468/dd.jf64nx; Zenodo deposit https://doi.org/10.5281/zenodo.23264805).
 4. Not done at 0.5 degree: coverage-based richness and the 2019-23 time-window refit.

@@ -9,9 +9,9 @@ Current interpretation lives in `docs/RESULTS_ADJUDICATION.md`.
 1. ~~Finish the 0.5° robustness grid.~~ **Done 2026-10-06** in bounded
    chunks (`MAX_PULLS`). Results: `RESULTS_ADJUDICATION.md` section 8. Remaining gap:
    0.5° has GPP only (no NPP, no time-window refit).
-2. **Register a GBIF derived dataset before the final report.** Our richness comes
-   from live API queries, so no citable DOI exists. GBIF requires one. Needs a
-   GBIF account (yours to create). See `docs/LITERATURE_NOTES.md`, data products.
+2. ~~Register a GBIF derived dataset.~~ **Done 2026-10-11:** https://doi.org/10.15468/dd.jf64nx (GBIF derived
+   dataset, 110 datasets, 71,716,026 records); data deposit on Zenodo https://doi.org/10.5281/zenodo.23264805.
+   Cite both in the report. See `docs/LITERATURE_NOTES.md`, data products.
 3. **Decide the report framing** (see "Open question" below).
 
 ## OPEN QUESTION FOR THE TEAM

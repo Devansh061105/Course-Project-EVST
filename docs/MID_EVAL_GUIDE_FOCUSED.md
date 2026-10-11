@@ -209,7 +209,7 @@ details, and its abstract was read.*
 37. NASA JPL. (2013). *NASA Shuttle Radar Topography Mission Global 1 arc second* [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MEaSUREs/SRTM/SRTMGL1.003
 38. Running, S., & Zhao, M. (2021). *MODIS/Terra Net Primary Production Gap-Filled Yearly L4 Global 500m SIN Grid V061* [Data set]. NASA EOSDIS Land Processes DAAC. https://doi.org/10.5067/MODIS/MOD17A3HGF.061
 39. Zanaga, D., Van De Kerchove, R., Daems, D., De Keersmaecker, W., et al. (2022). *ESA WorldCover 10 m 2021 v200* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7254221
-40. GBIF.org (2026). GBIF occurrence data, Aves, 5–31°N 68–102°E, 2000–2024. **DOI to be registered** (see 5.5).
+40. GBIF.org (11 October 2026). Filtered export of GBIF occurrence data [Derived dataset: Aves, 5–31°N 68–102°E, 2000–2024; 110 datasets, 71,716,026 records]. https://doi.org/10.15468/dd.jf64nx. Per-cell data and code: Zenodo, https://doi.org/10.5281/zenodo.23264805.
 
 ### 5.4 Policy sources (for the impact argument)
 41. Convention on Biological Diversity. (2022). *Decision 15/4: Kunming–Montreal Global Biodiversity Framework* (CBD/COP/DEC/15/4). https://www.cbd.int/doc/decisions/cop-15/cop-15-dec-04-en.pdf
@@ -217,8 +217,9 @@ details, and its abstract was read.*
 
 ### 5.5 Source notes (know these before you are asked)
 - **GBIF requires a citable DOI.** Our data came from live API queries, which do
-  not create one. A DOI will be registered (a GBIF download or "derived dataset")
-  before the final report.
+  not create one, so we registered a GBIF "derived dataset" (DOI 10.15468/dd.jf64nx,
+  110 contributing datasets, 71,716,026 records) and deposited the per-cell data and
+  code on Zenodo (DOI 10.5281/zenodo.23264805).
 - **Corrected from the plan:** the plan attributes "~55% of global GDP" to IUCN.
   The figure is the World Economic Forum's (2020): over half of world GDP,
   about $44 trillion.
@@ -272,7 +273,7 @@ are preliminary and will be reported in full in the final report.</div>
   climate and land-cover extraction; merged dataset; first models; spatial checks;
   case studies; figures; literature review (submitted).
 - **Next (weeks 7–8):** the written report and policy section; the presentation;
-  registering the GBIF DOI; adding the policy sources (5.4) to the introduction;
+  adding the policy sources (5.4) to the introduction;
   agreeing as a team how to frame H1 (association vs cause).
 
 ## 9. Questions you may be asked
@@ -332,7 +333,8 @@ data can mislead biodiversity monitoring.
 
 **Are your data citable?**
 All satellite and climate products have DOIs (section 5.3). GBIF requires a DOI
-for our bird data, which we will register before the final report.
+for our bird data, and we registered one: a GBIF derived dataset (10.15468/dd.jf64nx)
+plus a Zenodo deposit of the per-cell data (10.5281/zenodo.23264805).
 
 ## 10. Short glossary
 - **Species richness:** number of species.

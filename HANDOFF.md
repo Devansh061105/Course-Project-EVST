@@ -67,10 +67,10 @@ cached data and checks 27 headline numbers. Last run: **17/17 exit 0, 27/27 pass
      a cross-regional association that shrinks within ecoregions. Options: (a) keep H1 and
      report the weak within-region result; (b) reframe as an association test; (c) add
      species-energy as the leading alternative. Recommendation: (b) + (c).
-   - **GBIF DOI.** Richness comes from live API queries, so there is no citable dataset
-     DOI. This needs a GBIF account: either a formal download with a DOI, or a registered
-     derived dataset (title, description, public persistent URL such as Zenodo, plus a
-     datasetKey/count file). See `docs/LITERATURE_NOTES.md`.
+   - **GBIF DOI: done 2026-10-11.** Registered as a GBIF derived dataset,
+     https://doi.org/10.15468/dd.jf64nx (110 contributing datasets, 71,716,026 records). The per-cell data, codebook,
+     counts file and scripts are deposited on Zenodo, https://doi.org/10.5281/zenodo.23264805 (CC BY 4.0). Cite both in the
+     report. Supporting files: `data/gbif_derived_dataset/`.
    - **Policy source for the introduction.** Plan deliverable 1 needs the Kunming-Montreal
      Framework cited. Verified candidates: CBD Decision 15/4
      (https://www.cbd.int/doc/decisions/cop-15/cop-15-dec-04-en.pdf; Target 19, at least

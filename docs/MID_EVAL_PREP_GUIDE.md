@@ -74,7 +74,7 @@ filter. Do not describe the result as "Indian".
 ## 5. Data sources — what, where from, why
 | Data | Source | Resolution | Used for | Why this one | Citation |
 |---|---|---|---|---|---|
-| Bird occurrences | GBIF API (98.8% eBird) | point records | richness, effort | Free, global, no login; the plan's choice | GBIF derived-dataset DOI **still to register** |
+| Bird occurrences | GBIF API (98.8% eBird) | point records | richness, effort | Free, global, no login; the plan's choice | GBIF derived-dataset DOI **registered** (10.15468/dd.jf64nx) |
 | GPP, NPP | MODIS MOD17A3HGF v061 | 463 m, yearly | productivity (response) | Standard satellite productivity product | Running & Zhao 2021, doi:10.5067/MODIS/MOD17A3HGF.061 |
 | NDVI, EVI | MODIS MOD13Q1 v061 | 232 m, 16-day | robustness, seasonality | Alternative productivity proxies | Didan 2021, doi:10.5067/MODIS/MOD13Q1.061 |
 | Temperature, rainfall | ERA5-Land monthly | ~11 km | climate controls | Consistent global reanalysis | Muñoz-Sabater et al. 2021 |
@@ -289,7 +289,7 @@ code; every reference's abstract read; every headline number re-runs automatical
    windows gives the same result.
 8. **Within-ecoregion effect** is real at 0.5° but fragile; report it as a range
    (0.03–0.06 SD), not a point.
-9. **No GBIF DOI yet**: the data are not yet citable in the form GBIF requires.
+9. **GBIF DOI:** registered on 2026-10-11 as a derived dataset (10.15468/dd.jf64nx); the per-cell data and code are on Zenodo (10.5281/zenodo.23264805).
 
 ## 13. Progress against the 8-week plan
 - **Weeks 1–6 (setup, data, models, checks, case studies, figures): done.** We
@@ -376,7 +376,7 @@ in section 11.
 
 **Q: What would you do with more time?**
 Repeat with another taxon (e.g. plants at a coarser grain), use structural or
-lidar data to test the canopy mechanism, and register the GBIF DOI.
+lidar data to test the canopy mechanism.
 
 **Q: Policy implication?**
 Citizen-science biodiversity data must be bias-corrected before use: raw counts

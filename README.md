@@ -9,7 +9,7 @@ natural land cover.
 **Explore the data:** [3D terrain map](https://devansh061105.github.io/Course-Project-EVST/interactive_map_3d.html) ·
 [flat atlas](https://devansh061105.github.io/Course-Project-EVST/interactive_map.html)
 
-**Slides:** [Project9_Biodiversity_Productivity.pptx](presentation/Project9_Biodiversity_Productivity.pptx) (13 slides with speaker notes)
+**Slides:** [Project9_Biodiversity_Productivity.pptx](presentation/Project9_Biodiversity_Productivity.pptx) (16 slides with speaker notes)
 
 **Resuming work on the project? Start with [HANDOFF.md](HANDOFF.md).**
 
@@ -23,28 +23,43 @@ value and leaves corrected richness at 99.8%.
 ![Effort simulation](figures/fig11_effort_simulation.png)
 
 **2. Across regions, richer cells are more productive. Within a region, barely.**
-The coefficient is +0.27 across the whole area and about +0.03 to +0.06 inside
-ecoregions. That holds across 960 versions of the model: the result depends on
-whether you compare across or within regions, not on any data choice.
+With straight-line climate controls the coefficient is +0.27 across the whole
+area and about +0.03 to +0.06 inside ecoregions. That holds across 960 versions
+of the model: the result depends on whether you compare across or within
+regions, not on any data choice.
 
 ![Specification curve](figures/fig12_spec_curve.png)
 
-**3. It is not specific to birds.** Vascular plants and butterflies and moths,
+**3. About half of that across-region link is curved climate, and what is left
+is a small effect at every scale.** With flexible, non-linear controls the
+across-region coefficient falls to +0.14–0.17 at 1° and +0.07 at 0.5°, close to
+the within-ecoregion value. Split by spatial scale, the large slope sits only in
+the broadest patterns, patches of 700–800 km.
+
+![Spatial scale](figures/fig19_scale_bands.png)
+
+Inside ecoregions the effect is small but real at 0.5° (pooled +0.069 over 35
+ecoregions), and in every sample it is shown to be less than half the
+across-region one.
+
+![Slopes by ecoregion](figures/fig18_ecoregion_slopes.png)
+
+**4. It is not specific to birds.** Vascular plants and butterflies and moths,
 each recorded by a different community of observers, show the same pattern.
 
 ![Three taxa](figures/fig17_three_taxa.png)
 
-**4. The relationship is a straight line, not a hump,** and the data cannot say
+**5. The relationship is a straight line, not a hump,** and the data cannot say
 which way it runs: "richness drives productivity" and "productivity drives
 richness" fit equally well.
 
 ![Direction](figures/fig14_direction.png)
 
-**5. Richer cells are not steadier once climate is accounted for,** and the
+**6. Richer cells are not steadier once climate is accounted for,** and the
 slope does not differ with how much land is protected (though the protected-area
 data for India and China are too incomplete to say much).
 
-**6. Where the records run out.** Bird data are close to complete at this grain
+**7. Where the records run out.** Bird data are close to complete at this grain
 across India, Nepal, Thailand and Sri Lanka, and thin in western Pakistan, upland
 Myanmar and the Tibetan margin.
 
@@ -53,7 +68,9 @@ Myanmar and the Tibetan margin.
 ## Read the results
 | Document | What it covers |
 |---|---|
-| [RESULTS_ADJUDICATION.md](docs/RESULTS_ADJUDICATION.md) | The current interpretation of the main result |
+| [PAPER_CLAIMS.md](docs/PAPER_CLAIMS.md) | Each claim a paper could make, its evidence, figure and caveat |
+| [RESULTS_INFERENCE.md](docs/RESULTS_INFERENCE.md) | Flexible controls, measurement error, bounds on the within-region effect, slopes by ecoregion, spatial scale |
+| [RESULTS_ADJUDICATION.md](docs/RESULTS_ADJUDICATION.md) | The interpretation of the linear models |
 | [RESULTS_EXTENSION_A.md](docs/RESULTS_EXTENSION_A.md) | A: naive against corrected, and the thinning experiment |
 | [RESULTS_EXTENSION_B.md](docs/RESULTS_EXTENSION_B.md) | B: linear against hump-shaped, quadratic and flexible curves |
 | [RESULTS_EXTENSION_C.md](docs/RESULTS_EXTENSION_C.md), [RESULTS_LOCAL_SLOPES.md](docs/RESULTS_LOCAL_SLOPES.md) | C: three case-study regions, and the slope fitted around every cell |
@@ -80,12 +97,12 @@ pytest -q tests
 python scripts/reproduce_all.py
 ```
 
-The last command re-runs 28 analysis scripts from the cached data (no network, no
-accounts, about 12 minutes) and checks 57 headline numbers against the documented
+The last command re-runs 33 analysis scripts from the cached data (no network, no
+accounts, about 15 minutes) and checks 68 headline numbers against the documented
 values. The same two steps run on every push (`.github/workflows/checks.yml`).
 
-Rebuild the figures with `python scripts/make_figures.py` and
-`python scripts/make_figures_2.py`, and the maps with
+Rebuild the figures with `python scripts/make_figures.py`, `make_figures_2.py` and
+`make_figures_3.py`, and the maps with
 `python scripts/build_interactive_map.py`.
 
 ## Data

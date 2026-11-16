@@ -1,0 +1,25 @@
+grain,model,reliability,beta_observed,se,beta_reliability,beta_simex,zeta
+1.0,across regions,0.9951454564540175,0.27283244643636423,0.07162464055628406,0.274163384525256,0.27462687208077413,
+1.0,across regions (simex path),,0.27283244643636423,,,,0.0
+1.0,across regions (simex path),,0.27182375158539424,,,,0.5
+1.0,across regions (simex path),,0.2711380026177688,,,,1.0
+1.0,across regions (simex path),,0.2707862818675334,,,,1.5
+1.0,across regions (simex path),,0.2698935545420451,,,,2.0
+1.0,within ecoregions,0.9901281275748874,0.02986245784745164,0.05490831426212078,0.030160195449243025,0.030732464995964617,
+1.0,within ecoregions (simex path),,0.02986245784745164,,,,0.0
+1.0,within ecoregions (simex path),,0.02970094880468036,,,,0.5
+1.0,within ecoregions (simex path),,0.029654977961698976,,,,1.0
+1.0,within ecoregions (simex path),,0.029413648898557423,,,,1.5
+1.0,within ecoregions (simex path),,0.029786292846292074,,,,2.0
+0.5,across regions,0.9932255996491341,0.22763826799463968,0.04997301700460952,0.22919089890056693,0.22922525691535295,
+0.5,across regions (simex path),,0.22763826799463968,,,,0.0
+0.5,across regions (simex path),,0.2271657693249901,,,,0.5
+0.5,across regions (simex path),,0.2265465400240042,,,,1.0
+0.5,across regions (simex path),,0.22603218981319492,,,,1.5
+0.5,across regions (simex path),,0.22585654320033663,,,,2.0
+0.5,within ecoregions,0.9900459740745357,0.057714856159940445,0.02505180116001669,0.05829512736910072,0.05786174876967105,
+0.5,within ecoregions (simex path),,0.057714856159940445,,,,0.0
+0.5,within ecoregions (simex path),,0.05734504482910784,,,,0.5
+0.5,within ecoregions (simex path),,0.05751090480387434,,,,1.0
+0.5,within ecoregions (simex path),,0.05700441278432443,,,,1.5
+0.5,within ecoregions (simex path),,0.0568429444354685,,,,2.0

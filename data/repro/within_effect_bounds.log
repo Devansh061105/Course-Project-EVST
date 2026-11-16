@@ -1,0 +1,73 @@
+=== A. Equivalence tests and power ===
+birds, 1 degree            n=220  across +0.273 | within +0.030 (se 0.055), 90% CI [-0.060, +0.120]
+                                  smaller than half the across-region effect (0.136)? p = 0.0262 YES | smaller than 0.10? p = 0.1007 not shown
+                                  largest effect compatible (95% bound) +0.120 = 44% of the across-region effect; detectable with 80% power: 0.154
+birds, 0.5 degree          n=671  across +0.228 | within +0.058 (se 0.025), 90% CI [+0.017, +0.099]
+                                  smaller than half the across-region effect (0.114)? p = 0.0126 YES | smaller than 0.10? p = 0.0457 YES
+                                  largest effect compatible (95% bound) +0.099 = 43% of the across-region effect; detectable with 80% power: 0.070
+TOST birds 0.5 deg: within effect smaller than half the across-region effect, p = 0.0126
+plants, 1 degree           n=193  across +0.264 | within -0.027 (se 0.040), 90% CI [-0.092, +0.038]
+                                  smaller than half the across-region effect (0.132)? p = 0.0040 YES | smaller than 0.10? p = 0.0325 YES
+                                  largest effect compatible (95% bound) +0.038 = 14% of the across-region effect; detectable with 80% power: 0.111
+plants, 0.5 degree         n=425  across +0.228 | within +0.015 (se 0.035), 90% CI [-0.043, +0.074]
+                                  smaller than half the across-region effect (0.114)? p = 0.0027 YES | smaller than 0.10? p = 0.0085 YES
+                                  largest effect compatible (95% bound) +0.074 = 32% of the across-region effect; detectable with 80% power: 0.099
+butterflies and moths, 1 degree n=139  across +0.512 | within -0.087 (se 0.092), 90% CI [-0.239, +0.065]
+                                  smaller than half the across-region effect (0.256)? p = 0.0333 YES | smaller than 0.10? p = 0.4440 not shown
+                                  largest effect compatible (95% bound) +0.065 = 13% of the across-region effect; detectable with 80% power: 0.258
+
+=== B and C. Slopes by ecoregion ===
+
+--- slopes by ecoregion, 0.5 degree: 35 ecoregions with >= 8 cells (567 of 671 cells) ---
+ECO 0.5: pooled within-ecoregion slope +0.069 (se 0.020, 95% CI +0.030 to +0.108), p = 0.0006
+ECO 0.5: heterogeneity tau = 0.064, I2 = 46%, Q = 62.4 on 34 df (p = 0.0021); 95% prediction interval for a new ecoregion -0.068 to +0.205
+ECO 0.5: slope positive in 27 of 35 ecoregions; individually significant: 5 positive, 3 negative
+    South Western Ghats montane rain forests                   n=9   -0.628 (se 0.288)
+    Terai-Duar savanna and grasslands                          n=9   -0.316 (se 0.157)
+    Northern Indochina subtropical forests                     n=38  -0.155 (se 0.074)
+    Himalayan subtropical pine forests                         n=21  -0.131 (se 0.108)
+    North Western Ghats montane rain forests                   n=12  -0.107 (se 0.538)
+    Northern Thailand-Laos moist deciduous forests             n=14  -0.078 (se 0.123)
+    North Deccan dry deciduous forests                         n=10  -0.041 (se 0.189)
+    Myanmar coastal rain forests                               n=10  -0.014 (se 0.209)
+    East Deccan moist deciduous forests                        n=64  +0.006 (se 0.033)
+    Thar desert                                                n=21  +0.023 (se 0.013)
+    Northeast Himalayan subalpine conifer forests              n=10  +0.042 (se 0.074)
+    Chhota-Nagpur dry deciduous forests                        n=12  +0.048 (se 0.058)
+    Central Deccan Plateau dry deciduous forests               n=10  +0.053 (se 0.048)
+    Luang Prabang montane rain forests                         n=9   +0.053 (se 0.126)
+    Eastern Himalayan alpine shrub and meadows                 n=17  +0.060 (se 0.061)
+    Mizoram-Manipur-Kachin rain forests                        n=38  +0.062 (se 0.072)
+    North Western Ghats moist deciduous forests                n=10  +0.068 (se 0.128)
+    Irrawaddy moist deciduous forests                          n=11  +0.079 (se 0.059)
+    Khathiar-Gir dry deciduous forests                         n=10  +0.118 (se 0.055)
+    Himalayan subtropical broadleaf forests                    n=12  +0.127 (se 0.197)
+    Rock and Ice                                               n=10  +0.128 (se 0.109)
+    Central Indochina dry forests                              n=15  +0.129 (se 0.118)
+    Western Himalayan alpine shrub and meadows                 n=8   +0.130 (se 0.136)
+    Tenasserim-South Thailand semi-evergreen rain forests      n=29  +0.131 (se 0.087)
+    Malabar Coast moist forests                                n=8   +0.146 (se 0.189)
+    Lower Gangetic Plains moist deciduous forests              n=12  +0.146 (se 0.147)
+    Kayah-Karen montane rain forests                           n=28  +0.164 (se 0.079)
+    Eastern Himalayan broadleaf forests                        n=22  +0.169 (se 0.114)
+    South Deccan Plateau dry deciduous forests                 n=11  +0.200 (se 0.085)
+    Meghalaya subtropical forests                              n=15  +0.203 (se 0.151)
+    Northern Triangle subtropical forests                      n=8   +0.218 (se 0.163)
+    Brahmaputra Valley semi-evergreen forests                  n=16  +0.226 (se 0.174)
+    Eastern Himalayan subalpine conifer forests                n=13  +0.293 (se 0.145)
+    Nujiang Langcang Gorge alpine conifer and mixed forests    n=10  +0.427 (se 0.251)
+    Sri Lanka dry-zone dry evergreen forests                   n=15  +0.742 (se 0.178)
+MIXED 0.5: fixed richness slope +0.069 (se 0.020, p = 0.0007); SD of the slope across ecoregions 0.048
+
+--- slopes by ecoregion, 1.0 degree: 7 ecoregions with >= 8 cells (85 of 220 cells) ---
+ECO 1.0: pooled within-ecoregion slope +0.028 (se 0.058, 95% CI -0.086 to +0.141), p = 0.6316
+ECO 1.0: heterogeneity tau = 0.116, I2 = 63%, Q = 16.0 on 6 df (p = 0.0137); 95% prediction interval for a new ecoregion -0.306 to +0.362
+ECO 1.0: slope positive in 5 of 7 ecoregions; individually significant: 1 positive, 1 negative
+    Tenasserim-South Thailand semi-evergreen rain forests      n=8   -0.309 (se 0.137)
+    Northern Indochina subtropical forests                     n=18  -0.256 (se 0.141)
+    East Deccan moist deciduous forests                        n=18  +0.034 (se 0.083)
+    Thar desert                                                n=10  +0.065 (se 0.064)
+    Eastern Himalayan alpine shrub and meadows                 n=9   +0.095 (se 0.063)
+    Kayah-Karen montane rain forests                           n=10  +0.137 (se 0.085)
+    Mizoram-Manipur-Kachin rain forests                        n=12  +0.320 (se 0.162)
+MIXED 1.0: fixed richness slope +0.054 (se 0.038, p = 0.1605); SD of the slope across ecoregions 0.076

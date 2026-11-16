@@ -1,0 +1,24 @@
+
+=== measurement error in corrected richness, 1.0 degree: n = 220 ===
+standard error of a cell's richness (species): median 0.53, 90th percentile 1.91, max 3.52; SD of richness across cells 19.3
+cells with fewer than 1,000 records: 25, median SE there 2.43
+  reliability of richness, raw richness                   0.997   (error variance 1.2 of 371.8)
+  reliability of richness, net of controls                0.995   (error variance 1.2 of 254.4)
+  across regions     slope observed +0.273 (se 0.072) -> corrected by reliability +0.274
+  across regions     SIMEX: slope at added noise x0, x1, x2 = +0.273, +0.271, +0.270 -> extrapolated to no error +0.275
+  reliability of richness, net of controls and ecoregion  0.990   (error variance 1.2 of 125.1)
+  within ecoregions  slope observed +0.030 (se 0.055) -> corrected by reliability +0.030
+  within ecoregions  SIMEX: slope at added noise x0, x1, x2 = +0.030, +0.030, +0.030 -> extrapolated to no error +0.031
+MERR 1.0: within-ecoregion reliability 0.990; slope +0.030 observed, +0.030 after correction (SIMEX +0.031)
+
+=== measurement error in corrected richness, 0.5 degree: n = 671 ===
+standard error of a cell's richness (species): median 0.84, 90th percentile 2.38, max 3.56; SD of richness across cells 18.6
+cells with fewer than 1,000 records: 153, median SE there 2.30
+  reliability of richness, raw richness                   0.994   (error variance 1.9 of 344.8)
+  reliability of richness, net of controls                0.993   (error variance 1.9 of 287.7)
+  across regions     slope observed +0.228 (se 0.050) -> corrected by reliability +0.229
+  across regions     SIMEX: slope at added noise x0, x1, x2 = +0.228, +0.227, +0.226 -> extrapolated to no error +0.229
+  reliability of richness, net of controls and ecoregion  0.990   (error variance 1.9 of 195.8)
+  within ecoregions  slope observed +0.058 (se 0.025) -> corrected by reliability +0.058
+  within ecoregions  SIMEX: slope at added noise x0, x1, x2 = +0.058, +0.058, +0.057 -> extrapolated to no error +0.058
+MERR 0.5: within-ecoregion reliability 0.990; slope +0.058 observed, +0.058 after correction (SIMEX +0.058)

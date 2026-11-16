@@ -1,5 +1,11 @@
 # Adjudication: what the richness–productivity association actually is (2026-10-06)
 
+> **Read with `RESULTS_INFERENCE.md` (2026-11-16).** This document interprets the
+> linear models and stands as that record. A later batch shows that about half of
+> the across-region coefficient reported here (+0.273) is non-linear climate that
+> straight-line controls miss: with flexible controls it is +0.14 to +0.17 at 1° and
+> +0.07 at 0.5°. Quote those, not +0.273, as the size of the association.
+
 **This document supersedes the headline conclusions of `RESULTS_SPATIAL.md`
 ("H0 cannot be rejected") and `RESULTS_SENSITIVITY.md` ("specification-
 dependent").** Those were correct about the model outputs but drew the wrong
@@ -253,6 +259,12 @@ Figures 11-17 come from `make_figures_2.py` (added 2026-11-16):
 15. `fig15_stability` — richness and year-to-year stability (`RESULTS_EXTENSION_E.md`).
 16. `fig16_survey_gaps` — completeness and survey priority (`RESULTS_SURVEY_GAPS.md`).
 17. `fig17_three_taxa` — birds, plants, butterflies and moths (`RESULTS_EXTENSION_D.md`).
+
+Figures 18-21 come from `make_figures_3.py` (`RESULTS_INFERENCE.md`):
+18. `fig18_ecoregion_slopes` — the slope inside each of 35 ecoregions and their pooled value.
+19. `fig19_scale_bands` — the slope at each spatial scale.
+20. `fig20_within_bounds` — bounds on the within-ecoregion effect, five samples.
+21. `fig21_flexible_controls` — the coefficient under linear and non-linear controls.
 
 Palette validated with the dataviz validator against #ffffff (slots 1–3,
 all-pairs PASS; aqua at 2.82:1 is direct-labelled per the relief rule).

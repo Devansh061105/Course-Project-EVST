@@ -17,6 +17,8 @@ const SIZE = { // pixel sizes of the figures, for aspect-correct placement
   fig8_linear_vs_quadratic: [1628, 990], fig11_effort_simulation: [1924, 871],
   fig12_spec_curve: [2117, 922], fig13_shape: [1801, 837], fig14_direction: [1510, 823],
   fig15_stability: [2013, 888], fig16_survey_gaps: [2237, 990], fig17_three_taxa: [1981, 837],
+  fig18_ecoregion_slopes: [2145, 1735], fig19_scale_bands: [2055, 897],
+  fig21_flexible_controls: [1883, 863],
 };
 const THEME = {
   name: "Project 9", headFontFace: "Cambria", bodyFontFace: "Calibri",
@@ -65,7 +67,7 @@ function figure(s, name, x, y, w, h) { // fit inside the box, centred, aspect ke
 }
 function stat(s, x, y, w, big, label, color) {
   s.addShape(pres.ShapeType.roundRect, { x, y, w, h: 1.55, fill: { color: C.tint }, line: { color: C.tint }, rectRadius: 0.08, objectName: "stat card" });
-  s.addText(big, { x: x + 0.2, y: y + 0.1, w: w - 0.4, h: 0.75, fontSize: 34, bold: true, color: color || C.blue, margin: 0, valign: "middle", fontFace: THEME.headFontFace, isTextBox: true });
+  s.addText(big, { x: x + 0.2, y: y + 0.1, w: w - 0.4, h: 0.75, fontSize: big.length > 9 ? 25 : 34, bold: true, color: color || C.blue, margin: 0, valign: "middle", fontFace: THEME.headFontFace, isTextBox: true });
   s.addText(label, { x: x + 0.2, y: y + 0.85, w: w - 0.4, h: 0.62, fontSize: 14, color: C.ink2, margin: 0, valign: "top", isTextBox: true });
 }
 function points(s, items, x, y, w, h, size) {
@@ -119,7 +121,7 @@ pres.addSection({ title: "Method" });
     s.addText(body, { x: x + 0.2, y: y + 1.3, w: w - 0.4, h: 0.8, fontSize: 14, color: C.ink2, margin: 0, valign: "top", isTextBox: true });
   });
   points(s, [
-    "Every headline number is re-checked from cached data on each push: 28 scripts, 57 checks, 17 unit tests.",
+    "Every headline number is re-checked from cached data on each push: 33 scripts, 68 checks, 21 unit tests.",
     "Six extensions test the result from different sides; the next slides take them in turn.",
   ], 0.6, 4.75, 12.1, 1.6);
 }
@@ -143,6 +145,40 @@ pres.addSection({ title: "Results" });
   stat(s, 9.9, 1.7, 2.8, "+0.24", "median coefficient across regions (320 models)");
   stat(s, 9.9, 3.45, 2.8, "+0.04", "median within ecoregions (320 models)", C.orange);
   stat(s, 9.9, 5.2, 2.8, "0 of 960", "models significantly negative", C.green);
+}
+
+// ---------------------------------------------------------------- 5b. flexible controls
+{
+  const s = slide("Results", "About half of the across-region link is curved climate",
+    "This is the correction to our own headline. All the earlier models control for temperature and rainfall with straight lines. Let the controls bend, using a random forest or gradient boosting with folds that are spatial blocks, and the across-region coefficient roughly halves. At half a degree it comes down to about the same small number we get inside ecoregions. So +0.27 is what linear controls give; the size of the association is nearer +0.07 to +0.17. Method: double machine learning, Chernozhukov and others 2018.");
+  figure(s, "fig21_flexible_controls", 0.6, 1.55, 8.6, 5.2);
+  stat(s, 9.5, 1.7, 3.2, "+0.29 → +0.17", "across regions at 1°, straight-line against flexible controls");
+  stat(s, 9.5, 3.45, 3.2, "+0.18 → +0.07", "the same at 0.5°", C.orange);
+  stat(s, 9.5, 5.2, 3.2, "+0.05", "within ecoregions at 0.5°, flexible controls", C.green);
+}
+
+// ---------------------------------------------------------------- 5c. scale
+{
+  const s = slide("Results", "The link lives in the broadest spatial patterns",
+    "Instead of ecoregion borders, split the map into spatial patterns from continent-wide gradients down to cell-to-cell texture, and fit a slope in each band. The large slope is only in the broadest band, patches of 700 to 800 kilometres, which is also where three-quarters of the variation in productivity sits. At half a degree there is a small but clear positive slope in the part with no spatial structure at all: that is the local effect. Also worth saying: because neighbouring cells resemble each other, our 221 cells are worth about 36 independent observations.");
+  figure(s, "fig19_scale_bands", 0.6, 1.55, 8.8, 5.2);
+  stat(s, 9.7, 1.7, 3.0, "700–800 km", "size of the patches where the large slope sits");
+  stat(s, 9.7, 3.45, 3.0, "+0.09", "slope with no spatial structure, 0.5° grid", C.orange);
+  stat(s, 9.7, 5.2, 3.0, "36", "independent observations that 221 cells are worth", C.green);
+}
+
+// ---------------------------------------------------------------- 5d. ecoregions
+{
+  const s = slide("Results", "Inside ecoregions the effect is small, real, and varies",
+    "Fit the slope separately inside each of 35 ecoregions and combine them. The pooled slope is +0.069, clearly above zero, positive in 27 of 35. But ecoregions differ more than chance allows: about half the spread between them is real. Do not read individual ecoregions; eight are individually significant where two would be by chance. An equivalence test shows the within-ecoregion effect is less than half the across-region one in every sample, birds, plants and butterflies. And it is not measurement error: richness is 99 percent reliable even within ecoregions.");
+  figure(s, "fig18_ecoregion_slopes", 0.6, 1.5, 6.6, 5.35);
+  stat(s, 7.5, 1.7, 2.5, "+0.069", "pooled slope over 35 ecoregions");
+  stat(s, 10.2, 1.7, 2.5, "27 of 35", "ecoregions with a positive slope", C.green);
+  points(s, [
+    "95% interval +0.030 to +0.108.",
+    "Shown to be under half the across-region effect in all five samples.",
+    "Not noise: richness estimates are 99% reliable within ecoregions.",
+  ], 7.5, 3.6, 5.2, 3.0);
 }
 
 // ---------------------------------------------------------------- 6. extension B

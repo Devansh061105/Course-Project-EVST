@@ -155,6 +155,52 @@ def test_series_stats_on_a_pure_trend():
     assert cv[0] > 0.1                                          # but the raw CV is not zero
 
 
+# ---- inference batch: measurement error, equivalence, spatial scale -----------
+def test_vectorised_rarefaction_matches_the_reference_implementation():
+    import measurement_error
+    rng = np.random.default_rng(7)
+    for _ in range(20):
+        ab = rng.integers(1, 5000, size=rng.integers(20, 400))
+        # the two differ only in floating-point order of summation (about 2 parts in a billion)
+        assert measurement_error.rarefy(ab) == pytest.approx(hurlbert_rarefy(ab.tolist(), 250),
+                                                             rel=1e-6)
+    assert math.isnan(measurement_error.rarefy(np.array([100, 100])))   # fewer than 250 records
+
+
+def test_equivalence_test_behaves():
+    from within_effect_bounds import tost
+    assert tost(0.0, 0.02, 0.10) < 0.001            # tight estimate at zero: clearly inside
+    assert tost(0.10, 0.02, 0.10) == pytest.approx(0.5)   # sitting on the bound: undecided
+    assert tost(0.30, 0.02, 0.10) > 0.99            # well outside: equivalence not shown
+    assert tost(0.05, 0.03, 0.10) == pytest.approx(tost(-0.05, 0.03, 0.10))   # symmetric
+
+
+def test_spatial_patterns_are_orthonormal_and_centred():
+    import scale_decomposition as sd
+    lat, lon = np.meshgrid(np.arange(10.0, 18.0), np.arange(70.0, 80.0))
+    D = sd.haversine(lat.ravel(), lon.ravel())
+    E, moran, thr = sd.dbmem(D)
+    assert E.shape[1] > 5 and E.shape[1] < len(D)
+    assert np.allclose(E.T @ E, np.eye(E.shape[1]), atol=1e-8)
+    assert np.allclose(E.sum(axis=0), 0, atol=1e-8)      # each pattern has zero mean
+    assert (np.diff(moran) <= 1e-9).all() and moran[-1] > 0   # ordered broad to fine, all positive
+
+
+def test_effective_sample_size_shrinks_only_with_autocorrelation():
+    import scale_decomposition as sd
+    rng = np.random.default_rng(11)
+    lat, lon = np.meshgrid(np.arange(5.0, 25.0), np.arange(70.0, 90.0))
+    lat, lon = lat.ravel(), lon.ravel()
+    D = sd.haversine(lat, lon)
+    n = len(lat)
+    _, neff_noise, _ = sd.clifford(rng.normal(size=n), rng.normal(size=n), D, 111.0)
+    assert 0.6 * n < neff_noise < 1.6 * n                 # independent noise: about n
+    smooth_x = lat + 0.3 * lon + rng.normal(scale=0.5, size=n)
+    smooth_y = lat - 0.2 * lon + rng.normal(scale=0.5, size=n)
+    _, neff_smooth, _ = sd.clifford(smooth_x, smooth_y, D, 111.0)
+    assert neff_smooth < 0.2 * n                          # broad gradients: far fewer
+
+
 def test_series_stats_scale_free():
     rng = np.random.default_rng(2)
     years = np.arange(2001.0, 2024.0)

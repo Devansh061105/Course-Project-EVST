@@ -360,3 +360,36 @@ identity, so this is a separate, display-only request; no model uses it.
 built by `presentation/build_deck.js` (pptxgenjs) from the figures. The deck is kept as a file in the repo. Every number on the slides comes from the `RESULTS_*.md` files; if a result
 changes, change the script and rebuild. Slide 6 states that the fitted curve dips at
 the top end and why that is not a decline in the data, because the figure shows it.
+
+## 2026-11-16 (inference batch) - Deepen the inference; the study stays on one region
+**Decision.** The user asked for results worth a research paper. A replication in a
+second region (Mexico and Central America, same latitude band) was started and then
+stopped and removed at the user's instruction before any result existed: **the study
+stays on this region.** The batch therefore deepens the inference on the existing
+data: `dml_flexible.py`, `measurement_error.py`, `within_effect_bounds.py`,
+`scale_decomposition.py` (`RESULTS_INFERENCE.md`, Figures 18-21). These are not new
+extensions; they interrogate the main result.
+
+**Consequence for the headline.** The across-region coefficient of +0.273 is what
+straight-line climate controls give. Flexible controls roughly halve it (+0.14 to
++0.17 at 1°, +0.07 at 0.5°). The project's description of the result changes from
+"strong across regions, weak within" to "a small association at every scale, plus
+broad-scale environmental structure that linear models attribute to richness".
+`RESULTS_ADJUDICATION.md` is kept as the record of the linear models and now points
+to `RESULTS_INFERENCE.md`.
+
+**Design choices.**
+- Double ML folds are 4° spatial blocks, so no cell is predicted from its
+  neighbours. The within-ecoregion variant removes ecoregion means first, because
+  ecoregion dummies cannot be learned out of fold when whole blocks are held out
+  (the first version tried dummies and was replaced).
+- Spatial bands are equal-count quarters of the positive-eigenvalue Moran
+  eigenvector maps, fixed before looking at the slopes.
+- The five samples in the equivalence table share cells, so they are shown side by
+  side and not pooled; pooling is done across ecoregions, which are disjoint.
+- The equivalence bound "half the across-region coefficient" uses the linear
+  coefficient, the larger and so the more lenient bound; the fixed 0.10 bound is
+  reported beside it.
+- scikit-learn joins `requirements.txt`. The two random-forest reproducibility
+  checks have a tolerance of 0.04 because tree ensembles change between
+  scikit-learn versions.

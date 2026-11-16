@@ -73,6 +73,21 @@ Checked against Crossref; abstracts read via Europe PMC except where noted.
 | Shipley (2000) A new inferential test for path models based on directed acyclic graphs. *Structural Equation Modeling* 7:206–218. doi:10.1207/S15328007SEM0702_4 | Source of the d-separation test only; **no abstract available**. |
 | Boakes et al. (2010) Distorted views of biodiversity: spatial and temporal bias in species occurrence data. *PLoS Biology* 8:e1000385. doi:10.1371/journal.pbio.1000385 | 170,000 bird sightings over two centuries; changing data-gathering trends may confound the picture of biodiversity change. Summary read, not the full abstract. |
 
+## Inference methods (added 2026-11-16, inference batch)
+Checked against Crossref. Abstract read for the three marked; the others have none
+in Europe PMC and are cited as the source of a method only.
+
+| reference | used for |
+|---|---|
+| Chernozhukov, Chetverikov, Demirer, Duflo, Hansen, Newey & Robins (2018) Double/debiased machine learning for treatment and structural parameters. *The Econometrics Journal* 21:C1–C68. doi:10.1111/ectj.12097 | The residual-on-residual estimator with cross-fitting in `dml_flexible.py`. |
+| Cook & Stefanski (1994) Simulation-extrapolation estimation in parametric measurement error models. *JASA* 89:1314–1328. doi:10.1080/01621459.1994.10476871 | SIMEX in `measurement_error.py`. |
+| Lakens (2017) Equivalence tests. *Social Psychological and Personality Science* 8:355–362. doi:10.1177/1948550617697177 | **Abstract read:** researchers "often incorrectly conclude an effect is absent based on a nonsignificant result"; the two one-sided tests procedure can "statistically reject the presence of effects large enough to be considered worthwhile". |
+| DerSimonian & Laird (1986) Meta-analysis in clinical trials. *Controlled Clinical Trials* 7:177–188. doi:10.1016/0197-2456(86)90046-2 | **Abstract read:** a random-effects approach to combining evidence that "incorporates the heterogeneity of effects". Used for the slopes by ecoregion. |
+| Dray, Legendre & Peres-Neto (2006) Spatial modelling: a comprehensive framework for principal coordinate analysis of neighbour matrices (PCNM). *Ecological Modelling* 196:483–493. doi:10.1016/j.ecolmodel.2006.02.015 | Moran's eigenvector maps in `scale_decomposition.py`. |
+| Engle (1974) Band spectrum regression. *International Economic Review* 15:1–11. doi:10.2307/2526084 | Fitting a separate slope in each band of scales. DOI found by title search after a remembered DOI proved wrong. |
+| Clifford, Richardson & Hémon (1989) Assessing the significance of the correlation between two spatial processes. *Biometrics* 45:123–134. doi:10.2307/2532039 | **Abstract read:** tests "based on the evaluation of an effective sample size that takes into account the spatial structure"; for positively autocorrelated processes the effective sample size is reduced. |
+| Dutilleul (1993) Modifying the t test for assessing the correlation between two spatial processes. *Biometrics* 49:305–314. doi:10.2307/2532625 | The modified t-test on the effective sample size. |
+
 ## Data products (cite in methods)
 | product | citation |
 |---|---|

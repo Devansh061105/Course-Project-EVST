@@ -29,7 +29,9 @@ SCRIPTS = [
     "extension_d_more.py", "path_analysis.py", "effort_simulation.py",
     "shape_spline.py", "spec_curve.py", "survey_gaps.py",
     "extension_e_stability.py", "extension_f_protected.py",
-    "make_figures.py", "make_figures_2.py",
+    "measurement_error.py", "within_effect_bounds.py", "dml_flexible.py",
+    "scale_decomposition.py",
+    "make_figures.py", "make_figures_2.py", "make_figures_3.py",
 ]
 
 # (script, regex on its log, documented value, tolerance, what it is)
@@ -91,6 +93,19 @@ CHECKS = [
     ("extension_e_stability.py", r"STAB plants:.*?within ecoregions \+([\d.]+)", 0.002, 0.001, "Ext E plants within beta"),
     ("extension_f_protected.py", r"PROT 1\.0: effort ~ strict protection beta = \+([\d.]+)", 0.010, 0.001, "Ext F effort ~ protection"),
     ("extension_f_protected.py", r"PROT 0\.5 excl\. India and China:.*?interaction = \+([\d.]+)", 0.064, 0.001, "Ext F interaction, subset"),
+    ("measurement_error.py", r"MERR 1\.0: within-ecoregion reliability ([\d.]+)", 0.990, 0.002, "richness reliability within, 1 deg"),
+    ("measurement_error.py", r"MERR 0\.5:.*?after correction \(SIMEX \+([\d.]+)\)", 0.058, 0.002, "SIMEX-corrected within slope"),
+    ("within_effect_bounds.py", r"TOST birds 0\.5 deg:.*?p = ([\d.]+)", 0.0126, 0.0005, "equivalence test p, birds 0.5"),
+    ("within_effect_bounds.py", r"ECO 0\.5: pooled within-ecoregion slope \+([\d.]+)", 0.069, 0.001, "pooled slope over ecoregions"),
+    ("within_effect_bounds.py", r"ECO 0\.5: heterogeneity tau = ([\d.]+)", 0.064, 0.001, "between-ecoregion tau"),
+    ("within_effect_bounds.py", r"MIXED 0\.5: fixed richness slope \+([\d.]+)", 0.069, 0.003, "mixed-model slope"),
+    # Tree ensembles depend on the scikit-learn version, so these two get a wide
+    # tolerance: the check is that the estimate stays well below the linear one.
+    ("dml_flexible.py", r"DML 1\.0 environment, random forest: theta = \+([\d.]+)", 0.172, 0.04, "flexible-control theta, 1 deg"),
+    ("dml_flexible.py", r"DML 0\.5 environment, random forest: theta = \+([\d.]+)", 0.073, 0.04, "flexible-control theta, 0.5 deg"),
+    ("scale_decomposition.py", r"SCALE 1\.0: slope in the broadest band \+([\d.]+)", 0.820, 0.01, "broadest-band slope, 1 deg"),
+    ("scale_decomposition.py", r"SCALE 0\.5: slope in the broadest band \+([\d.]+)", 0.553, 0.01, "broadest-band slope, 0.5 deg"),
+    ("scale_decomposition.py", r"NEFF 1\.0, net of effort and climate:.*?worth (\d+) independent", 36, 1, "effective sample size, 1 deg"),
 ]
 
 

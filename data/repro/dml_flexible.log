@@ -1,0 +1,22 @@
+
+=== flexible controls, 1.0 degree: n = 220, 39 spatial blocks ===
+controls           learner              theta       se         p    R2 of GPP  R2 of rich.
+environment        linear              +0.289    0.071    0.0000        0.524        0.386
+environment        random forest       +0.172    0.071    0.0153        0.694        0.433
+DML 1.0 environment, random forest: theta = +0.172 (se 0.071, p = 0.0153)
+environment        gradient boosting    +0.144    0.062    0.0207        0.769        0.398
+within ecoregions  linear              +0.098    0.053    0.0652        0.001       -0.044
+within ecoregions  random forest       +0.075    0.057    0.1901        0.051        0.005
+DML 1.0 within ecoregions, random forest: theta = +0.075 (se 0.057, p = 0.1901)
+within ecoregions  gradient boosting    +0.080    0.056    0.1512       -0.160       -0.189
+
+=== flexible controls, 0.5 degree: n = 671, 44 spatial blocks ===
+controls           learner              theta       se         p    R2 of GPP  R2 of rich.
+environment        linear              +0.182    0.047    0.0001        0.438        0.226
+environment        random forest       +0.073    0.042    0.0799        0.676        0.219
+DML 0.5 environment, random forest: theta = +0.073 (se 0.042, p = 0.0799)
+environment        gradient boosting    +0.073    0.038    0.0507        0.670        0.171
+within ecoregions  linear              +0.064    0.025    0.0115        0.027        0.020
+within ecoregions  random forest       +0.050    0.024    0.0400        0.116        0.011
+DML 0.5 within ecoregions, random forest: theta = +0.050 (se 0.024, p = 0.0400)
+within ecoregions  gradient boosting    +0.045    0.028    0.1053       -0.005       -0.129

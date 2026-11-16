@@ -13,6 +13,9 @@ Current interpretation lives in `docs/RESULTS_ADJUDICATION.md`.
    dataset, 110 datasets, 71,716,026 records); data deposit on Zenodo https://doi.org/10.5281/zenodo.23264805.
    Cite both in the report. See `docs/LITERATURE_NOTES.md`, data products.
 3. **Decide the report framing** (see "Open question" below).
+   The inference batch sharpens this: the report should lead with the small, robust
+   association (about 0.05-0.07 SD) and present +0.27 as what linear climate controls
+   give, not as the effect size. See `PAPER_CLAIMS.md`.
 4. **Cite the plant records.** The GBIF derived-dataset DOI covers birds only. Before
    Extension D appears in a report, register a second derived dataset for the plant
    records (needs a GBIF account; contributing-dataset counts are in
@@ -56,6 +59,10 @@ These are not exclusive. Recommendation: (b) + (c).
   analysis, 960-model specification curve, survey-gap ranking; Figures 11-17;
   species names, a guided tour and overlays in the maps; unit tests and CI; maps
   hosted on GitHub Pages. 57/57 reproducibility checks pass.
+- **2026-11-16 (inference batch):** flexible-control estimate, measurement-error
+  correction, equivalence bounds, slopes by ecoregion with meta-analysis, spatial
+  scale decomposition and effective sample size (`RESULTS_INFERENCE.md`, Figures
+  18-21); claims-to-evidence table (`PAPER_CLAIMS.md`). 68/68 checks, 21 tests.
 
 ## NEXT
 5. ~~NPP at 0.5°~~ Done (section 9 of RESULTS_ADJUDICATION). Still not done at 0.5°: coverage-based richness and the 2019-23 time-window refit.
@@ -65,6 +72,8 @@ These are not exclusive. Recommendation: (b) + (c).
    the equation itself (formula implemented from memory; boundary checks pass).
 
 ## DO NOT DO
+- Do not add a second study region. The user decided on 2026-11-16 that the study
+  stays on this region; build on the existing area only.
 - Do not add a seventh extension. The plan scope-locked at three; the user lifted
   the lock twice on 2026-11-16 (D, then E and F). Further effort belongs in the report.
 - Do not re-pull cached GBIF cells; do not delete `data/*_cache*.json`.

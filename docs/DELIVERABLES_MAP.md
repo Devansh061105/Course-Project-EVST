@@ -31,6 +31,8 @@ inventory.
 | Direction of the link (path analysis) | **Done**: not identifiable | `RESULTS_DIRECTION.md`; `fig14_direction` |
 | Specification curve, 960 models | **Done** | `RESULTS_SPEC_CURVE.md`; `fig12_spec_curve` |
 | Survey-gap ranking for the citizen-science section | **Done** | `RESULTS_SURVEY_GAPS.md`; `fig16_survey_gaps` |
+| Inference batch: flexible controls, measurement error, equivalence bounds, slopes by ecoregion, spatial scale | **Done** | `RESULTS_INFERENCE.md`; `fig18`-`fig21` |
+| Claims-to-evidence table for a paper | **Done** | `PAPER_CLAIMS.md` |
 
 ## What the policy section can honestly say (from the results)
 Each claim is limited to what a specific result supports.
@@ -40,6 +42,10 @@ Each claim is limited to what a specific result supports.
   ranking of the three case studies flips (Western Ghats first on raw counts,
   Eastern Himalaya first once corrected). Survey effort differs 139-fold across the
   three regions. (`RESULTS_EXTENSION_C.md`, `fig7`)
+- **Quote the small number, not the large one.** With flexible climate controls
+  the association is about +0.07 to +0.17 SD across regions and +0.05 to +0.07
+  within; +0.27 is what straight-line controls give and overstates it.
+  (`RESULTS_INFERENCE.md`)
 - **Biodiversity-productivity link: strong between regions, weak within.**
   Effort-corrected richness is associated with productivity across ecoregions, but
   ecoregion fixed effects remove ~75-90% of the association; a small positive

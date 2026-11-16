@@ -125,3 +125,24 @@ failure. Result 2026-11-16: **28/28 scripts exit 0; 55/57 checks PASS** (log:
 **Not checked:** India's official protected-area share (quoted from memory as about
 5%); the WDPA version; why eBird records are sparse in China; whether the CI
 workflow passes on Linux (numerical tolerances were set on Windows).
+
+## 9. Inference batch of 2026-11-16
+`reproduce_all.py` runs **33 scripts and 68 checks**. Result 2026-11-16: **33/33
+scripts exit 0; 68/68 checks PASS** (log: `data/repro/_reproduce_all_2026-11-16c.txt`).
+`pytest -q tests`: **21 passed**. The CI run for the previous push (28 scripts, 57
+checks) passed on Linux, so the earlier tolerances hold across platforms.
+
+| what | how it was checked |
+|---|---|
+| Vectorised rarefaction in `measurement_error.py` | unit test against `gbif_lib.hurlbert_rarefy` on 20 random abundance vectors: agreement to 2 parts in a billion |
+| Double ML procedure | with a linear learner it returns +0.289 at 1 degree out of fold, against +0.242 for the in-sample OLS with the same six controls (`RESULTS_ADJUDICATION.md` section 5); same sign and size, the difference being the out-of-fold fit on 4-degree blocks |
+| Within-ecoregion double ML | first version used ecoregion dummies under spatially blocked folds, which cannot be learned out of fold; replaced by removing ecoregion means, and the earlier numbers discarded |
+| Per-ecoregion meta-analysis | the pooled slope (+0.069) matches an independently fitted mixed model with random slopes (+0.069) |
+| Equivalence test | unit test: inside the bound gives p < 0.001, on the bound p = 0.5, outside p > 0.99, symmetric in sign |
+| Moran eigenvector maps | unit test: eigenvectors orthonormal, each with zero mean, ordered by Moran's I, all positive |
+| Effective sample size | unit test: independent noise gives about n; two smooth gradients give under 20% of n |
+| Spatial bands | richness shares across the five components sum to 100% at both grains |
+| References | 8 method papers checked against Crossref. One DOI written from memory was wrong (it resolved to a different paper) and was replaced by a title search: Engle 1974 is doi:10.2307/2526084 |
+
+**Not checked:** the double ML estimates under a different scikit-learn version;
+whether the equal-count band boundaries matter (other boundaries were not tried).

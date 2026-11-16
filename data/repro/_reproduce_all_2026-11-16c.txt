@@ -1,0 +1,106 @@
+merge_and_extA.py            exit 0      3s
+spatial_refit.py             exit 0      4s
+weights_sensitivity.py       exit 0      4s
+extension_b.py               exit 0      4s
+extension_c.py               exit 0      3s
+scan_contrast_region.py      exit 0      1s
+adjudicate_lag_error.py      exit 0     41s
+spatial_cv.py                exit 0      2s
+hawkins_subsample.py         exit 0     24s
+robustness_suite.py          exit 0      5s
+confounder_analysis.py       exit 0      4s
+ecoregion_analysis.py        exit 0      4s
+coverage_rarefaction.py      exit 0      2s
+gbif_timewindow.py           exit 0      4s
+grain_0p5_analysis.py        exit 0      4s
+grain_0p5_extended.py        exit 0      4s
+local_slopes.py              exit 0     26s
+extension_d_plants.py        exit 0      4s
+extension_d_more.py          exit 0      5s
+path_analysis.py             exit 0      4s
+effort_simulation.py         exit 0     13s
+shape_spline.py              exit 0     71s
+spec_curve.py                exit 0     39s
+survey_gaps.py               exit 0      1s
+extension_e_stability.py     exit 0      4s
+extension_f_protected.py     exit 0      3s
+measurement_error.py         exit 0     32s
+within_effect_bounds.py      exit 0      3s
+dml_flexible.py              exit 0    110s
+scale_decomposition.py       exit 0      3s
+make_figures.py              exit 0      7s
+make_figures_2.py            exit 0      5s
+make_figures_3.py            exit 0      5s
+
+check                                    documented   reproduced  result
+--------------------------------------------------------------------------------
+model cells                                     221          221  PASS
+corrected OLS coef (raw units)            0.0109704    0.0109704  PASS
+SEM richness beta (raw units)               0.00069      0.00069  PASS
+SEM richness p                               0.5059       0.5059  PASS
+only significant weights spec                 knn12        knn12  PASS
+Ext B primary linear AIC                     342.32       342.32  PASS
+case-study effort spread                        139          139  PASS
+case-study GPP spread                         10.03        10.03  PASS
+case-study corrected-richness spread           1.29         1.29  PASS
+Thar precipitation (mm)                         241          241  PASS
+SDEM AIC at 1 deg                            128.67       128.67  PASS
+LR SDM vs SAR                                  78.6        78.60  PASS
+4-deg block CV gain %                           9.4          9.4  PASS
+Hawkins median beta @3 deg                    0.268        0.268  PASS
+NPP SEM beta                                  0.093        0.093  PASS
+GPP OLS + all confounders                     0.242        0.242  PASS
+within-ecoregion GPP beta                      0.03        0.030  PASS
+within-ecoregion GPP p                       0.5865       0.5865  PASS
+plateau after ecoregion FE                   -0.027       -0.027  PASS
+richness variance within ecoregions %          38.5         38.5  PASS
+2019-23 within-ecoregion GPP beta             0.003        0.003  PASS
+0.5 deg baseline beta                         0.228        0.228  PASS
+0.5 deg within-ecoregion beta                 0.058        0.058  PASS
+0.5 deg within-ecoregion p                   0.0212       0.0212  PASS
+0.5 deg spatial error beta                     0.09        0.090  PASS
+0.5 deg full within model, GPP                0.051        0.051  PASS
+leave-one-ecoregion-out min beta              0.046        0.046  PASS
+GWR 1 deg window (neighbours)                    32           32  PASS
+GWR 1 deg median local slope                  0.026        0.026  PASS
+GWR 0.5 deg median local slope                0.036        0.036  PASS
+GWR 1 deg stationarity p                      0.918        0.918  PASS
+Ext D plant corrected beta                    0.264        0.264  PASS
+Ext D plant within-ecoregion beta            -0.027       -0.027  PASS
+Ext D birds on shared cells beta              0.277        0.277  PASS
+Ext D bird-plant congruence r                 0.299        0.299  PASS
+Ext D plant block CV gain %                    15.4         15.4  PASS
+Ext D plants 0.5 deg beta                     0.228        0.228  PASS
+Ext D Lepidoptera beta                        0.512        0.512  PASS
+path richness -> GPP                          0.273        0.273  PASS
+path GPP -> richness                          0.378        0.378  PASS
+IV instrument rejected                        valid        valid  PASS
+thinning: raw richness % kept                  23.1         23.1  PASS
+thinning: corrected richness % kept            99.8         99.8  PASS
+beta with cells thinned to 1,000              0.268        0.268  PASS
+spline dAIC at 1 deg                          -6.66        -6.66  PASS
+spline dAIC at 0.5 deg                          3.4        +3.40  PASS
+slope in richest quarter, 1 deg                0.44        0.440  PASS
+slope in richest quarter, 0.5 deg             0.295        0.295  PASS
+spec curve median, OLS                         0.24        0.240  PASS
+spec curve median, within                     0.039        0.039  PASS
+spec curve negative models                        0            0  PASS
+survey-gap model CV R2                        0.464        0.464  PASS
+natural cells not modelled                       46           46  PASS
+Ext E birds instability beta                  0.144        0.144  PASS
+Ext E plants within beta                      0.002        0.002  PASS
+Ext F effort ~ protection                      0.01        0.010  PASS
+Ext F interaction, subset                     0.064        0.064  PASS
+richness reliability within, 1 deg             0.99        0.990  PASS
+SIMEX-corrected within slope                  0.058        0.058  PASS
+equivalence test p, birds 0.5                0.0126       0.0126  PASS
+pooled slope over ecoregions                  0.069        0.069  PASS
+between-ecoregion tau                         0.064        0.064  PASS
+mixed-model slope                             0.069        0.069  PASS
+flexible-control theta, 1 deg                 0.172        0.172  PASS
+flexible-control theta, 0.5 deg               0.073        0.073  PASS
+broadest-band slope, 1 deg                     0.82        0.820  PASS
+broadest-band slope, 0.5 deg                  0.553        0.553  PASS
+effective sample size, 1 deg                     36           36  PASS
+
+68/68 checks pass; 33/33 scripts exited 0

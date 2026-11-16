@@ -57,6 +57,14 @@ Authoritative write-up: `docs/RESULTS_ADJUDICATION.md` (it supersedes
   median of +0.03, and it grows steadily as the fitting window widens to the whole region.
   No statistical evidence that the slope differs from place to place
   (`docs/RESULTS_LOCAL_SLOPES.md`).
+- **Inference batch (added 2026-11-16, read `docs/RESULTS_INFERENCE.md`).** The +0.273
+  is what straight-line climate controls give. With flexible, non-linear controls it
+  falls to +0.14-0.17 at 1° and +0.07 at 0.5°; the large slope sits only in the broadest
+  spatial patterns (patches of 700-800 km). Inside ecoregions at 0.5° the effect is small
+  but real (pooled +0.069, 95% CI +0.030 to +0.108) and is shown to be less than half the
+  across-region coefficient in all five samples. It is not measurement error (richness is
+  99% reliable). The 221 cells are worth about 36 independent observations.
+  `docs/PAPER_CLAIMS.md` maps each claim to its evidence and caveat.
 - **Direction is not identified.** Species-energy theory has productivity driving bird
   richness, so do not claim "biodiversity raises carbon uptake".
 
@@ -76,14 +84,15 @@ Authoritative write-up: `docs/RESULTS_ADJUDICATION.md` (it supersedes
 | Thinning experiment (A), flexible-curve test (B), plants at 0.5° and butterflies (D) | Done 2026-11-16 | `RESULTS_EXTENSION_{A,B,D}.md`, Figs 11, 13, 17 |
 | Extension E: stability of productivity; Extension F: protected land | Done 2026-11-16 (F is data-limited) | `RESULTS_EXTENSION_{E,F}.md`, Fig 15 |
 | Path analysis, 960-model specification curve, survey-gap ranking | Done 2026-11-16 | `RESULTS_DIRECTION.md`, `RESULTS_SPEC_CURVE.md`, `RESULTS_SURVEY_GAPS.md`, Figs 12, 14, 16 |
+| Inference batch: flexible controls, measurement error, equivalence bounds, slopes by ecoregion, spatial scale | Done 2026-11-16 | `docs/RESULTS_INFERENCE.md`, `docs/PAPER_CLAIMS.md`, Figs 18-21 |
 | Unit tests and continuous integration | Done 2026-11-16 | `tests/`, `.github/workflows/checks.yml` |
-| Presentation deck (13 slides, speaker notes) | Done 2026-11-16 | `presentation/Project9_Biodiversity_Productivity.pptx`, built by `presentation/build_deck.js` |
+| Presentation deck (16 slides, speaker notes) | Done 2026-11-16 | `presentation/Project9_Biodiversity_Productivity.pptx`, built by `presentation/build_deck.js` |
 | Independent verification and project review (12 errors found and fixed) | Done | `docs/VERIFICATION.md` |
 | Mid-eval prep guides (full 15 pp, focused 12 pp) | Done | `docs/MID_EVAL_GUIDE_FOCUSED.{md,pdf}`, `docs/MID_EVAL_PREP_GUIDE.{md,pdf}` |
 
-Reproducibility: `python scripts/reproduce_all.py` re-runs 28 analysis scripts from the
-cached data and checks 57 headline numbers (about 12 minutes). Last run (2026-11-16):
-**28/28 exit 0, 57/57 pass.** `pytest -q tests` runs 17 unit tests. Both run on every
+Reproducibility: `python scripts/reproduce_all.py` re-runs 33 analysis scripts from the
+cached data and checks 68 headline numbers (about 15 minutes). Last run (2026-11-16):
+**33/33 exit 0, 68/68 pass.** `pytest -q tests` runs 21 unit tests. Both run on every
 push (`.github/workflows/checks.yml`).
 
 ## 4. Status: what is NOT done / open items (priority order)
@@ -139,7 +148,7 @@ push (`.github/workflows/checks.yml`).
 | `data/case_study_regions/` | Ecoregion-based case-study polygons and cell-overlap tables from the teammate Step 1 package, plus a crosswalk to our cell IDs (see its README) |
 | `data/*_cache*.json` | **Frozen API results = restart state. Never delete or re-pull.** |
 | `data/repro/` | Logs from `reproduce_all.py` |
-| `figures/` | fig1-fig17 PNG and CSV (`make_figures.py` 1-10, `make_figures_2.py` 11-17) |
+| `figures/` | fig1-fig21 PNG and CSV (`make_figures.py` 1-10, `make_figures_2.py` 11-17, `make_figures_3.py` 18-21) |
 | `scripts/gbif_lib.py` | Grid, GBIF queries, Hurlbert rarefaction |
 | `scripts/gee_extract_chunked.py` | The live Earth Engine extractor (`gee_extract.py` is deprecated and exits) |
 | `scripts/reproduce_all.py` | Re-runs the analysis and checks headline numbers |
@@ -185,7 +194,7 @@ Python 3.13 with `pip install -r requirements.txt`.
 
 ## 9. Suggested next steps for whoever resumes
 1. Read `docs/MID_EVAL_GUIDE_FOCUSED.pdf`, then `docs/RESULTS_ADJUDICATION.md`.
-2. Run `python scripts/reproduce_all.py` to confirm the environment reproduces 57/57.
+2. Run `python scripts/reproduce_all.py` to confirm the environment reproduces 68/68.
 3. Get the team's answers to the three open decisions in section 4.1.
 4. When asked, draft the report (ask format, brief, length first), then deliverable 8.
 5. Update this file, `docs/TODO.md` and `docs/DECISIONS.md` after each significant step.

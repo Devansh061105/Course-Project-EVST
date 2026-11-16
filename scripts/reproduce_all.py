@@ -25,7 +25,8 @@ SCRIPTS = [
     "adjudicate_lag_error.py", "spatial_cv.py", "hawkins_subsample.py",
     "robustness_suite.py", "confounder_analysis.py", "ecoregion_analysis.py",
     "coverage_rarefaction.py", "gbif_timewindow.py", "grain_0p5_analysis.py",
-    "grain_0p5_extended.py", "make_figures.py",
+    "grain_0p5_extended.py", "local_slopes.py", "extension_d_plants.py",
+    "make_figures.py",
 ]
 
 # (script, regex on its log, documented value, tolerance, what it is)
@@ -57,6 +58,14 @@ CHECKS = [
     ("grain_0p5_analysis.py", r"spatial error \(queen, \d+ island cells\): beta \+([\d.]+)", 0.090, 0.001, "0.5 deg spatial error beta"),
     ("grain_0p5_extended.py", r"\+ both  \(full within model\)\s+beta \+([\d.]+)", 0.051, 0.001, "0.5 deg full within model, GPP"),
     ("grain_0p5_extended.py", r"64 refits: beta range \+([\d.]+)", 0.046, 0.001, "leave-one-ecoregion-out min beta"),
+    ("local_slopes.py", r"GWR 1\.0: k = (\d+) neighbours", 32, 0, "GWR 1 deg window (neighbours)"),
+    ("local_slopes.py", r"GWR 1\.0: local richness beta .*?median \+([\d.]+)", 0.026, 0.001, "GWR 1 deg median local slope"),
+    ("local_slopes.py", r"GWR 0\.5: local richness beta .*?median \+([\d.]+)", 0.036, 0.001, "GWR 0.5 deg median local slope"),
+    ("local_slopes.py", r"GWR 1\.0: stationarity Monte Carlo.*?p = ([\d.]+)", 0.918, 0.001, "GWR 1 deg stationarity p"),
+    ("extension_d_plants.py", r"PLANTS corrected GPP beta = \+([\d.]+)", 0.264, 0.001, "Ext D plant corrected beta"),
+    ("extension_d_plants.py", r"plants, response GPP[\s\S]*?ecoregion fixed effects \(within\)\s+n=\d+\s+beta ([-+][\d.]+)", -0.027, 0.001, "Ext D plant within-ecoregion beta"),
+    ("extension_d_plants.py", r"birds \(same cells\), response GPP[\s\S]*?corrected: \+ effort \+ temp \+ precip \(HC3\)\s+n=\d+\s+beta \+([\d.]+)", 0.277, 0.001, "Ext D birds on shared cells beta"),
+    ("extension_d_plants.py", r"effort-corrected: r = \+([\d.]+)", 0.299, 0.001, "Ext D bird-plant congruence r"),
 ]
 
 

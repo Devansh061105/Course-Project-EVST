@@ -1,4 +1,4 @@
-# TODO — priority order (updated 2026-10-06)
+# TODO — priority order (updated 2026-11-16)
 
 Plan reference: `C:\downloads\Project9_Comprehensive_Plan.docx`, Section 6 (Steps 1–10).
 Timeline: 8 weeks; midpoint passed. Literature review submitted.
@@ -13,6 +13,11 @@ Current interpretation lives in `docs/RESULTS_ADJUDICATION.md`.
    dataset, 110 datasets, 71,716,026 records); data deposit on Zenodo https://doi.org/10.5281/zenodo.23264805.
    Cite both in the report. See `docs/LITERATURE_NOTES.md`, data products.
 3. **Decide the report framing** (see "Open question" below).
+4. **Cite the plant records.** The GBIF derived-dataset DOI covers birds only. Before
+   Extension D appears in a report, register a second derived dataset for the plant
+   records (needs a GBIF account; contributing-dataset counts are in
+   `data/gbif_derived_dataset/dataset_counts_plants.csv`) and decide whether to add
+   the plant tables to a new version of the Zenodo deposit.
 
 ## OPEN QUESTION FOR THE TEAM
 The plan's H1 is causal in direction: biodiversity → productivity. The data show a
@@ -37,17 +42,22 @@ These are not exclusive. Recommendation: (b) + (c).
 - Figures 1–8 with CSV table views (`figures/`); clean dataset + codebook (`data/final/`);
   plan-deliverables map (`docs/DELIVERABLES_MAP.md`).
 - Literature for the interpretation verified with abstracts (`LITERATURE_NOTES.md`).
+- **2026-11-16:** local slopes for every cell (GWR, `RESULTS_LOCAL_SLOPES.md`, Fig 9);
+  Extension D, vascular plants as a second taxon (`RESULTS_EXTENSION_D.md`, Fig 10);
+  interactive maps (`docs/interactive_map.html` flat, `docs/interactive_map_3d.html`
+  3D terrain). 35/35 reproducibility checks pass.
 
 ## NEXT
-4. ~~NPP at 0.5°~~ Done (section 9 of RESULTS_ADJUDICATION). Still not done at 0.5°: coverage-based richness and the 2019-23 time-window refit.
-5. **Draft the mid submission / report** when the team asks. Confirm format, brief and
+5. ~~NPP at 0.5°~~ Done (section 9 of RESULTS_ADJUDICATION). Still not done at 0.5°: coverage-based richness and the 2019-23 time-window refit.
+6. **Draft the mid submission / report** when the team asks. Confirm format, brief and
    length first.
-6. Optional: confirm Chao & Jost (2012) eq. 4a against the paper before citing
+7. Optional: confirm Chao & Jost (2012) eq. 4a against the paper before citing
    the equation itself (formula implemented from memory; boundary checks pass).
 
 ## DO NOT DO
-- Do not add a fourth extension. The plan scope-locks at three; everything above
-  is robustness for the existing three, not new questions.
+- Do not add a fifth extension. The plan scope-locked at three; the user lifted the
+  lock once, on 2026-11-16, for Extension D (plants). Everything else is robustness
+  for the existing four, not new questions.
 - Do not re-pull cached GBIF cells; do not delete `data/*_cache*.json`.
 - Do not launch long jobs with `nohup` where the parent process can be killed: the
   job survives the kill, and a restart then runs two copies against the same

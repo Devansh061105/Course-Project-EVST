@@ -24,7 +24,8 @@ grid = build_grid(1.0)
 cache = load_cache(CACHE)
 rows = []
 
-for taxon, key in TAXA.items():
+CHECK = {k: TAXA[k] for k in ("birds", "plants")}   # the original Step-2 comparison
+for taxon, key in CHECK.items():
     for region, box in CASE_STUDIES.items():
         for cell in cells_in_box(grid, box):
             ck = "%s|%s" % (taxon, cell["cell_id"])
@@ -57,7 +58,7 @@ def pct(xs, p):
 print("%-7s %-17s %5s %7s %7s %7s %6s %6s" % (
     "taxon", "region", "cells", "median", "min", "max", "usable", "trunc"))
 print("-" * 72)
-for taxon in TAXA:
+for taxon in CHECK:
     for region in CASE_STUDIES:
         sub = [r for r in rows if r["taxon"] == taxon and r["region"] == region]
         tot = [r["total"] for r in sub]
@@ -69,7 +70,7 @@ for taxon in TAXA:
     print()
 
 print("Rarefied richness at n=%d (median across usable cells):" % RAREFY_N)
-for taxon in TAXA:
+for taxon in CHECK:
     for region in CASE_STUDIES:
         v = [r["rarefied50"] for r in rows
              if r["taxon"] == taxon and r["region"] == region and r["rarefied50"]]

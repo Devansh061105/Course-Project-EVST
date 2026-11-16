@@ -1,0 +1,74 @@
+
+=== GWR 1.0 deg: n=221 ===
+global OLS richness beta = +0.273   AICc OLS = 458.3
+GWR 1.0: k = 32 neighbours (median bandwidth 541 km)  ENP = 63.3  AICc GWR = 98.0
+GWR 1.0: AICc gain over OLS = 360.3
+GWR 1.0: local richness beta min -0.354  q25 -0.021  median +0.026  q75 +0.112  max +0.467
+GWR 1.0: local beta > 0 in 57.9% of cells
+GWR 1.0: adjusted alpha = 0.0039 (t crit 2.93); significant positive 12, negative 6, of 221
+GWR 1.0: stationarity Monte Carlo (SD of local beta 0.136 vs null median 0.177): p = 0.918
+GWR 1.0: local condition number median 8.1, max 30.6, cells > 30: 1
+local richness slope by case-study region (1.0 deg):
+  Western Ghats     cells 7   median +0.147  range +0.061 to +0.321  significant 0
+  Thar Desert       cells 8   median +0.078  range +0.012 to +0.117  significant 0
+  Eastern Himalaya  cells 24  median +0.172  range +0.014 to +0.369  significant 5
+ecoregions with >= 8 cells, by median local slope (1.0 deg):
+  Northern Indochina subtropical forests                     n=18  median -0.109
+  Kayah-Karen montane rain forests                           n=10  median -0.095
+  Tenasserim-South Thailand semi-evergreen rain forests      n=8   median -0.045
+  East Deccan moist deciduous forests                        n=18  median -0.015
+  Eastern Himalayan alpine shrub and meadows                 n=9   median +0.052
+  Thar desert                                                n=10  median +0.092
+  Mizoram-Manipur-Kachin rain forests                        n=12  median +0.094
+GWR 1.0: share of local-slope variance between ecoregions = 70.7%
+
+=== GWR 0.5 deg: n=672 ===
+global OLS richness beta = +0.226   AICc OLS = 1585.2
+GWR 0.5: k = 40 neighbours (median bandwidth 319 km)  ENP = 161.3  AICc GWR = 253.0
+GWR 0.5: AICc gain over OLS = 1332.2
+GWR 0.5: local richness beta min -0.266  q25 -0.004  median +0.036  q75 +0.098  max +0.573
+GWR 0.5: local beta > 0 in 73.1% of cells
+GWR 0.5: adjusted alpha = 0.0015 (t crit 3.18); significant positive 39, negative 2, of 672
+GWR 0.5: stationarity Monte Carlo (SD of local beta 0.117 vs null median 0.186): p = 1.000
+GWR 0.5: local condition number median 9.1, max 41.4, cells > 30: 7
+local richness slope by case-study region (0.5 deg):
+  Western Ghats     cells 27  median +0.058  range +0.006 to +0.228  significant 0
+  Thar Desert       cells 18  median +0.027  range +0.020 to +0.033  significant 0
+  Eastern Himalaya  cells 70  median +0.083  range -0.060 to +0.468  significant 14
+ecoregions with >= 8 cells, by median local slope (0.5 deg):
+  Irrawaddy moist deciduous forests                          n=11  median -0.044
+  Mizoram-Manipur-Kachin rain forests                        n=38  median -0.039
+  Luang Prabang montane rain forests                         n=9   median -0.025
+  Kayah-Karen montane rain forests                           n=28  median -0.007
+  Terai-Duar savanna and grasslands                          n=9   median +0.001
+  Northern Thailand-Laos moist deciduous forests             n=14  median +0.001
+  Tenasserim-South Thailand semi-evergreen rain forests      n=29  median +0.007
+  Myanmar coastal rain forests                               n=10  median +0.011
+  Himalayan subtropical broadleaf forests                    n=12  median +0.013
+  Central Deccan Plateau dry deciduous forests               n=10  median +0.015
+  Northeast Himalayan subalpine conifer forests              n=10  median +0.019
+  East Deccan moist deciduous forests                        n=64  median +0.021
+  Thar desert                                                n=21  median +0.026
+  Rock and Ice                                               n=10  median +0.027
+  Khathiar-Gir dry deciduous forests                         n=10  median +0.028
+  Central Indochina dry forests                              n=15  median +0.030
+  Eastern Himalayan subalpine conifer forests                n=13  median +0.034
+  Chhota-Nagpur dry deciduous forests                        n=12  median +0.037
+  Himalayan subtropical pine forests                         n=21  median +0.037
+  Northern Indochina subtropical forests                     n=38  median +0.037
+  Meghalaya subtropical forests                              n=15  median +0.039
+  Eastern Himalayan alpine shrub and meadows                 n=17  median +0.043
+  Western Himalayan alpine shrub and meadows                 n=8   median +0.056
+  North Western Ghats montane rain forests                   n=12  median +0.057
+  South Western Ghats montane rain forests                   n=9   median +0.073
+  South Deccan Plateau dry deciduous forests                 n=11  median +0.074
+  Malabar Coast moist forests                                n=8   median +0.075
+  Eastern Himalayan broadleaf forests                        n=22  median +0.075
+  North Deccan dry deciduous forests                         n=10  median +0.077
+  Lower Gangetic Plains moist deciduous forests              n=12  median +0.092
+  Nujiang Langcang Gorge alpine conifer and mixed forests    n=10  median +0.123
+  North Western Ghats moist deciduous forests                n=10  median +0.133
+  Brahmaputra Valley semi-evergreen forests                  n=16  median +0.145
+  Northern Triangle subtropical forests                      n=8   median +0.233
+  Sri Lanka dry-zone dry evergreen forests                   n=15  median +0.490
+GWR 0.5: share of local-slope variance between ecoregions = 64.7%

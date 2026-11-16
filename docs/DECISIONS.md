@@ -217,3 +217,86 @@ editing old entries.
    first reason alone: plants have ~200× fewer records per cell (e.g. Deccan
    median 145 vs 29,642), and cell r22c22 holds 1,265 species in only 4,192 records,
    far too sparse to rarefy.
+
+## 2026-11-16 — Scope lock lifted by the user: vascular plants added as Extension D
+**Decision.** A fourth extension is added: the model chain is repeated for a second
+taxon, vascular plants (Tracheophyta, taxonKey 7707728). The plan locked the
+project at three extensions "unless weeks 1-6 finish comfortably early"; the
+analysis for A/B/C was complete on 2026-10-06 and the user asked for the addition
+on 2026-11-16 after being shown that it breaks the lock. The lock now stands at
+**four** extensions (A, B, C, D).
+
+**Why plants.** Live density check on every fifth modelled cell (45 cells,
+`scripts/taxon2_check.py`, cache `data/taxon2_check_cache.json`):
+
+| group | median identified records / cell | cells with ≥ 50 | ≥ 100 | ≥ 250 |
+|---|---|---|---|---|
+| vascular plants | 524 | 37 | 35 | 30 |
+| Lepidoptera | 160 | 33 | 28 | 16 |
+| Squamata | 54 | 25 | 17 | 11 |
+| amphibians | 34 | 22 | 17 | 9 |
+| mammals | 21 | 19 | 13 | 9 |
+
+Plants are the only other group with enough records in most modelled cells, and
+they are the group biodiversity–productivity theory is about. This does not
+overturn the 2026-10-05 choice of birds as the primary taxon: plants still carry
+orders of magnitude fewer records per cell, and that check was dominated by the
+cropland Deccan cells, which are not modelled.
+
+**How.** `scripts/gbif_pull_taxon2.py`: one faceted request per 1° cell, same
+filters and years as the birds, facet limit 5000 (project-review correction 8),
+own append-only cache `data/gbif_cache_plants.json`. Analysis in
+`scripts/extension_d_plants.py`; results in `docs/RESULTS_EXTENSION_D.md`.
+
+**Consequences.** (1) The GBIF derived-dataset DOI (10.15468/dd.jf64nx) covers the
+bird records only; plant records need their own citation before they appear in a
+report (TODO). (2) `data/final/biodiversity_productivity_1deg.csv` is unchanged,
+so it still matches the Zenodo deposit; plant columns live in
+`data/gbif_cells_plants.csv` and `data/plants_model_cells.csv`. (3) The
+limitations paragraph can no longer say "birds only".
+
+## 2026-11-16 — Local slopes (GWR) added inside Extension C
+**Decision.** Geographically weighted regression of the corrected model at 1° and
+0.5° (`scripts/local_slopes.py`, `docs/RESULTS_LOCAL_SLOPES.md`, Fig 9).
+
+**Why.** Extension C asks whether the relationship holds in every landscape and
+answers with three boxes chosen in advance. Local slopes answer it for every
+modelled cell, and the slope-against-window-size curve shows the between-region
+result without relying on ecoregion boundaries. It is reported as part of
+Extension C, with a Monte Carlo stationarity test and a multiple-testing
+correction, because GWR maps are easy to over-interpret.
+
+**Implementation note.** Written directly in numpy (adaptive bisquare kernel,
+AICc bandwidth) to avoid adding the `mgwr` dependency.
+
+## 2026-11-16 — Interactive atlas
+**Decision.** `docs/interactive_map.html`, one self-contained page built by
+`scripts/build_interactive_map.py` from the finished per-cell tables: switchable
+layers, a per-cell record and a linked richness–GPP scatter. No map tiles and no
+server, so it opens from the repo and can be shown in the presentation. It
+displays results; it adds no analysis of its own.
+
+## 2026-11-16 — Cache writes retry on Windows file locks
+`gbif_lib.save_cache` now retries `os.replace` on `PermissionError`. The first
+plant pull died at cell ~230 when another process briefly held the cache file;
+nothing was lost (the cache is written after every cell) and the pull resumed.
+
+## 2026-11-16 — 3D terrain map; ETOPO1 and 0.05° grids for display only
+**Decision.** A second interactive page, `docs/interactive_map_3d.html`: the study
+region as 3D terrain with the ground coloured by land cover, NDVI, GPP or
+elevation, one column per 1° cell for bird or plant richness, and a record for any
+place clicked. The user asked for it after seeing the flat atlas.
+
+**Data.** `scripts/gee_terrain_grid.py` pulls four 0.05° grids (680 × 520) once and
+caches them in `data/terrain_grid_0p05.npz`: ETOPO1 elevation, WorldCover class,
+MOD13Q1 NDVI and MOD17A3HGF GPP (2019–2023 means). These grids are **for display
+only**; no model uses them. ETOPO1 is used instead of the SRTM of the analysis
+because it is already at a coarse resolution and covers the sea.
+
+**Two things to know.** (1) MOD17 fill values are not masked in the Earth Engine
+asset and get averaged into the coarser pyramid levels; the GPP grid is therefore
+masked at 500 m and aggregated explicitly (the first attempt was wrong, see
+`VERIFICATION.md` section 7). (2) The page loads three.js from a CDN, so it needs
+an internet connection when it is opened; the flat atlas does not need one for its
+content (only for its web fonts). Relief is exaggerated (25× by default) and the
+page says so.

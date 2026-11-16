@@ -1,0 +1,73 @@
+cells: 884 in grid, 267 natural-cover land cells with GPP and climate
+plant records in all cells: 1364346 total, 1316540 identified to species
+plant records per natural-cover cell: median 424 (birds: 8175)
+
+=== D0. Does rarefaction work for plants? ===
+level   cells  median E[S]     E[S]/n   CV of E[S]  coverage at n r(E[S],effort)
+50        208         44.0       0.88        0.179           0.22         -0.019
+100       193         80.6       0.81        0.220           0.34         -0.051
+250       155        169.8       0.68        0.286           0.50         -0.097
+birds     221        118.3       0.47        0.166           0.76         +0.241   (rarefied at 250, for scale)
+raw plant richness vs log effort: r = +0.834 (birds, raw: +0.809)
+
+=== D1. Plant model chain (rarefied at 100; 193 cells) ===
+  naive: raw plant richness alone                n=193  beta +0.203  se 0.073  p=0.0056  R2=0.041
+ plants, response GPP
+  rarefied richness alone                        n=193  beta +0.218  se 0.066  p=0.0009  R2=0.048
+  corrected: + effort + temp + precip (HC3)      n=193  beta +0.264  se 0.043  p=0.0000  R2=0.639
+  R2 without -> with richness                    0.570 -> 0.639 (+6.8 points)
+  corrected, SEs clustered by ecoregion          n=193  beta +0.264  se 0.070  p=0.0002  R2=0.639
+  + ecoregion fixed effects (within)             n=193  beta -0.027  se 0.040  p=0.4947  R2=0.920
+ML_Error
+  spatial error model                            n=193  beta -0.008  p=0.7727  lambda=0.91
+ plants, response NPP
+  rarefied richness alone                        n=193  beta +0.301  se 0.067  p=0.0000  R2=0.091
+  corrected: + effort + temp + precip (HC3)      n=193  beta +0.327  se 0.054  p=0.0000  R2=0.430
+  R2 without -> with richness                    0.325 -> 0.430 (+10.5 points)
+  corrected, SEs clustered by ecoregion          n=193  beta +0.327  se 0.097  p=0.0008  R2=0.430
+  + ecoregion fixed effects (within)             n=193  beta +0.006  se 0.044  p=0.8879  R2=0.854
+ML_Error
+  spatial error model                            n=193  beta +0.038  p=0.2785  lambda=0.87
+PLANTS corrected GPP beta = +0.264 (p = 0.0000, n = 193)
+
+=== D2. Rarefaction level sensitivity (corrected model, GPP) ===
+  plants rarefied at 50                          n=208  beta +0.241  se 0.038  p=0.0000  R2=0.646
+  plants rarefied at 100                         n=193  beta +0.264  se 0.043  p=0.0000  R2=0.639
+  plants rarefied at 250                         n=155  beta +0.309  se 0.049  p=0.0000  R2=0.663
+
+=== D3. Birds refitted on the cells that have both taxa (180 cells) ===
+ birds (same cells), response GPP
+  rarefied richness alone                        n=180  beta +0.504  se 0.058  p=0.0000  R2=0.254
+  corrected: + effort + temp + precip (HC3)      n=180  beta +0.277  se 0.052  p=0.0000  R2=0.601
+  R2 without -> with richness                    0.546 -> 0.601 (+5.5 points)
+  corrected, SEs clustered by ecoregion          n=180  beta +0.277  se 0.068  p=0.0001  R2=0.601
+  + ecoregion fixed effects (within)             n=180  beta +0.033  se 0.075  p=0.6622  R2=0.915
+ML_Error
+  spatial error model                            n=180  beta +0.057  p=0.0897  lambda=0.90
+ birds (same cells), response NPP
+  rarefied richness alone                        n=180  beta +0.552  se 0.054  p=0.0000  R2=0.305
+  corrected: + effort + temp + precip (HC3)      n=180  beta +0.407  se 0.063  p=0.0000  R2=0.430
+  R2 without -> with richness                    0.313 -> 0.430 (+11.8 points)
+  corrected, SEs clustered by ecoregion          n=180  beta +0.407  se 0.082  p=0.0000  R2=0.430
+  + ecoregion fixed effects (within)             n=180  beta +0.110  se 0.085  p=0.1980  R2=0.855
+ML_Error
+  spatial error model                            n=180  beta +0.142  p=0.0011  lambda=0.85
+ Both taxa in one model (GPP):
+  bird richness | plants + controls              n=180  beta +0.190  se 0.058  p=0.0010  R2=0.648
+  plant richness | birds + controls              n=180  beta +0.209  se 0.051  p=0.0000  R2=0.648
+  bird richness, + ecoregion FE                  n=180  beta +0.047  se 0.087  p=0.5863  R2=0.916
+  plant richness, + ecoregion FE                 n=180  beta -0.051  se 0.056  p=0.3620  R2=0.916
+
+=== D4. Do the two taxa agree on where diversity is high? ===
+bird vs plant richness, raw counts:      r = +0.431
+bird vs plant richness, effort-corrected: r = +0.299  (Spearman +0.306, p = 0.0000)
+bird effort vs plant effort (log records): r = +0.544
+corrected richness, climate partialled out: r = +0.335
+
+=== D5. Case-study regions, plants ===
+region             cells median records      raw S   rarefied@100  bird rare@250
+Western Ghats          7          26527       1061           51.0          117.6
+Thar Desert            2            362         70           42.8           96.9
+Eastern Himalaya      18            633        264           79.5          137.6
+
+wrote data/plants_model_cells.csv (193 cells)

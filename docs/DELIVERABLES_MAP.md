@@ -17,6 +17,13 @@ inventory.
 | 7 | Grid-size robustness | **Done** at 2.0, 1.0 and 0.5 degrees | `RESULTS_SENSITIVITY.md`, `RESULTS_ADJUDICATION.md` sections 8-9 |
 | 8 | Closing section: conservation-policy and citizen-science implications | **Not written** (report prose). The evidence for it exists; see below. | to draft |
 
+## Beyond the plan's checklist (added 2026-11-16)
+| Item | Status | Where |
+|---|---|---|
+| Extension D: the model chain repeated for vascular plants | **Done** at 1°; scope lock lifted by the user for this one addition | `RESULTS_EXTENSION_D.md`; `fig10_second_taxon` |
+| Local slopes for every cell (GWR), inside Extension C | **Done** at 1° and 0.5° | `RESULTS_LOCAL_SLOPES.md`; `fig9_local_slopes` |
+| Interactive maps for the presentation | **Done** | `docs/interactive_map.html` (flat), `docs/interactive_map_3d.html` (3D terrain) |
+
 ## What the policy section can honestly say (from the results)
 Each claim is limited to what a specific result supports.
 
@@ -31,6 +38,14 @@ Each claim is limited to what a specific result supports.
   remainder (about 0.03-0.06 SD) is supported at 0.5 degree and is fragile.
   Cross-regional species-pool differences, not local biodiversity effects,
   dominate. (`RESULTS_ADJUDICATION.md`)
+- **The pattern is not specific to birds.** Vascular plants, recorded by a different
+  community of observers, show the same cross-regional association (β +0.264
+  against +0.277 for birds on the same cells) and the same disappearance within
+  ecoregions. Bird and plant richness agree only weakly on where diversity is high
+  (r = +0.30), so one group is a poor stand-in for another. (`RESULTS_EXTENSION_D.md`)
+- **Do not rank places by local slope.** The slope fitted around each cell is
+  typically a tenth of the region-wide one, and there is no statistical evidence
+  that it differs from place to place. (`RESULTS_LOCAL_SLOPES.md`)
 - **Direction is not identified.** Bird richness driving plant productivity is
   implausible; the species-energy literature has productivity driving richness.
   Any "biodiversity supports carbon uptake" reading should be avoided for this
@@ -54,3 +69,5 @@ Each claim is limited to what a specific result supports.
    the report but must be cited).
 3. ~~GBIF derived-dataset DOI~~ done 2026-10-11 (https://doi.org/10.15468/dd.jf64nx; Zenodo deposit https://doi.org/10.5281/zenodo.23264805).
 4. Not done at 0.5 degree: coverage-based richness and the 2019-23 time-window refit.
+5. A GBIF derived-dataset DOI for the plant records (the existing DOI covers birds only).
+6. Extension D is 1 degree only, with no block cross-validation, Hawkins test or quadratic test.

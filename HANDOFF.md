@@ -4,7 +4,9 @@ Course Project 9, **Biodiversity and Ecosystem Productivity** (5-person team, 8-
 timeline). This file gives a new person the full context and
 the exact current status, so work can restart where it stopped.
 
-**Snapshot date: 2026-10-07.** The analysis phase is essentially complete. The mid
+**Snapshot date: 2026-11-16** (previous: 2026-10-07). The analysis phase is complete,
+including three additions made on 2026-11-16: a second taxon (Extension D), local
+slopes for every cell, and two interactive maps. The mid
 evaluation is a *talk about the project* (what it is, approach, literature and
 citations, impact, expected results). The written mid-submission report has **not**
 been drafted yet; the team asked for the analysis to come first.
@@ -21,11 +23,13 @@ log10(survey effort) covariate). Predictor: MODIS GPP (MOD17A3HGF), with ERA5-La
 climate controls. **H1:** corrected richness is positively associated with GPP after
 climate controls on natural land cover.
 
-Three extensions, **scope-locked, do not add a fourth:**
+Four extensions, **scope-locked, do not add a fifth** (the plan locked at three; the
+lock was lifted once, for D, on 2026-11-16 — see `docs/DECISIONS.md`):
 - **A** naive (raw richness) vs corrected (rarefied + effort + climate + mask)
 - **B** linear vs quadratic fit, compared by AIC
 - **C** three case studies: Western Ghats, Thar Desert (replaced the Deccan, which has
-  no natural-cover cells), Eastern Himalaya
+  no natural-cover cells), Eastern Himalaya; plus local slopes for every cell
+- **D** second taxon: vascular plants, same model chain as the birds
 
 ## 2. What the results say (current interpretation)
 Authoritative write-up: `docs/RESULTS_ADJUDICATION.md` (it supersedes
@@ -42,6 +46,14 @@ Authoritative write-up: `docs/RESULTS_ADJUDICATION.md` (it supersedes
 - The case-study ranking flips after correction (Western Ghats 1st raw -> 2nd corrected;
   Eastern Himalaya 2nd -> 1st). Spreads: effort 139x, GPP 10x, raw richness 2.2x,
   corrected richness 1.3x.
+- **Second taxon (added 2026-11-16).** Vascular plants give the same picture: corrected
+  beta = +0.264 for GPP (birds on the same cells +0.277), and −0.027 (p = 0.49) within
+  ecoregions. Bird and plant richness agree only weakly (r = +0.30 after correction).
+  Plant samples are far from complete, so read `docs/RESULTS_EXTENSION_D.md` first.
+- **Local slopes (added 2026-11-16).** Fitted around each cell, the richness slope has a
+  median of +0.03, and it grows steadily as the fitting window widens to the whole region.
+  No statistical evidence that the slope differs from place to place
+  (`docs/RESULTS_LOCAL_SLOPES.md`).
 - **Direction is not identified.** Species-energy theory has productivity driving bird
   richness, so do not claim "biodiversity raises carbon uptake".
 
@@ -54,12 +66,16 @@ Authoritative write-up: `docs/RESULTS_ADJUDICATION.md` (it supersedes
 | Moran's I, VIF, cluster-robust SEs, spatial models, 2° / 0.5° grid robustness | Done | `docs/RESULTS_ADJUDICATION.md` |
 | Extra robustness (Hawkins, block CV, NPP/NDVI/EVI, mask, coverage standardisation, confounders, ecoregion FE, time window) | Done | same + `docs/RESULTS_SENSITIVITY.md` |
 | Clean dataset (884 x 39) + codebook | Done | `data/final/` |
-| Eight figures + CSV views | Done | `figures/`, `scripts/make_figures.py` |
+| Ten figures + CSV views | Done | `figures/`, `scripts/make_figures.py` |
+| Extension D: vascular plants as a second taxon | Done 2026-11-16 (1° only) | `docs/RESULTS_EXTENSION_D.md`, Fig 10 |
+| Local slopes (GWR) at 1° and 0.5° | Done 2026-11-16 | `docs/RESULTS_LOCAL_SLOPES.md`, Fig 9 |
+| Interactive maps (flat atlas, 3D terrain) | Done 2026-11-16 | `docs/interactive_map.html`, `docs/interactive_map_3d.html` |
 | Independent verification and project review (12 errors found and fixed) | Done | `docs/VERIFICATION.md` |
 | Mid-eval prep guides (full 15 pp, focused 12 pp) | Done | `docs/MID_EVAL_GUIDE_FOCUSED.{md,pdf}`, `docs/MID_EVAL_PREP_GUIDE.{md,pdf}` |
 
-Reproducibility: `python scripts/reproduce_all.py` re-runs 17 analysis scripts from the
-cached data and checks 27 headline numbers. Last run: **17/17 exit 0, 27/27 pass.**
+Reproducibility: `python scripts/reproduce_all.py` re-runs 19 analysis scripts from the
+cached data and checks 35 headline numbers. Last run (2026-11-16): **19/19 exit 0,
+35/35 pass.**
 
 ## 4. Status: what is NOT done / open items (priority order)
 1. **Three decisions that need the team:**
@@ -84,6 +100,10 @@ cached data and checks 27 headline numbers. Last run: **17/17 exit 0, 27/27 pass
 3. **Deliverable 8** (conservation-policy and citizen-science implications) is unwritten;
    `docs/DELIVERABLES_MAP.md` lists what it can and cannot claim.
 4. Literature review byline: add the four teammates' names.
+4a. **Plant records need a citation.** The GBIF derived-dataset DOI covers birds only.
+   Register a second derived dataset before Extension D goes into a report; the
+   contributing-dataset counts are ready in
+   `data/gbif_derived_dataset/dataset_counts_plants.csv`. Needs a GBIF account.
 5. Not done at 0.5°: coverage-based richness and the 2019-23 time-window refit.
 6. Optional: confirm Chao & Jost (2012) eq. 4a against the paper before citing the
    equation (the implementation already matches the authors' iNEXT package to 5e-13).
@@ -94,7 +114,14 @@ cached data and checks 27 headline numbers. Last run: **17/17 exit 0, 27/27 pass
 | `docs/DECISIONS.md` | Why each choice was made (append-only) |
 | `docs/TODO.md` | Priority-ordered remaining work |
 | `docs/RESULTS_ADJUDICATION.md` | Current interpretation of all results |
-| `docs/RESULTS_EXTENSION_{A,B,C}.md` | Per-extension results |
+| `docs/RESULTS_EXTENSION_{A,B,C,D}.md` | Per-extension results (D = vascular plants, added 2026-11-16) |
+| `docs/RESULTS_LOCAL_SLOPES.md` | Local slopes (GWR) for every modelled cell, part of Extension C |
+| `docs/interactive_map.html` | Interactive flat atlas (open in a browser) |
+| `docs/interactive_map_3d.html` | Interactive 3D terrain map (needs internet once, to load three.js) |
+| `scripts/build_interactive_map.py` | Builds both maps from the per-cell tables and `data/terrain_grid_0p05.npz` |
+| `scripts/gee_terrain_grid.py` | One-off Earth Engine pull of the 0.05° terrain, land-cover, NDVI and GPP grids for the 3D map |
+| `scripts/gbif_pull_taxon2.py`, `scripts/extension_d_plants.py` | Plant pull (own cache) and the Extension D analysis |
+| `scripts/local_slopes.py` | Geographically weighted regression, numpy only |
 | `docs/VERIFICATION.md` | What was independently checked and how |
 | `docs/LITERATURE_NOTES.md` | Analysis references beyond the 20, each checked against its abstract; data-product DOIs |
 | `docs/DELIVERABLES_MAP.md` | Plan Section 9 checklist -> files; what the policy section may claim |
@@ -103,7 +130,7 @@ cached data and checks 27 headline numbers. Last run: **17/17 exit 0, 27/27 pass
 | `data/case_study_regions/` | Ecoregion-based case-study polygons and cell-overlap tables from the teammate Step 1 package, plus a crosswalk to our cell IDs (see its README) |
 | `data/*_cache*.json` | **Frozen API results = restart state. Never delete or re-pull.** |
 | `data/repro/` | Logs from `reproduce_all.py` |
-| `figures/` | fig1-fig8 PNG and CSV |
+| `figures/` | fig1-fig10 PNG and CSV |
 | `scripts/gbif_lib.py` | Grid, GBIF queries, Hurlbert rarefaction |
 | `scripts/gee_extract_chunked.py` | The live Earth Engine extractor (`gee_extract.py` is deprecated and exits) |
 | `scripts/reproduce_all.py` | Re-runs the analysis and checks headline numbers |
@@ -115,6 +142,8 @@ Python 3.13 with `pip install -r requirements.txt`.
 - **Re-run the analysis from cache (no network, no accounts):**
   `python scripts/reproduce_all.py`
 - **Rebuild figures:** `python scripts/make_figures.py`
+- **Rebuild the interactive maps:** `python scripts/build_interactive_map.py`, then open
+  `docs/interactive_map.html` or `docs/interactive_map_3d.html` in a browser
 - **Re-pull GBIF / Earth Engine** (rarely needed; the caches are the frozen inputs, and
   GBIF results drift slightly because it keeps ingesting records): the GBIF API needs no
   key, but Earth Engine needs your own account. Run `earthengine authenticate`, then set
@@ -122,7 +151,7 @@ Python 3.13 with `pip install -r requirements.txt`.
   belongs to another team member's account).
 
 ## 7. Rules and pitfalls (learned the hard way)
-- Never add a fourth extension. Everything beyond A/B/C is robustness, not a new question.
+- Never add a fifth extension. Everything beyond A/B/C/D is robustness, not a new question.
 - GBIF: 0.3 s between requests, cache after every cell, never re-pull cached cells.
   Per-cell richness comes from ONE faceted request (`facet=speciesKey`); if a cell
   reports `facet_truncated=1`, raise `FACET_LIMIT` rather than ignoring it.
@@ -147,7 +176,7 @@ Python 3.13 with `pip install -r requirements.txt`.
 
 ## 9. Suggested next steps for whoever resumes
 1. Read `docs/MID_EVAL_GUIDE_FOCUSED.pdf`, then `docs/RESULTS_ADJUDICATION.md`.
-2. Run `python scripts/reproduce_all.py` to confirm the environment reproduces 27/27.
+2. Run `python scripts/reproduce_all.py` to confirm the environment reproduces 35/35.
 3. Get the team's answers to the three open decisions in section 4.1.
 4. When asked, draft the report (ask format, brief, length first), then deliverable 8.
 5. Update this file, `docs/TODO.md` and `docs/DECISIONS.md` after each significant step.

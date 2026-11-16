@@ -471,6 +471,173 @@ def fig8(model):
         os.path.join(OUT, "fig8_linear_vs_quadratic.csv"), index=False)
 
 
+# ---- Fig 9: local slopes (GWR) ----------------------------------------------
+def fig9():
+    """Needs data/local_slopes_*.csv from local_slopes.py."""
+    paths = [os.path.join(DATA, "local_slopes_%s.csv" % t) for t in ("1p0", "0p5")]
+    prof_path = os.path.join(DATA, "local_slopes_profile.csv")
+    if not all(os.path.exists(p) for p in paths + [prof_path]):
+        print("fig9 skipped: run local_slopes.py first", flush=True)
+        return
+    div = LinearSegmentedColormap.from_list(
+        "div", ["#8f3612", "#eb6834", "#f6b496", "#f1f0ea", "#86b6ef", "#2a78d6", "#0d366b"])
+    fig = plt.figure(figsize=(11.6, 8.6))
+    gs = fig.add_gridspec(2, 2, height_ratios=[1.25, 1], hspace=0.32, wspace=0.36)
+    vmax = 0.4
+    frames = []
+    for j, (path, size, title) in enumerate(zip(
+            paths, (1.0, 0.5), ("a  Local richness slope, 1° grid",
+                                "b  Local richness slope, 0.5° grid"))):
+        d = pd.read_csv(path)
+        ax = fig.add_subplot(gs[0, j])
+        pc = PatchCollection(cell_patches(d, size), cmap=div, edgecolor=SURFACE,
+                             linewidth=0.3)
+        pc.set_array(d.local_beta_richness.values); pc.set_clim(-vmax, vmax)
+        ax.add_collection(pc)
+        s = d[d.sig_adjusted == 1]
+        ax.add_collection(PatchCollection(cell_patches(s, size), facecolor="none",
+                                          edgecolor=INK, linewidth=0.9))
+        draw_cases(ax, label=(j == 0))
+        map_axes(ax)
+        ax.set_title("%s (n = %d; %d cells significant, outlined)"
+                     % (title, len(d), len(s)), loc="left", fontsize=10)
+        d["grain"] = size
+        frames.append(d)
+    cax = fig.add_axes([0.925, 0.56, 0.012, 0.3])
+    cb = fig.colorbar(pc, cax=cax, extend="both")
+    cb.set_label("Local slope (SD of GPP per SD of richness)", fontsize=8.5)
+    cb.outline.set_visible(False)
+
+    prof = pd.read_csv(prof_path)
+    ax = fig.add_subplot(gs[1, 0])
+    for grain, col in (("1.0", BLUE), ("0.5", ORANGE)):
+        p = prof[prof.grain.astype(str) == grain].sort_values("bandwidth_km")
+        ax.fill_between(p.bandwidth_km, p.beta_q25, p.beta_q75, color=col, alpha=0.16,
+                        linewidth=0)
+        ax.plot(p.bandwidth_km, p.beta_median, color=col, linewidth=2)
+        ax.axhline(p.global_beta.iloc[0], color=col, linewidth=0.9, linestyle=(0, (4, 3)))
+        best = p.loc[p.aicc.idxmin()]
+        ax.plot(best.bandwidth_km, best.beta_median, "o", color=col, markersize=6,
+                markeredgecolor=SURFACE, markeredgewidth=1.2)
+        ax.text(165, p.global_beta.iloc[0] + 0.006,
+                "Whole-region slope, %s° grid: %+.2f"
+                % ("1" if grain == "1.0" else "0.5", p.global_beta.iloc[0]),
+                color=col, fontsize=8.2, ha="left", va="bottom")
+    ax.axhline(0, color=AXIS, linewidth=0.8)
+    ax.set_xscale("log")
+    ax.set_xlabel("Window radius (km, median distance to the k-th neighbour)")
+    ax.set_ylabel("Median local slope (band: middle half of cells)")
+    ax.set_title("c  The slope grows with the size of the window", loc="left", fontsize=10)
+    hairline_grid(ax, "y")
+    ax.set_xlim(160, 3400); ax.set_ylim(-0.08, 0.31)
+    ax.set_xticks([200, 500, 1000, 2000, 3000])
+    ax.set_xticklabels(["200", "500", "1,000", "2,000", "3,000"])
+    ax.minorticks_off()
+    ax.text(0.98, 0.04, "Dots: window chosen by AICc", transform=ax.transAxes,
+            fontsize=8.2, color=INK2, va="bottom", ha="right")
+
+    ax = fig.add_subplot(gs[1, 1])
+    d1 = frames[0]
+    rows = [(name, d1[d1.case_study == name].local_beta_richness.values) for name in CASES]
+    rows.append(("All other modelled cells", d1[d1.case_study.isna() | (d1.case_study == "")]
+                 .local_beta_richness.values))
+    for i, (name, v) in enumerate(rows):
+        yy = np.full(len(v), i) + np.random.default_rng(3 + i).uniform(-0.16, 0.16, len(v))
+        ax.scatter(v, yy, s=13, color=BLUE if i < 3 else NEUTRAL, alpha=0.85,
+                   edgecolor=SURFACE, linewidth=0.4, zorder=2)
+        ax.plot([np.median(v)] * 2, [i - 0.3, i + 0.3], color=INK, linewidth=1.6, zorder=3)
+        ax.text(np.median(v), i - 0.34, "%+.2f" % (np.median(v) + 0.0), ha="center",
+                va="bottom", fontsize=8.2, color=INK)
+    ax.axvline(0, color=AXIS, linewidth=0.8)
+    ax.set_yticks(range(len(rows)))
+    ax.set_yticklabels(["%s (%d)" % (n, len(v)) for n, v in rows])
+    ax.set_ylim(-0.75, len(rows) - 0.45); ax.invert_yaxis()
+    ax.set_xlabel("Local slope at 1° (bar: median)")
+    ax.set_title("d  Local slopes in the three case-study regions", loc="left", fontsize=10)
+    hairline_grid(ax, "x")
+    fig.savefig(os.path.join(OUT, "fig9_local_slopes.png"), dpi=220, bbox_inches="tight")
+    plt.close(fig)
+    pd.concat(frames)[["grain", "cell_id", "lat_c", "lon_c", "local_beta_richness",
+                       "local_se", "local_t", "sig_adjusted", "case_study"]].to_csv(
+        os.path.join(OUT, "fig9_local_slopes.csv"), index=False)
+
+
+# ---- Fig 10: second taxon (Extension D) --------------------------------------
+def fig10():
+    """Needs data/extension_d_estimates.csv and data/plants_model_cells.csv
+    from extension_d_plants.py."""
+    ep = os.path.join(DATA, "extension_d_estimates.csv")
+    pp = os.path.join(DATA, "plants_model_cells.csv")
+    if not (os.path.exists(ep) and os.path.exists(pp)):
+        print("fig10 skipped: run extension_d_plants.py first", flush=True)
+        return
+    est = pd.read_csv(ep); P = pd.read_csv(pp)
+    est = est[est.response == "gpp"]
+    specs = [("alone", "Rarefied richness alone"),
+             ("corrected", "Corrected: + effort,\ntemperature, precipitation"),
+             ("within", "Within ecoregions\n(fixed effects)"),
+             ("sem", "Spatial error model")]
+    series = [("birds (same cells)", "Birds", BLUE, -0.14), ("plants", "Plants", AQUA, 0.14)]
+    fig, axes = plt.subplots(1, 3, figsize=(12.6, 4.3),
+                             gridspec_kw={"width_ratios": [1.25, 1, 1], "wspace": 0.42})
+    ax = axes[0]
+    for tag, name, col, off in series:
+        e = est[est.taxon == tag].set_index("spec")
+        for i, (k, _) in enumerate(specs):
+            b, se = e.loc[k, "beta"], e.loc[k, "se"]
+            ax.plot([b - 1.96 * se, b + 1.96 * se], [i + off] * 2, color=col, linewidth=1.8)
+            ax.plot(b, i + off, "o", color=col, markersize=6.5, markeredgecolor=SURFACE,
+                    markeredgewidth=1)
+            ax.text(b + 1.96 * se + 0.02, i + off, "%+.2f" % (b + 0.0), va="center",
+                    fontsize=8.2, color=INK2)
+            if i == 0:
+                ax.text(b, i + off - 0.2 if off < 0 else i + off + 0.2, name, color=col,
+                        fontsize=9, fontweight="bold", ha="center",
+                        va="bottom" if off < 0 else "top")
+    ax.axvline(0, color=AXIS, linewidth=0.8)
+    ax.set_yticks(range(len(specs))); ax.set_yticklabels([lab for _, lab in specs])
+    ax.set_ylim(len(specs) - 0.5, -0.75)
+    ax.set_xlabel("Richness coefficient for GPP (standardised, 95% interval)")
+    ax.set_title("a  Same model chain, two taxa (plants n = %d, birds n = %d)"
+                 % (int(est[est.taxon == "plants"].n.max()),
+                    int(est[est.taxon == "birds (same cells)"].n.max())),
+                 loc="left", fontsize=10)
+    hairline_grid(ax, "x")
+
+    ax = axes[1]
+    B = P.dropna(subset=["rarefied_250", "plant_rarefied_100"])
+    ax.scatter(B.rarefied_250, B.plant_rarefied_100, s=16, color=BLUE, alpha=0.7,
+               edgecolor=SURFACE, linewidth=0.4)
+    r = np.corrcoef(B.rarefied_250, B.plant_rarefied_100)[0, 1]
+    ax.text(0.04, 0.95, "r = %+.2f" % r, transform=ax.transAxes, fontsize=10, color=INK,
+            va="top", bbox=dict(boxstyle="round,pad=0.25", facecolor=SURFACE,
+                                edgecolor="none", alpha=0.9))
+    ax.set_xlabel("Bird species expected in 250 records")
+    ax.set_ylabel("Plant species expected in 100 records")
+    ax.set_title("b  Do the two taxa agree?", loc="left", fontsize=10)
+    hairline_grid(ax)
+
+    ax = axes[2]
+    bins = np.linspace(0, 1, 26)
+    ax.hist(B.rarefied_250 / 250, bins=bins, color=BLUE, alpha=0.75, label="Birds")
+    ax.hist(B.plant_rarefied_100 / 100, bins=bins, color=AQUA, alpha=0.75, label="Plants")
+    ymax = ax.get_ylim()[1]
+    ax.text((B.rarefied_250 / 250).median(), ymax * 0.97, "Birds", color=BLUE, fontsize=9,
+            fontweight="bold", ha="center", va="top")
+    ax.text((B.plant_rarefied_100 / 100).median(), ymax * 0.97, "Plants", color=AQUA,
+            fontsize=9, fontweight="bold", ha="center", va="top")
+    ax.set_xlim(0, 1)
+    ax.set_xlabel("Distinct species per record in the rarefied sample")
+    ax.set_ylabel("Cells")
+    ax.set_title("c  Plant samples are far from complete", loc="left", fontsize=10)
+    hairline_grid(ax, "y")
+    fig.savefig(os.path.join(OUT, "fig10_second_taxon.png"), dpi=220, bbox_inches="tight")
+    plt.close(fig)
+    est.to_csv(os.path.join(OUT, "fig10a_chain_estimates.csv"), index=False)
+    B[["cell_id", "lat_c", "lon_c", "rarefied_250", "plant_rarefied_100"]].to_csv(
+        os.path.join(OUT, "fig10bc_bird_vs_plant.csv"), index=False)
+
+
 def main():
     merged, model, eco = load()
     fig1(merged, model); print("fig1 done", flush=True)
@@ -481,6 +648,8 @@ def main():
     fig6(model); print("fig6 done", flush=True)
     fig7(model); print("fig7 done", flush=True)
     fig8(model); print("fig8 done", flush=True)
+    fig9(); print("fig9 done", flush=True)
+    fig10(); print("fig10 done", flush=True)
 
 
 if __name__ == "__main__":

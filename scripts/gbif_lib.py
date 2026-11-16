@@ -23,7 +23,8 @@ UA = {"User-Agent": "project9-biodiversity-coursework/0.1"}
 # species is flagged as possibly truncated rather than silently trusted.
 FACET_LIMIT = 1200
 
-TAXA = {"birds": 212, "plants": 7707728}      # Aves (class), Tracheophyta (phylum)
+TAXA = {"birds": 212, "plants": 7707728,      # Aves (class), Tracheophyta (phylum)
+        "lepidoptera": 797}                   # butterflies and moths (order)
 YEAR_RANGE = "2000,2024"
 
 # Case-study regions (plan Extension C) as (lat_min, lat_max, lon_min, lon_max)
@@ -153,4 +154,13 @@ def save_cache(path, obj):
     tmp = path + ".tmp"
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(obj, f)
-    os.replace(tmp, path)
+    # On Windows another process (antivirus, indexer) can hold the target for a
+    # moment and os.replace then raises PermissionError; retry instead of dying.
+    for attempt in range(8):
+        try:
+            os.replace(tmp, path)
+            return
+        except PermissionError:
+            if attempt == 7:
+                raise
+            time.sleep(0.5 * (attempt + 1))

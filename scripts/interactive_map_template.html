@@ -1,0 +1,288 @@
+<title>Richness and Productivity Atlas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one working surface. Map on the left with its layer picker and legend;
+   the selected cell's record and the linked scatter on the right; stacks on phones. */
+:root {
+  --bg: #f7f7f3; --surface: #ffffff; --sea: #e9eef2; --ink: #14161a; --ink2: #4d5057;
+  --muted: #82858c; --line: #dcdcd4; --nodata: #d4d4cc; --accent: #2a78d6;
+  --c1: #2a78d6; --c2: #eb6834; --c3: #12976a; --select: #14161a;
+  --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111418; --surface: #1a1e24; --sea: #141a22; --ink: #eef0f3; --ink2: #b5b9c1;
+    --muted: #7f848d; --line: #2d333c; --nodata: #2f353e; --accent: #6aa8f0;
+    --c1: #6aa8f0; --c2: #f08a5d; --c3: #3fc79a; --select: #ffffff; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111418; --surface: #1a1e24; --sea: #141a22; --ink: #eef0f3; --ink2: #b5b9c1;
+  --muted: #7f848d; --line: #2d333c; --nodata: #2f353e; --accent: #6aa8f0;
+  --c1: #6aa8f0; --c2: #f08a5d; --c3: #3fc79a; --select: #ffffff; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 14px; line-height: 1.5; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 28px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header h1 { font-family: var(--display); font-weight: 600; font-size: 1.7rem; line-height: 1.15; margin: 0 0 6px; text-wrap: balance; }
+header p { margin: 0; color: var(--ink2); max-width: 68ch; }
+header a { color: var(--accent); }
+.grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 20px; margin-top: 22px; align-items: start; }
+@media (max-width: 860px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; min-width: 0; }
+.side { display: grid; gap: 20px; min-width: 0; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 1rem; margin: 0 0 10px; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: end; margin-bottom: 10px; }
+label.field { display: grid; gap: 4px; font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; min-width: 0; }
+select { font: inherit; font-size: 0.95rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 6px 8px; max-width: 100%; text-transform: none; letter-spacing: 0; }
+select:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.check { display: flex; gap: 6px; align-items: center; color: var(--ink2); font-size: 0.9rem; padding-bottom: 6px; }
+.note { color: var(--ink2); margin: 0 0 12px; min-height: 3em; max-width: 70ch; }
+svg { display: block; width: 100%; height: auto; }
+#map .sea { fill: var(--sea); }
+#map .cell { stroke: var(--surface); stroke-width: 0.6; cursor: pointer; }
+#map .cell.dim { fill: var(--nodata); }
+#map .sel { fill: none; stroke: var(--select); stroke-width: 2.2; pointer-events: none; }
+#map .sig { fill: none; stroke: var(--ink); stroke-width: 1.1; pointer-events: none; }
+#map .case { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 5 3; pointer-events: none; }
+#map .caselabel { font: 500 11px var(--body); fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; }
+.tick { font: 10px var(--body); fill: var(--muted); font-variant-numeric: tabular-nums; }
+.legend { display: flex; gap: 10px; align-items: center; margin-top: 10px; color: var(--ink2); font-size: 0.85rem; font-variant-numeric: tabular-nums; flex-wrap: wrap; }
+.legend .bar { flex: 1 1 160px; height: 10px; border-radius: 2px; min-width: 120px; }
+.legend .sw { display: inline-flex; gap: 6px; align-items: center; margin-right: 10px; }
+.legend .sw i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 5px 14px; margin: 0; font-variant-numeric: tabular-nums; }
+dt { color: var(--muted); } dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+.cellhead { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; margin-bottom: 10px; }
+.cellhead strong { font-family: var(--display); font-size: 1.05rem; }
+.badge { font-size: 0.75rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink2); white-space: nowrap; }
+.badge.m { border-color: var(--c1); color: var(--c1); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.seg button { font: inherit; font-size: 0.85rem; padding: 5px 10px; border: 0; background: transparent; color: var(--ink2); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+.scatterhead { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+#scatter .pt { cursor: pointer; }
+#scatter .axis { stroke: var(--line); }
+#scatter .fit { stroke: var(--ink); stroke-width: 1.4; }
+.stat { color: var(--ink2); margin: 8px 0 0; }
+.stat b { color: var(--ink); font-weight: 600; }
+footer { margin-top: 22px; color: var(--muted); font-size: 0.85rem; max-width: 80ch; }
+footer a { color: var(--accent); }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Richness and Productivity Atlas</h1>
+    <p>Every one-degree cell of the study region, 5–31°N and 68–102°E. Pick a layer, then hover or tap a cell to read its record. Of 884 cells, 630 are on land and 221 pass the natural-cover and record-count rules used in the models. <!--__NAV__--></p>
+  </header>
+
+  <div class="grid">
+    <section class="panel" aria-label="Map">
+      <div class="controls">
+        <label class="field" for="layer">Layer
+          <select id="layer"></select>
+        </label>
+        <label class="check" for="onlymodel"><input type="checkbox" id="onlymodel"> Modelled cells only</label>
+      </div>
+      <p class="note" id="note"></p>
+      <svg id="map" viewBox="-30 -8 722 556" role="img" aria-label="Grid map of the study region coloured by the selected layer"></svg>
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <div class="side">
+      <section class="panel" aria-live="polite">
+        <div class="cellhead"><strong id="cid"></strong><span class="badge" id="cstat"></span></div>
+        <dl id="detail"></dl>
+      </section>
+      <section class="panel">
+        <div class="scatterhead">
+          <h2 style="margin:0">Richness against productivity</h2>
+          <div class="seg" role="group" aria-label="Richness measure">
+            <button type="button" id="braw" aria-pressed="false">Raw count</button>
+            <button type="button" id="bcor" aria-pressed="true">Effort-corrected</button>
+          </div>
+        </div>
+        <svg id="scatter" viewBox="0 0 420 300" role="img" aria-label="Scatter of bird richness against productivity for the modelled cells"></svg>
+        <p class="stat" id="stat"></p>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    Birds and plants: GBIF occurrence records 2000–2024 (derived dataset <a href="https://doi.org/10.15468/dd.jf64nx">doi:10.15468/dd.jf64nx</a> covers the bird records). Productivity: MODIS MOD17A3HGF, 2019–2023 mean. Climate: ERA5-Land. Land cover: ESA WorldCover v200. Dashed boxes mark the three case-study regions. Built by <code>scripts/build_interactive_map.py</code> from the project's per-cell tables.
+  </footer>
+</div>
+
+<script>
+const CELLS = /*__DATA__*/[];
+const CASES = [["Western Ghats", 8, 16, 74, 77], ["Thar Desert", 25, 30, 69, 74], ["Eastern Himalaya", 26, 29, 88, 97]];
+const S = 20, LON0 = 68, LAT1 = 31, W = 34 * S, H = 26 * S;
+const NS = "http://www.w3.org/2000/svg";
+const RAMPS = {
+  blue:   {light: ["#e3eefb", "#86b6ef", "#3987e5", "#184f95", "#0d366b"], dark: ["#16304f", "#1f5aa6", "#3987e5", "#86b6ef", "#dbeafc"]},
+  orange: {light: ["#fde4d8", "#f6b496", "#eb6834", "#8f3612", "#5e2108"], dark: ["#4a1f0c", "#a8431a", "#eb6834", "#f6b496", "#fde9df"]},
+  green:  {light: ["#dcf3ea", "#8fd9bd", "#1baf7a", "#0f7350", "#084a33"], dark: ["#0b3a29", "#0f7350", "#1baf7a", "#8fd9bd", "#e2f6ee"]},
+  div:    {light: ["#8f3612", "#eb6834", "#f6b496", "#efeee8", "#86b6ef", "#2a78d6", "#0d366b"], dark: ["#fbd3c0", "#eb6834", "#8f3612", "#2a2d33", "#184f95", "#3987e5", "#cfe3fb"]}
+};
+const fmt = (v, d = 0) => v == null ? "–" : Number(v).toLocaleString("en-US", {minimumFractionDigits: d, maximumFractionDigits: d});
+const sgn = (v, d = 2) => v == null ? "–" : (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(d);
+const LAYERS = [
+  {k: "sc", label: "Bird richness, effort-corrected", ramp: "blue", unit: "species expected in 250 records", d: 1,
+   note: "Species expected in a random draw of 250 records (Hurlbert rarefaction). This is the richness measure used in the models. It is highest along the Eastern Himalaya, not in the heavily surveyed Western Ghats."},
+  {k: "so", label: "Bird richness, raw count", ramp: "blue", unit: "species observed", d: 0,
+   note: "Species ever recorded in the cell. Compare with the survey-effort layer: the raw count largely maps where birdwatchers go (r = 0.81 with log records in the modelled cells)."},
+  {k: "n", label: "Bird survey effort", ramp: "green", unit: "records (log scale)", d: 0, log: true,
+   note: "GBIF bird records per cell, 2000–2024, mostly from eBird. Effort differs 139-fold between the three case-study regions."},
+  {k: "gpp", label: "Productivity (GPP)", ramp: "orange", unit: "kg C m⁻² yr⁻¹", d: 2,
+   note: "Gross primary productivity, MODIS, 2019–2023 mean. It varies about 10-fold across the case-study regions while corrected richness varies 1.3-fold."},
+  {k: "npp", label: "Productivity (NPP)", ramp: "orange", unit: "kg C m⁻² yr⁻¹", d: 2,
+   note: "Net primary productivity: GPP minus modelled plant respiration. The richness association is stronger for NPP than for GPP."},
+  {k: "res", label: "Model residual", ramp: "div", unit: "SD of GPP", d: 2, div: true,
+   note: "GPP left unexplained by corrected richness, effort, temperature and precipitation. Blue cells are more productive than the model predicts, orange cells less. The broad patches are the spatial autocorrelation the report discusses."},
+  {k: "ls", label: "Local richness slope", ramp: "div", unit: "SD of GPP per SD of richness", d: 2, div: true,
+   note: "Slope of GPP on corrected richness fitted separately around each cell (geographically weighted regression, 32 nearest cells). Outlined cells pass the multiple-testing threshold. Most local slopes are near zero; the region-wide slope is +0.27."},
+  {k: "pc", label: "Plant richness, effort-corrected", ramp: "green", unit: "species expected in 100 records", d: 1,
+   note: "Vascular plants, second taxon. Species expected in a random draw of 100 records. Plant records are far sparser than bird records, so many cells have no value."},
+  {k: "pn", label: "Plant survey effort", ramp: "green", unit: "records (log scale)", d: 0, log: true,
+   note: "GBIF vascular-plant records per cell, 2000–2024, from herbaria and iNaturalist. A different observer community from the bird data."},
+  {k: "st", label: "Which cells are modelled", cat: true,
+   note: "Blue cells enter the models. Orange cells are dominated by cropland or built-up land and are excluded, which removes most of peninsular India. Grey cells are water-dominated or have fewer than 250 identified bird records."}
+];
+const STATUS = {m: ["Modelled", "--c1"], c: ["Cropland or built-up", "--c2"], o: ["Water, too few records, or no data", "--nodata"]};
+const state = {layer: "sc", only: false, sel: null, pin: null, rich: "sc"};
+const el = id => document.getElementById(id);
+const mk = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const a in attrs) e.setAttribute(a, attrs[a]); if (parent) parent.appendChild(e); return e; };
+const isDark = () => { const t = document.documentElement.dataset.theme; return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; };
+const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+function ramp(name, t) {
+  const stops = RAMPS[name][isDark() ? "dark" : "light"], x = Math.min(1, Math.max(0, t)) * (stops.length - 1);
+  const i = Math.min(stops.length - 2, Math.floor(x)), f = x - i, a = hex(stops[i]), b = hex(stops[i + 1]);
+  return "rgb(" + a.map((v, j) => Math.round(v + (b[j] - v) * f)).join(",") + ")";
+}
+function scaleFor(L) {
+  const vals = CELLS.filter(c => c[L.k] != null && (!L.log || c[L.k] > 0)).map(c => L.log ? Math.log10(c[L.k]) : c[L.k]).sort((a, b) => a - b);
+  if (!vals.length) return null;
+  const q = p => vals[Math.round(p * (vals.length - 1))];
+  let lo = q(0.02), hi = q(0.98);
+  if (L.div) { const m = Math.max(Math.abs(lo), Math.abs(hi)); lo = -m; hi = m; }
+  return {lo, hi, t: v => (((L.log ? Math.log10(Math.max(v, 1)) : v) - lo) / (hi - lo || 1))};
+}
+
+const map = el("map"), rects = new Map();
+function buildMap() {
+  mk("rect", {class: "sea", x: 0, y: 0, width: W, height: H}, map);
+  for (let lon = 70; lon <= 100; lon += 5) mk("text", {class: "tick", x: (lon - LON0) * S, y: H + 16, "text-anchor": "middle"}, map).textContent = lon + "°E";
+  for (let lat = 5; lat <= 30; lat += 5) mk("text", {class: "tick", x: -6, y: (LAT1 - lat) * S + 3, "text-anchor": "end"}, map).textContent = lat + "°N";
+  const g = mk("g", {}, map);
+  for (const c of CELLS) {
+    const r = mk("rect", {class: "cell", x: (c.lo - 0.5 - LON0) * S, y: (LAT1 - c.la - 0.5) * S, width: S, height: S}, g);
+    r.addEventListener("pointerenter", () => show(c));
+    r.addEventListener("click", () => { state.pin = state.pin === c ? null : c; show(c); });
+    rects.set(c.id, r);
+  }
+  g.addEventListener("pointerleave", () => show(state.pin || state.sel));
+  mk("g", {id: "sigs"}, map);
+  for (const [name, a, b, x0, x1] of CASES) {
+    mk("rect", {class: "case", x: (x0 - LON0) * S, y: (LAT1 - b) * S, width: (x1 - x0) * S, height: (b - a) * S}, map);
+    const t = mk("text", {class: "caselabel", x: (x0 - LON0) * S + 2, y: (LAT1 - b) * S - 5}, map); t.textContent = name;
+  }
+  mk("rect", {class: "sel", id: "selbox", width: S, height: S, visibility: "hidden"}, map);
+}
+function paint() {
+  const L = LAYERS.find(l => l.k === state.layer), sc = L.cat ? null : scaleFor(L);
+  el("note").textContent = L.note;
+  const sigs = el("sigs"); sigs.textContent = "";
+  for (const c of CELLS) {
+    const r = rects.get(c.id), v = c[L.k];
+    const hide = state.only && c.st !== "m";
+    r.classList.remove("dim"); r.style.fill = "";
+    if (hide || v == null || (L.log && !(v > 0)) || !sc && !L.cat) r.classList.add("dim");
+    else if (L.cat) r.style.fill = "var(" + STATUS[v][1] + ")";
+    else r.style.fill = ramp(L.ramp, sc.t(v));
+    if (L.k === "ls" && c.lsig && !hide) mk("rect", {class: "sig", x: r.getAttribute("x"), y: r.getAttribute("y"), width: S, height: S}, sigs);
+  }
+  const lg = el("legend"); lg.textContent = "";
+  if (L.cat) {
+    for (const k in STATUS) { const s = document.createElement("span"); s.className = "sw"; const i = document.createElement("i"); i.style.background = "var(" + STATUS[k][1] + ")"; s.append(i, STATUS[k][0] + " (" + CELLS.filter(c => c.st === k).length + ")"); lg.append(s); }
+  } else if (!sc) {
+    lg.textContent = "No data for this layer yet.";
+  } else {
+    const lab = v => L.log ? fmt(Math.pow(10, v)) : (L.div ? sgn(v, L.d) : fmt(v, L.d));
+    const bar = document.createElement("div"); bar.className = "bar";
+    bar.style.background = "linear-gradient(to right," + [0, .25, .5, .75, 1].map(t => ramp(L.ramp, t)).join(",") + ")";
+    const a = document.createElement("span"), b = document.createElement("span"), u = document.createElement("span");
+    a.textContent = lab(sc.lo); b.textContent = lab(sc.hi); u.textContent = L.unit; u.style.flexBasis = "100%";
+    lg.append(a, bar, b, u);
+  }
+}
+function show(c) {
+  if (!c) return;
+  state.sel = c;
+  const box = el("selbox"), r = rects.get(c.id);
+  box.setAttribute("x", r.getAttribute("x")); box.setAttribute("y", r.getAttribute("y")); box.setAttribute("visibility", "visible");
+  el("cid").textContent = c.la.toFixed(1) + "°N, " + c.lo.toFixed(1) + "°E";
+  const b = el("cstat"); b.textContent = STATUS[c.st][0].split(",")[0]; b.className = "badge " + c.st;
+  const rows = [
+    ["Country", c.cty || "–"], ["Ecoregion", c.eco || "–"], ["Dominant land cover", c.wc || "–"],
+    ["Natural cover", c.nat == null ? "–" : Math.round(c.nat * 100) + "%"],
+    ["Bird records", fmt(c.n)], ["Bird species, raw", fmt(c.so)], ["Bird species, corrected", fmt(c.sc, 1)],
+    ["GPP (kg C m⁻² yr⁻¹)", fmt(c.gpp, 2)], ["NPP (kg C m⁻² yr⁻¹)", fmt(c.npp, 2)],
+    ["Temperature (°C)", fmt(c.t, 1)], ["Precipitation (mm yr⁻¹)", fmt(c.p)],
+    ["Model residual (SD)", sgn(c.res)], ["Local richness slope", sgn(c.ls)],
+    ["Plant records", fmt(c.pn)], ["Plant species, raw", fmt(c.ps)], ["Plant species, corrected", fmt(c.pc, 1)]
+  ];
+  const dl = el("detail"); dl.textContent = "";
+  for (const [k, v] of rows) { const dt = document.createElement("dt"), dd = document.createElement("dd"); dt.textContent = k; dd.textContent = v; dl.append(dt, dd); }
+  document.querySelectorAll("#scatter .pt").forEach(p => { const on = p.dataset.id === c.id; p.setAttribute("r", on ? 6 : 3.2); p.setAttribute("stroke", on ? "var(--select)" : "none"); if (on) p.parentNode.appendChild(p); });
+}
+
+function scatter() {
+  const svg = el("scatter"); svg.textContent = "";
+  const k = state.rich, pts = CELLS.filter(c => c.st === "m" && c[k] != null && c.gpp != null);
+  const m = {l: 44, r: 12, t: 10, b: 38}, w = 420 - m.l - m.r, h = 300 - m.t - m.b;
+  const xs = pts.map(c => c[k]), ys = pts.map(c => c.gpp);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs), y1 = Math.max(...ys) * 1.04;
+  const X = v => m.l + (v - x0) / (x1 - x0) * w, Y = v => m.t + h - v / y1 * h;
+  mk("line", {class: "axis", x1: m.l, y1: m.t + h, x2: m.l + w, y2: m.t + h}, svg);
+  mk("line", {class: "axis", x1: m.l, y1: m.t, x2: m.l, y2: m.t + h}, svg);
+  for (let i = 0; i <= 3; i++) {
+    const yv = y1 / 1.04 * i / 3, xv = x0 + (x1 - x0) * i / 3;
+    mk("text", {class: "tick", x: m.l - 6, y: Y(yv) + 3, "text-anchor": "end"}, svg).textContent = yv.toFixed(1);
+    mk("text", {class: "tick", x: X(xv), y: m.t + h + 14, "text-anchor": i === 0 ? "start" : i === 3 ? "end" : "middle"}, svg).textContent = Math.round(xv);
+  }
+  mk("text", {class: "tick", x: m.l + w / 2, y: 296, "text-anchor": "middle"}, svg).textContent = k === "sc" ? "Bird species expected in 250 records" : "Bird species observed (raw)";
+  const yl = mk("text", {class: "tick", x: 12, y: m.t + h / 2, "text-anchor": "middle", transform: "rotate(-90 12 " + (m.t + h / 2) + ")"}, svg); yl.textContent = "GPP (kg C m⁻² yr⁻¹)";
+  const n = pts.length, mx = xs.reduce((a, b) => a + b) / n, my = ys.reduce((a, b) => a + b) / n;
+  let sxy = 0, sxx = 0, syy = 0, sxe = 0, see = 0, me = pts.reduce((a, c) => a + Math.log10(c.n), 0) / n;
+  pts.forEach(c => { const dx = c[k] - mx, dy = c.gpp - my, de = Math.log10(c.n) - me; sxy += dx * dy; sxx += dx * dx; syy += dy * dy; sxe += dx * de; see += de * de; });
+  const slope = sxy / sxx;
+  mk("line", {class: "fit", x1: X(x0), y1: Y(my + slope * (x0 - mx)), x2: X(x1), y2: Y(my + slope * (x1 - mx))}, svg);
+  const colour = c => c.cs === "Western Ghats" ? "var(--c1)" : c.cs === "Thar Desert" ? "var(--c2)" : c.cs === "Eastern Himalaya" ? "var(--c3)" : "var(--muted)";
+  for (const c of pts.slice().sort((a, b) => (a.cs ? 1 : 0) - (b.cs ? 1 : 0))) {
+    const p = mk("circle", {class: "pt", cx: X(c[k]), cy: Y(c.gpp), r: 3.2, fill: colour(c), "fill-opacity": c.cs ? 0.95 : 0.45, "stroke-width": 1.6, stroke: "none"}, svg);
+    p.dataset.id = c.id;
+    p.addEventListener("pointerenter", () => show(c));
+    p.addEventListener("click", () => { state.pin = c; show(c); });
+  }
+  let lx = m.l + 6;
+  for (const [name, v] of [["Western Ghats", "--c1"], ["Thar Desert", "--c2"], ["Eastern Himalaya", "--c3"]]) {
+    mk("circle", {cx: lx + 4, cy: m.t + 6, r: 4, fill: "var(" + v + ")"}, svg);
+    const t = mk("text", {class: "tick", x: lx + 12, y: m.t + 9.5}, svg); t.textContent = name; t.style.fill = "var(--ink2)";
+    lx += 22 + name.length * 5.6;
+  }
+  el("stat").innerHTML = "Across the " + n + " modelled cells: correlation with GPP <b>r = " + (sxy / Math.sqrt(sxx * syy)).toFixed(2) + "</b>; correlation with survey effort <b>r = " + (sxe / Math.sqrt(sxx * see)).toFixed(2) + "</b>. " +
+    (k === "sc" ? "After correction, richness is no longer mainly a map of effort." : "The raw count tracks how many records a cell has.");
+  if (state.sel) show(state.sel);
+}
+
+const sel = el("layer");
+for (const L of LAYERS) { if (!L.cat && !CELLS.some(c => c[L.k] != null)) continue; const o = document.createElement("option"); o.value = L.k; o.textContent = L.label; sel.append(o); }
+sel.addEventListener("change", () => { state.layer = sel.value; paint(); });
+el("onlymodel").addEventListener("change", e => { state.only = e.target.checked; paint(); });
+for (const [id, k] of [["braw", "so"], ["bcor", "sc"]]) el(id).addEventListener("click", () => { state.rich = k; el("braw").setAttribute("aria-pressed", k === "so"); el("bcor").setAttribute("aria-pressed", k === "sc"); scatter(); });
+buildMap(); paint(); scatter();
+show(CELLS.filter(c => c.cs === "Eastern Himalaya" && c.st === "m").sort((a, b) => b.sc - a.sc)[0] || CELLS[0]);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+new MutationObserver(paint).observe(document.documentElement, {attributes: true, attributeFilter: ["data-theme"]});
+</script>

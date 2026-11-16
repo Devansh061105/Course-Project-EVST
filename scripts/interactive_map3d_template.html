@@ -1,0 +1,406 @@
+<title>Richness Terrain Atlas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: the 3D scene is the page. Controls sit in one bar above it, the record of
+   the clicked place sits beside it (below it on phones), legends under the scene. */
+:root {
+  --bg: #f7f7f3; --surface: #ffffff; --sea: #c9dbe8; --ink: #14161a; --ink2: #4d5057;
+  --muted: #82858c; --line: #dcdcd4; --accent: #2a78d6; --select: #14161a; --tip: #14161a; --tipink: #ffffff;
+  --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111418; --surface: #1a1e24; --sea: #17232f; --ink: #eef0f3; --ink2: #b5b9c1;
+    --muted: #7f848d; --line: #2d333c; --accent: #6aa8f0; --select: #ffffff; --tip: #eef0f3; --tipink: #14161a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111418; --surface: #1a1e24; --sea: #17232f; --ink: #eef0f3; --ink2: #b5b9c1;
+  --muted: #7f848d; --line: #2d333c; --accent: #6aa8f0; --select: #ffffff; --tip: #eef0f3; --tipink: #14161a; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 14px; line-height: 1.5; }
+.wrap { max-width: 1320px; margin: 0 auto; padding-block: 28px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header h1 { font-family: var(--display); font-weight: 600; font-size: 1.7rem; line-height: 1.15; margin: 0 0 6px; text-wrap: balance; }
+header p { margin: 0; color: var(--ink2); max-width: 72ch; }
+header a, footer a { color: var(--accent); }
+.bar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: end; margin: 20px 0 12px; }
+label.field { display: grid; gap: 4px; font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; min-width: 0; }
+select, button.btn { font: inherit; font-size: 0.92rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 6px 9px; max-width: 100%; text-transform: none; letter-spacing: 0; }
+button.btn { cursor: pointer; }
+button.btn:hover { border-color: var(--muted); }
+select:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+input[type="range"] { width: 130px; max-width: 100%; accent-color: var(--accent); }
+.check { display: flex; gap: 6px; align-items: center; color: var(--ink2); font-size: 0.9rem; padding-bottom: 6px; }
+.fly { display: flex; flex-wrap: wrap; gap: 6px; }
+.grid { display: grid; grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 900px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+.stage { position: relative; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--sea); aspect-ratio: 16 / 10; max-width: 100%; min-height: 340px; touch-action: none; }
+.stage canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+.stage canvas:active { cursor: grabbing; }
+.tag { position: absolute; transform: translate(-50%, -100%); font: 500 12px var(--body); color: var(--tipink); background: var(--tip); padding: 2px 7px; border-radius: 3px; pointer-events: none; white-space: nowrap; }
+.tip { position: absolute; font-size: 12px; color: var(--tipink); background: var(--tip); padding: 5px 8px; border-radius: 4px; pointer-events: none; max-width: 240px; font-variant-numeric: tabular-nums; z-index: 2; }
+.hint { position: absolute; left: 10px; bottom: 8px; font-size: 12px; color: var(--tipink); background: var(--tip); opacity: 0.82; padding: 3px 8px; border-radius: 3px; pointer-events: none; }
+.msg { position: absolute; inset: 0; display: grid; place-items: center; padding: 20px; text-align: center; color: var(--ink2); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; min-width: 0; }
+.cellhead { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; margin-bottom: 4px; }
+.cellhead strong { font-family: var(--display); font-size: 1.05rem; }
+.badge { font-size: 0.75rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink2); white-space: nowrap; }
+.badge.m { border-color: var(--accent); color: var(--accent); }
+.sub { color: var(--muted); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; margin: 14px 0 6px; }
+dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 5px 14px; margin: 0; font-variant-numeric: tabular-nums; }
+dt { color: var(--muted); } dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
+.legends { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 28px; margin-top: 12px; color: var(--ink2); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
+.legends h3 { font: 600 0.78rem var(--body); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+.grad { display: flex; gap: 8px; align-items: center; }
+.grad .b { flex: 1 1 auto; height: 10px; border-radius: 2px; min-width: 80px; }
+.sw { display: inline-flex; gap: 6px; align-items: center; margin: 0 12px 4px 0; }
+.sw i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+footer { margin-top: 22px; color: var(--muted); font-size: 0.85rem; max-width: 84ch; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Richness Terrain Atlas</h1>
+    <p>The study region as terrain, 5–31°N and 68–102°E. The ground is coloured by vegetation; each column is one one-degree cell, and its height is how many bird or plant species the cell holds. Drag to turn the scene, scroll or pinch to zoom, and click any place to read its record. <!--__NAV__--></p>
+  </header>
+
+  <div class="bar">
+    <label class="field" for="drape">Ground shows
+      <select id="drape">
+        <option value="lc">Land cover</option>
+        <option value="ndvi">Vegetation greenness (NDVI)</option>
+        <option value="gpp">Productivity (GPP)</option>
+        <option value="elev">Elevation</option>
+      </select>
+    </label>
+    <label class="field" for="cols">Columns show
+      <select id="cols">
+        <option value="sc">Bird richness, effort-corrected</option>
+        <option value="so">Bird richness, raw count</option>
+        <option value="n">Bird survey effort</option>
+        <option value="pc">Plant richness, effort-corrected</option>
+        <option value="none">No columns</option>
+      </select>
+    </label>
+    <label class="check" for="onlymodel"><input type="checkbox" id="onlymodel" checked> Modelled cells only</label>
+    <label class="field" for="exag"><span style="white-space:nowrap">Relief ×<span id="exagv">25</span></span>
+      <input type="range" id="exag" min="5" max="60" step="1" value="25">
+    </label>
+    <div class="fly" role="group" aria-label="Fly to">
+      <button type="button" class="btn" data-fly="all">Whole region</button>
+      <button type="button" class="btn" data-fly="0">Western Ghats</button>
+      <button type="button" class="btn" data-fly="1">Thar Desert</button>
+      <button type="button" class="btn" data-fly="2">Eastern Himalaya</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="stage" id="stage">
+        <div class="tip" id="tip" hidden></div>
+        <div class="hint">Drag: turn · Scroll: zoom · Right-drag: move · Click: details</div>
+      </div>
+      <div class="legends">
+        <div><h3 id="lgd1t">Ground</h3><div id="lgd1"></div></div>
+        <div><h3 id="lgd2t">Columns</h3><div id="lgd2"></div></div>
+      </div>
+    </div>
+    <section class="panel" aria-live="polite">
+      <div class="cellhead"><strong id="cid">Click a place</strong><span class="badge" id="cstat" hidden></span></div>
+      <div id="point"></div>
+      <div class="sub" id="cellsub" hidden>The one-degree cell around it</div>
+      <dl id="detail"></dl>
+    </section>
+  </div>
+
+  <footer>
+    Terrain: ETOPO1 (NOAA), drawn at 0.05° with the relief exaggerated. Land cover: ESA WorldCover v200. Greenness and productivity: MODIS MOD13Q1 and MOD17A3HGF, 2019–2023 means. Birds and plants: GBIF occurrence records 2000–2024, per one-degree cell; "effort-corrected" is the number of species expected in a random draw of 250 bird records or 100 plant records. Dashed outlines mark the three case-study regions. Built by <code>scripts/build_interactive_map.py</code>.
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const D = /*__DATA__*/{cells: [], grid: null};
+const CELLS = D.cells, G = D.grid;
+const CASES = [["Western Ghats", 8, 16, 74, 77], ["Thar Desert", 25, 30, 69, 74], ["Eastern Himalaya", 26, 29, 88, 97]];
+const LON0 = 68, LAT1 = 31, LONC = 85, LATC = 18, BASEX = 25, KM = 1 / 111;
+const el = id => document.getElementById(id);
+const fmt = (v, d = 0) => v == null ? "–" : Number(v).toLocaleString("en-US", {minimumFractionDigits: d, maximumFractionDigits: d});
+const sgn = (v, d = 2) => v == null ? "–" : (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(d);
+const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+function rampRGB(stops, t) {
+  const x = Math.min(1, Math.max(0, t)) * (stops.length - 1), i = Math.min(stops.length - 2, Math.floor(x)), f = x - i;
+  const a = hex(stops[i]), b = hex(stops[i + 1]);
+  return a.map((v, j) => Math.round(v + (b[j] - v) * f));
+}
+const LC = {10: ["Tree cover", "#2f7d4f"], 20: ["Shrubland", "#a9b46a"], 30: ["Grassland", "#cfd98a"], 40: ["Cropland", "#e3c26a"],
+  50: ["Built-up", "#c2452d"], 60: ["Bare or sparse", "#cdbfa6"], 70: ["Snow and ice", "#f2f5f7"], 80: ["Water", "#6ea3c9"],
+  90: ["Wetland", "#4fa39a"], 95: ["Mangrove", "#1f7a70"], 100: ["Moss and lichen", "#b9c9a0"]};
+const DRAPES = {
+  lc: {title: "Ground: land cover"},
+  ndvi: {title: "Ground: vegetation greenness (NDVI)", stops: ["#b89b72", "#e2d79a", "#a9cf73", "#4e9f4a", "#17603a"], lo: 0, hi: 0.9, d: 2},
+  gpp: {title: "Ground: productivity (GPP, kg C m⁻² yr⁻¹)", stops: ["#f3e3d3", "#f6b496", "#eb6834", "#8f3612", "#4a1a06"], lo: 0, hi: 3.3, d: 1},
+  elev: {title: "Ground: elevation (m)", stops: ["#5f9a6a", "#a8c68a", "#e6dca6", "#c9a877", "#9b7a5c", "#e9e6e2", "#ffffff"], lo: 0, hi: 6000, d: 0}
+};
+const COLS = {
+  sc: {label: "Bird species expected in 250 records", stops: ["#bcd8f8", "#3987e5", "#0d366b"], d: 1},
+  so: {label: "Bird species observed (raw count)", stops: ["#bcd8f8", "#3987e5", "#0d366b"], d: 0},
+  n: {label: "Bird records (log scale)", stops: ["#f3d9f0", "#b455a8", "#5a1f55"], d: 0, log: true},
+  pc: {label: "Plant species expected in 100 records", stops: ["#d6f0c9", "#3fae5a", "#0c5226"], d: 1}
+};
+const STATUS = {m: "Modelled", c: "Cropland or built-up", o: "Not modelled"};
+const state = {drape: "lc", cols: "sc", only: true, exag: 25, sel: null};
+
+function b64(s, Type) { const bin = atob(s), u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return new Type(u.buffer); }
+const stage = el("stage");
+function fail(text) { const m = document.createElement("div"); m.className = "msg"; m.textContent = text; stage.appendChild(m); }
+
+(function main() {
+  if (!G) return fail("The terrain grid is missing. Rebuild the page with scripts/build_interactive_map.py.");
+  if (!window.THREE || !THREE.OrbitControls) return fail("The 3D library did not load. Check the network connection and reload.");
+  const W = G.w, H = G.h, RES = G.res;
+  const ELEV = b64(G.elev, Uint16Array), LCG = b64(G.lc, Uint8Array), NDVI = b64(G.ndvi, Uint8Array), GPP = b64(G.gpp, Uint8Array);
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({antialias: true}); } catch (e) { return fail("This browser cannot draw 3D graphics (WebGL is unavailable)."); }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  stage.insertBefore(renderer.domElement, stage.firstChild);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(38, 16 / 10, 0.1, 400);
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.maxPolarAngle = Math.PI * 0.47; controls.minDistance = 2.5; controls.maxDistance = 90; controls.screenSpacePanning = false;
+  scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.95); sun.position.set(-16, 14, -12); scene.add(sun);
+
+  const X = lon => lon - LONC, Z = lat => LATC - lat;
+  const hBase = i => ELEV[i] / 1000 * KM * BASEX;           // height in scene units at the base exaggeration
+  function heightAt(lon, lat) {                              // scene-units height at the current exaggeration
+    const i = Math.floor((lon - LON0) / RES), j = Math.floor((LAT1 - lat) / RES);
+    if (i < 0 || j < 0 || i >= W || j >= H) return 0;
+    return hBase(j * W + i) * state.exag / BASEX;
+  }
+
+  // ---- terrain ----
+  const pos = new Float32Array(W * H * 3), uv = new Float32Array(W * H * 2), idx = new Uint32Array((W - 1) * (H - 1) * 6);
+  for (let j = 0, p = 0, q = 0; j < H; j++) for (let i = 0; i < W; i++) {
+    pos[p++] = X(LON0 + (i + 0.5) * RES); pos[p++] = hBase(j * W + i); pos[p++] = Z(LAT1 - (j + 0.5) * RES);
+    uv[q++] = (i + 0.5) / W; uv[q++] = 1 - (j + 0.5) / H;
+  }
+  for (let j = 0, k = 0; j < H - 1; j++) for (let i = 0; i < W - 1; i++) {
+    const a = j * W + i, b = a + 1, c = a + W, d = c + 1;
+    idx[k++] = a; idx[k++] = c; idx[k++] = b; idx[k++] = b; idx[k++] = c; idx[k++] = d;
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+  geo.setAttribute("uv", new THREE.BufferAttribute(uv, 2));
+  geo.setIndex(new THREE.BufferAttribute(idx, 1));
+  geo.computeVertexNormals();
+  const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+  const ctx = cv.getContext("2d"), img = ctx.createImageData(W, H);
+  const tex = new THREE.CanvasTexture(cv); tex.minFilter = THREE.LinearFilter; tex.generateMipmaps = false;
+  const world = new THREE.Group(); scene.add(world);
+  world.add(new THREE.Mesh(geo, new THREE.MeshLambertMaterial({map: tex})));
+
+  function pixelRGB(k, sea) {
+    const lc = LCG[k], e = ELEV[k];
+    if (lc === 0 && e === 0) return sea;
+    const dr = state.drape;
+    if (dr === "lc") return lc ? hex(LC[lc][1]) : [200, 198, 190];
+    if (lc === 80 && e === 0) return hex(LC[80][1]);
+    const L = DRAPES[dr];
+    if (dr === "elev") return rampRGB(L.stops, e / L.hi);
+    const raw = dr === "ndvi" ? NDVI[k] : GPP[k];
+    if (raw === 0) return [200, 198, 190];
+    return rampRGB(L.stops, (raw - 1) / 254);
+  }
+  function paintGround() {
+    const sea = hex(css("--sea"));
+    for (let k = 0, p = 0; k < W * H; k++) { const c = pixelRGB(k, sea); img.data[p++] = c[0]; img.data[p++] = c[1]; img.data[p++] = c[2]; img.data[p++] = 255; }
+    ctx.putImageData(img, 0, 0); tex.needsUpdate = true;
+    renderer.setClearColor(new THREE.Color(css("--sea")), 1);
+    const L = DRAPES[state.drape], box = el("lgd1"); el("lgd1t").textContent = L.title; box.textContent = "";
+    if (state.drape === "lc") {
+      for (const code in LC) { const s = document.createElement("span"); s.className = "sw"; const i = document.createElement("i"); i.style.background = LC[code][1]; s.append(i, LC[code][0]); box.append(s); }
+    } else {
+      const g = document.createElement("div"); g.className = "grad"; const b = document.createElement("div"); b.className = "b";
+      b.style.background = "linear-gradient(to right," + L.stops.join(",") + ")";
+      const a = document.createElement("span"), z = document.createElement("span"); a.textContent = fmt(L.lo, L.d); z.textContent = fmt(L.hi, L.d) + (state.drape === "elev" ? "+" : "");
+      g.append(a, b, z); box.append(g);
+    }
+  }
+
+  // ---- case-study outlines and labels ----
+  const lineMat = new THREE.LineDashedMaterial({color: 0x14161a, dashSize: 0.22, gapSize: 0.12});
+  const tags = [];
+  CASES.forEach(([name, a, b, x0, x1]) => {
+    const pts = [], step = RES;
+    const push = (lon, lat) => { const i = Math.min(W - 1, Math.max(0, Math.floor((lon - LON0) / RES))), j = Math.min(H - 1, Math.max(0, Math.floor((LAT1 - lat) / RES))); pts.push(new THREE.Vector3(X(lon), hBase(j * W + i) + 0.035, Z(lat))); };
+    for (let x = x0; x < x1; x += step) push(x, a);
+    for (let y = a; y < b; y += step) push(x1, y);
+    for (let x = x1; x > x0; x -= step) push(x, b);
+    for (let y = b; y > a; y -= step) push(x0, y);
+    push(x0, a);
+    const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), lineMat); line.computeLineDistances(); world.add(line);
+    const t = document.createElement("div"); t.className = "tag"; t.textContent = name; stage.appendChild(t);
+    tags.push({el: t, lon: (x0 + x1) / 2, lat: b});
+  });
+
+  // ---- columns ----
+  const box = new THREE.BoxGeometry(0.3, 1, 0.3); box.translate(0, 0.5, 0);
+  const colMesh = new THREE.InstancedMesh(box, new THREE.MeshLambertMaterial({color: 0xffffff}), CELLS.length);
+  colMesh.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(CELLS.length * 3), 3);
+  scene.add(colMesh);
+  let colCells = [], colScale = null;
+  const cellBase = c => (c.el == null ? 0 : Math.max(0, c.el)) / 1000 * KM * state.exag;
+  function colHeight(c) { const L = COLS[state.cols], v = L.log ? Math.log10(Math.max(c[state.cols], 1)) : c[state.cols]; return 0.12 + 1.9 * Math.min(1, Math.max(0, (v - colScale.lo) / (colScale.hi - colScale.lo || 1))); }
+  function paintColumns() {
+    const key = state.cols, lg = el("lgd2"); lg.textContent = "";
+    colCells = [];
+    if (key === "none") { colMesh.count = 0; el("lgd2t").textContent = "Columns: off"; return; }
+    const L = COLS[key];
+    const all = CELLS.filter(c => c[key] != null && (!L.log || c[key] > 0));
+    const vals = all.map(c => L.log ? Math.log10(c[key]) : c[key]).sort((a, b) => a - b);
+    if (!vals.length) { colMesh.count = 0; el("lgd2t").textContent = "Columns: no data"; return; }
+    colScale = {lo: vals[Math.round(0.02 * (vals.length - 1))], hi: vals[Math.round(0.98 * (vals.length - 1))]};
+    colCells = all.filter(c => !state.only || c.st === "m");
+    const m = new THREE.Matrix4(), col = new THREE.Color();
+    colCells.forEach((c, i) => {
+      const h = colHeight(c), t = (h - 0.12) / 1.9, rgb = rampRGB(L.stops, t);
+      m.makeScale(1, h, 1); m.setPosition(X(c.lo), cellBase(c), Z(c.la)); colMesh.setMatrixAt(i, m);
+      col.setRGB(rgb[0] / 255, rgb[1] / 255, rgb[2] / 255); colMesh.setColorAt(i, col);
+    });
+    colMesh.count = colCells.length; colMesh.instanceMatrix.needsUpdate = true; colMesh.instanceColor.needsUpdate = true;
+    el("lgd2t").textContent = "Columns: " + L.label;
+    const g = document.createElement("div"); g.className = "grad"; const b = document.createElement("div"); b.className = "b";
+    b.style.background = "linear-gradient(to right," + L.stops.join(",") + ")";
+    const lab = v => L.log ? fmt(Math.pow(10, v)) : fmt(v, L.d);
+    const a = document.createElement("span"), z = document.createElement("span"); a.textContent = lab(colScale.lo); z.textContent = lab(colScale.hi);
+    g.append(a, b, z); lg.append(g);
+    const note = document.createElement("div"); note.textContent = "Taller and darker means more. " + colCells.length + " cells have a value."; lg.append(note);
+  }
+
+  // ---- selection frame ----
+  const frame = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1, 1, 1)), new THREE.LineBasicMaterial({color: 0x14161a}));
+  frame.visible = false; scene.add(frame);
+  function placeFrame() {
+    const c = state.sel; if (!c) { frame.visible = false; return; }
+    let top = 0;
+    for (let y = c.la - 0.5 + RES / 2; y < c.la + 0.5; y += RES) for (let x = c.lo - 0.5 + RES / 2; x < c.lo + 0.5; x += RES) top = Math.max(top, heightAt(x, y));
+    if (state.cols !== "none" && colCells.includes(c)) top = Math.max(top, cellBase(c) + colHeight(c));
+    top += 0.12;
+    frame.scale.set(1, top, 1); frame.position.set(X(c.lo), top / 2, Z(c.la)); frame.visible = true;
+    frame.material.color.set(css("--select"));
+  }
+
+  // ---- picking ----
+  const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+  const byId = new Map(CELLS.map(c => [Math.floor(c.lo) + "," + Math.floor(c.la), c]));
+  function pick(ev) {
+    const r = renderer.domElement.getBoundingClientRect();
+    ndc.set((ev.clientX - r.left) / r.width * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1);
+    ray.setFromCamera(ndc, camera);
+    const o = ray.ray.origin, d = ray.ray.direction;
+    let hit = null;
+    for (let t = 0.5; t < 160; t += 0.04) {                  // march the ray against the height field
+      const x = o.x + d.x * t, y = o.y + d.y * t, z = o.z + d.z * t, lon = x + LONC, lat = LATC - z;
+      if (lon < LON0 || lon >= LON0 + W * RES || lat <= LAT1 - H * RES || lat > LAT1) { if (y < 0) break; continue; }
+      if (y <= heightAt(lon, lat)) { hit = {t, lon, lat}; break; }
+    }
+    const ch = colMesh.count ? ray.intersectObject(colMesh)[0] : null;
+    if (ch && (!hit || ch.distance < hit.t)) { const c = colCells[ch.instanceId]; return {cell: c, lon: c.lo, lat: c.la, column: true}; }
+    if (!hit) return null;
+    return {cell: byId.get(Math.floor(hit.lon) + "," + Math.floor(hit.lat)) || null, lon: hit.lon, lat: hit.lat};
+  }
+  function pointInfo(lon, lat) {
+    const i = Math.floor((lon - LON0) / RES), j = Math.floor((LAT1 - lat) / RES), k = j * W + i;
+    const sea = LCG[k] === 0 && ELEV[k] === 0;
+    return {sea, elev: ELEV[k], lc: LCG[k] ? LC[LCG[k]][0] : null, ndvi: NDVI[k] ? (NDVI[k] - 1) / 254 * 0.9 : null, gpp: GPP[k] ? (GPP[k] - 1) / 254 * 3.3 : null};
+  }
+  function rows(dl, list) { dl.textContent = ""; for (const [k, v] of list) { const dt = document.createElement("dt"), dd = document.createElement("dd"); dt.textContent = k; dd.textContent = v; dl.append(dt, dd); } }
+  function showDetail(p) {
+    const c = p.cell; state.sel = c; placeFrame();
+    el("cid").textContent = p.lat.toFixed(2) + "°N, " + p.lon.toFixed(2) + "°E";
+    const pt = el("point"); pt.textContent = "";
+    if (!p.column) {
+      const i = pointInfo(p.lon, p.lat), dl = document.createElement("dl");
+      rows(dl, i.sea ? [["Here", "Open sea"]] : [["Elevation here", fmt(i.elev) + " m"], ["Land cover here", i.lc || "–"], ["Greenness (NDVI)", i.ndvi == null ? "–" : i.ndvi.toFixed(2)], ["GPP (kg C m⁻² yr⁻¹)", i.gpp == null ? "–" : i.gpp.toFixed(2)]]);
+      pt.append(dl);
+    }
+    const b = el("cstat"), sub = el("cellsub");
+    if (!c) { b.hidden = true; sub.hidden = true; el("detail").textContent = ""; render(); return; }
+    b.hidden = false; b.textContent = STATUS[c.st]; b.className = "badge " + c.st;
+    sub.hidden = false; sub.textContent = "One-degree cell " + (c.la - 0.5) + "–" + (c.la + 0.5) + "°N, " + (c.lo - 0.5) + "–" + (c.lo + 0.5) + "°E";
+    rows(el("detail"), [
+      ["Country", c.cty || "–"], ["Ecoregion", c.eco || "–"], ["Dominant land cover", c.wc || "–"],
+      ["Natural cover", c.nat == null ? "–" : Math.round(c.nat * 100) + "%"], ["Mean elevation (m)", fmt(c.el)],
+      ["Bird records", fmt(c.n)], ["Bird species, raw", fmt(c.so)], ["Bird species, corrected", fmt(c.sc, 1)],
+      ["Plant records", fmt(c.pn)], ["Plant species, raw", fmt(c.ps)], ["Plant species, corrected", fmt(c.pc, 1)],
+      ["GPP (kg C m⁻² yr⁻¹)", fmt(c.gpp, 2)], ["NPP (kg C m⁻² yr⁻¹)", fmt(c.npp, 2)],
+      ["Temperature (°C)", fmt(c.t, 1)], ["Precipitation (mm yr⁻¹)", fmt(c.p)],
+      ["Model residual (SD)", sgn(c.res)], ["Local richness slope", sgn(c.ls)], ["Case-study region", c.cs || "–"]
+    ]);
+    render();
+  }
+  let down = null, lastMove = 0;
+  const cvs = renderer.domElement, tip = el("tip");
+  cvs.addEventListener("pointerdown", e => { down = [e.clientX, e.clientY]; tip.hidden = true; });
+  cvs.addEventListener("pointerup", e => { if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 5) { const p = pick(e); if (p) showDetail(p); } down = null; });
+  cvs.addEventListener("pointerleave", () => { tip.hidden = true; });
+  cvs.addEventListener("pointermove", e => {
+    if (e.buttons || e.pointerType === "touch") return;
+    const now = performance.now(); if (now - lastMove < 60) return; lastMove = now;
+    const p = pick(e); if (!p) { tip.hidden = true; return; }
+    const r = stage.getBoundingClientRect(), i = p.column ? null : pointInfo(p.lon, p.lat), c = p.cell;
+    let text = p.lat.toFixed(1) + "°N, " + p.lon.toFixed(1) + "°E";
+    if (i) text += i.sea ? " · sea" : " · " + fmt(i.elev) + " m" + (i.lc ? " · " + i.lc : "");
+    if (c && state.cols !== "none" && c[state.cols] != null) text += " · " + COLS[state.cols].label.toLowerCase() + ": " + fmt(c[state.cols], COLS[state.cols].d);
+    tip.textContent = text; tip.hidden = false;
+    tip.style.left = Math.min(r.width - 250, Math.max(4, e.clientX - r.left + 14)) + "px"; tip.style.top = Math.max(4, e.clientY - r.top + 14) + "px";
+  });
+
+  // ---- render, resize, camera moves ----
+  const v3 = new THREE.Vector3();
+  function render() {
+    renderer.render(scene, camera);
+    const w = stage.clientWidth, h = stage.clientHeight;
+    for (const t of tags) {
+      v3.set(X(t.lon), heightAt(t.lon, t.lat) + 0.25, Z(t.lat)).project(camera);
+      const vis = v3.z < 1 && Math.abs(v3.x) < 1 && Math.abs(v3.y) < 1;
+      t.el.hidden = !vis; if (vis) { t.el.style.left = (v3.x + 1) / 2 * w + "px"; t.el.style.top = (1 - v3.y) / 2 * h + "px"; }
+    }
+  }
+  controls.addEventListener("change", render);
+  function resize() { const w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); render(); }
+  new ResizeObserver(resize).observe(stage);
+  const VIEWS = {all: [[0, 0, 1.5], [-1.5, 21, 24]]};
+  CASES.forEach(([, a, b, x0, x1], i) => { const cx = X((x0 + x1) / 2), cz = Z((a + b) / 2), s = Math.max(x1 - x0, b - a); VIEWS[i] = [[cx, 0, cz], [cx - s * 0.25, s * 1.15, cz + s * 1.45]]; });
+  let anim = 0;
+  function fly(key) {
+    const [t, p] = VIEWS[key], t0 = controls.target.clone(), p0 = camera.position.clone(), t1 = new THREE.Vector3(...t), p1 = new THREE.Vector3(...p);
+    const still = matchMedia("(prefers-reduced-motion: reduce)").matches, start = performance.now(), id = ++anim;
+    (function step(now) {
+      if (id !== anim) return;
+      let k = still ? 1 : Math.min(1, (now - start) / 700); k = k * k * (3 - 2 * k);
+      controls.target.lerpVectors(t0, t1, k); camera.position.lerpVectors(p0, p1, k); controls.update(); render();
+      if (k < 1) requestAnimationFrame(step);
+    })(start);
+  }
+  document.querySelectorAll("[data-fly]").forEach(b => b.addEventListener("click", () => fly(b.dataset.fly)));
+  function setExag() { world.scale.y = state.exag / BASEX; el("exagv").textContent = state.exag; paintColumns(); placeFrame(); render(); }
+  el("exag").addEventListener("input", e => { state.exag = +e.target.value; setExag(); });
+  el("drape").addEventListener("change", e => { state.drape = e.target.value; paintGround(); render(); });
+  el("cols").addEventListener("change", e => { state.cols = e.target.value; paintColumns(); placeFrame(); render(); });
+  el("onlymodel").addEventListener("change", e => { state.only = e.target.checked; paintColumns(); placeFrame(); render(); });
+  const retheme = () => { paintGround(); lineMat.color.set(css("--ink")); placeFrame(); render(); };
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", retheme);
+  new MutationObserver(retheme).observe(document.documentElement, {attributes: true, attributeFilter: ["data-theme"]});
+
+  camera.position.set(...VIEWS.all[1]); controls.target.set(...VIEWS.all[0]); controls.update();
+  paintGround(); paintColumns(); lineMat.color.set(css("--ink")); resize();
+  const first = CELLS.filter(c => c.cs === "Eastern Himalaya" && c.st === "m").sort((a, b) => b.sc - a.sc)[0];
+  if (first) showDetail({cell: first, lon: first.lo, lat: first.la, column: true});
+})();
+</script>

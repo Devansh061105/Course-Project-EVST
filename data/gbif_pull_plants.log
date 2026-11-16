@@ -1,0 +1,28 @@
+seeded 45 cells from taxon2_check cache; 45 cached at start
+  50/884 cells (cached 94) 80s
+  100/884 cells (cached 143) 132s
+  150/884 cells (cached 192) 205s
+Traceback (most recent call last):
+  File "C:\summer project 2\project9_biodiversity\scripts\gbif_pull_taxon2.py", line 54, in <module>
+    save_cache(CACHE, cache)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\summer project 2\project9_biodiversity\scripts\gbif_lib.py", line 156, in save_cache
+    os.replace(tmp, path)
+    ~~~~~~~~~~^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\summer project 2\\project9_biodiversity\\data\\gbif_cache_plants.json.tmp' -> 'C:\\summer project 2\\project9_biodiversity\\data\\gbif_cache_plants.json'
+seeded 0 cells from taxon2_check cache; 229 cached at start
+  200/884 cells (cached 241) 20s
+  250/884 cells (cached 290) 82s
+  300/884 cells (cached 340) 138s
+  350/884 cells (cached 388) 192s
+  400/884 cells (cached 438) 263s
+  450/884 cells (cached 485) 340s
+  500/884 cells (cached 532) 403s
+  550/884 cells (cached 579) 462s
+  600/884 cells (cached 626) 521s
+  650/884 cells (cached 671) 584s
+  700/884 cells (cached 719) 657s
+  750/884 cells (cached 764) 716s
+  850/884 cells (cached 853) 926s
+pull complete in 972s
+wrote C:\summer project 2\project9_biodiversity\data\gbif_cells_plants.csv: 884 cells, 0 facet-truncated

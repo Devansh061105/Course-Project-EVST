@@ -238,6 +238,12 @@ Each PNG has a CSV of its plotted values beside it (table view).
 7. `fig7_naive_vs_corrected` — Extension A scatter (raw vs rarefied richness vs GPP;
    effort correlation 0.81 → 0.24).
 8. `fig8_linear_vs_quadratic` — Extension B partial-residual plot (ΔAIC +1.9).
+9. `fig9_local_slopes` — local richness slope at 1° and 0.5° (GWR), the slope
+   against window size, and the three case-study regions (added 2026-11-16; see
+   `RESULTS_LOCAL_SLOPES.md`).
+10. `fig10_second_taxon` — birds and vascular plants through the same model chain,
+    their agreement, and how incomplete the plant samples are (added 2026-11-16;
+    see `RESULTS_EXTENSION_D.md`).
 
 Palette validated with the dataviz validator against #ffffff (slots 1–3,
 all-pairs PASS; aqua at 2.82:1 is direct-labelled per the relief rule).
@@ -307,6 +313,15 @@ seasonality controls. It is real enough not to be called zero, small enough
 (a quarter of the cross-regional effect) that it should not carry a causal claim,
 and fragile enough (topography, individual biomes, out-of-sample) that the report
 should present it as a range, not a point.
+
+## Two later additions that agree with this reading (2026-11-16)
+- **Local slopes** (`RESULTS_LOCAL_SLOPES.md`): fitted around each cell, the richness
+  slope has a median of +0.026 at 1° and +0.036 at 0.5°, close to the ecoregion
+  fixed-effects estimates above, and it rises to the region-wide value as the
+  fitting window widens. This shows the between-region character of the
+  association without using ecoregion boundaries.
+- **Vascular plants** (`RESULTS_EXTENSION_D.md`): corrected β +0.264 for GPP
+  (birds on the same cells +0.277), and −0.027 (p = 0.49) within ecoregions.
 
 ## Still outstanding
 - Everything else is in `TODO.md`.

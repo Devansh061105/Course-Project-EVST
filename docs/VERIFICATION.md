@@ -87,3 +87,21 @@ cells have no masked classes and no missing predictors. After the fixes:
 - The verification checks that the code does what the docs say and that the
   inputs mean what the code assumes. It does not check the interpretation —
   that is argued in `RESULTS_ADJUDICATION.md`.
+
+## 7. Additions of 2026-11-16
+`python scripts/reproduce_all.py` now runs **19 scripts and 35 checks** (the 27
+above plus 4 for the local slopes and 4 for Extension D). Result 2026-11-16:
+**19/19 scripts exit 0; 35/35 checks PASS** (log:
+`data/repro/_reproduce_all_2026-11-16.txt`).
+
+| what | how it was checked |
+|---|---|
+| Plant pull (`gbif_pull_taxon2.py`) | 884 of 884 cells cached; 0 cells at the facet limit of 5,000; `extension_d_plants.py` refuses to run if any cell is truncated |
+| Local slopes (`local_slopes.py`) | AICc minimum is interior (k = 32 at 1°, with k = 28 and 40 both worse), not at the edge of the search; median local slope tends to the global OLS β as the window widens to the whole region (+0.263 against +0.273); local condition number > 30 in 1 of 221 cells |
+| 0.05° grids for the 3D map (`gee_terrain_grid.py`) | 1° block means against the per-cell table on the 221 modelled cells: GPP r = 0.9988 (mean difference −0.019 kg C m⁻² yr⁻¹), ETOPO1 against SRTM elevation r = 0.9997 (mean difference −8 m). A first GPP extract was wrong (values up to 6.5 from MOD17 fill values averaged into the image pyramid) and was replaced by masking at 500 m before aggregating |
+| Interactive maps | Both pages loaded in a browser with no console errors; the flat atlas draws 630 cells and 221 scatter points; in the 3D map a click on terrain and a click on a column both return the right cell and fill the record panel |
+| New references | 8 added: all checked against Crossref for existence and details; abstracts read for the 4 plant and cross-taxon papers (Europe PMC); the 4 GWR method papers have no abstract in Europe PMC and are cited only as the source of the method |
+
+**Not checked:** the plant analysis has no independent re-count of facet values
+(the bird pull had 12 species re-counted, section 3); the plant numbers rest on
+the same request code path.

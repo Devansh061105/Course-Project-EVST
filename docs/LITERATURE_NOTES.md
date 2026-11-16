@@ -38,6 +38,27 @@ for anything beyond that without reading the paper.
 | Chao & Jost (2012) Coverage-based rarefaction and extrapolation: standardizing samples by completeness rather than size. *Ecology* 93(12):2533–2547. doi:10.1890/11-1952.1 | Abstract: traditional rarefaction to equal-sized samples "systematically biases the degree of differences between community richnesses", because a sample of a given size may fully characterise a low-diversity community but not a richer one; comparing at equal coverage gives less biased comparisons. (Our cells span coverage 0.61–0.93 at n = 250 — the situation they describe.) Coverage-interpolation formula implemented in `scripts/coverage_rarefaction.py`. **Verified 2026-10-06 against the authors' own R package iNEXT** (`AnneChao/iNEXT`, `R/iNEXT.r` `Chat.Ind`; full-sample estimator per `R/invChat.R`): algebraically identical, max numeric difference 5×10⁻¹³ over 200 random abundance vectors, identical to 10 d.p. on a 3.76M-record cell, and coverage monotone in m (required by the bisection). |
 | Hurlbert (1971) — already in the literature review. | |
 
+## Local regression (added 2026-11-16)
+Existence and details checked against Crossref. No abstract was available through
+Europe PMC for these four, so they are cited **only as the source of the method**.
+
+| reference | used for |
+|---|---|
+| Brunsdon, Fotheringham & Charlton (1996) Geographically weighted regression: a method for exploring spatial nonstationarity. *Geographical Analysis* 28(4):281–298. doi:10.1111/j.1538-4632.1996.tb00936.x | The GWR method in `local_slopes.py`. |
+| Brunsdon, Fotheringham & Charlton (1998) Geographically weighted regression. *The Statistician* 47(3):431–443. doi:10.1111/1467-9884.00145 | The Monte Carlo test of whether local coefficients vary more than chance. |
+| da Silva & Fotheringham (2016) The multiple testing issue in geographically weighted regression. *Geographical Analysis* 48(3):233–247. doi:10.1111/gean.12084 | The adjusted significance level for local t-tests. Crossref lists 2015 online; volume 48 is 2016. |
+| Wheeler & Tiefelsdorf (2005) Multicollinearity and correlation among local regression coefficients in geographically weighted regression. *Journal of Geographical Systems* 7(2):161–187. doi:10.1007/s10109-005-0155-6 | Why local condition numbers are reported. |
+
+## Second taxon: plants (added 2026-11-16)
+Checked against Crossref and abstracts read via Europe PMC.
+
+| reference | claim used |
+|---|---|
+| Meyer, Weigelt & Kreft (2016) Multidimensional biases, gaps and uncertainties in global plant occurrence information. *Ecology Letters* 19(8):992–1006. doi:10.1111/ele.12624 | 120 million plant occurrence records analysed for all c. 370,000 land plant species: biases, gaps and uncertainties along taxonomic, geographical and temporal dimensions "remain a central problem"; filtering to reduce uncertainty usually costs coverage. |
+| Daru, Park, Primack, Willis et al. (2018) Widespread sampling biases in herbaria revealed from large-scale digitization. *New Phytologist* 217(2):939–955. doi:10.1111/nph.14855 | c. 5 million herbarium records from three floras: specimens collected close to roads and herbaria; a disproportionately large share collected by very few individuals. The three floras are Australia, South Africa and New England, none in our region. Crossref lists 2017 online. |
+| Kreft & Jetz (2007) Global patterns and determinants of vascular plant diversity. *PNAS* 104(14):5925–5930. doi:10.1073/pnas.0608361104 | Across 1,032 regions, potential evapotranspiration, wet days per year and topographic and habitat heterogeneity are the core predictors of vascular plant richness; the combined model explains about 70% of global variation. Used for: energy and water drive plant richness as well as productivity. |
+| Wolters, Bengtsson & Zaitsev (2006) Relationship among the species richness of different taxa. *Ecology* 87(8):1886–1895. doi:10.1890/0012-9658(2006)87[1886:RATSRO]2.0.CO;2 | Review of 237 cross-taxon richness correlations: average effect size 0.374 (95% CI ± 0.068), "positive but weak". |
+
 ## Data products (cite in methods)
 | product | citation |
 |---|---|
@@ -47,6 +68,8 @@ for anything beyond that without reading the paper.
 | ESA WorldCover v200 | Zanaga, D. et al. (2022). ESA WorldCover 10 m 2021 v200. Zenodo. doi:10.5281/zenodo.7254221 |
 | RESOLVE Ecoregions 2017 | Dinerstein, E. et al. (2017). An ecoregion-based approach to protecting half the terrestrial realm. *BioScience* 67(6):534–545. doi:10.1093/biosci/bix014. Abstract read: the paper's map of Earth's 846 terrestrial ecoregions is the layer used (Earth Engine `RESOLVE/ECOREGIONS/2017`); the paper's own subject is conservation targets, so cite it as the source of the ecoregion map only. |
 | SRTM (elevation) | NASA JPL (2013). NASA Shuttle Radar Topography Mission Global 1 arc second. NASA EOSDIS Land Processes DAAC. doi:10.5067/MEaSUREs/SRTM/SRTMGL1.003 (Earth Engine asset `USGS/SRTMGL1_003`) |
+| ETOPO1 (terrain in the 3D map only) | Amante, C. & Eakins, B.W. (2009). ETOPO1 1 Arc-Minute Global Relief Model. NOAA National Geophysical Data Center. doi:10.7289/V5C8276M (Earth Engine asset `NOAA/NGDC/ETOPO1`). Citation written from memory and **not yet checked against the Earth Engine catalogue or the DOI**; check before citing. Used for display, not for any analysis. |
+| GBIF plant occurrences | **No DOI yet.** 1,362,316 records from 435 datasets (Tracheophyta, 5-31N 68-102E, 2000-2024), counts in `data/gbif_derived_dataset/dataset_counts_plants.csv`. Register a derived dataset before citing (TODO). |
 | GBIF occurrences | GBIF.org (11 October 2026) Filtered export of GBIF occurrence data. https://doi.org/10.15468/dd.jf64nx (GBIF derived dataset: Aves, 5-31N 68-102E, 2000-2024; 110 datasets, 71,716,026 records; registered 2026-10-11 because the data came from API queries, not a download). Per-cell data, codebook, counts and scripts: Zenodo doi:10.5281/zenodo.23264805. |
 
 ## Considered and dropped

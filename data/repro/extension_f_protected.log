@@ -1,0 +1,107 @@
+protected share of land by country (1-degree land cells; countries with >= 10 cells):
+  India        cells 257  strict   0.2%   all WDPA  18.4%
+  China        cells 77   strict   1.3%   all WDPA   4.1%
+  Burma        cells 60   strict   7.6%   all WDPA   8.7%
+  Thailand     cells 29   strict  18.4%   all WDPA  19.6%
+  Pakistan     cells 25   strict   6.7%   all WDPA  15.3%
+  Bangladesh   cells 13   strict   1.0%   all WDPA   4.3%
+  Nepal        cells 13   strict   6.4%   all WDPA  22.2%
+
+=== 1.0 degree: n = 220 modelled cells ===
+protected fraction, strict (IUCN Ia-IV): mean 0.065, median 0.000, cells with none 56%, cells above 10% 23%
+protected fraction, all WDPA: mean 0.195, median 0.154, cells with none 15%, cells above 10% 61%
+ protection definition: strict
+  F1 effort ~ protection + climate                     beta +0.010  se 0.082  p = 0.8990
+  F1 same, within ecoregions                           beta +0.039  se 0.093  p = 0.6791
+  F2 raw richness ~ protection + climate               beta +0.113  se 0.073  p = 0.1248
+  F2 corrected richness ~ protection + effort + climate beta +0.127  se 0.063  p = 0.0446
+  F2 GPP ~ protection + climate                        beta +0.111  se 0.088  p = 0.2093
+  F2 GPP ~ protection + climate, within ecoregions     beta +0.045  se 0.031  p = 0.1442
+  F3 richness x protection interaction (GPP model)     beta -0.007  se 0.071  p = 0.9167
+     richness main effect in that model                beta +0.257  (p = 0.0030)
+PROT 1.0: effort ~ strict protection beta = +0.010 (p = 0.8990); richness x protection interaction = -0.007 (p = 0.9167)
+ protection definition: all
+  F1 effort ~ protection + climate                     beta +0.238  se 0.109  p = 0.0297
+  F1 same, within ecoregions                           beta +0.079  se 0.121  p = 0.5146
+  F2 raw richness ~ protection + climate               beta +0.155  se 0.095  p = 0.1027
+  F2 corrected richness ~ protection + effort + climate beta +0.039  se 0.094  p = 0.6750
+  F2 GPP ~ protection + climate                        beta -0.190  se 0.090  p = 0.0345
+  F2 GPP ~ protection + climate, within ecoregions     beta +0.061  se 0.034  p = 0.0782
+  F3 richness x protection interaction (GPP model)     beta +0.080  se 0.068  p = 0.2372
+     richness main effect in that model                beta +0.314  (p = 0.0000)
+  slope in cells with strict protection > 5%    n=64   richness beta +0.018  se 0.072  p = 0.8066
+  slope in cells with no strict protection      n=123  richness beta +0.395  se 0.098  p = 0.0001
+
+=== 1.0 excl. India and China degree: n = 93 modelled cells ===
+protected fraction, strict (IUCN Ia-IV): mean 0.143, median 0.113, cells with none 16%, cells above 10% 52%
+protected fraction, all WDPA: mean 0.192, median 0.141, cells with none 9%, cells above 10% 60%
+ protection definition: strict
+  F1 effort ~ protection + climate                     beta +0.232  se 0.124  p = 0.0617
+  F1 same, within ecoregions                           beta +0.149  se 0.114  p = 0.1901
+  F2 raw richness ~ protection + climate               beta +0.153  se 0.093  p = 0.0977
+  F2 corrected richness ~ protection + effort + climate beta -0.003  se 0.112  p = 0.9818
+  F2 GPP ~ protection + climate                        beta -0.071  se 0.150  p = 0.6348
+  F2 GPP ~ protection + climate, within ecoregions     beta +0.017  se 0.095  p = 0.8563
+  F3 richness x protection interaction (GPP model)     beta +0.095  se 0.078  p = 0.2262
+     richness main effect in that model                beta +0.146  (p = 0.1768)
+PROT 1.0 excl. India and China: effort ~ strict protection beta = +0.232 (p = 0.0617); richness x protection interaction = +0.095 (p = 0.2262)
+ protection definition: all
+  F1 effort ~ protection + climate                     beta +0.181  se 0.178  p = 0.3079
+  F1 same, within ecoregions                           beta +0.124  se 0.120  p = 0.2979
+  F2 raw richness ~ protection + climate               beta +0.120  se 0.144  p = 0.4058
+  F2 corrected richness ~ protection + effort + climate beta -0.071  se 0.120  p = 0.5529
+  F2 GPP ~ protection + climate                        beta -0.210  se 0.161  p = 0.1913
+  F2 GPP ~ protection + climate, within ecoregions     beta +0.055  se 0.078  p = 0.4793
+  F3 richness x protection interaction (GPP model)     beta +0.077  se 0.071  p = 0.2785
+     richness main effect in that model                beta +0.134  (p = 0.1830)
+  slope in cells with strict protection > 5%    n=57   richness beta +0.118  se 0.079  p = 0.1350
+
+=== 0.5 degree: n = 671 modelled cells ===
+protected fraction, strict (IUCN Ia-IV): mean 0.079, median 0.000, cells with none 65%, cells above 10% 21%
+protected fraction, all WDPA: mean 0.250, median 0.205, cells with none 16%, cells above 10% 62%
+ protection definition: strict
+  F1 effort ~ protection + climate                     beta +0.017  se 0.053  p = 0.7509
+  F1 same, within ecoregions                           beta +0.047  se 0.051  p = 0.3602
+  F2 raw richness ~ protection + climate               beta +0.130  se 0.052  p = 0.0129
+  F2 corrected richness ~ protection + effort + climate beta +0.158  se 0.041  p = 0.0001
+  F2 GPP ~ protection + climate                        beta +0.204  se 0.062  p = 0.0010
+  F2 GPP ~ protection + climate, within ecoregions     beta +0.027  se 0.026  p = 0.3068
+  F3 richness x protection interaction (GPP model)     beta -0.023  se 0.028  p = 0.4176
+     richness main effect in that model                beta +0.193  (p = 0.0006)
+PROT 0.5: effort ~ strict protection beta = +0.017 (p = 0.7509); richness x protection interaction = -0.023 (p = 0.4176)
+ protection definition: all
+  F1 effort ~ protection + climate                     beta +0.150  se 0.073  p = 0.0397
+  F1 same, within ecoregions                           beta +0.081  se 0.055  p = 0.1398
+  F2 raw richness ~ protection + climate               beta +0.150  se 0.071  p = 0.0348
+  F2 corrected richness ~ protection + effort + climate beta +0.113  se 0.059  p = 0.0537
+  F2 GPP ~ protection + climate                        beta -0.089  se 0.094  p = 0.3429
+  F2 GPP ~ protection + climate, within ecoregions     beta +0.047  se 0.024  p = 0.0444
+  F3 richness x protection interaction (GPP model)     beta +0.012  se 0.046  p = 0.7886
+     richness main effect in that model                beta +0.244  (p = 0.0000)
+  slope in cells with strict protection > 5%    n=172  richness beta +0.109  se 0.108  p = 0.3110
+  slope in cells with no strict protection      n=434  richness beta +0.233  se 0.068  p = 0.0006
+
+=== 0.5 excl. India and China degree: n = 289 modelled cells ===
+protected fraction, strict (IUCN Ia-IV): mean 0.172, median 0.072, cells with none 28%, cells above 10% 45%
+protected fraction, all WDPA: mean 0.220, median 0.146, cells with none 13%, cells above 10% 56%
+ protection definition: strict
+  F1 effort ~ protection + climate                     beta +0.124  se 0.072  p = 0.0852
+  F1 same, within ecoregions                           beta +0.103  se 0.064  p = 0.1085
+  F2 raw richness ~ protection + climate               beta +0.150  se 0.062  p = 0.0152
+  F2 corrected richness ~ protection + effort + climate beta +0.096  se 0.067  p = 0.1515
+  F2 GPP ~ protection + climate                        beta +0.119  se 0.084  p = 0.1577
+  F2 GPP ~ protection + climate, within ecoregions     beta +0.041  se 0.047  p = 0.3877
+  F3 richness x protection interaction (GPP model)     beta +0.064  se 0.055  p = 0.2415
+     richness main effect in that model                beta +0.169  (p = 0.0093)
+PROT 0.5 excl. India and China: effort ~ strict protection beta = +0.124 (p = 0.0852); richness x protection interaction = +0.064 (p = 0.2415)
+ protection definition: all
+  F1 effort ~ protection + climate                     beta +0.187  se 0.071  p = 0.0088
+  F1 same, within ecoregions                           beta +0.115  se 0.068  p = 0.0912
+  F2 raw richness ~ protection + climate               beta +0.196  se 0.063  p = 0.0017
+  F2 corrected richness ~ protection + effort + climate beta +0.082  se 0.079  p = 0.3020
+  F2 GPP ~ protection + climate                        beta +0.063  se 0.087  p = 0.4735
+  F2 GPP ~ protection + climate, within ecoregions     beta +0.032  se 0.048  p = 0.5001
+  F3 richness x protection interaction (GPP model)     beta +0.041  se 0.056  p = 0.4645
+     richness main effect in that model                beta +0.175  (p = 0.0107)
+  slope in cells with strict protection > 5%    n=155  richness beta +0.171  se 0.104  p = 0.1014
+  slope in cells with no strict protection      n=80   richness beta +0.195  se 0.062  p = 0.0018

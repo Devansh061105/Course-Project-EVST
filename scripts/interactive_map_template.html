@@ -51,8 +51,12 @@ svg { display: block; width: 100%; height: auto; }
 .legend { display: flex; gap: 10px; align-items: center; margin-top: 10px; color: var(--ink2); font-size: 0.85rem; font-variant-numeric: tabular-nums; flex-wrap: wrap; }
 .legend .bar { flex: 1 1 160px; height: 10px; border-radius: 2px; min-width: 120px; }
 .legend .sw { display: inline-flex; gap: 6px; align-items: center; margin-right: 10px; }
-.legend .sw i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
-dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 5px 14px; margin: 0; font-variant-numeric: tabular-nums; }
+.legend .sw i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; box-shadow: 0 0 0 1px var(--line); }
+dl { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 5px 14px; margin: 0; font-variant-numeric: tabular-nums; }
+.sub { color: var(--muted); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; margin: 14px 0 6px; }
+ol.species { margin: 0; padding-left: 1.3em; display: grid; gap: 3px; }
+ol.species i { color: var(--muted); }
+ol.species span { color: var(--muted); font-variant-numeric: tabular-nums; }
 dt { color: var(--muted); } dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
 .cellhead { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; margin-bottom: 10px; }
 .cellhead strong { font-family: var(--display); font-size: 1.05rem; }
@@ -94,6 +98,10 @@ footer a { color: var(--accent); }
       <section class="panel" aria-live="polite">
         <div class="cellhead"><strong id="cid"></strong><span class="badge" id="cstat"></span></div>
         <dl id="detail"></dl>
+        <div class="sub" id="spbt" hidden>Most-recorded birds</div>
+        <ol class="species" id="spb"></ol>
+        <div class="sub" id="sppt" hidden>Most-recorded plants</div>
+        <ol class="species" id="spp"></ol>
       </section>
       <section class="panel">
         <div class="scatterhead">
@@ -146,6 +154,16 @@ const LAYERS = [
    note: "Vascular plants, second taxon. Species expected in a random draw of 100 records. Plant records are far sparser than bird records, so many cells have no value."},
   {k: "pn", label: "Plant survey effort", ramp: "green", unit: "records (log scale)", d: 0, log: true,
    note: "GBIF vascular-plant records per cell, 2000–2024, from herbaria and iNaturalist. A different observer community from the bird data."},
+  {k: "lpc", label: "Butterfly and moth richness, effort-corrected", ramp: "green", unit: "species expected in 100 records", d: 1,
+   note: "Butterflies and moths, third taxon. Records are sparse and concentrated where naturalists photograph insects, so most cells have no value."},
+  {k: "cp", label: "Completeness of bird records", ramp: "blue", unit: "sample coverage (0–1)", d: 2,
+   note: "Estimated share of a cell's birds, by individuals, that belong to species already recorded there. Natural-cover cells only. Modelled cells are almost all above 0.9; the thin cells are in western Pakistan, eastern Myanmar and Tibet."},
+  {k: "pr", label: "Survey priority", ramp: "orange", unit: "0–100", d: 0,
+   note: "Many species expected from climate and terrain, few of them documented. A ranking aid for where new bird surveys would add most, not a finding about biodiversity. In China the gap is partly a gap in GBIF, not in what ornithologists know."},
+  {k: "cv", label: "Year-to-year variation in GPP", ramp: "orange", unit: "% of the mean, 2001–2023", d: 1,
+   note: "How much productivity swings from year to year around its trend. Dry cells vary most. Richer cells look steadier, but that disappears once rainfall variability and mean productivity are accounted for."},
+  {k: "pa", label: "Protected land", ramp: "green", unit: "share of the cell's land (0–1)", d: 2,
+   note: "All designated sites in the World Database on Protected Areas. In India this includes Reserve and Protected Forests, while most Indian national parks and sanctuaries are missing from the public database, so compare countries with care."},
   {k: "st", label: "Which cells are modelled", cat: true,
    note: "Blue cells enter the models. Orange cells are dominated by cropland or built-up land and are excluded, which removes most of peninsular India. Grey cells are water-dominated or have fewer than 250 identified bird records."}
 ];
@@ -230,10 +248,23 @@ function show(c) {
     ["GPP (kg C m⁻² yr⁻¹)", fmt(c.gpp, 2)], ["NPP (kg C m⁻² yr⁻¹)", fmt(c.npp, 2)],
     ["Temperature (°C)", fmt(c.t, 1)], ["Precipitation (mm yr⁻¹)", fmt(c.p)],
     ["Model residual (SD)", sgn(c.res)], ["Local richness slope", sgn(c.ls)],
-    ["Plant records", fmt(c.pn)], ["Plant species, raw", fmt(c.ps)], ["Plant species, corrected", fmt(c.pc, 1)]
+    ["Plant records", fmt(c.pn)], ["Plant species, raw", fmt(c.ps)], ["Plant species, corrected", fmt(c.pc, 1)],
+    ["Butterflies and moths, corrected", fmt(c.lpc, 1)],
+    ["GPP variation, year to year", c.cv == null ? "–" : fmt(c.cv, 1) + "%"],
+    ["Bird record completeness", c.cp == null ? "–" : Math.round(c.cp * 100) + "%"], ["Survey priority (0–100)", fmt(c.pr)],
+    ["Protected, all WDPA sites", c.pa == null ? "–" : Math.round(c.pa * 100) + "%"]
   ];
   const dl = el("detail"); dl.textContent = "";
   for (const [k, v] of rows) { const dt = document.createElement("dt"), dd = document.createElement("dd"); dt.textContent = k; dd.textContent = v; dl.append(dt, dd); }
+  for (const [list, head, items] of [["spb", "spbt", c.tb], ["spp", "sppt", c.tp]]) {
+    const ol = el(list); ol.textContent = ""; el(head).hidden = !(items && items.length);
+    for (const [sci, en, n] of items || []) {
+      const li = document.createElement("li"), i = document.createElement("i"), s = document.createElement("span");
+      i.textContent = sci; s.textContent = " · " + fmt(n) + " records";
+      if (en) li.append(en + " (", i, ")", s); else li.append(i, s);
+      ol.append(li);
+    }
+  }
   document.querySelectorAll("#scatter .pt").forEach(p => { const on = p.dataset.id === c.id; p.setAttribute("r", on ? 6 : 3.2); p.setAttribute("stroke", on ? "var(--select)" : "none"); if (on) p.parentNode.appendChild(p); });
 }
 

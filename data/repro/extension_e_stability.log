@@ -1,0 +1,36 @@
+=== Extension E: stability of productivity, 2001-2023 ===
+modelled cells with a complete 23-year GPP series: 220 of 221
+detrended CV of annual GPP: median 0.048 (5th-95th percentile 0.029 to 0.114)
+GPP trend: median +0.22% per year; positive in 82% of cells
+raw correlations with corrected bird richness: instability r = -0.363, trend r = -0.284, mean GPP r = +0.627
+what drives instability on its own: r with rainfall variability +0.554, with mean precipitation -0.499, with mean GPP -0.676
+
+--- birds: n = 220 ---
+ response: instability (log detrended CV)
+  S1 usual controls                  beta -0.171  se 0.092  p = 0.0635  R2 = 0.270
+  S2 + climate variability           beta -0.082  se 0.082  p = 0.3174  R2 = 0.530
+  S3 + mean GPP                      beta +0.144  se 0.070  p = 0.0388  R2 = 0.688
+  S3 + ecoregion fixed effects       beta +0.000  se 0.049  p = 0.9962
+  S3 spatial error model             beta +0.060  se 0.037  p = 0.1055
+STAB birds: richness coefficient for instability, full controls: +0.144 (p = 0.0388); within ecoregions +0.000 (p = 0.9962)
+ response: GPP trend, % per year
+  S1 usual controls                  beta -0.126  se 0.069  p = 0.0662  R2 = 0.264
+  S2 + climate variability           beta -0.053  se 0.072  p = 0.4573  R2 = 0.463
+  S3 + mean GPP                      beta +0.160  se 0.090  p = 0.0774  R2 = 0.603
+  S3 + ecoregion fixed effects       beta -0.009  se 0.060  p = 0.8819
+  S3 spatial error model             beta -0.008  se 0.032  p = 0.8079
+
+--- plants: n = 193 ---
+ response: instability (log detrended CV)
+  S1 usual controls                  beta -0.385  se 0.101  p = 0.0001  R2 = 0.352
+  S2 + climate variability           beta -0.294  se 0.082  p = 0.0003  R2 = 0.423
+  S3 + mean GPP                      beta -0.090  se 0.075  p = 0.2307  R2 = 0.614
+  S3 + ecoregion fixed effects       beta +0.002  se 0.050  p = 0.9757
+  S3 spatial error model             beta -0.050  se 0.037  p = 0.1698
+STAB plants: richness coefficient for instability, full controls: -0.090 (p = 0.2307); within ecoregions +0.002 (p = 0.9757)
+ response: GPP trend, % per year
+  S1 usual controls                  beta -0.413  se 0.104  p = 0.0001  R2 = 0.323
+  S2 + climate variability           beta -0.330  se 0.079  p = 0.0000  R2 = 0.379
+  S3 + mean GPP                      beta -0.202  se 0.080  p = 0.0118  R2 = 0.455
+  S3 + ecoregion fixed effects       beta -0.019  se 0.059  p = 0.7513
+  S3 spatial error model             beta -0.125  se 0.040  p = 0.0018

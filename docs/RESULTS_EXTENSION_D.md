@@ -113,11 +113,42 @@ a poor stand-in for another in this region.
 - **Limitations paragraph:** "birds only" becomes "birds, checked against
   vascular plants at 1°".
 
-## Not done
-- Plants at 0.5° or 2° (1° only).
-- Block cross-validation, the Hawkins test and the quadratic test for plants.
-- A GBIF derived-dataset DOI for the plant records. The bird DOI does not cover
-  them. Contributing-dataset counts are ready:
+## Completed later on 2026-11-16: finer grain, more tests, a third taxon
+Reproduce: `python scripts/extension_d_more.py`. Figure: `fig17_three_taxa`.
+Pulls: `scripts/gbif_pull_generic.py plants 0.5` and `... lepidoptera 1.0`.
+
+| sample | n | across regions (corrected) | within ecoregions | spatial error model |
+|---|---|---|---|---|
+| plants, 1° | 193 | +0.264 (p < 0.0001) | −0.027 (p = 0.49) | −0.008 (p = 0.77) |
+| **plants, 0.5°** | 425 | **+0.228 (p = 0.0002)** | **+0.015 (p = 0.67)** | +0.026 (p = 0.29) |
+| plants, 0.5°, rarefied at 50 | 529 | +0.172 (p = 0.0009) | +0.007 (p = 0.78) | −0.005 (p = 0.77) |
+| **butterflies and moths, 1°** | 139 | **+0.512 (p < 0.0001)** | **−0.087 (p = 0.35)** | +0.137 (p = 0.015) |
+| butterflies and moths, 1°, rarefied at 50 | 163 | +0.451 (p < 0.0001) | −0.006 (p = 0.93) | +0.126 (p = 0.007) |
+
+- **Plants at 0.5° replicate the 1° result:** a clear association across regions,
+  none within ecoregions. (1,079 natural-cover cells pulled, 866,188 records,
+  median 53 per cell, none truncated; 425 have 100 identified records.)
+- **A third taxon gives the same pattern.** Butterflies and moths (Lepidoptera;
+  560,818 records, 485,195 identified to species) are strongly associated with
+  GPP across regions and not at all within ecoregions.
+- **Plants pass the other two tests the birds had.** Adding plant richness cuts
+  out-of-sample error by 15.4% under 4° block cross-validation (95% interval 5.2
+  to 23.3; birds on the shared cells 11.1%, interval −0.0 to 21.0). The quadratic
+  test finds no hump: the squared term is positive (see `RESULTS_EXTENSION_B.md`).
+- **Agreement between taxa stays weak:** butterflies vs birds r = +0.39,
+  butterflies vs plants r = +0.25, birds vs plants at 0.5° r = +0.12.
+
+**The butterfly coefficient is not comparable in size.** Rarefaction does not
+remove the effort signal for this group: corrected butterfly richness still
+correlates r = +0.45 with log records at 100 records (plants −0.05, birds +0.24),
+and 74% of a rarefied sample is distinct species. Read its +0.51 as "same sign,
+same collapse within regions", not as a stronger effect than for birds.
+
+## Still not done
+- The Hawkins subsampling test for plants or butterflies.
+- Butterflies at 0.5°; any taxon at 2° other than birds.
+- A GBIF derived-dataset DOI for the plant or butterfly records. The bird DOI
+  does not cover them. Contributing-dataset counts are ready:
   `data/gbif_derived_dataset/dataset_counts_plants.csv` (435 datasets,
   1,362,316 records, queried 2026-11-16 by `scripts/gbif_dataset_counts.py`; the
   per-cell pull summed to 1,364,346, the difference being records on shared cell

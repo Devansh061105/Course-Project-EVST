@@ -73,3 +73,51 @@ The defensible statement for the report is therefore:
 > this grain. Where an association is detectable at all, it is adequately
 > described by a straight line; adding curvature never improves fit by a
 > meaningful margin.
+
+## Without assuming a parabola (2026-11-16)
+Reproduce: `python scripts/shape_spline.py`. Figure: `fig13_shape`.
+
+A quadratic can bend only once and symmetrically. To check that "no hump" is not
+an artefact of that shape, the richness term was replaced by natural cubic
+splines, and by a single-breakpoint model with the breakpoint searched and a
+permutation p-value that accounts for the search.
+
+| | 1° (n = 221) | 0.5° (n = 672) |
+|---|---|---|
+| spline with 2 parameters vs line, ΔAIC | +2.00 | +1.46 |
+| spline with 3 parameters vs line, ΔAIC (F-test p) | **−6.66 (p = 0.006)** | +3.40 (p = 0.74) |
+| spline with 4 parameters vs line, ΔAIC | −7.68 | +4.68 |
+| block cross-validated MSE, line / 3-parameter spline | 0.518 / 0.509 | 0.691 / 0.698 |
+| best breakpoint: slope below → above | +0.361 → +0.002 | +0.275 → +0.175 |
+| breakpoint permutation p (search-adjusted) | 0.19 | 0.66 |
+
+- **At 1° a flexible curve fits better than a line**, in-sample and (slightly)
+  out of sample. As drawn in Fig 13a it is S-shaped: steep in the middle, and it
+  **dips at the highest richness values** (the fitted curve peaks near +0.9 SD).
+- **That dip is not in the data.** A hump predicts a negative slope among the
+  richest cells. Fitted directly, that slope is positive at both grains:
+
+  | richest cells | 1° slope | 0.5° slope |
+  |---|---|---|
+  | top 25% | +0.440 (p = 0.037) | +0.295 (p = 0.019) |
+  | top 15% | +0.454 (p = 0.28) | +0.313 (p = 0.061) |
+  | top 10% | +0.602 (p = 0.43) | +0.596 (p = 0.033) |
+
+  The dip is the shape a three-parameter spline takes to accommodate a steep
+  middle section, not a decline in productivity. (An earlier draft of this
+  section said "nothing turns downward"; the drawn curve does, so the upper-tail
+  slopes were added to test it.)
+- **The curvature does not replicate at 0.5°**, where the line wins on every
+  count, and the breakpoint is not significant at either grain once the search
+  is accounted for.
+- The slopes within thirds of the richness range are not consistent either
+  (1°: +0.10, +0.88, +0.19; 0.5°: +0.16, +0.21, +0.31).
+
+**Conclusion unchanged: linear.** The 1° data have a steeper middle than a line
+allows, which is a weak, unreplicated hint of non-linearity. There is no support
+anywhere for the hump-backed model: the slope among the richest cells is positive
+in all six upper-tail fits.
+
+For plants (`extension_d_more.py`), the quadratic beats the line (ΔAIC −3.90) but
+with a **positive** squared term (+0.090, p = 0.017): convex, the opposite of a
+hump.

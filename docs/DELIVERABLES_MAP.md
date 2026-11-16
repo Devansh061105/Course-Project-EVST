@@ -22,7 +22,15 @@ inventory.
 |---|---|---|
 | Extension D: the model chain repeated for vascular plants | **Done** at 1°; scope lock lifted by the user for this one addition | `RESULTS_EXTENSION_D.md`; `fig10_second_taxon` |
 | Local slopes for every cell (GWR), inside Extension C | **Done** at 1° and 0.5° | `RESULTS_LOCAL_SLOPES.md`; `fig9_local_slopes` |
-| Interactive maps for the presentation | **Done** | `docs/interactive_map.html` (flat), `docs/interactive_map_3d.html` (3D terrain) |
+| Interactive maps for the presentation | **Done**; hosted at https://devansh061105.github.io/Course-Project-EVST/ | `docs/interactive_map.html` (flat), `docs/interactive_map_3d.html` (3D terrain, guided tour) |
+| Thinning experiment for Extension A | **Done** | `RESULTS_EXTENSION_A.md`; `fig11_effort_simulation` |
+| Flexible-curve test for Extension B | **Done** | `RESULTS_EXTENSION_B.md`; `fig13_shape` |
+| Plants at 0.5° and butterflies and moths, inside Extension D | **Done** | `RESULTS_EXTENSION_D.md`; `fig17_three_taxa` |
+| Extension E: stability of productivity | **Done** at 1° | `RESULTS_EXTENSION_E.md`; `fig15_stability` |
+| Extension F: protected land | **Done but data-limited** | `RESULTS_EXTENSION_F.md` |
+| Direction of the link (path analysis) | **Done**: not identifiable | `RESULTS_DIRECTION.md`; `fig14_direction` |
+| Specification curve, 960 models | **Done** | `RESULTS_SPEC_CURVE.md`; `fig12_spec_curve` |
+| Survey-gap ranking for the citizen-science section | **Done** | `RESULTS_SURVEY_GAPS.md`; `fig16_survey_gaps` |
 
 ## What the policy section can honestly say (from the results)
 Each claim is limited to what a specific result supports.
@@ -46,6 +54,16 @@ Each claim is limited to what a specific result supports.
 - **Do not rank places by local slope.** The slope fitted around each cell is
   typically a tenth of the region-wide one, and there is no statistical evidence
   that it differs from place to place. (`RESULTS_LOCAL_SLOPES.md`)
+- **Where citizen-science data run out.** Bird records are close to complete at 1°
+  across India, Nepal, Thailand and Sri Lanka and thin in western Pakistan, upland
+  Myanmar and the Tibetan margin; 46 natural-cover cells drop out of every model
+  for lack of records. (`RESULTS_SURVEY_GAPS.md`)
+- **Diversity does not buy stability here.** Richer cells vary less from year to
+  year, but only because they are wetter and more productive; the link is zero
+  within ecoregions. Do not claim an insurance effect. (`RESULTS_EXTENSION_E.md`)
+- **Protected-area data are not good enough to test conservation claims.** India's
+  parks are largely missing from the public database. Say this; do not report a
+  protection effect. (`RESULTS_EXTENSION_F.md`)
 - **Direction is not identified.** Bird richness driving plant productivity is
   implausible; the species-energy literature has productivity driving richness.
   Any "biodiversity supports carbon uptake" reading should be avoided for this

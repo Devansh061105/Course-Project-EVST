@@ -300,3 +300,63 @@ masked at 500 m and aggregated explicitly (the first attempt was wrong, see
 an internet connection when it is opened; the flat atlas does not need one for its
 content (only for its web fonts). Relief is exaggerated (25× by default) and the
 page says so.
+
+## 2026-11-16 (later) — Scope lock lifted a second time: Extensions E and F
+**Decision.** After being shown a list in which three items were marked as needing
+the scope lock lifted again, with a recommendation against them, the user asked
+for everything on the list except the report. Recorded here because it overrides
+the "no fifth extension" rule written earlier the same day. The lock now stands
+at **six** extensions:
+
+- **E** richness and the year-to-year stability of productivity
+  (`RESULTS_EXTENSION_E.md`);
+- **F** protected land (`RESULTS_EXTENSION_F.md`).
+
+The third item, a third taxon (butterflies and moths), is the same question as
+Extension D and is reported inside it, not as a seventh extension.
+
+**Do not add a seventh.** The project is now wide; further work should go into
+the report.
+
+## 2026-11-16 (later) — Additions inside the existing extensions
+- **A:** thinning experiment (`effort_simulation.py`).
+- **B:** flexible-curve and breakpoint tests (`shape_spline.py`).
+- **D:** plants at 0.5°, plant cross-validation and hump test, Lepidoptera
+  (`extension_d_more.py`, `gbif_pull_generic.py`).
+- **Cross-cutting:** path analysis for direction (`path_analysis.py`), a
+  960-model specification curve (`spec_curve.py`), a survey-gap ranking
+  (`survey_gaps.py`).
+
+## 2026-11-16 (later) — Protected areas: two definitions, and a subset without India and China
+**Decision.** Extension F reports protection two ways (IUCN categories Ia–IV, and
+all designated WDPA polygons) and repeats every model without India and China.
+
+**Why.** The first extract gave India 18% protected. A breakdown by designation
+showed about 180,000 of India's 190,000 WDPA polygons are Reserve Forest or
+Protected Forest, while its national parks and sanctuaries total only about
+20,800 km² of reported area: the parks are largely missing from the public
+database. Under the strict definition India reads 0.2%. Neither number measures
+protection in India, so results that include India are not interpretable and the
+extension is labelled data-limited.
+
+## 2026-11-16 (later) — Species names are fetched for display only
+`gbif_top_species.py` asks GBIF for the four most-recorded bird and plant species
+per land cell (1,176 requests) and resolves 1,187 species keys to names, with
+their own append-only caches. The richness pulls store counts without species
+identity, so this is a separate, display-only request; no model uses it.
+
+## 2026-11-16 (later) — Tests, continuous integration and hosted maps
+- `tests/test_core.py`: 17 unit tests of rarefaction, coverage, the grid, the GWR
+  kernel, thinning and the stability statistics, against hand-computed or
+  by-construction values.
+- `.github/workflows/checks.yml`: on every push, run the tests and
+  `reproduce_all.py`, which now exits non-zero if any check fails.
+- GitHub Pages serves `docs/` (with `docs/.nojekyll` so files are served as they
+  are), giving the two maps public URLs. The user asked for the push and for the
+  hosting.
+
+## 2026-11-16 (later) - Presentation deck as a PowerPoint file
+`presentation/Project9_Biodiversity_Productivity.pptx`, 13 slides with speaker notes,
+built by `presentation/build_deck.js` (pptxgenjs) from the figures. The deck is kept as a file in the repo. Every number on the slides comes from the `RESULTS_*.md` files; if a result
+changes, change the script and rebuild. Slide 6 states that the fitted curve dips at
+the top end and why that is not a decline in the data, because the figure shows it.

@@ -23,13 +23,16 @@ log10(survey effort) covariate). Predictor: MODIS GPP (MOD17A3HGF), with ERA5-La
 climate controls. **H1:** corrected richness is positively associated with GPP after
 climate controls on natural land cover.
 
-Four extensions, **scope-locked, do not add a fifth** (the plan locked at three; the
-lock was lifted once, for D, on 2026-11-16 — see `docs/DECISIONS.md`):
+Six extensions, **scope-locked, do not add a seventh** (the plan locked at three; the
+user lifted the lock twice on 2026-11-16, for D and then for E and F — see
+`docs/DECISIONS.md`):
 - **A** naive (raw richness) vs corrected (rarefied + effort + climate + mask)
 - **B** linear vs quadratic fit, compared by AIC
 - **C** three case studies: Western Ghats, Thar Desert (replaced the Deccan, which has
   no natural-cover cells), Eastern Himalaya; plus local slopes for every cell
-- **D** second taxon: vascular plants, same model chain as the birds
+- **D** other taxa: vascular plants and butterflies and moths, same model chain
+- **E** richness and the year-to-year stability of productivity (2001-2023)
+- **F** protected land (data-limited: India's parks are missing from the public database)
 
 ## 2. What the results say (current interpretation)
 Authoritative write-up: `docs/RESULTS_ADJUDICATION.md` (it supersedes
@@ -69,13 +72,19 @@ Authoritative write-up: `docs/RESULTS_ADJUDICATION.md` (it supersedes
 | Ten figures + CSV views | Done | `figures/`, `scripts/make_figures.py` |
 | Extension D: vascular plants as a second taxon | Done 2026-11-16 (1° only) | `docs/RESULTS_EXTENSION_D.md`, Fig 10 |
 | Local slopes (GWR) at 1° and 0.5° | Done 2026-11-16 | `docs/RESULTS_LOCAL_SLOPES.md`, Fig 9 |
-| Interactive maps (flat atlas, 3D terrain) | Done 2026-11-16 | `docs/interactive_map.html`, `docs/interactive_map_3d.html` |
+| Interactive maps (flat atlas, 3D terrain) with species names, guided tour, overlays | Done 2026-11-16 | `docs/interactive_map.html`, `docs/interactive_map_3d.html`; hosted at https://devansh061105.github.io/Course-Project-EVST/ |
+| Thinning experiment (A), flexible-curve test (B), plants at 0.5° and butterflies (D) | Done 2026-11-16 | `RESULTS_EXTENSION_{A,B,D}.md`, Figs 11, 13, 17 |
+| Extension E: stability of productivity; Extension F: protected land | Done 2026-11-16 (F is data-limited) | `RESULTS_EXTENSION_{E,F}.md`, Fig 15 |
+| Path analysis, 960-model specification curve, survey-gap ranking | Done 2026-11-16 | `RESULTS_DIRECTION.md`, `RESULTS_SPEC_CURVE.md`, `RESULTS_SURVEY_GAPS.md`, Figs 12, 14, 16 |
+| Unit tests and continuous integration | Done 2026-11-16 | `tests/`, `.github/workflows/checks.yml` |
+| Presentation deck (13 slides, speaker notes) | Done 2026-11-16 | `presentation/Project9_Biodiversity_Productivity.pptx`, built by `presentation/build_deck.js` |
 | Independent verification and project review (12 errors found and fixed) | Done | `docs/VERIFICATION.md` |
 | Mid-eval prep guides (full 15 pp, focused 12 pp) | Done | `docs/MID_EVAL_GUIDE_FOCUSED.{md,pdf}`, `docs/MID_EVAL_PREP_GUIDE.{md,pdf}` |
 
-Reproducibility: `python scripts/reproduce_all.py` re-runs 19 analysis scripts from the
-cached data and checks 35 headline numbers. Last run (2026-11-16): **19/19 exit 0,
-35/35 pass.**
+Reproducibility: `python scripts/reproduce_all.py` re-runs 28 analysis scripts from the
+cached data and checks 57 headline numbers (about 12 minutes). Last run (2026-11-16):
+**28/28 exit 0, 57/57 pass.** `pytest -q tests` runs 17 unit tests. Both run on every
+push (`.github/workflows/checks.yml`).
 
 ## 4. Status: what is NOT done / open items (priority order)
 1. **Three decisions that need the team:**
@@ -130,7 +139,7 @@ cached data and checks 35 headline numbers. Last run (2026-11-16): **19/19 exit 
 | `data/case_study_regions/` | Ecoregion-based case-study polygons and cell-overlap tables from the teammate Step 1 package, plus a crosswalk to our cell IDs (see its README) |
 | `data/*_cache*.json` | **Frozen API results = restart state. Never delete or re-pull.** |
 | `data/repro/` | Logs from `reproduce_all.py` |
-| `figures/` | fig1-fig10 PNG and CSV |
+| `figures/` | fig1-fig17 PNG and CSV (`make_figures.py` 1-10, `make_figures_2.py` 11-17) |
 | `scripts/gbif_lib.py` | Grid, GBIF queries, Hurlbert rarefaction |
 | `scripts/gee_extract_chunked.py` | The live Earth Engine extractor (`gee_extract.py` is deprecated and exits) |
 | `scripts/reproduce_all.py` | Re-runs the analysis and checks headline numbers |
@@ -151,7 +160,7 @@ Python 3.13 with `pip install -r requirements.txt`.
   belongs to another team member's account).
 
 ## 7. Rules and pitfalls (learned the hard way)
-- Never add a fifth extension. Everything beyond A/B/C/D is robustness, not a new question.
+- Never add a seventh extension. Everything beyond A-F is robustness, not a new question.
 - GBIF: 0.3 s between requests, cache after every cell, never re-pull cached cells.
   Per-cell richness comes from ONE faceted request (`facet=speciesKey`); if a cell
   reports `facet_truncated=1`, raise `FACET_LIMIT` rather than ignoring it.
@@ -176,7 +185,7 @@ Python 3.13 with `pip install -r requirements.txt`.
 
 ## 9. Suggested next steps for whoever resumes
 1. Read `docs/MID_EVAL_GUIDE_FOCUSED.pdf`, then `docs/RESULTS_ADJUDICATION.md`.
-2. Run `python scripts/reproduce_all.py` to confirm the environment reproduces 35/35.
+2. Run `python scripts/reproduce_all.py` to confirm the environment reproduces 57/57.
 3. Get the team's answers to the three open decisions in section 4.1.
 4. When asked, draft the report (ask format, brief, length first), then deliverable 8.
 5. Update this file, `docs/TODO.md` and `docs/DECISIONS.md` after each significant step.

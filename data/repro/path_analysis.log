@@ -1,0 +1,34 @@
+
+=== path analysis, 1.0 degree: n = 220 ===
+raw correlation richness-GPP: r = +0.557
+PATH 1.0: richness -> GPP | climate, effort   beta = +0.273  [+0.180, +0.368]
+PATH 1.0: GPP -> richness | climate, effort   beta = +0.378  [+0.249, +0.508]
+the two directions are equivalent in fit: both reproduce the same partial correlation (sum of equation R2 0.873 vs 0.892 is not a test)
+DECOMP 1.0: of r = 0.557, direct link 0.273 (49%), shared through climate and effort 0.284 (51%)
+COMMON-CAUSE 1.0: partial r(richness, GPP | climate, effort) = +0.321, p = 0.0001 (SEs clustered by ecoregion) -> rejected
+topographic heterogeneity: r with richness +0.267, with GPP +0.097
+  heterogeneity -> richness | climate, effort: beta = +0.491, p = 0.0000
+DSEP 1.0: model 'GPP -> richness' claims heterogeneity is unrelated to GPP given climate: beta = +0.546, p = 0.0006
+DSEP 1.0: model 'richness -> GPP' claims heterogeneity is unrelated to GPP given richness and climate: beta = +0.479, p = 0.0051
+  Fisher's C for 'GPP -> richness': C = 14.78, df = 2, p = 0.0006 (small p = model rejected)
+  Fisher's C for 'richness -> GPP': C = 10.55, df = 2, p = 0.0051 (small p = model rejected)
+IV 1.0: richness -> GPP with heterogeneity as instrument: beta = +1.114 [+0.695, +1.533], p = 0.0000; first-stage F = 18.7 (adequate)
+IV 1.0 VERDICT: not valid. Heterogeneity still predicts GPP with richness held fixed (p = 0.0051), so it does not act only through richness; the IV estimate is 4.1 times the OLS one, which is the signature of a bad instrument. Direction stays unidentified.
+within ecoregions: heterogeneity -> GPP | climate: beta = +0.071, p = 0.5491
+
+=== path analysis, 0.5 degree: n = 671 ===
+raw correlation richness-GPP: r = +0.367
+PATH 0.5: richness -> GPP | climate, effort   beta = +0.228  [+0.165, +0.290]
+PATH 0.5: GPP -> richness | climate, effort   beta = +0.291  [+0.204, +0.369]
+the two directions are equivalent in fit: both reproduce the same partial correlation (sum of equation R2 0.556 vs 0.568 is not a test)
+DECOMP 0.5: of r = 0.367, direct link 0.228 (62%), shared through climate and effort 0.139 (38%)
+COMMON-CAUSE 0.5: partial r(richness, GPP | climate, effort) = +0.257, p = 0.0000 (SEs clustered by ecoregion) -> rejected
+topographic heterogeneity: r with richness +0.302, with GPP +0.157
+  heterogeneity -> richness | climate, effort: beta = +0.385, p = 0.0000
+DSEP 0.5: model 'GPP -> richness' claims heterogeneity is unrelated to GPP given climate: beta = +0.541, p = 0.0000
+DSEP 0.5: model 'richness -> GPP' claims heterogeneity is unrelated to GPP given richness and climate: beta = +0.495, p = 0.0000
+  Fisher's C for 'GPP -> richness': C = 22.30, df = 2, p = 0.0000 (small p = model rejected)
+  Fisher's C for 'richness -> GPP': C = 20.12, df = 2, p = 0.0000 (small p = model rejected)
+IV 0.5: richness -> GPP with heterogeneity as instrument: beta = +1.405 [+1.025, +1.785], p = 0.0000; first-stage F = 28.8 (adequate)
+IV 0.5 VERDICT: not valid. Heterogeneity still predicts GPP with richness held fixed (p = 0.0000), so it does not act only through richness; the IV estimate is 6.2 times the OLS one, which is the signature of a bad instrument. Direction stays unidentified.
+within ecoregions: heterogeneity -> GPP | climate: beta = +0.289, p = 0.0000

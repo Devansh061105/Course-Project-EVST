@@ -245,6 +245,15 @@ Each PNG has a CSV of its plotted values beside it (table view).
     their agreement, and how incomplete the plant samples are (added 2026-11-16;
     see `RESULTS_EXTENSION_D.md`).
 
+Figures 11-17 come from `make_figures_2.py` (added 2026-11-16):
+11. `fig11_effort_simulation` — thinning experiment (`RESULTS_EXTENSION_A.md`).
+12. `fig12_spec_curve` — 960 specifications (`RESULTS_SPEC_CURVE.md`).
+13. `fig13_shape` — flexible curve against a line (`RESULTS_EXTENSION_B.md`).
+14. `fig14_direction` — path diagram (`RESULTS_DIRECTION.md`).
+15. `fig15_stability` — richness and year-to-year stability (`RESULTS_EXTENSION_E.md`).
+16. `fig16_survey_gaps` — completeness and survey priority (`RESULTS_SURVEY_GAPS.md`).
+17. `fig17_three_taxa` — birds, plants, butterflies and moths (`RESULTS_EXTENSION_D.md`).
+
 Palette validated with the dataviz validator against #ffffff (slots 1–3,
 all-pairs PASS; aqua at 2.82:1 is direct-labelled per the relief rule).
 Corrections made during visual review: fig3 rows relabelled because they are not
@@ -322,6 +331,15 @@ should present it as a range, not a point.
   association without using ecoregion boundaries.
 - **Vascular plants** (`RESULTS_EXTENSION_D.md`): corrected β +0.264 for GPP
   (birds on the same cells +0.277), and −0.027 (p = 0.49) within ecoregions.
+
+## Further checks that agree with this reading (2026-11-16, second batch)
+- **960 specifications** (`RESULTS_SPEC_CURVE.md`): median coefficient +0.240 under
+  OLS, +0.039 with ecoregion fixed effects, +0.033 under the spatial error model;
+  none significantly negative. The across/within split does not depend on any
+  data choice.
+- **Three taxa** (`RESULTS_EXTENSION_D.md`): plants at 0.5° (+0.228 across, +0.015
+  within) and butterflies and moths at 1° (+0.512 across, −0.087 within).
+- **Direction** (`RESULTS_DIRECTION.md`): not identifiable from these data.
 
 ## Still outstanding
 - Everything else is in `TODO.md`.

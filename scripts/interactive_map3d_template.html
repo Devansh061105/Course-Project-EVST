@@ -49,15 +49,26 @@ input[type="range"] { width: 130px; max-width: 100%; accent-color: var(--accent)
 .badge { font-size: 0.75rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink2); white-space: nowrap; }
 .badge.m { border-color: var(--accent); color: var(--accent); }
 .sub { color: var(--muted); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; margin: 14px 0 6px; }
-dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 5px 14px; margin: 0; font-variant-numeric: tabular-nums; }
+dl { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 5px 14px; margin: 0; font-variant-numeric: tabular-nums; }
 dt { color: var(--muted); } dd { margin: 0; text-align: right; overflow-wrap: anywhere; }
 .legends { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 28px; margin-top: 12px; color: var(--ink2); font-size: 0.85rem; font-variant-numeric: tabular-nums; }
 .legends h3 { font: 600 0.78rem var(--body); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
 .grad { display: flex; gap: 8px; align-items: center; }
 .grad .b { flex: 1 1 auto; height: 10px; border-radius: 2px; min-width: 80px; }
 .sw { display: inline-flex; gap: 6px; align-items: center; margin: 0 12px 4px 0; }
-.sw i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+.sw i { width: 12px; height: 12px; border-radius: 2px; display: inline-block; box-shadow: 0 0 0 1px var(--line); }
 footer { margin-top: 22px; color: var(--muted); font-size: 0.85rem; max-width: 84ch; }
+.checks { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+button.primary { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.tour { position: absolute; left: 10px; right: 10px; bottom: 10px; background: var(--tip); color: var(--tipink); border-radius: 6px; padding: 12px 14px; z-index: 3; display: grid; gap: 8px; }
+.tour p { margin: 0; font-size: 0.95rem; line-height: 1.45; max-width: 78ch; }
+.tour .step { font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.7; }
+.tour .nav { display: flex; gap: 8px; flex-wrap: wrap; }
+.tour button { font: inherit; font-size: 0.85rem; padding: 4px 12px; border-radius: 4px; border: 1px solid var(--tipink); background: transparent; color: var(--tipink); cursor: pointer; }
+.tour button:disabled { opacity: 0.35; cursor: default; }
+ol.species { margin: 0; padding-left: 1.3em; display: grid; gap: 3px; }
+ol.species i { color: var(--muted); }
+ol.species span { color: var(--muted); font-variant-numeric: tabular-nums; }
 </style>
 
 <div class="wrap">
@@ -81,14 +92,23 @@ footer { margin-top: 22px; color: var(--muted); font-size: 0.85rem; max-width: 8
         <option value="so">Bird richness, raw count</option>
         <option value="n">Bird survey effort</option>
         <option value="pc">Plant richness, effort-corrected</option>
+        <option value="lpc">Butterfly and moth richness, effort-corrected</option>
+        <option value="pr">Survey priority</option>
+        <option value="cv">Year-to-year variation in GPP</option>
         <option value="none">No columns</option>
       </select>
     </label>
     <label class="check" for="onlymodel"><input type="checkbox" id="onlymodel" checked> Modelled cells only</label>
+    <div class="checks" role="group" aria-label="Overlays">
+      <label class="check" for="ovb"><input type="checkbox" id="ovb"> Country borders</label>
+      <label class="check" for="ove"><input type="checkbox" id="ove"> Ecoregion boundaries</label>
+      <label class="check" for="ovp"><input type="checkbox" id="ovp"> Protected areas</label>
+    </div>
     <label class="field" for="exag"><span style="white-space:nowrap">Relief ×<span id="exagv">25</span></span>
       <input type="range" id="exag" min="5" max="60" step="1" value="25">
     </label>
     <div class="fly" role="group" aria-label="Fly to">
+      <button type="button" class="btn primary" id="tourbtn">Play the tour</button>
       <button type="button" class="btn" data-fly="all">Whole region</button>
       <button type="button" class="btn" data-fly="0">Western Ghats</button>
       <button type="button" class="btn" data-fly="1">Thar Desert</button>
@@ -100,7 +120,16 @@ footer { margin-top: 22px; color: var(--muted); font-size: 0.85rem; max-width: 8
     <div>
       <div class="stage" id="stage">
         <div class="tip" id="tip" hidden></div>
-        <div class="hint">Drag: turn · Scroll: zoom · Right-drag: move · Click: details</div>
+        <div class="hint" id="hint">Drag: turn · Scroll: zoom · Right-drag: move · Click: details</div>
+        <div class="tour" id="tour" hidden>
+          <div class="step" id="tourstep"></div>
+          <p id="tourtext"></p>
+          <div class="nav">
+            <button type="button" id="tourprev">Back</button>
+            <button type="button" id="tournext">Next</button>
+            <button type="button" id="tourstop">End tour</button>
+          </div>
+        </div>
       </div>
       <div class="legends">
         <div><h3 id="lgd1t">Ground</h3><div id="lgd1"></div></div>
@@ -112,11 +141,15 @@ footer { margin-top: 22px; color: var(--muted); font-size: 0.85rem; max-width: 8
       <div id="point"></div>
       <div class="sub" id="cellsub" hidden>The one-degree cell around it</div>
       <dl id="detail"></dl>
+      <div class="sub" id="spbt" hidden>Most-recorded birds</div>
+      <ol class="species" id="spb"></ol>
+      <div class="sub" id="sppt" hidden>Most-recorded plants</div>
+      <ol class="species" id="spp"></ol>
     </section>
   </div>
 
   <footer>
-    Terrain: ETOPO1 (NOAA), drawn at 0.05° with the relief exaggerated. Land cover: ESA WorldCover v200. Greenness and productivity: MODIS MOD13Q1 and MOD17A3HGF, 2019–2023 means. Birds and plants: GBIF occurrence records 2000–2024, per one-degree cell; "effort-corrected" is the number of species expected in a random draw of 250 bird records or 100 plant records. Dashed outlines mark the three case-study regions. Built by <code>scripts/build_interactive_map.py</code>.
+    Protected areas: World Database on Protected Areas, all designated sites; in India this includes Reserve and Protected Forests, while most Indian national parks and sanctuaries are missing from the public database, so read that overlay with care there. Survey priority: many species expected from the environment, few documented. Terrain: ETOPO1 (NOAA), drawn at 0.05° with the relief exaggerated. Land cover: ESA WorldCover v200. Greenness and productivity: MODIS MOD13Q1 and MOD17A3HGF, 2019–2023 means. Birds and plants: GBIF occurrence records 2000–2024, per one-degree cell; "effort-corrected" is the number of species expected in a random draw of 250 bird records or 100 plant records. Dashed outlines mark the three case-study regions. Built by <code>scripts/build_interactive_map.py</code>.
   </footer>
 </div>
 
@@ -150,10 +183,25 @@ const COLS = {
   sc: {label: "Bird species expected in 250 records", stops: ["#bcd8f8", "#3987e5", "#0d366b"], d: 1},
   so: {label: "Bird species observed (raw count)", stops: ["#bcd8f8", "#3987e5", "#0d366b"], d: 0},
   n: {label: "Bird records (log scale)", stops: ["#f3d9f0", "#b455a8", "#5a1f55"], d: 0, log: true},
-  pc: {label: "Plant species expected in 100 records", stops: ["#d6f0c9", "#3fae5a", "#0c5226"], d: 1}
+  pc: {label: "Plant species expected in 100 records", stops: ["#d6f0c9", "#3fae5a", "#0c5226"], d: 1},
+  lpc: {label: "Butterfly and moth species expected in 100 records", stops: ["#fde6c4", "#e39a2d", "#7a4706"], d: 1},
+  pr: {label: "Survey priority (0–100)", stops: ["#fde4d8", "#eb6834", "#5e2108"], d: 0},
+  cv: {label: "Year-to-year variation in GPP (%)", stops: ["#e6e0f5", "#8a6cc9", "#3a2274"], d: 1}
 };
 const STATUS = {m: "Modelled", c: "Cropland or built-up", o: "Not modelled"};
-const state = {drape: "lc", cols: "sc", only: true, exag: 25, sel: null};
+const PROT = [122, 63, 184];
+const state = {drape: "lc", cols: "sc", only: true, exag: 25, sel: null, ovb: false, ove: false, ovp: false};
+// The guided tour: each step sets the view and layers, then says one thing.
+const TOUR = [
+  {view: "all", drape: "lc", cols: "none", only: true, text: "This is the study region: South and Southeast Asia, 5–31°N and 68–102°E. The ground shows land cover. Most of peninsular India is yellow cropland, which the analysis leaves out; only cells dominated by natural cover are modelled."},
+  {view: "all", drape: "lc", cols: "n", only: false, text: "Each column is how many bird records a one-degree cell has. Birdwatchers are not spread evenly: survey effort differs 139-fold between the three case-study regions."},
+  {view: "0", drape: "lc", cols: "so", only: false, text: "On raw species counts the Western Ghats looks like the richest region. But raw counts follow effort closely (r = 0.81): the more people look, the more species they list."},
+  {view: "2", drape: "lc", cols: "sc", only: true, text: "After the effort correction, the Eastern Himalaya is the richest of the three, not the Western Ghats. The ranking flips."},
+  {view: "all", drape: "gpp", cols: "sc", only: true, text: "Now the ground shows productivity. Across the whole region, richer cells are more productive even after climate is accounted for (β = +0.27). That is the cross-regional result."},
+  {view: "1", drape: "gpp", cols: "sc", only: true, text: "But the Thar Desert shows the limit of that. Productivity differs 10-fold between these regions while corrected richness differs only 1.3-fold. Inside an ecoregion the link nearly disappears."},
+  {view: "all", drape: "ndvi", cols: "pc", only: false, text: "Plants tell the same story as birds: the same link across regions (β = +0.26), and none within ecoregions. The two groups agree only weakly on where diversity is high (r = +0.30)."},
+  {view: "all", drape: "lc", cols: "pr", only: false, ovb: true, text: "Where should surveys go next? These columns mark natural land where many species are expected but few are documented: western Pakistan, eastern Myanmar and the Tibetan margin. Click any place to read its record."}
+];
 
 function b64(s, Type) { const bin = atob(s), u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return new Type(u.buffer); }
 const stage = el("stage");
@@ -164,6 +212,8 @@ function fail(text) { const m = document.createElement("div"); m.className = "ms
   if (!window.THREE || !THREE.OrbitControls) return fail("The 3D library did not load. Check the network connection and reload.");
   const W = G.w, H = G.h, RES = G.res;
   const ELEV = b64(G.elev, Uint16Array), LCG = b64(G.lc, Uint8Array), NDVI = b64(G.ndvi, Uint8Array), GPP = b64(G.gpp, Uint8Array);
+  const OV = G.ov ? b64(G.ov, Uint8Array) : null;
+  if (!OV) for (const id of ["ovb", "ove", "ovp"]) el(id).disabled = true;
   let renderer;
   try { renderer = new THREE.WebGLRenderer({antialias: true}); } catch (e) { return fail("This browser cannot draw 3D graphics (WebGL is unavailable)."); }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -218,7 +268,17 @@ function fail(text) { const m = document.createElement("div"); m.className = "ms
   }
   function paintGround() {
     const sea = hex(css("--sea"));
-    for (let k = 0, p = 0; k < W * H; k++) { const c = pixelRGB(k, sea); img.data[p++] = c[0]; img.data[p++] = c[1]; img.data[p++] = c[2]; img.data[p++] = 255; }
+    const useOv = OV && (state.ovb || state.ove || state.ovp);
+    for (let k = 0, p = 0; k < W * H; k++) {
+      let c = pixelRGB(k, sea);
+      if (useOv && OV[k]) {
+        const v = OV[k];
+        if (state.ovp && v >> 2) { const f = 0.25 + 0.5 * Math.min(1, (v >> 2) / 40); c = [c[0] + (PROT[0] - c[0]) * f, c[1] + (PROT[1] - c[1]) * f, c[2] + (PROT[2] - c[2]) * f]; }
+        if (state.ove && (v & 2)) c = [c[0] * 0.45 + 12, c[1] * 0.45 + 12, c[2] * 0.45 + 14];
+        if (state.ovb && (v & 1)) c = [16, 18, 22];
+      }
+      img.data[p++] = c[0]; img.data[p++] = c[1]; img.data[p++] = c[2]; img.data[p++] = 255;
+    }
     ctx.putImageData(img, 0, 0); tex.needsUpdate = true;
     renderer.setClearColor(new THREE.Color(css("--sea")), 1);
     const L = DRAPES[state.drape], box = el("lgd1"); el("lgd1t").textContent = L.title; box.textContent = "";
@@ -229,6 +289,15 @@ function fail(text) { const m = document.createElement("div"); m.className = "ms
       b.style.background = "linear-gradient(to right," + L.stops.join(",") + ")";
       const a = document.createElement("span"), z = document.createElement("span"); a.textContent = fmt(L.lo, L.d); z.textContent = fmt(L.hi, L.d) + (state.drape === "elev" ? "+" : "");
       g.append(a, b, z); box.append(g);
+    }
+    const marks = [];
+    if (state.ovp) marks.push(["rgb(" + PROT.join(",") + ")", "Protected area (deeper = larger share of the pixel)"]);
+    if (state.ove) marks.push(["#3a3d44", "Ecoregion boundary"]);
+    if (state.ovb) marks.push(["#101216", "Country border"]);
+    if (marks.length) {
+      const row = document.createElement("div"); row.style.marginTop = "6px";
+      for (const [col, text] of marks) { const s = document.createElement("span"); s.className = "sw"; const i = document.createElement("i"); i.style.background = col; s.append(i, text); row.append(s); }
+      box.append(row);
     }
   }
 
@@ -330,6 +399,15 @@ function fail(text) { const m = document.createElement("div"); m.className = "ms
       pt.append(dl);
     }
     const b = el("cstat"), sub = el("cellsub");
+    for (const [list, head, items] of [["spb", "spbt", c && c.tb], ["spp", "sppt", c && c.tp]]) {
+      const ol = el(list); ol.textContent = ""; el(head).hidden = !(items && items.length);
+      for (const [sci, en, n] of items || []) {
+        const li = document.createElement("li"), i = document.createElement("i"), s = document.createElement("span");
+        i.textContent = sci; s.textContent = " · " + fmt(n) + " records";
+        if (en) li.append(en + " (", i, ")", s); else li.append(i, s);
+        ol.append(li);
+      }
+    }
     if (!c) { b.hidden = true; sub.hidden = true; el("detail").textContent = ""; render(); return; }
     b.hidden = false; b.textContent = STATUS[c.st]; b.className = "badge " + c.st;
     sub.hidden = false; sub.textContent = "One-degree cell " + (c.la - 0.5) + "–" + (c.la + 0.5) + "°N, " + (c.lo - 0.5) + "–" + (c.lo + 0.5) + "°E";
@@ -340,7 +418,12 @@ function fail(text) { const m = document.createElement("div"); m.className = "ms
       ["Plant records", fmt(c.pn)], ["Plant species, raw", fmt(c.ps)], ["Plant species, corrected", fmt(c.pc, 1)],
       ["GPP (kg C m⁻² yr⁻¹)", fmt(c.gpp, 2)], ["NPP (kg C m⁻² yr⁻¹)", fmt(c.npp, 2)],
       ["Temperature (°C)", fmt(c.t, 1)], ["Precipitation (mm yr⁻¹)", fmt(c.p)],
-      ["Model residual (SD)", sgn(c.res)], ["Local richness slope", sgn(c.ls)], ["Case-study region", c.cs || "–"]
+      ["Model residual (SD)", sgn(c.res)], ["Local richness slope", sgn(c.ls)],
+      ["GPP variation, year to year", c.cv == null ? "–" : fmt(c.cv, 1) + "%"], ["GPP trend, 2001–2023", c.tr == null ? "–" : sgn(c.tr) + "% per year"],
+      ["Bird record completeness", c.cp == null ? "–" : Math.round(c.cp * 100) + "%"], ["Survey priority (0–100)", fmt(c.pr)],
+      ["Protected, all WDPA sites", c.pa == null ? "–" : Math.round(c.pa * 100) + "%"],
+      ["Butterfly and moth records", fmt(c.ln)], ["Butterflies and moths, corrected", fmt(c.lpc, 1)],
+      ["Case-study region", c.cs || "–"]
     ]);
     render();
   }
@@ -394,6 +477,29 @@ function fail(text) { const m = document.createElement("div"); m.className = "ms
   el("drape").addEventListener("change", e => { state.drape = e.target.value; paintGround(); render(); });
   el("cols").addEventListener("change", e => { state.cols = e.target.value; paintColumns(); placeFrame(); render(); });
   el("onlymodel").addEventListener("change", e => { state.only = e.target.checked; paintColumns(); placeFrame(); render(); });
+  for (const id of ["ovb", "ove", "ovp"]) el(id).addEventListener("change", e => { state[id] = e.target.checked; paintGround(); render(); });
+
+  // ---- guided tour ----
+  let tourAt = -1;
+  function tourShow(i) {
+    tourAt = i; const s = TOUR[i];
+    state.drape = s.drape; state.cols = s.cols; state.only = s.only; state.ovb = !!s.ovb;
+    el("drape").value = s.drape; el("cols").value = s.cols; el("onlymodel").checked = s.only; el("ovb").checked = state.ovb;
+    paintGround(); paintColumns(); placeFrame(); fly(s.view);
+    el("tourstep").textContent = "Step " + (i + 1) + " of " + TOUR.length;
+    el("tourtext").textContent = s.text;
+    el("tourprev").disabled = i === 0; el("tournext").disabled = i === TOUR.length - 1;
+    el("tour").hidden = false; el("hint").hidden = true; el("tourbtn").textContent = "Restart the tour";
+  }
+  function tourEnd() { tourAt = -1; el("tour").hidden = true; el("hint").hidden = false; el("tourbtn").textContent = "Play the tour"; }
+  el("tourbtn").addEventListener("click", () => tourShow(0));
+  el("tournext").addEventListener("click", () => { if (tourAt < TOUR.length - 1) tourShow(tourAt + 1); });
+  el("tourprev").addEventListener("click", () => { if (tourAt > 0) tourShow(tourAt - 1); });
+  el("tourstop").addEventListener("click", tourEnd);
+  if (!CELLS.some(c => c.lpc != null)) el("cols").querySelector('[value="lpc"]').remove();
+  if (!CELLS.some(c => c.pr != null)) el("cols").querySelector('[value="pr"]').remove();
+  if (!CELLS.some(c => c.cv != null)) el("cols").querySelector('[value="cv"]').remove();
+
   const retheme = () => { paintGround(); lineMat.color.set(css("--ink")); placeFrame(); render(); };
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", retheme);
   new MutationObserver(retheme).observe(document.documentElement, {attributes: true, attributeFilter: ["data-theme"]});

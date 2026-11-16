@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biodiversity and Ecosystem Productivity</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+:root { --bg: #f7f7f3; --surface: #ffffff; --ink: #14161a; --ink2: #4d5057; --muted: #82858c; --line: #dcdcd4; --accent: #2a78d6; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #111418; --surface: #1a1e24; --ink: #eef0f3; --ink2: #b5b9c1; --muted: #7f848d; --line: #2d333c; --accent: #6aa8f0; color-scheme: dark; }
+}
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Inter", "Segoe UI", system-ui, sans-serif; font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 44px max(16px, env(safe-area-inset-right, 0px)) 56px max(16px, env(safe-area-inset-left, 0px)); }
+h1 { font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif; font-weight: 600; font-size: 2rem; line-height: 1.15; margin: 0 0 10px; text-wrap: balance; }
+h2 { font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif; font-weight: 600; font-size: 1.05rem; margin: 34px 0 10px; }
+p { margin: 0 0 12px; color: var(--ink2); max-width: 66ch; }
+a { color: var(--accent); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 22px; }
+.card { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px; text-decoration: none; color: inherit; }
+.card:hover, .card:focus-visible { border-color: var(--accent); outline: none; }
+.card strong { display: block; font-family: "Space Grotesk", "Segoe UI", system-ui, sans-serif; font-size: 1.1rem; margin-bottom: 6px; color: var(--ink); }
+.card span { color: var(--ink2); }
+ul { margin: 0; padding-left: 1.2em; color: var(--ink2); max-width: 66ch; }
+li { margin-bottom: 6px; }
+footer { margin-top: 36px; color: var(--muted); font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Biodiversity and Ecosystem Productivity</h1>
+  <p>Does biodiversity track ecosystem productivity once the uneven effort behind citizen-science records is corrected? Bird, plant and butterfly richness from GBIF against satellite productivity, on a one-degree grid over South and Southeast Asia.</p>
+
+  <div class="cards">
+    <a class="card" href="interactive_map_3d.html">
+      <strong>3D terrain map</strong>
+      <span>The region as terrain, coloured by vegetation, with a richness column per cell. Take the guided tour or click any place for its record and its most-recorded species.</span>
+    </a>
+    <a class="card" href="interactive_map.html">
+      <strong>Flat atlas</strong>
+      <span>Fifteen layers, from raw and corrected richness to model residuals, local slopes, survey gaps and protected land, with a linked richness-against-productivity scatter.</span>
+    </a>
+  </div>
+
+  <h2>What the analysis found</h2>
+  <ul>
+    <li>Raw species counts mostly map survey effort (r = 0.81). After correction that falls to r = 0.24.</li>
+    <li>Across regions, richer cells are more productive (coefficient +0.27 after climate). Inside an ecoregion the link nearly disappears (+0.03 to +0.06).</li>
+    <li>Plants and butterflies show the same pattern as birds.</li>
+    <li>The relationship is a straight line, not a hump, and the data cannot say which way it runs.</li>
+    <li>Bird records are close to complete across India, Nepal, Thailand and Sri Lanka, and thin in western Pakistan, upland Myanmar and the Tibetan margin.</li>
+  </ul>
+
+  <footer>
+    Code, data and full results: <a href="https://github.com/Devansh061105/Course-Project-EVST">github.com/Devansh061105/Course-Project-EVST</a>. Every headline number is re-checked from cached data on each push.
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+GPP 2001: 582 cells with data, mean 1.180
+GPP 2002: 582 cells with data, mean 1.183
+GPP 2003: 582 cells with data, mean 1.218
+GPP 2004: 582 cells with data, mean 1.169
+GPP 2005: 582 cells with data, mean 1.181
+GPP 2006: 582 cells with data, mean 1.243
+GPP 2007: 582 cells with data, mean 1.214
+GPP 2008: 582 cells with data, mean 1.221
+GPP 2009: 582 cells with data, mean 1.198
+GPP 2010: 582 cells with data, mean 1.194
+GPP 2011: 582 cells with data, mean 1.280
+GPP 2012: 582 cells with data, mean 1.176
+GPP 2013: 582 cells with data, mean 1.243
+GPP 2014: 582 cells with data, mean 1.224
+GPP 2015: 582 cells with data, mean 1.226
+GPP 2016: 582 cells with data, mean 1.220
+GPP 2017: 582 cells with data, mean 1.251
+GPP 2018: 582 cells with data, mean 1.232
+GPP 2019: 582 cells with data, mean 1.264
+GPP 2020: 582 cells with data, mean 1.311
+GPP 2021: 582 cells with data, mean 1.292
+GPP 2022: 582 cells with data, mean 1.322
+GPP 2023: 582 cells with data, mean 1.276
+WDPA polygons in the region after filters: 179597
+protected: mean fraction over the whole box 0.0862
+border pixels 8860; ecoregions 84
+wrote C:\summer project 2\project9_biodiversity\data\gee_extras.npz (311 KB)
+climate 2001: precip mean 1484 mm, temp mean 21.4 C
+climate 2002: precip mean 1409 mm, temp mean 21.6 C
+climate 2003: precip mean 1503 mm, temp mean 21.4 C
+climate 2004: precip mean 1464 mm, temp mean 21.4 C
+climate 2005: precip mean 1481 mm, temp mean 21.5 C
+climate 2006: precip mean 1489 mm, temp mean 21.7 C
+climate 2007: precip mean 1659 mm, temp mean 21.5 C
+climate 2008: precip mean 1635 mm, temp mean 21.3 C
+climate 2009: precip mean 1455 mm, temp mean 22.0 C
+climate 2010: precip mean 1649 mm, temp mean 22.1 C
+climate 2011: precip mean 1624 mm, temp mean 21.3 C
+climate 2012: precip mean 1488 mm, temp mean 21.4 C
+climate 2013: precip mean 1599 mm, temp mean 21.3 C
+climate 2014: precip mean 1403 mm, temp mean 21.5 C
+climate 2015: precip mean 1477 mm, temp mean 21.6 C
+climate 2016: precip mean 1518 mm, temp mean 22.0 C
+climate 2017: precip mean 1578 mm, temp mean 21.8 C
+climate 2018: precip mean 1501 mm, temp mean 21.7 C
+climate 2019: precip mean 1550 mm, temp mean 21.7 C
+climate 2020: precip mean 1584 mm, temp mean 21.6 C
+climate 2021: precip mean 1552 mm, temp mean 21.7 C
+climate 2022: precip mean 1577 mm, temp mean 21.6 C
+climate 2023: precip mean 1442 mm, temp mean 21.9 C
+WDPA polygons, protected_strict: 836
+protected_strict: mean fraction over the whole box 0.0204
+wrote C:\summer project 2\project9_biodiversity\data\gee_extras.npz (443 KB)

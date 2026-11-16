@@ -105,3 +105,23 @@ above plus 4 for the local slopes and 4 for Extension D). Result 2026-11-16:
 **Not checked:** the plant analysis has no independent re-count of facet values
 (the bird pull had 12 species re-counted, section 3); the plant numbers rest on
 the same request code path.
+
+## 8. Second batch of 2026-11-16
+`reproduce_all.py` now runs **28 scripts and 57 checks** and exits non-zero on any
+failure. Result 2026-11-16: **28/28 scripts exit 0; 55/57 checks PASS** (log:
+`data/repro/_reproduce_all_2026-11-16b.txt`). `pytest -q tests`: **17 passed**.
+
+| what | how it was checked |
+|---|---|
+| Annual GPP 2001-2023 (`gee_extras.py`) | its 2019-2023 mean against the project's GPP table on the 221 modelled cells: r = 1.0000, maximum difference 0.002; all 221 cells have 23 years |
+| Protected-area grids | national shares compared between definitions and against expectation; India failed the check (0.2% strict, 18.4% all), which was traced to the database's content by a breakdown of designations, and is reported as the main finding of Extension F. Thailand (18%), Nepal (22% all sites) and Sri Lanka read as plausible; none was verified against an official source |
+| Path analysis | the two-stage estimate was checked against the direct regression it relies on; the instrument fails (heterogeneity predicts GPP with richness held fixed), so the estimate is reported as invalid, not as a result |
+| Thinning experiment | unit test confirms thinning keeps exactly m records and never exceeds a species' count; mean rarefied richness over 300 thinnings matches the full value to 2% |
+| Unit tests | one test was wrong as first written (it compared a 67-record pool with a large one, where a finite-population difference is expected); the test was corrected, not the code |
+| Plant 0.5° and Lepidoptera pulls | 1,079 and 884 cells cached, 0 at the facet limit |
+| Maps | both pages reloaded in a browser with no console errors: 8 tour steps run, overlays draw, the record panel shows species lists |
+| New references | 8 checked against Crossref; abstracts read for 7 (Shipley 2000 has none available) |
+
+**Not checked:** India's official protected-area share (quoted from memory as about
+5%); the WDPA version; why eBird records are sparse in China; whether the CI
+workflow passes on Linux (numerical tolerances were set on Windows).

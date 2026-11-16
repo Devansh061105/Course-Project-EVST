@@ -96,3 +96,44 @@ entirely converted to agriculture. Options, in order of preference:
   exist in `gbif_cells.csv` for the sensitivity check.
 - Birds only. Better recorded than any other group, so this likely understates
   the sampling-bias problem rather than overstating it.
+
+## Tested by experiment: thinning the records (2026-11-16)
+Reproduce: `python scripts/effort_simulation.py`. Figure: `fig11_effort_simulation`.
+
+The sections above compare different places. This tests the correction on the
+*same* place: take the 12 best-surveyed modelled cells (713 thousand to 3.76
+million identified records each), throw records away at random, and recompute
+both richness measures (200 random thinnings per level).
+
+| records kept | raw richness, share of full value | corrected richness, share of full value | SD of corrected richness (species) |
+|---|---|---|---|
+| 250 | 0.231 | 0.998 | 5.3 |
+| 500 | 0.314 | 1.000 | 3.2 |
+| 1,000 | 0.399 | 1.001 | 2.2 |
+| 3,000 | 0.525 | 1.000 | 1.2 |
+| 10,000 | 0.647 | 1.000 | 0.7 |
+| 30,000 | 0.740 | 1.000 | 0.4 |
+| 100,000 | 0.829 | 1.000 | 0.2 |
+
+Cut a cell to 250 records and its raw species count falls to 23% of the full
+value; corrected richness stays at 99.8%. The largest bias of the mean at any
+level is 0.59%.
+
+**The headline survives thinning the whole dataset.** With every modelled cell
+cut to at most N records and the corrected model refitted (50 repeats each):
+
+| every cell thinned to at most | richness β (95% of repeats) | r with full-data corrected richness |
+|---|---|---|
+| 250 | +0.255 [+0.227, +0.288] | 0.966 |
+| 500 | +0.262 [+0.243, +0.278] | 0.988 |
+| 1,000 | +0.268 [+0.258, +0.279] | 0.995 |
+| 3,000 | +0.272 [+0.267, +0.278] | 0.999 |
+| 10,000 | +0.274 [+0.272, +0.275] | 1.000 |
+| all records | +0.273 | 1 |
+
+**What this does and does not show.** Rarefied richness of a random subsample is
+unbiased by construction, so the first table confirms the implementation and
+shows the size of the noise (about 5 species at 250 records). It does **not**
+show that a poorly surveyed real cell is a random subsample of what a
+well-surveyed one would be: real observers choose where to go and what to
+record. That part of the bias is what the effort covariate and the mask are for.

@@ -2,6 +2,7 @@ numpy
 pandas
 scipy
 statsmodels
+patsy
 matplotlib
 libpysal
 esda

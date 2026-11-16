@@ -18,6 +18,11 @@ Current interpretation lives in `docs/RESULTS_ADJUDICATION.md`.
    records (needs a GBIF account; contributing-dataset counts are in
    `data/gbif_derived_dataset/dataset_counts_plants.csv`) and decide whether to add
    the plant tables to a new version of the Zenodo deposit.
+   The butterfly and moth records need the same (run
+   `python scripts/gbif_dataset_counts.py lepidoptera` for the counts file).
+4a. **Before citing Extension F:** record the WDPA version month from
+   protectedplanet.net, and verify India's official protected-area share (the "about
+   5%" in `RESULTS_EXTENSION_F.md` is from memory).
 
 ## OPEN QUESTION FOR THE TEAM
 The plan's H1 is causal in direction: biodiversity → productivity. The data show a
@@ -46,6 +51,11 @@ These are not exclusive. Recommendation: (b) + (c).
   Extension D, vascular plants as a second taxon (`RESULTS_EXTENSION_D.md`, Fig 10);
   interactive maps (`docs/interactive_map.html` flat, `docs/interactive_map_3d.html`
   3D terrain). 35/35 reproducibility checks pass.
+- **2026-11-16 (later):** thinning experiment (A), flexible-curve test (B), plants at
+  0.5° and butterflies (D), stability (E), protected land (F, data-limited), path
+  analysis, 960-model specification curve, survey-gap ranking; Figures 11-17;
+  species names, a guided tour and overlays in the maps; unit tests and CI; maps
+  hosted on GitHub Pages. 57/57 reproducibility checks pass.
 
 ## NEXT
 5. ~~NPP at 0.5°~~ Done (section 9 of RESULTS_ADJUDICATION). Still not done at 0.5°: coverage-based richness and the 2019-23 time-window refit.
@@ -55,9 +65,8 @@ These are not exclusive. Recommendation: (b) + (c).
    the equation itself (formula implemented from memory; boundary checks pass).
 
 ## DO NOT DO
-- Do not add a fifth extension. The plan scope-locked at three; the user lifted the
-  lock once, on 2026-11-16, for Extension D (plants). Everything else is robustness
-  for the existing four, not new questions.
+- Do not add a seventh extension. The plan scope-locked at three; the user lifted
+  the lock twice on 2026-11-16 (D, then E and F). Further effort belongs in the report.
 - Do not re-pull cached GBIF cells; do not delete `data/*_cache*.json`.
 - Do not launch long jobs with `nohup` where the parent process can be killed: the
   job survives the kill, and a restart then runs two copies against the same

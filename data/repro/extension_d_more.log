@@ -1,0 +1,25 @@
+=== M1. Plants at 1 degree: hump test and cross-validation (n = 193) ===
+M1 plants quadratic vs linear: dAIC = -3.90; squared term +0.090 (p = 0.017) -> convex, not a hump
+M1 plants 4-degree block CV: adding richness cuts out-of-sample MSE by 15.4% [5.2, 23.3]
+   birds on the cells with both taxa (n = 180): 11.1% [-0.0, 21.0]
+
+=== M2. Plants at 0.5 degree ===
+cells pulled 1079; plant records 866188; median records per cell 53
+  plants, rarefied at 100        n=425  corrected beta +0.228 (p = 0.0002) | within ecoregions +0.015 (p = 0.6666) | spatial error +0.026 (p = 0.2948)
+M2 plants 0.5 deg: corrected beta = +0.228 (p = 0.0002), within ecoregions +0.015 (p = 0.6666), n = 425
+  birds, same cells              n=360  corrected beta +0.153 (p = 0.0491) | within ecoregions +0.072 (p = 0.0481) | spatial error +0.104 (p = 0.0000)
+  bird vs plant corrected richness at 0.5 degree: r = +0.120 (n = 360)
+  plants, rarefied at 50         n=529  corrected beta +0.172 (p = 0.0009) | within ecoregions +0.007 (p = 0.7774) | spatial error -0.005 (p = 0.7725)
+
+=== M3. Butterflies and moths at 1 degree ===
+records in all cells: 560818 (485195 identified to species); median per natural-cover cell 166
+  rarefied at 50  cells 163  median 41.4  distinct species per record 0.83  r with log effort +0.511
+  rarefied at 100 cells 139  median 74.1  distinct species per record 0.74  r with log effort +0.448
+  rarefied at 250 cells 101  median 151.9  distinct species per record 0.61  r with log effort +0.269
+  raw richness vs log effort: r = +0.813
+  Lepidoptera, rarefied at 100   n=139  corrected beta +0.512 (p = 0.0000) | within ecoregions -0.087 (p = 0.3453) | spatial error +0.137 (p = 0.0151)
+M3 lepidoptera: corrected beta = +0.512 (p = 0.0000), within ecoregions -0.087 (p = 0.3453), n = 139
+  Lepidoptera, rarefied at 50    n=163  corrected beta +0.451 (p = 0.0000) | within ecoregions -0.006 (p = 0.9261) | spatial error +0.126 (p = 0.0069)
+  birds, same cells              n=137  corrected beta +0.292 (p = 0.0004) | within ecoregions +0.045 (p = 0.6043) | spatial error +0.068 (p = 0.1081)
+  agreement of corrected richness: Lepidoptera vs birds r = +0.394 (n = 137)
+  agreement of corrected richness: Lepidoptera vs plants r = +0.253 (n = 134)

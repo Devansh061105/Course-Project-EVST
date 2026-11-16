@@ -1,0 +1,47 @@
+  birds 100/595  108s
+  birds 200/595  218s
+  birds 300/595  326s
+  birds 400/595  433s
+  birds 500/595  608s
+  plants 100/581  834s
+  plants 200/581  954s
+  plants 300/581  1076s
+  plants 400/581  1189s
+  plants 500/581  1318s
+top species cached for 1176 cell-taxon pairs
+  names 100/1187  1567s
+  names 200/1187  1689s
+  names 300/1187  1815s
+  names 400/1187  1917s
+  names 500/1187  2042s
+  names 600/1187  2168s
+  names 700/1187  2281s
+  names 800/1187  2379s
+  names 900/1187  2487s
+  names 1000/1187  2603s
+  names 1100/1187  2715s
+wrote data/top_species_1p0.json: 601 cells, 1187 distinct species named
+lepidoptera at 1.0 deg: 884 cells to hold
+seeded 45 cells from the taxon2_check cache
+  100/884 (cached 143) 125s
+  200/884 (cached 241) 259s
+  300/884 (cached 340) 396s
+  400/884 (cached 438) 526s
+  500/884 (cached 532) 651s
+  600/884 (cached 626) 776s
+  700/884 (cached 719) 896s
+pull complete in 1117s
+wrote C:\summer project 2\project9_biodiversity\data\gbif_cells_lepidoptera_1p0.csv: 884 cells, 0 facet-truncated
+plants at 0.5 deg: 1079 cells to hold
+  100/1079 (cached 100) 124s
+  200/1079 (cached 200) 243s
+  300/1079 (cached 300) 375s
+  400/1079 (cached 400) 518s
+  500/1079 (cached 500) 657s
+  600/1079 (cached 600) 821s
+  700/1079 (cached 700) 960s
+  800/1079 (cached 800) 1096s
+  900/1079 (cached 900) 1234s
+  1000/1079 (cached 1000) 1422s
+pull complete in 1535s
+wrote C:\summer project 2\project9_biodiversity\data\gbif_cells_plants_0p5.csv: 1079 cells, 0 facet-truncated

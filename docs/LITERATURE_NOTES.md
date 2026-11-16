@@ -59,6 +59,20 @@ Checked against Crossref and abstracts read via Europe PMC.
 | Kreft & Jetz (2007) Global patterns and determinants of vascular plant diversity. *PNAS* 104(14):5925–5930. doi:10.1073/pnas.0608361104 | Across 1,032 regions, potential evapotranspiration, wet days per year and topographic and habitat heterogeneity are the core predictors of vascular plant richness; the combined model explains about 70% of global variation. Used for: energy and water drive plant richness as well as productivity. |
 | Wolters, Bengtsson & Zaitsev (2006) Relationship among the species richness of different taxa. *Ecology* 87(8):1886–1895. doi:10.1890/0012-9658(2006)87[1886:RATSRO]2.0.CO;2 | Review of 237 cross-taxon richness correlations: average effect size 0.374 (95% CI ± 0.068), "positive but weak". |
 
+## Stability, robustness and direction (added 2026-11-16, second batch)
+Checked against Crossref; abstracts read via Europe PMC except where noted.
+
+| reference | claim used |
+|---|---|
+| Tilman, Reich & Knops (2006) Biodiversity and ecosystem stability in a decade-long grassland experiment. *Nature* 441:629–632. doi:10.1038/nature04742 | Experiment controlling the number of perennial prairie species: more species led to greater temporal stability of annual aboveground production. A plot experiment with plants, not a regional pattern. |
+| Isbell et al. (2015) Biodiversity increases the resistance of ecosystem productivity to climate extremes. *Nature* 526:574–577. doi:10.1038/nature15374 | 46 grassland experiments: productivity of communities with 1–2 species changed by about 50% during climate events, communities with 16–32 species by about 25%. |
+| Oehri, Schmid, Schaepman-Strub & Niklaus (2017) Biodiversity promotes primary productivity and growing season lengthening at the landscape scale. *PNAS* 114:10160–10165. doi:10.1073/pnas.1703928114 | 447 1-km² plots with remotely sensed productivity 2000–2015: "landscape-scale productivity and its temporal stability increase with the diversity of plants and other taxa". The closest published design to Extension E, at a far finer grain. |
+| Loreau & de Mazancourt (2013) Biodiversity and ecosystem stability: a synthesis of underlying mechanisms. *Ecology Letters* 16:106–115. doi:10.1111/ele.12073 | Mechanisms behind diversity–stability effects (asynchrony of species' responses, differences in response speed, reduced competition). Background only. |
+| Simonsohn, Simmons & Nelson (2020) Specification curve analysis. *Nature Human Behaviour* 4:1208–1214. doi:10.1038/s41562-020-0912-z | Results hinge on analytic decisions that are "defensible, arbitrary and motivated"; fit all justified specifications and show them. Method for `spec_curve.py`. |
+| Steegen, Tuerlinckx, Gelman & Vanpaemel (2016) Increasing transparency through a multiverse analysis. *Perspectives on Psychological Science* 11:702–712. doi:10.1177/1745691616658637 | Perform all analyses across the set of reasonable data-processing choices. |
+| Shipley (2000) A new inferential test for path models based on directed acyclic graphs. *Structural Equation Modeling* 7:206–218. doi:10.1207/S15328007SEM0702_4 | Source of the d-separation test only; **no abstract available**. |
+| Boakes et al. (2010) Distorted views of biodiversity: spatial and temporal bias in species occurrence data. *PLoS Biology* 8:e1000385. doi:10.1371/journal.pbio.1000385 | 170,000 bird sightings over two centuries; changing data-gathering trends may confound the picture of biodiversity change. Summary read, not the full abstract. |
+
 ## Data products (cite in methods)
 | product | citation |
 |---|---|
@@ -69,6 +83,8 @@ Checked against Crossref and abstracts read via Europe PMC.
 | RESOLVE Ecoregions 2017 | Dinerstein, E. et al. (2017). An ecoregion-based approach to protecting half the terrestrial realm. *BioScience* 67(6):534–545. doi:10.1093/biosci/bix014. Abstract read: the paper's map of Earth's 846 terrestrial ecoregions is the layer used (Earth Engine `RESOLVE/ECOREGIONS/2017`); the paper's own subject is conservation targets, so cite it as the source of the ecoregion map only. |
 | SRTM (elevation) | NASA JPL (2013). NASA Shuttle Radar Topography Mission Global 1 arc second. NASA EOSDIS Land Processes DAAC. doi:10.5067/MEaSUREs/SRTM/SRTMGL1.003 (Earth Engine asset `USGS/SRTMGL1_003`) |
 | ETOPO1 (terrain in the 3D map only) | Amante, C. & Eakins, B.W. (2009). ETOPO1 1 Arc-Minute Global Relief Model. NOAA National Geophysical Data Center. doi:10.7289/V5C8276M (Earth Engine asset `NOAA/NGDC/ETOPO1`). Citation written from memory and **not yet checked against the Earth Engine catalogue or the DOI**; check before citing. Used for display, not for any analysis. |
+| WDPA (Extension F, map overlay) | UNEP-WCMC and IUCN, Protected Planet: The World Database on Protected Areas. Earth Engine asset `WCMC/WDPA/current/polygons`, accessed 2026-11-16. **Version month not recorded; get it from protectedplanet.net before citing.** |
+| GBIF butterfly and moth occurrences | **No DOI yet.** Lepidoptera (taxonKey 797), 560,818 records in the 884 cells, 2000-2024. |
 | GBIF plant occurrences | **No DOI yet.** 1,362,316 records from 435 datasets (Tracheophyta, 5-31N 68-102E, 2000-2024), counts in `data/gbif_derived_dataset/dataset_counts_plants.csv`. Register a derived dataset before citing (TODO). |
 | GBIF occurrences | GBIF.org (11 October 2026) Filtered export of GBIF occurrence data. https://doi.org/10.15468/dd.jf64nx (GBIF derived dataset: Aves, 5-31N 68-102E, 2000-2024; 110 datasets, 71,716,026 records; registered 2026-10-11 because the data came from API queries, not a download). Per-cell data, codebook, counts and scripts: Zenodo doi:10.5281/zenodo.23264805. |
 

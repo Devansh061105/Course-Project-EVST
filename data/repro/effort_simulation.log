@@ -1,0 +1,19 @@
+=== Experiment 1: 12 best-surveyed cells (712,910 to 3,758,648 identified records), 200 random thinnings each ===
+records kept      raw richness / full   rarefied richness / full  rarefied SD (spp)
+250                             0.231                      0.998               5.34
+500                             0.314                      1.000               3.22
+1,000                           0.399                      1.001               2.19
+3,000                           0.525                      1.000               1.17
+10,000                          0.647                      1.000               0.65
+30,000                          0.740                      1.000               0.36
+100,000                         0.829                      1.000               0.20
+SIM at 250 records kept: raw richness falls to 23.1% of its full value; rarefied richness stays at 99.8%
+SIM largest bias of the mean rarefied richness at any thinning level: 0.59%
+
+=== Experiment 2: every modelled cell thinned to at most CAP records, model refitted (50 repeats) ===
+full data: richness beta = +0.273 (n = 221)
+REFIT cap 250    beta = +0.255 [+0.227, +0.288]   r with full-data rarefied richness = 0.966
+REFIT cap 500    beta = +0.262 [+0.243, +0.278]   r with full-data rarefied richness = 0.988
+REFIT cap 1,000  beta = +0.268 [+0.258, +0.279]   r with full-data rarefied richness = 0.995
+REFIT cap 3,000  beta = +0.272 [+0.267, +0.278]   r with full-data rarefied richness = 0.999
+REFIT cap 10,000 beta = +0.274 [+0.272, +0.275]   r with full-data rarefied richness = 1.000

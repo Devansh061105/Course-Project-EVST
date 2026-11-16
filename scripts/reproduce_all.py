@@ -26,7 +26,10 @@ SCRIPTS = [
     "robustness_suite.py", "confounder_analysis.py", "ecoregion_analysis.py",
     "coverage_rarefaction.py", "gbif_timewindow.py", "grain_0p5_analysis.py",
     "grain_0p5_extended.py", "local_slopes.py", "extension_d_plants.py",
-    "make_figures.py",
+    "extension_d_more.py", "path_analysis.py", "effort_simulation.py",
+    "shape_spline.py", "spec_curve.py", "survey_gaps.py",
+    "extension_e_stability.py", "extension_f_protected.py",
+    "make_figures.py", "make_figures_2.py",
 ]
 
 # (script, regex on its log, documented value, tolerance, what it is)
@@ -66,6 +69,28 @@ CHECKS = [
     ("extension_d_plants.py", r"plants, response GPP[\s\S]*?ecoregion fixed effects \(within\)\s+n=\d+\s+beta ([-+][\d.]+)", -0.027, 0.001, "Ext D plant within-ecoregion beta"),
     ("extension_d_plants.py", r"birds \(same cells\), response GPP[\s\S]*?corrected: \+ effort \+ temp \+ precip \(HC3\)\s+n=\d+\s+beta \+([\d.]+)", 0.277, 0.001, "Ext D birds on shared cells beta"),
     ("extension_d_plants.py", r"effort-corrected: r = \+([\d.]+)", 0.299, 0.001, "Ext D bird-plant congruence r"),
+    ("extension_d_more.py", r"M1 plants 4-degree block CV: adding richness cuts out-of-sample MSE by ([\d.]+)%", 15.4, 0.1, "Ext D plant block CV gain %"),
+    ("extension_d_more.py", r"M2 plants 0\.5 deg: corrected beta = \+([\d.]+)", 0.228, 0.001, "Ext D plants 0.5 deg beta"),
+    ("extension_d_more.py", r"M3 lepidoptera: corrected beta = \+([\d.]+)", 0.512, 0.001, "Ext D Lepidoptera beta"),
+    ("path_analysis.py", r"PATH 1\.0: richness -> GPP \| climate, effort\s+beta = \+([\d.]+)", 0.273, 0.001, "path richness -> GPP"),
+    ("path_analysis.py", r"PATH 1\.0: GPP -> richness \| climate, effort\s+beta = \+([\d.]+)", 0.378, 0.001, "path GPP -> richness"),
+    ("path_analysis.py", r"IV 1\.0 VERDICT: not (valid)", "valid", None, "IV instrument rejected"),
+    ("effort_simulation.py", r"SIM at 250 records kept: raw richness falls to ([\d.]+)%", 23.1, 0.2, "thinning: raw richness % kept"),
+    ("effort_simulation.py", r"rarefied richness stays at ([\d.]+)%", 99.8, 0.2, "thinning: corrected richness % kept"),
+    ("effort_simulation.py", r"REFIT cap 1,000\s+beta = \+([\d.]+)", 0.268, 0.002, "beta with cells thinned to 1,000"),
+    ("shape_spline.py", r"SPLINE 1\.0: 3-parameter spline vs line: dAIC = ([-+][\d.]+)", -6.66, 0.02, "spline dAIC at 1 deg"),
+    ("shape_spline.py", r"SPLINE 0\.5: 3-parameter spline vs line: dAIC = ([-+][\d.]+)", 3.40, 0.02, "spline dAIC at 0.5 deg"),
+    ("shape_spline.py", r"TAIL 1\.0: slope among the richest quarter \+([\d.]+)", 0.440, 0.001, "slope in richest quarter, 1 deg"),
+    ("shape_spline.py", r"TAIL 0\.5: slope among the richest quarter \+([\d.]+)", 0.295, 0.001, "slope in richest quarter, 0.5 deg"),
+    ("spec_curve.py", r"SPEC OLS\s+\d+\s+\+([\d.]+)", 0.240, 0.001, "spec curve median, OLS"),
+    ("spec_curve.py", r"SPEC ecoregion FE\s+\d+\s+\+([\d.]+)", 0.039, 0.001, "spec curve median, within"),
+    ("spec_curve.py", r"significantly negative models: (\d+)", 0, 0, "spec curve negative models"),
+    ("survey_gaps.py", r"leave-one-4-degree-block-out R2 ([\d.]+)", 0.464, 0.001, "survey-gap model CV R2"),
+    ("survey_gaps.py", r"too few records: (\d+)", 46, 0, "natural cells not modelled"),
+    ("extension_e_stability.py", r"STAB birds: richness coefficient for instability, full controls: \+([\d.]+)", 0.144, 0.001, "Ext E birds instability beta"),
+    ("extension_e_stability.py", r"STAB plants:.*?within ecoregions \+([\d.]+)", 0.002, 0.001, "Ext E plants within beta"),
+    ("extension_f_protected.py", r"PROT 1\.0: effort ~ strict protection beta = \+([\d.]+)", 0.010, 0.001, "Ext F effort ~ protection"),
+    ("extension_f_protected.py", r"PROT 0\.5 excl\. India and China:.*?interaction = \+([\d.]+)", 0.064, 0.001, "Ext F interaction, subset"),
 ]
 
 
@@ -96,8 +121,11 @@ def main():
             ok = abs(float(got) - float(want)) <= tol
         npass += ok
         print("%-38s %12s %12s  %s" % (what[:38], want, got, "PASS" if ok else "FAIL"))
+    nok = sum(v == 0 for v in status.values())
     print("\n%d/%d checks pass; %d/%d scripts exited 0"
-          % (npass, len(CHECKS), sum(v == 0 for v in status.values()), len(status)))
+          % (npass, len(CHECKS), nok, len(status)))
+    # Non-zero exit when anything fails, so a CI run goes red.
+    sys.exit(0 if npass == len(CHECKS) and nok == len(status) else 1)
 
 
 if __name__ == "__main__":

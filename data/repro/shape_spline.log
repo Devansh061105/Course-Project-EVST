@@ -1,0 +1,30 @@
+
+=== shape of the relationship, 1.0 degree: n = 221 ===
+straight line              AIC   455.93   block-CV MSE 0.5181
+spline, 2 parameters       AIC   457.93   block-CV MSE 0.5327   dAIC vs line  +2.00   F-test p = 0.9955
+spline, 3 parameters       AIC   449.28   block-CV MSE 0.5087   dAIC vs line  -6.66   F-test p = 0.0057
+SPLINE 1.0: 3-parameter spline vs line: dAIC = -6.66, F-test p = 0.0057, block-CV MSE 0.5087 vs 0.5181 (spline better out of sample)
+spline, 4 parameters       AIC   448.25   block-CV MSE 0.5082   dAIC vs line  -7.68   F-test p = 0.0042
+BREAK 1.0: best breakpoint at richness z = +0.46; slope below +0.361, above +0.002; permutation p (search-adjusted) = 0.192
+  slope in the lower third   n=74   beta +0.104  se 0.092  p = 0.261
+  slope in the middle third  n=73   beta +0.877  se 0.320  p = 0.006
+  slope in the upper third   n=74   beta +0.188  se 0.184  p = 0.309
+  slope among the richest 25% n=55   beta +0.440  se 0.212  p = 0.037
+  slope among the richest 15% n=33   beta +0.454  se 0.424  p = 0.284
+  slope among the richest 10% n=22   beta +0.602  se 0.754  p = 0.425
+TAIL 1.0: slope among the richest quarter +0.440; negative in 0 of 3 upper-tail subsets -> no decline at high richness
+
+=== shape of the relationship, 0.5 degree: n = 672 ===
+straight line              AIC  1583.09   block-CV MSE 0.6910
+spline, 2 parameters       AIC  1584.55   block-CV MSE 0.6953   dAIC vs line  +1.46   F-test p = 0.4666
+spline, 3 parameters       AIC  1586.48   block-CV MSE 0.6977   dAIC vs line  +3.40   F-test p = 0.7427
+SPLINE 0.5: 3-parameter spline vs line: dAIC = +3.40, F-test p = 0.7427, block-CV MSE 0.6977 vs 0.6910 (line better out of sample)
+spline, 4 parameters       AIC  1587.77   block-CV MSE 0.6990   dAIC vs line  +4.68   F-test p = 0.7286
+BREAK 0.5: best breakpoint at richness z = -0.09; slope below +0.275, above +0.175; permutation p (search-adjusted) = 0.664
+  slope in the lower third   n=224  beta +0.160  se 0.082  p = 0.051
+  slope in the middle third  n=224  beta +0.214  se 0.273  p = 0.435
+  slope in the upper third   n=224  beta +0.307  se 0.095  p = 0.001
+  slope among the richest 25% n=168  beta +0.295  se 0.126  p = 0.019
+  slope among the richest 15% n=101  beta +0.313  se 0.167  p = 0.061
+  slope among the richest 10% n=68   beta +0.596  se 0.280  p = 0.033
+TAIL 0.5: slope among the richest quarter +0.295; negative in 0 of 3 upper-tail subsets -> no decline at high richness

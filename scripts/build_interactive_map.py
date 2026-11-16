@@ -74,10 +74,31 @@ def main():
         for c in ("plant_total_records", "plant_obs_richness", "plant_rarefied_100"):
             d[c] = np.nan
 
+    # Optional per-cell extras from the 2026-11-16 analyses; each is skipped if absent.
+    extras = (("survey_gaps_1p0.csv", ["completeness", "priority"]),
+              ("extension_e_all_cells.csv", ["gpp_cv_detrended", "trend"]),
+              ("protected_1p0.csv", ["prot_strict", "prot_all"]),
+              ("gbif_cells_lepidoptera_1p0.csv", ["lepid_total_records", "lepid_rarefied_100"]))
+    for name, cols in extras:
+        path = os.path.join(DATA, name)
+        if os.path.exists(path):
+            d = d.merge(pd.read_csv(path)[["cell_id"] + cols], on="cell_id", how="left")
+        else:
+            for c in cols:
+                d[c] = np.nan
+    ts_path = os.path.join(DATA, "top_species_1p0.json")
+    top = json.load(open(ts_path, encoding="utf-8")) if os.path.exists(ts_path) else {}
+
     cells = []
     for r in d.itertuples():
         status = "m" if r.in_model == 1 else ("c" if r.wc_mode in (40, 50) else "o")
+        sp = top.get(r.cell_id, {})
         cells.append({
+            "cp": num(r.completeness, 2), "pr": num(r.priority, 1),
+            "cv": num(100 * r.gpp_cv_detrended, 1), "tr": num(r.trend, 2),
+            "pa": num(r.prot_all, 2), "pst": num(r.prot_strict, 2),
+            "ln": num(r.lepid_total_records, 0), "lpc": num(r.lepid_rarefied_100, 1),
+            "tb": sp.get("birds", []), "tp": sp.get("plants", []),
             "id": r.cell_id, "la": r.lat_c, "lo": r.lon_c, "st": status,
             "cty": None if pd.isna(r.country) else r.country,
             "eco": None if pd.isna(r.eco_name) else r.eco_name,
@@ -123,6 +144,20 @@ def main():
             "elev": enc(np.clip(elev, 0, 65535).astype("<u2")),
             "lc": enc(np.where(lc > 0, lc, 0).astype(np.uint8)),
             "ndvi": enc(byte(ndvi, 0.9)), "gpp": enc(byte(gpp, 3.3))}
+    # Overlay byte per pixel: bit 0 country border, bit 1 ecoregion boundary,
+    # bits 2-7 protected fraction (all designated WDPA polygons) in 63 steps.
+    ex = os.path.join(DATA, "gee_extras.npz")
+    if os.path.exists(ex):
+        x = np.load(ex)
+        eco = x["eco_id"]
+        edge = np.zeros(eco.shape, bool)
+        edge[:, 1:] |= eco[:, 1:] != eco[:, :-1]
+        edge[1:, :] |= eco[1:, :] != eco[:-1, :]
+        edge &= lc > 0
+        prot = np.round(np.clip(x["protected"], 0, 1) * 63).astype(np.uint8)
+        prot[lc <= 0] = 0
+        ov = ((x["border"] > 0).astype(np.uint8) | (edge.astype(np.uint8) << 1) | (prot << 2))
+        grid["ov"] = enc(ov.astype(np.uint8))
     payload = json.dumps({"cells": cells, "grid": grid}, separators=(",", ":"),
                          ensure_ascii=False)
     emit("interactive_map3d_template.html", "interactive_map_3d.html", "atlas_3d.html",

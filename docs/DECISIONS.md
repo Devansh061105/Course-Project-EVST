@@ -393,3 +393,21 @@ to `RESULTS_INFERENCE.md`.
 - scikit-learn joins `requirements.txt`. The two random-forest reproducibility
   checks have a tolerance of 0.04 because tree ensembles change between
   scikit-learn versions.
+
+## 2026-11-17 - Two 1-degree robustness checks repeated at 0.5 degrees
+**Decision.** `grain_0p5_sensitivity.py` repeats coverage-based richness and the
+2019-23 time-window refit at 0.5 degrees, closing the last analysis gap in
+`TODO.md`. Not a new extension: both are existing robustness checks at a second
+grain.
+
+**Design choices.**
+- The 2019-23 pull covers only the 672 cells in the 0.5-degree model, not all
+  1,079 cells that pass the land-cover mask. A cell with fewer than 250
+  species-identified records over 2000-24 cannot have 250 in 2019-23, so the
+  other 407 requests could not change any model. Cache:
+  `data/gbif_cache_0p5_2019_2023.json` (same never-delete, never-re-pull rules).
+- Each reduced sample is fitted twice, with the new measure and with the main
+  measure on the same cells, so the effect of the measure is not confused with the
+  effect of dropping cells.
+- The script is in `reproduce_all.py` and reads only caches there; it would pull
+  only if the cache were missing cells.

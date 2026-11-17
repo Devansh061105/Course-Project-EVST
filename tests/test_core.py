@@ -14,7 +14,7 @@ import pytest
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "scripts"))
 
 from gbif_lib import build_grid, cells_in_box, hurlbert_rarefy  # noqa: E402
-from coverage_rarefaction import coverage_at, full_coverage  # noqa: E402
+from coverage_rarefaction import coverage_at, full_coverage, m_for_coverage  # noqa: E402
 import local_slopes  # noqa: E402
 import effort_simulation  # noqa: E402
 from extension_e_stability import series_stats  # noqa: E402
@@ -93,6 +93,26 @@ def test_coverage_rises_with_sample_size():
     cov = [coverage_at(x, n, m) for m in (10, 50, 150, 300)]
     assert all(b > a for a, b in zip(cov, cov[1:]))
     assert all(0 <= c <= 1 for c in cov)
+
+
+def test_coverage_formulas_match_hand_values():
+    # n = 80, three singletons, one doubleton
+    x = np.array([50.0, 20, 5, 2, 1, 1, 1])
+    n = x.sum()
+    # Chao & Jost (2012) eq. 4a: 1 - (f1/n) * (n-1) f1 / ((n-1) f1 + 2 f2)
+    assert full_coverage(x) == pytest.approx(1 - (3 / 80) * (79 * 3) / (79 * 3 + 2))
+    # eq. 4b at m = n - 1 leaves only the singletons: 1 - f1 / n
+    assert coverage_at(x, n, int(n) - 1) == pytest.approx(1 - 3 / 80)
+    # eq. 4b at m = 1: 1 - sum (X_i/n) (n - X_i)/(n - 1)
+    assert coverage_at(x, n, 1) == pytest.approx(1 - np.sum((x / n) * (n - x) / (n - 1)))
+
+
+def test_coverage_target_is_the_smallest_sample_that_reaches_it():
+    x = np.array([400.0, 220, 130, 60, 30, 12, 6, 3, 2, 1, 1, 1, 1])
+    n = x.sum()
+    m = m_for_coverage(x, 0.90)
+    assert coverage_at(x, n, m) >= 0.90 > coverage_at(x, n, m - 1)
+    assert m_for_coverage(np.array([1.0] * 30), 0.90) is None      # never reached
 
 
 # ---- geographically weighted regression ------------------------------------

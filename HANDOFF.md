@@ -90,9 +90,9 @@ Authoritative write-up: `docs/RESULTS_ADJUDICATION.md` (it supersedes
 | Independent verification and project review (12 errors found and fixed) | Done | `docs/VERIFICATION.md` |
 | Mid-eval prep guides (full 15 pp, focused 12 pp) | Done | `docs/MID_EVAL_GUIDE_FOCUSED.{md,pdf}`, `docs/MID_EVAL_PREP_GUIDE.{md,pdf}` |
 
-Reproducibility: `python scripts/reproduce_all.py` re-runs 33 analysis scripts from the
-cached data and checks 68 headline numbers (about 15 minutes). Last run (2026-11-16):
-**33/33 exit 0, 68/68 pass.** `pytest -q tests` runs 21 unit tests. Both run on every
+Reproducibility: `python scripts/reproduce_all.py` re-runs 34 analysis scripts from the
+cached data and checks 73 headline numbers (about 15 minutes). Last run (2026-11-17):
+**34/34 exit 0, 73/73 pass.** `pytest -q tests` runs 23 unit tests. Both run on every
 push (`.github/workflows/checks.yml`).
 
 ## 4. Status: what is NOT done / open items (priority order)
@@ -122,9 +122,13 @@ push (`.github/workflows/checks.yml`).
    Register a second derived dataset before Extension D goes into a report; the
    contributing-dataset counts are ready in
    `data/gbif_derived_dataset/dataset_counts_plants.csv`. Needs a GBIF account.
-5. Not done at 0.5°: coverage-based richness and the 2019-23 time-window refit.
-6. Optional: confirm Chao & Jost (2012) eq. 4a against the paper before citing the
-   equation (the implementation already matches the authors' iNEXT package to 5e-13).
+5. ~~Coverage-based richness and the 2019-23 time-window refit at 0.5°~~ done 2026-11-17
+   (`docs/RESULTS_ADJUDICATION.md` section 10).
+6. ~~Chao & Jost (2012) equation numbers~~ checked 2026-11-17: full-sample coverage is
+   eq. 4a, rarefied-sample coverage eq. 4b (`docs/VERIFICATION.md` section 10).
+7. **India's protected-area share is sourced second-hand** (5.28%, Wikipedia quoting the
+   Wildlife Institute of India). Open the two PDFs linked from https://wii.gov.in/envis
+   and confirm before citing the Institute (`docs/TODO.md` 4a).
 
 ## 5. Map of the repo
 | Path | What |
@@ -194,7 +198,7 @@ Python 3.13 with `pip install -r requirements.txt`.
 
 ## 9. Suggested next steps for whoever resumes
 1. Read `docs/MID_EVAL_GUIDE_FOCUSED.pdf`, then `docs/RESULTS_ADJUDICATION.md`.
-2. Run `python scripts/reproduce_all.py` to confirm the environment reproduces 68/68.
+2. Run `python scripts/reproduce_all.py` to confirm the environment reproduces 73/73.
 3. Get the team's answers to the three open decisions in section 4.1.
 4. When asked, draft the report (ask format, brief, length first), then deliverable 8.
 5. Update this file, `docs/TODO.md` and `docs/DECISIONS.md` after each significant step.

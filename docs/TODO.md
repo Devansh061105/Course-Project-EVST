@@ -1,4 +1,4 @@
-# TODO — priority order (updated 2026-11-16)
+# TODO — priority order (updated 2026-11-17)
 
 Plan reference: `C:\downloads\Project9_Comprehensive_Plan.docx`, Section 6 (Steps 1–10).
 Timeline: 8 weeks; midpoint passed. Literature review submitted.
@@ -23,9 +23,13 @@ Current interpretation lives in `docs/RESULTS_ADJUDICATION.md`.
    the plant tables to a new version of the Zenodo deposit.
    The butterfly and moth records need the same (run
    `python scripts/gbif_dataset_counts.py lepidoptera` for the counts file).
-4a. **Before citing Extension F:** record the WDPA version month from
-   protectedplanet.net, and verify India's official protected-area share (the "about
-   5%" in `RESULTS_EXTENSION_F.md` is from memory).
+4a. **Before citing Extension F:** ~~record the WDPA version month~~ done 2026-11-17
+   (November 2026 release, from the Earth Engine asset metadata). India's
+   protected-area share is now a sourced figure (5.28%, January 2023) but only
+   second-hand: it is quoted from Wikipedia, which attributes it to the Wildlife
+   Institute of India. **Still to do by a person:** open the two PDFs linked from
+   https://wii.gov.in/envis (national parks, wildlife sanctuaries) and confirm the
+   totals before citing the Institute.
 
 ## OPEN QUESTION FOR THE TEAM
 The plan's H1 is causal in direction: biodiversity → productivity. The data show a
@@ -63,13 +67,19 @@ These are not exclusive. Recommendation: (b) + (c).
   correction, equivalence bounds, slopes by ecoregion with meta-analysis, spatial
   scale decomposition and effective sample size (`RESULTS_INFERENCE.md`, Figures
   18-21); claims-to-evidence table (`PAPER_CLAIMS.md`). 68/68 checks, 21 tests.
+- **2026-11-17:** coverage-based richness and the 2019-23 time-window refit at 0.5°
+  (`grain_0p5_sensitivity.py`, `RESULTS_ADJUDICATION.md` section 10); WDPA release,
+  ETOPO1 citation and the Chao & Jost equation numbers checked. 73 checks, 23 tests.
 
 ## NEXT
-5. ~~NPP at 0.5°~~ Done (section 9 of RESULTS_ADJUDICATION). Still not done at 0.5°: coverage-based richness and the 2019-23 time-window refit.
+5. ~~NPP at 0.5°~~ Done (section 9 of RESULTS_ADJUDICATION). ~~Coverage-based richness and the 2019-23 time-window refit at 0.5°~~ **Done 2026-11-17** (section 10): the within-ecoregion effect holds under both (+0.071 / +0.075 and +0.062).
 6. **Draft the mid submission / report** when the team asks. Confirm format, brief and
    length first.
-7. Optional: confirm Chao & Jost (2012) eq. 4a against the paper before citing
-   the equation itself (formula implemented from memory; boundary checks pass).
+7. ~~Confirm the Chao & Jost (2012) equation.~~ **Done 2026-11-17.** Full-sample
+   coverage is eq. 4a and rarefied-sample coverage is eq. 4b; the script comment
+   had the second labelled 4a and is corrected. Checked against the paper's own
+   Appendix F and Chao et al. (2014) Appendix B, not the main text (paywalled).
+8. ~~ETOPO1 citation.~~ **Done 2026-11-17** (`LITERATURE_NOTES.md`, data products).
 
 ## DO NOT DO
 - Do not add a second study region. The user decided on 2026-11-16 that the study

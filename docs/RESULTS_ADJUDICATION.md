@@ -328,6 +328,56 @@ degree. n = 671 cells, 64 ecoregions, SEs clustered by ecoregion, standardised.
   touch zero.
 - NPP again gives the larger coefficient, as at 1 degree.
 
+## 10. Coverage-based richness and the time-window match at 0.5 degrees (`grain_0p5_sensitivity.py`, added 2026-11-17)
+The two checks of sections 4 and 7 existed only at 1 degree. Both are now run at
+0.5 degrees with the same three models as section 8 (GPP, standardised, SEs
+clustered by ecoregion). "Same cells" rows refit the main measure on the reduced
+cell set, so a change of measure is not confused with a change of sample.
+
+**Coverage-based richness** (Chao & Jost 2012; from the cached abundance vectors).
+The fixed 250-record standard leaves cells at very different completeness: sample
+coverage from 0.62 to 0.99 (median 0.80).
+
+| richness measure | n | baseline | within ecoregion | spatial error |
+|---|---|---|---|---|
+| rarefied to 250 records (main) | 671 | +0.228 | +0.058 (p = 0.021) | +0.090 |
+| equal coverage 0.90 | 618 | +0.221 | **+0.071 (p = 0.005)** | +0.086 |
+| rarefied 250, same 618 cells | 618 | +0.211 | +0.069 (p = 0.004) | +0.087 |
+| equal coverage 0.95 | 532 | +0.216 | **+0.075 (p = 0.014)** | +0.067 (p = 0.002) |
+| rarefied 250, same 532 cells | 532 | +0.195 | +0.078 (p = 0.002) | +0.076 |
+
+Coverage-based and size-based richness correlate r = 0.946 (0.90) and 0.907
+(0.95). Every coefficient keeps its sign and rough size; all spatial error
+p-values are below 0.003. The choice of standardisation does not drive the
+0.5-degree result.
+
+**Records restricted to 2019–2023**, the years of the environmental means. Pulled
+for the 672 model cells only (a cell short of 250 records over 2000–24 cannot have
+250 in 2019–23); 0 cells at the facet limit. 2019–23 records are a median 38% of
+the 2000–24 total; 558 cells still have 250 species-identified records (557 with
+an ecoregion). Richness from the two windows correlates r = 0.912.
+
+| | n | baseline | within ecoregion | spatial error |
+|---|---|---|---|---|
+| 2000–24 records (main) | 671 | +0.228 | +0.058 (p = 0.021) | +0.090 |
+| **2019–23 records** | 557 | **+0.157 (p = 0.004)** | **+0.062 (p = 0.010)** | +0.099 |
+| 2000–24 records, same 557 cells | 557 | +0.211 | +0.078 (p = 0.001) | +0.110 |
+
+- **The within-ecoregion effect survives the time-window match** (+0.062 against
+  +0.058 on all cells and +0.078 on the same cells), as does the spatial error
+  coefficient.
+- **The across-region baseline shrinks by about a quarter** on the same cells
+  (+0.211 → +0.157), a little more than at 1 degree (+0.273 → +0.223, section 7).
+  Sampling noise alone is unlikely to explain it: rarefied richness is about 99%
+  reliable (`RESULTS_INFERENCE.md`, section 2), while the two windows correlate
+  only 0.912, so the recorded communities differ somewhat between periods (for
+  example because survey locations moved as eBird grew). Which window measures
+  richness better is not settled here; the across-region coefficient at this grain
+  should be read as +0.16 to +0.23 under linear controls.
+- At 1 degree the time-window refit left the within-ecoregion coefficient at zero
+  (+0.003). At 0.5 degrees it stays positive. This is the same grain difference as
+  in section 8, not a new disagreement.
+
 **Net reading.** A small positive within-ecoregion association of about
 0.04-0.07 SD is supported at 0.5 degree and survives elevation-heterogeneity and
 seasonality controls. It is real enough not to be called zero, small enough

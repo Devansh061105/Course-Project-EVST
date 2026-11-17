@@ -92,6 +92,6 @@ Each claim is limited to what a specific result supports.
 2. GBF source for the introduction (CBD decision text; non-peer-reviewed is fine in
    the report but must be cited).
 3. ~~GBIF derived-dataset DOI~~ done 2026-10-11 (https://doi.org/10.15468/dd.jf64nx; Zenodo deposit https://doi.org/10.5281/zenodo.23264805).
-4. Not done at 0.5 degree: coverage-based richness and the 2019-23 time-window refit.
+4. ~~Coverage-based richness and the 2019-23 time-window refit at 0.5 degree~~ done 2026-11-17 (`RESULTS_ADJUDICATION.md` section 10).
 5. A GBIF derived-dataset DOI for the plant records (the existing DOI covers birds only).
 6. Extension D is 1 degree only, with no block cross-validation, Hawkins test or quadratic test.

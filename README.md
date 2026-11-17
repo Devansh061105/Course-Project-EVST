@@ -97,8 +97,8 @@ pytest -q tests
 python scripts/reproduce_all.py
 ```
 
-The last command re-runs 33 analysis scripts from the cached data (no network, no
-accounts, about 15 minutes) and checks 68 headline numbers against the documented
+The last command re-runs 34 analysis scripts from the cached data (no network, no
+accounts, about 15 minutes) and checks 73 headline numbers against the documented
 values. The same two steps run on every push (`.github/workflows/checks.yml`).
 
 Rebuild the figures with `python scripts/make_figures.py`, `make_figures_2.py` and

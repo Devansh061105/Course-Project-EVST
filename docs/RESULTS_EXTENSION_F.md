@@ -24,11 +24,17 @@ Protected share of land by country, from the World Database on Protected Areas
 | Bangladesh | 13 | 1.0% | 4.3% |
 | Nepal | 13 | 6.4% | 22.2% |
 
-- **India, strict: 0.2%.** India's national parks and wildlife sanctuaries cover
-  on the order of 5% of the country (a widely quoted official figure, **not
-  re-verified for this project**). In the database they total about 20,800 km²
-  of reported area (536 polygons), a small fraction of that. The parks are
-  largely absent from the public polygons.
+- **India, strict: 0.2%.** India's protected areas cover about 5.3% of the
+  country: 173,629.52 km² (5.28%) as of January 2023, of which 106 national parks
+  cover 44,402.95 km² (1.35%) and 567 wildlife sanctuaries 122,564.86 km² (3.73%).
+  **Source status (checked 2026-11-17):** these figures are quoted from the
+  Wikipedia article "Protected areas of India", which attributes them to the
+  Wildlife Institute of India's National Wildlife Database (4 January 2023). The
+  Institute's own lists are PDFs linked from https://wii.gov.in/envis and were
+  **not opened**, so cite the Institute only after reading them. In the WDPA the
+  national parks and sanctuaries total about 20,800 km² of reported area (536
+  polygons), roughly an eighth of the 167,000 km² above. The parks are largely
+  absent from the public polygons.
 - **India, all sites: 18.4%.** This is not parks either. About 180,000 of India's
   190,000 polygons are "Reserve Forest" or "Protected Forest": categories under
   forest law, not wildlife reserves.
@@ -102,14 +108,15 @@ unprotected land.)
 - Protected share per 1° or 0.5° cell, not per record: we cannot say whether the
   records themselves were made inside parks.
 - Only polygons are used; sites stored as points are omitted.
-- WDPA is the current version at extraction (2026-11-16), while bird records
-  span 2000–2024; some sites were designated during that period.
+- WDPA is the November 2026 release (current at extraction, 2026-11-16), while
+  bird records span 2000–2024; some sites were designated during that period.
 
 ## Sources
-- UNEP-WCMC and IUCN, Protected Planet: The World Database on Protected Areas
-  (WDPA), Earth Engine asset `WCMC/WDPA/current/polygons`, accessed 2026-11-16.
-  **Cite the version month from protectedplanet.net before using this in a
-  report; it was not recorded here.**
+- UNEP-WCMC and IUCN (2026), Protected Planet: The World Database on Protected
+  Areas (WDPA), November 2026 release. Earth Engine asset
+  `WCMC/WDPA/current/polygons`, accessed 2026-11-16. The release month is read
+  from the asset's metadata (period 2026-11-01 to 2026-12-01, updated 2026-11-06),
+  checked 2026-11-17.
 - Boakes et al. (2010) Distorted views of biodiversity: spatial and temporal bias
   in species occurrence data. *PLoS Biology* 8: e1000385.
   doi:10.1371/journal.pbio.1000385 (Crossref-checked; summary read: 170,000 bird

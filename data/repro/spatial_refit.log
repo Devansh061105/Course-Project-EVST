@@ -36,9 +36,9 @@ ML_Error
   pseudo R2 = 0.3943
 
 --- residual Moran's I ---
-  OLS            I=+0.7233  z= 15.76  p=0.0010
-  spatial lag    I=+0.1612  z=  3.26  p=0.0030
-  spatial error  I=+0.0336  z=  0.77  p=0.2230
+  OLS            I=+0.7233  z= 15.48  p=0.0010
+  spatial lag    I=+0.1612  z=  3.58  p=0.0010
+  spatial error  I=+0.0336  z=  0.82  p=0.2040
 
 === VERDICT on rarefied richness ===
   OLS + HC3      beta=+0.01097  se=0.00194  p=0.0000  significant

@@ -45,7 +45,9 @@ matches.**
 - **Chao & Jost (2012) coverage** — compared with the authors' own R package
   iNEXT (`Chat.Ind`, `invChat.R`): algebraically identical, max numeric
   difference 5×10⁻¹³ over 200 random vectors, identical to 10 d.p. on a
-  3.76M-record cell, monotone in m.
+  3.76M-record cell, monotone in m. Equation numbers checked 2026-11-17 (§10):
+  the full-sample estimator is eq. 4a and the rarefied-sample one is eq. 4b; the
+  script's comment had the rarefied one labelled 4a and was corrected.
 
 ## 5. References
 All 14 references added for the analysis (beyond the literature review's 20) were
@@ -122,9 +124,9 @@ failure. Result 2026-11-16: **28/28 scripts exit 0; 55/57 checks PASS** (log:
 | Maps | both pages reloaded in a browser with no console errors: 8 tour steps run, overlays draw, the record panel shows species lists |
 | New references | 8 checked against Crossref; abstracts read for 7 (Shipley 2000 has none available) |
 
-**Not checked:** India's official protected-area share (quoted from memory as about
-5%); the WDPA version; why eBird records are sparse in China; whether the CI
-workflow passes on Linux (numerical tolerances were set on Windows).
+**Not checked:** why eBird records are sparse in China. (India's protected-area
+share and the WDPA version were open here and are dealt with in §10; the CI
+workflow has since passed on Linux for both later pushes.)
 
 ## 9. Inference batch of 2026-11-16
 `reproduce_all.py` runs **33 scripts and 68 checks**. Result 2026-11-16: **33/33
@@ -146,3 +148,31 @@ checks) passed on Linux, so the earlier tolerances hold across platforms.
 
 **Not checked:** the double ML estimates under a different scikit-learn version;
 whether the equal-count band boundaries matter (other boundaries were not tried).
+
+## 10. Follow-up checks of 2026-11-17
+`reproduce_all.py` runs **34 scripts and 73 checks**; `pytest -q tests`: **23 passed**.
+Result 2026-11-17: **34/34 scripts exit 0; 73/73 checks PASS** (log:
+`data/repro/_reproduce_all_2026-11-17.txt`).
+The CI run for the inference-batch push (33 scripts, 68 checks) passed on Linux, so
+the wide tolerance on the two random-forest checks was enough across scikit-learn
+builds.
+
+| what | how it was checked | result |
+|---|---|---|
+| 0.5° coverage-based richness (`grain_0p5_sensitivity.py`) | the script's first row refits the main measure and must match `grain_0p5_analysis.py` | +0.228 / +0.058 / +0.090, identical |
+| 0.5° 2019-23 pull | 672 cells cached, 0 at the facet limit; restricted to model cells because a cell short of 250 records over 2000-24 cannot reach 250 in a sub-period | 558 cells keep 250 records |
+| Coverage formulas | two new unit tests: eq. 4a against a hand value, eq. 4b against its closed forms at m = 1 and m = n − 1, and the target search returns the smallest sample that reaches the target | pass |
+| Chao & Jost (2012) equation numbers | the paper's own Appendix F ("see Eqs. 4b and 9" for rarefied and extrapolated coverage; the reference point, "see Eq. 4a") and Chao et al. (2014) *Ecol. Monogr.* 84, Appendix B eqs. B.7 and B.9, which restate both estimators and credit them to Chao & Jost (2012) | formulas match the code; the code comment had the rarefied estimator labelled 4a, corrected to 4b |
+| ETOPO1 citation | Earth Engine catalogue page for `NOAA/NGDC/ETOPO1`; DOI 10.7289/V5C8276M resolved through doi.org | Amante & Eakins (2009), NOAA Technical Memorandum NESDIS NGDC-24; the DOI resolves to the dataset. The earlier row lacked the report number |
+| WDPA version | metadata of the Earth Engine asset used (`ee.data.getAsset`) | period 2026-11-01 to 2026-12-01, updated 2026-11-06: the November 2026 release |
+| India's protected-area share | Wikipedia "Protected areas of India", quoting the Wildlife Institute of India's National Wildlife Database, 4 January 2023 | 173,629.52 km², 5.28% (national parks 44,402.95 km², sanctuaries 122,564.86 km²). **Second-hand** |
+
+**Not checked:**
+- India's figures against the Wildlife Institute of India's own lists. Its site
+  (https://wii.gov.in/envis) links them as PDFs on eiacp.moef.gov.in, which could
+  not be opened from here; the older ENVIS address no longer resolves and the web
+  archive refused the request.
+- The main text of Chao & Jost (2012), which is paywalled. The equation numbers
+  come from the paper's own appendix, and the handling of samples with no
+  doubletons follows the authors' iNEXT code (section 4), not a page of the paper.
+- The exact wording of Protected Planet's recommended citation.

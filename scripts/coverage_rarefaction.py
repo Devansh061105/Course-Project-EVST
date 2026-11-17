@@ -8,9 +8,14 @@ already detected). Two cells rarefied to 250 records can sit at very different
 completeness if one community is far more even than the other.
 
 For each cell's species-abundance vector X (n records):
-  sample coverage at size m < n  (Chao & Jost 2012, eq. 4a):
+  coverage of the full sample of n records  (Chao & Jost 2012, eq. 4a):
+      C_n = 1 - (f1 / n) * (n - 1) f1 / ((n - 1) f1 + 2 f2)
+  coverage of a rarefied sample of size m < n  (Chao & Jost 2012, eq. 4b):
       C_m = 1 - sum_i (X_i / n) * C(n - X_i, m) / C(n - 1, m)
   find m* with C_m* = target by bisection, then report Hurlbert S(m*).
+  (Equation numbers and both formulas checked 2026-11-17 against the paper's own
+  Appendix F and Chao et al. 2014, Ecol. Monogr. 84, Appendix B eqs. B.7 and B.9.
+  The f2 = 0 branch in full_coverage follows the authors' iNEXT code.)
 Cells whose full-sample coverage is below the target would need extrapolation
 and are left missing rather than extrapolated.
 

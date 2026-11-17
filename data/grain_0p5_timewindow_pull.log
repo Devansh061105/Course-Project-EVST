@@ -1,0 +1,54 @@
+=== 1. coverage-based richness at 0.5 degrees ===
+model cells: 672; full-sample coverage: min 0.7181, median 0.9916
+coverage reached by the fixed n=250 standardisation: min 0.621, median 0.795, max 0.990
+coverage 0.90: reached in 619 of 672 cells (records needed: median 531); r with rarefied-250 = 0.946
+coverage 0.95: reached in 533 of 672 cells (records needed: median 1009); r with rarefied-250 = 0.907
+ML_Error
+COV rarefied 250, all cells (n=671, 64 ecoregions): baseline +0.228 (p=0.0000) | within-ecoregion +0.058 (se 0.025, p=0.0212) | spatial error +0.090 (p=0.0000)
+ML_Error
+COV coverage 0.90 (n=618, 63 ecoregions): baseline +0.221 (p=0.0008) | within-ecoregion +0.071 (se 0.025, p=0.0049) | spatial error +0.086 (p=0.0000)
+ML_Error
+COV rarefied 250, coverage-0.90 cells (n=618, 63 ecoregions): baseline +0.211 (p=0.0000) | within-ecoregion +0.069 (se 0.024, p=0.0035) | spatial error +0.087 (p=0.0000)
+ML_Error
+COV coverage 0.95 (n=532, 62 ecoregions): baseline +0.216 (p=0.0053) | within-ecoregion +0.075 (se 0.030, p=0.0141) | spatial error +0.067 (p=0.0024)
+ML_Error
+COV rarefied 250, coverage-0.95 cells (n=532, 62 ecoregions): baseline +0.195 (p=0.0004) | within-ecoregion +0.078 (se 0.025, p=0.0021) | spatial error +0.076 (p=0.0000)
+
+=== 2. records restricted to 2019-2023, 0.5 degrees ===
+cells in the 0.5-degree model: 672, to pull: 669
+  25/669  27s
+  50/669  64s
+  75/669  109s
+  100/669  136s
+  125/669  162s
+  150/669  192s
+  175/669  219s
+  200/669  248s
+  225/669  277s
+  250/669  306s
+  275/669  333s
+  300/669  361s
+  325/669  391s
+  350/669  420s
+  375/669  446s
+  400/669  474s
+  425/669  511s
+  450/669  540s
+  475/669  567s
+  500/669  593s
+  525/669  621s
+  550/669  649s
+  575/669  682s
+  600/669  712s
+  625/669  746s
+  650/669  780s
+facet-truncated cells: 0
+records 2019-2023 as share of 2000-2024 (median over cells): 0.38
+cells that still have 250 species-identified records in 2019-2023: 558 of 672
+correlation of rarefied richness, 2019-23 vs 2000-24 (n=558): 0.912
+ML_Error
+WIN 2000-24 records, all cells (n=671, 64 ecoregions): baseline +0.228 (p=0.0000) | within-ecoregion +0.058 (se 0.025, p=0.0212) | spatial error +0.090 (p=0.0000)
+ML_Error
+WIN 2019-23 records (n=557, 63 ecoregions): baseline +0.157 (p=0.0044) | within-ecoregion +0.062 (se 0.024, p=0.0096) | spatial error +0.099 (p=0.0000)
+ML_Error
+WIN 2000-24 records, same cells (n=557, 63 ecoregions): baseline +0.211 (p=0.0011) | within-ecoregion +0.078 (se 0.023, p=0.0008) | spatial error +0.110 (p=0.0000)

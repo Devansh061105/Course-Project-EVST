@@ -9,7 +9,9 @@ natural land cover.
 **Explore the data:** [3D terrain map](https://devansh061105.github.io/Course-Project-EVST/interactive_map_3d.html) ·
 [flat atlas](https://devansh061105.github.io/Course-Project-EVST/interactive_map.html)
 
-**Slides:** [Project9_Biodiversity_Productivity.pptx](presentation/Project9_Biodiversity_Productivity.pptx) (16 slides with speaker notes)
+**Final evaluation:** [PowerPoint](presentation/final/Final_Evaluation_Biodiversity_Productivity.pptx) · [PDF](presentation/final/Final_Evaluation_Biodiversity_Productivity.pdf) · [Five-person speaking guide](presentation/final/FINAL_EVAL_SPEAKING_GUIDE.md). The revised deck contains 35 slides: 28 content slides, six linked reference slides and image credits. Five speaking sections target 4½ minutes each (22½ minutes total). No Q&A backup section.
+
+**Earlier presentation:** [Project9_Biodiversity_Productivity.pptx](presentation/Project9_Biodiversity_Productivity.pptx) (16 slides with speaker notes)
 
 **Resuming work on the project? Start with [HANDOFF.md](HANDOFF.md).**
 

@@ -4,3 +4,4 @@ __pycache__/
 *.pem
 *.key
 credentials*
+presentation/.final-build/

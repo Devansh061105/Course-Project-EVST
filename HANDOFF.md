@@ -126,9 +126,8 @@ push (`.github/workflows/checks.yml`).
    (`docs/RESULTS_ADJUDICATION.md` section 10).
 6. ~~Chao & Jost (2012) equation numbers~~ checked 2026-11-17: full-sample coverage is
    eq. 4a, rarefied-sample coverage eq. 4b (`docs/VERIFICATION.md` section 10).
-7. **India's protected-area share is sourced second-hand** (5.28%, Wikipedia quoting the
-   Wildlife Institute of India). Open the two PDFs linked from https://wii.gov.in/envis
-   and confirm before citing the Institute (`docs/TODO.md` 4a).
+7. ~~India's protected-area share~~ confirmed 2026-11-17 from the Wildlife Institute of
+   India's own table: 5.69% (as on February 2025; `docs/RESULTS_EXTENSION_F.md`).
 
 ## 5. Map of the repo
 | Path | What |

@@ -165,13 +165,13 @@ builds.
 | Chao & Jost (2012) equation numbers | the paper's own Appendix F ("see Eqs. 4b and 9" for rarefied and extrapolated coverage; the reference point, "see Eq. 4a") and Chao et al. (2014) *Ecol. Monogr.* 84, Appendix B eqs. B.7 and B.9, which restate both estimators and credit them to Chao & Jost (2012) | formulas match the code; the code comment had the rarefied estimator labelled 4a, corrected to 4b |
 | ETOPO1 citation | Earth Engine catalogue page for `NOAA/NGDC/ETOPO1`; DOI 10.7289/V5C8276M resolved through doi.org | Amante & Eakins (2009), NOAA Technical Memorandum NESDIS NGDC-24; the DOI resolves to the dataset. The earlier row lacked the report number |
 | WDPA version | metadata of the Earth Engine asset used (`ee.data.getAsset`) | period 2026-11-01 to 2026-12-01, updated 2026-11-06: the November 2026 release |
-| India's protected-area share | Wikipedia "Protected areas of India", quoting the Wildlife Institute of India's National Wildlife Database, 4 January 2023 | 173,629.52 km², 5.28% (national parks 44,402.95 km², sanctuaries 122,564.86 km²). **Second-hand** |
+| India's protected-area share | the Wildlife Institute of India's own table, "Protected Areas of India (As on February, 2025)", last updated 7 March 2025, read from the web-archive copy of 13 January 2026 (the live site does not resolve from here); each category's percentage and the total recomputed from the areas and the stated 3,287,263 km² | 1,134 areas, 187,162.91 km², **5.69%**; the four categories sum exactly to the total. Wikipedia's 5.28% (January 2023) does not match the Institute's own 2023 row (178,640.69 km², 5.43%) and is not used |
 
 **Not checked:**
-- India's figures against the Wildlife Institute of India's own lists. Its site
-  (https://wii.gov.in/envis) links them as PDFs on eiacp.moef.gov.in, which could
-  not be opened from here; the older ENVIS address no longer resolves and the web
-  archive refused the request.
+- The Wildlife Institute's per-site PDFs (linked from https://wii.gov.in/envis,
+  hosted on eiacp.moef.gov.in): the host refuses connections from here. The summary
+  table above comes from the same centre, so the per-site lists are not needed for
+  the national total.
 - The main text of Chao & Jost (2012), which is paywalled. The equation numbers
   come from the paper's own appendix, and the handling of samples with no
   doubletons follows the authors' iNEXT code (section 4), not a page of the paper.

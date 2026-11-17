@@ -24,12 +24,10 @@ Current interpretation lives in `docs/RESULTS_ADJUDICATION.md`.
    The butterfly and moth records need the same (run
    `python scripts/gbif_dataset_counts.py lepidoptera` for the counts file).
 4a. **Before citing Extension F:** ~~record the WDPA version month~~ done 2026-11-17
-   (November 2026 release, from the Earth Engine asset metadata). India's
-   protected-area share is now a sourced figure (5.28%, January 2023) but only
-   second-hand: it is quoted from Wikipedia, which attributes it to the Wildlife
-   Institute of India. **Still to do by a person:** open the two PDFs linked from
-   https://wii.gov.in/envis (national parks, wildlife sanctuaries) and confirm the
-   totals before citing the Institute.
+   (November 2026 release, from the Earth Engine asset metadata). ~~India's
+   protected-area share~~ **confirmed 2026-11-17** from the Wildlife Institute of
+   India's own table: 5.69% (1,134 areas, 187,162.91 km², as on February 2025). The
+   5.28% quoted earlier from Wikipedia is out of date. Extension F can now be cited.
 
 ## OPEN QUESTION FOR THE TEAM
 The plan's H1 is causal in direction: biodiversity → productivity. The data show a

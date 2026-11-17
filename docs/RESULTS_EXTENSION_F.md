@@ -24,17 +24,17 @@ Protected share of land by country, from the World Database on Protected Areas
 | Bangladesh | 13 | 1.0% | 4.3% |
 | Nepal | 13 | 6.4% | 22.2% |
 
-- **India, strict: 0.2%.** India's protected areas cover about 5.3% of the
-  country: 173,629.52 km² (5.28%) as of January 2023, of which 106 national parks
-  cover 44,402.95 km² (1.35%) and 567 wildlife sanctuaries 122,564.86 km² (3.73%).
-  **Source status (checked 2026-11-17):** these figures are quoted from the
-  Wikipedia article "Protected areas of India", which attributes them to the
-  Wildlife Institute of India's National Wildlife Database (4 January 2023). The
-  Institute's own lists are PDFs linked from https://wii.gov.in/envis and were
-  **not opened**, so cite the Institute only after reading them. In the WDPA the
-  national parks and sanctuaries total about 20,800 km² of reported area (536
-  polygons), roughly an eighth of the 167,000 km² above. The parks are largely
-  absent from the public polygons.
+- **India, strict: 0.2%.** Officially, India's 1,134 protected areas cover
+  187,162.91 km², **5.69%** of the country (as on February 2025): 106 national
+  parks 44,402.94 km² (1.35%), 574 wildlife sanctuaries 127,241.24 km² (3.87%),
+  309 community reserves 8,464.13 km² (0.26%) and 145 conservation reserves
+  7,054.60 km² (0.21%), against a geographical area of 3,287,263 km². Source: the
+  Wildlife Institute of India's EIACP centre, "Protected Areas of India", last
+  updated 7 March 2025 (https://wiienvis.nic.in/Database/Protected_Area_854.aspx; read from the web-archive copy of 13 January 2026,
+  because the live site does not resolve from here). In the WDPA, national parks
+  and sanctuaries total about 20,800 km² of reported area (536 polygons), about
+  12% of the official 171,644 km². The parks are largely absent from the public
+  polygons.
 - **India, all sites: 18.4%.** This is not parks either. About 180,000 of India's
   190,000 polygons are "Reserve Forest" or "Protected Forest": categories under
   forest law, not wildlife reserves.

@@ -9,7 +9,7 @@ natural land cover.
 **Explore the data:** [3D terrain map](https://devansh061105.github.io/Course-Project-EVST/interactive_map_3d.html) ·
 [flat atlas](https://devansh061105.github.io/Course-Project-EVST/interactive_map.html)
 
-**Final evaluation:** [PowerPoint](presentation/final/Final_Evaluation_Biodiversity_Productivity.pptx) · [PDF](presentation/final/Final_Evaluation_Biodiversity_Productivity.pdf) · [Five-person speaking guide](presentation/final/FINAL_EVAL_SPEAKING_GUIDE.md). The revised deck contains 35 slides: 28 content slides, six linked reference slides and image credits. Five speaking sections target 4½ minutes each (22½ minutes total). No Q&A backup section.
+**Final evaluation — Planet LOL:** [PowerPoint](presentation/final/Final_Evaluation_Biodiversity_Productivity.pptx) · [PDF](presentation/final/Final_Evaluation_Biodiversity_Productivity.pdf) · [Exact scripts and named preparation guides](presentation/final/README.md) · [75 cross-questions and answers](presentation/final/CROSS_QUESTIONS.md). The deck has 30 spoken slides plus references, image credits and a repository appendix (39 total). Vaibhavi, Deepraj, Ekansh, Devansh and Raunak each have six slides and 3:48 of prepared speech, totalling 19 minutes within the 20-minute limit.
 
 **Earlier presentation:** [Project9_Biodiversity_Productivity.pptx](presentation/Project9_Biodiversity_Productivity.pptx) (16 slides with speaker notes)
 

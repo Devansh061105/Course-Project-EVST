@@ -1,4 +1,4 @@
-# Final evaluation presentation
+# Planet LOL: final evaluation presentation
 
 - [Editable PowerPoint](Final_Evaluation_Biodiversity_Productivity.pptx)
 - [PDF copy](Final_Evaluation_Biodiversity_Productivity.pdf)

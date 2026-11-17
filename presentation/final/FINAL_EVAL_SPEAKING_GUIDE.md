@@ -1,4 +1,4 @@
-# Revised final evaluation: five-person speaking split
+# Planet LOL: five-person speaking split
 
 **35 slides total. No Q&A section and no hidden slides.** Slides 1–28 form the spoken presentation. Slides 29–34 contain the linked references and slide 35 credits the images. Display references after the conclusion without reading every entry.
 
